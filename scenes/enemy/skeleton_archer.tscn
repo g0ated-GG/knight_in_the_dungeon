@@ -1,0 +1,16 @@
+[gd_scene load_steps=5 format=3 uid="uid://blfx4gmc8o7dg"]
+
+[ext_resource type="PackedScene" uid="uid://mbx1a73w157t" path="res://scenes/enemy/generic_enemy.tscn" id="1_3txf3"]
+[ext_resource type="Script" path="res://scenes/enemy/skeleton_archer.gd" id="2_b7evk"]
+[ext_resource type="Texture2D" uid="uid://dqm0byujp5gdn" path="res://img/test/test sprites.svg" id="3_h5qq6"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_blx7i"]
+atlas = ExtResource("3_h5qq6")
+region = Rect2(432, 14, 194, 291)
+
+[node name="Skeleton archer" instance=ExtResource("1_3txf3")]
+script = ExtResource("2_b7evk")
+speed = 0.0
+
+[node name="Sprite2D" parent="." index="0"]
+texture = SubResource("AtlasTexture_blx7i")

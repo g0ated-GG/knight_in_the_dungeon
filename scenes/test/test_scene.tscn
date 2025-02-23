@@ -1,0 +1,28 @@
+[gd_scene load_steps=6 format=3 uid="uid://dn5eepk8sqbbi"]
+
+[ext_resource type="PackedScene" uid="uid://cbv8kd8au3ic" path="res://scenes/player/player.tscn" id="1_spxja"]
+[ext_resource type="PackedScene" uid="uid://dcp7dodgvnmor" path="res://scenes/player/hud.tscn" id="2_su4ny"]
+[ext_resource type="PackedScene" uid="uid://mbx1a73w157t" path="res://scenes/enemy/generic_enemy.tscn" id="3_gmqur"]
+
+[sub_resource type="Gradient" id="Gradient_y8x8s"]
+colors = PackedColorArray(0, 0, 0, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_af2h7"]
+gradient = SubResource("Gradient_y8x8s")
+
+[node name="Test scene" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(576, 324)
+scale = Vector2(4.5, 648)
+texture = SubResource("GradientTexture1D_af2h7")
+
+[node name="Player" parent="." instance=ExtResource("1_spxja")]
+position = Vector2(584, 328)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="HUD" parent="CanvasLayer" instance=ExtResource("2_su4ny")]
+
+[node name="Generic enemy" parent="." instance=ExtResource("3_gmqur")]
+position = Vector2(695, 199)

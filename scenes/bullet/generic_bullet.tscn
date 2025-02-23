@@ -1,0 +1,29 @@
+[gd_scene load_steps=4 format=3 uid="uid://cxpyxm0hexr7o"]
+
+[ext_resource type="Script" path="res://scenes/bullet/generic_bullet.gd" id="1_02lcn"]
+[ext_resource type="Texture2D" uid="uid://ccei4b1c30jd" path="res://img/test/arrow.tres" id="2_vfcs4"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_hldi7"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_vfcs4")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Generic bullet" type="CharacterBody2D"]
+collision_mask = 11
+motion_mode = 1
+platform_floor_layers = 4294967040
+script = ExtResource("1_02lcn")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+rotation = 1.5708
+scale = Vector2(0.3, 0.3)
+sprite_frames = SubResource("SpriteFrames_hldi7")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(-32, -3, 19, -3, 19, -10, 36, 0, 19, 10, 19, 3, -32, 3, -32, 8, -37, 8, -37, -8, -32, -8)

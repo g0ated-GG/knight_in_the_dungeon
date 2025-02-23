@@ -1,0 +1,41 @@
+[gd_scene format=3 uid="uid://cah3jhknogeiw"]
+
+[node name="Main menu" type="Node2D"]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="JamLink" type="LinkButton" parent="CanvasLayer"]
+anchors_preset = -1
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 25.0
+offset_bottom = -25.0
+grow_vertical = 0
+text = "Игра для гейм-джема КОД23 \"Мал, да удал\" https://gamin.me/compos/kod/23"
+uri = "https://gamin.me/compos/kod/23"
+
+[node name="Buttons" type="VBoxContainer" parent="CanvasLayer"]
+anchors_preset = -1
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -25.0
+offset_bottom = -25.0
+grow_horizontal = 0
+grow_vertical = 0
+
+[node name="PlayButton" type="Button" parent="CanvasLayer/Buttons"]
+layout_mode = 2
+text = "Играть"
+
+[node name="ExitButton" type="Button" parent="CanvasLayer/Buttons"]
+layout_mode = 2
+text = "Выход"

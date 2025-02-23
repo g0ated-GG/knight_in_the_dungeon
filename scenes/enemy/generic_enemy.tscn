@@ -1,0 +1,43 @@
+[gd_scene load_steps=4 format=3 uid="uid://mbx1a73w157t"]
+
+[ext_resource type="Script" path="res://scenes/enemy/generic_enemy.gd" id="1_51bku"]
+[ext_resource type="Texture2D" uid="uid://dqm0byujp5gdn" path="res://img/test/test sprites.svg" id="1_y1qax"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jnewn"]
+atlas = ExtResource("1_y1qax")
+region = Rect2(224, 14, 195, 291)
+
+[node name="Generic enemy" type="CharacterBody2D"]
+collision_layer = 9
+motion_mode = 1
+platform_on_leave = 2
+platform_floor_layers = 4294967040
+platform_wall_layers = 3
+script = ExtResource("1_51bku")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+rotation = 1.5708
+scale = Vector2(0.3, 0.3)
+texture = SubResource("AtlasTexture_jnewn")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+rotation = 1.5708
+polygon = PackedVector2Array(0, -42, -24, 0, -27, 8, -28, 15, -27, 23, -23, 31, -16, 38, -8, 42, 0, 42, 8, 41, 16, 38, 23, 31, 28, 21, 28, 9, 24, 0)
+
+[node name="ViewField" type="Area2D" parent="."]
+collision_layer = 4
+collision_mask = 2
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="ViewField"]
+polygon = PackedVector2Array(0, 0, 384, -256, 384, 256)
+
+[node name="Node2D" type="Node2D" parent="."]
+
+[node name="HP" type="ProgressBar" parent="Node2D"]
+offset_left = -64.0
+offset_top = -96.0
+offset_right = 64.0
+offset_bottom = -64.0
+value = 100.0
+
+[node name="Bullets" type="Node2D" parent="."]
