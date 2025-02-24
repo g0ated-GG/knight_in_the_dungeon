@@ -1,0 +1,26 @@
+[gd_scene load_steps=6 format=3 uid="uid://dah36w80s8ho6"]
+
+[ext_resource type="PackedScene" uid="uid://di1psgm2krpc3" path="res://scenes/props/generic_prop.tscn" id="1_v6b20"]
+[ext_resource type="Texture2D" uid="uid://cf880tqyh4lsu" path="res://img/world_sprites.svg" id="2_1m0gy"]
+[ext_resource type="Texture2D" uid="uid://bwpp8sttuibr2" path="res://img/lamp.png" id="2_8c77b"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yrebg"]
+atlas = ExtResource("2_1m0gy")
+region = Rect2(950, 550, 110, 110)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_qphil"]
+radius = 30.0
+
+[node name="Lamp" instance=ExtResource("1_v6b20")]
+
+[node name="PointLight2D" type="PointLight2D" parent="." index="0"]
+color = Color(1, 1, 0, 1)
+energy = 2.0
+texture = ExtResource("2_8c77b")
+
+[node name="Sprite2D" parent="." index="1"]
+scale = Vector2(0.5, 0.5)
+texture = SubResource("AtlasTexture_yrebg")
+
+[node name="CollisionShape2D" parent="." index="2"]
+shape = SubResource("CircleShape2D_qphil")

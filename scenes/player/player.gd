@@ -24,8 +24,11 @@ func _physics_process(_delta: float) -> void:
 	var direction := Input.get_vector('ui_left', 'ui_right', 'ui_up', 'ui_down')
 	if direction:
 		velocity = direction * speed
+		$WalkAnimationPlayer.play('walk')
 	else:
 		velocity = Vector2.ZERO
+		$WalkAnimationPlayer.stop()
+		$Body.rotation = 0
 	look_at(get_global_mouse_position())
 	if not $AnimationPlayer.is_playing():
 		if Input.is_action_just_pressed('attack'):

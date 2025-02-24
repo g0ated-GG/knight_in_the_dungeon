@@ -1,11 +1,66 @@
-[gd_scene load_steps=4 format=3 uid="uid://mbx1a73w157t"]
+[gd_scene load_steps=12 format=3 uid="uid://mbx1a73w157t"]
 
 [ext_resource type="Script" path="res://scenes/enemy/generic_enemy.gd" id="1_51bku"]
-[ext_resource type="Texture2D" uid="uid://dqm0byujp5gdn" path="res://img/test/test sprites.svg" id="1_y1qax"]
+[ext_resource type="Texture2D" uid="uid://cf880tqyh4lsu" path="res://img/world_sprites.svg" id="2_yys55"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_jnewn"]
-atlas = ExtResource("1_y1qax")
-region = Rect2(224, 14, 195, 291)
+[sub_resource type="AtlasTexture" id="AtlasTexture_wrhcw"]
+atlas = ExtResource("2_yys55")
+region = Rect2(1420, 1450, 70, 310)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5qud3"]
+atlas = ExtResource("2_yys55")
+region = Rect2(1150, 1500, 210, 210)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_uhh0y"]
+radius = 32.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qx4cq"]
+bg_color = Color(0.498039, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pkjiq"]
+bg_color = Color(1, 0, 0, 1)
+
+[sub_resource type="Theme" id="Theme_km2a8"]
+ProgressBar/styles/background = SubResource("StyleBoxFlat_qx4cq")
+ProgressBar/styles/fill = SubResource("StyleBoxFlat_pkjiq")
+
+[sub_resource type="Animation" id="Animation_caioe"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Body:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_8g0n1"]
+resource_name = "walk"
+length = 0.6
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Body:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [-0.349066, 0.349066]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_8uolb"]
+_data = {
+"RESET": SubResource("Animation_caioe"),
+"walk": SubResource("Animation_8g0n1")
+}
 
 [node name="Generic enemy" type="CharacterBody2D"]
 collision_layer = 9
@@ -15,14 +70,17 @@ platform_floor_layers = 4294967040
 platform_wall_layers = 3
 script = ExtResource("1_51bku")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-rotation = 1.5708
+[node name="Body" type="Sprite2D" parent="."]
 scale = Vector2(0.3, 0.3)
-texture = SubResource("AtlasTexture_jnewn")
+texture = SubResource("AtlasTexture_wrhcw")
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
-rotation = 1.5708
-polygon = PackedVector2Array(0, -42, -24, 0, -27, 8, -28, 15, -27, 23, -23, 31, -16, 38, -8, 42, 0, 42, 8, 41, 16, 38, 23, 31, 28, 21, 28, 9, 24, 0)
+[node name="Head" type="Sprite2D" parent="."]
+rotation = 3.14159
+scale = Vector2(0.3, 0.3)
+texture = SubResource("AtlasTexture_5qud3")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_uhh0y")
 
 [node name="ViewField" type="Area2D" parent="."]
 collision_layer = 4
@@ -35,9 +93,28 @@ polygon = PackedVector2Array(0, 0, 384, -256, 384, 256)
 
 [node name="HP" type="ProgressBar" parent="Node2D"]
 offset_left = -64.0
-offset_top = -96.0
+offset_top = -87.0
 offset_right = 64.0
 offset_bottom = -64.0
+theme = SubResource("Theme_km2a8")
 value = 100.0
+show_percentage = false
+
+[node name="Value" type="Label" parent="Node2D/HP"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "100 / 100"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Bullets" type="Node2D" parent="."]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_8uolb")
+}
+autoplay = "walk"

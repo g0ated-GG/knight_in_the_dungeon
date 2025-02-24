@@ -17,6 +17,7 @@ func _ready() -> void:
 func sync_hp_bar() -> void:
 	$Node2D/HP.value = hp
 	$Node2D/HP.max_value = hp_max
+	$Node2D/HP/Value.text = '%d / %d' % [hp, hp_max]
 
 func _physics_process(_delta: float) -> void:
 	if hp == 0:
@@ -31,9 +32,18 @@ func _physics_process(_delta: float) -> void:
 		else:
 			velocity = Vector2.ZERO
 		move_and_slide()
+		attack()
+	else:
+		idle()
 
 func damage(points : int) -> void:
 	hp = clamp(hp - points, 0, hp_max)
 	hp_changed.emit()
 	if hp == 0:
 		death.emit()
+
+func attack():
+	pass
+
+func idle():
+	pass

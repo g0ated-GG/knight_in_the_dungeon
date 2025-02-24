@@ -1,92 +1,193 @@
-[gd_scene load_steps=10 format=3 uid="uid://cbv8kd8au3ic"]
+[gd_scene load_steps=14 format=3 uid="uid://cbv8kd8au3ic"]
 
 [ext_resource type="Script" path="res://scenes/player/player.gd" id="1_07msp"]
-[ext_resource type="Texture2D" uid="uid://dqm0byujp5gdn" path="res://img/test/test sprites.svg" id="1_rjld5"]
+[ext_resource type="Texture2D" uid="uid://cf880tqyh4lsu" path="res://img/world_sprites.svg" id="2_llpwy"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_jnewn"]
-atlas = ExtResource("1_rjld5")
-region = Rect2(16, 14, 195, 291)
+[sub_resource type="AtlasTexture" id="AtlasTexture_ysu0c"]
+atlas = ExtResource("2_llpwy")
+region = Rect2(375, 1050, 160, 310)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_0u8hw"]
-atlas = ExtResource("1_rjld5")
-region = Rect2(54, 338, 81, 194)
+[sub_resource type="AtlasTexture" id="AtlasTexture_mhubp"]
+atlas = ExtResource("2_llpwy")
+region = Rect2(605, 1125, 354, 110)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c8u2l"]
+atlas = ExtResource("2_llpwy")
+region = Rect2(350, 800, 300, 210)
 
 [sub_resource type="Animation" id="Animation_u3ylp"]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("CollisionPolygon2D:disabled")
+tracks/0/path = NodePath("Hand:rotation")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
+"update": 0,
+"values": [0.0]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Hand:rotation")
+tracks/1/path = NodePath("Hand/Sword:visible")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [0.0]
+"update": 1,
+"values": [false]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("Hand/Sword:visible")
+tracks/2/path = NodePath("Hand/Sword/CollisionPolygon2D:disabled")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [false]
+"values": [true]
 }
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("Hand/Sword/CollisionPolygon2D:disabled")
+tracks/3/path = NodePath("Hand/Sword/CollisionPolygon2D:visible")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [true]
+"values": [false]
 }
 tracks/4/type = "value"
 tracks/4/imported = false
 tracks/4/enabled = true
-tracks/4/path = NodePath("Hand/Sword/CollisionPolygon2D:visible")
+tracks/4/path = NodePath(".:collision_layer")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [false]
+"values": [67]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Head:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Head:rotation")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Body:position")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-15, 0)]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("Head:z_index")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [3]
 }
 
 [sub_resource type="Animation" id="Animation_0trkf"]
 resource_name = "dodge"
+length = 0.9
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("CollisionPolygon2D:disabled")
+tracks/0/path = NodePath(".:collision_layer")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.8),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
-"values": [true, false]
+"values": [65, 67]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Head:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(20, 0), Vector2(0, 0), Vector2(-20, 0), Vector2(0, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Head:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8),
+"transitions": PackedFloat32Array(1, 1e-05, 2.4788e-05, 1e-05, 1),
+"update": 0,
+"values": [0.0, 0.0, 3.14159, 3.14159, 0.0]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Body:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.5994),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(-15, 0), Vector2(15, 0), Vector2(0, 0), Vector2(-15, 0)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Head:z_index")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.1998, 0.5994),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [3, 1, 3]
 }
 
 [sub_resource type="Animation" id="Animation_emqgp"]
@@ -102,7 +203,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.3),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [-0.785398, 0.785398]
+"values": [-1.309, 1.309]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -154,7 +255,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.3),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [0.785398, -0.785398]
+"values": [1.309, -1.309]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -201,15 +302,54 @@ _data = {
 "right_to_left": SubResource("Animation_kcfbd")
 }
 
+[sub_resource type="Animation" id="Animation_tvjq3"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Body:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_7j8hq"]
+resource_name = "walk"
+length = 0.6
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Body:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [-0.349066, 0.349066]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_spl7o"]
+_data = {
+"RESET": SubResource("Animation_tvjq3"),
+"walk": SubResource("Animation_7j8hq")
+}
+
 [node name="Player" type="CharacterBody2D"]
-collision_layer = 3
+collision_layer = 67
 motion_mode = 1
 script = ExtResource("1_07msp")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-rotation = 1.5708
+[node name="Body" type="Sprite2D" parent="."]
+z_index = 2
+position = Vector2(-15, 0)
 scale = Vector2(0.3, 0.3)
-texture = SubResource("AtlasTexture_jnewn")
+texture = SubResource("AtlasTexture_ysu0c")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
 rotation = 1.5708
@@ -224,21 +364,32 @@ rotation_smoothing_enabled = true
 
 [node name="Sword" type="Area2D" parent="Hand"]
 visible = false
-position = Vector2(40, 0)
+position = Vector2(90, 0)
 rotation = 1.5708
-collision_layer = 0
+collision_layer = 32
 collision_mask = 8
 
 [node name="Sprite2D" type="Sprite2D" parent="Hand/Sword"]
+rotation = -1.5708
 scale = Vector2(0.3, 0.3)
-texture = SubResource("AtlasTexture_0u8hw")
+texture = SubResource("AtlasTexture_mhubp")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Hand/Sword"]
 visible = false
-polygon = PackedVector2Array(-6, 28, 5, 28, 11, -11, 0, -27, -11, -11)
+polygon = PackedVector2Array(-7.07093, 38.5858, 7.07121, 38.5858, 10.6065, -35.6605, -0.000209808, -53.3381, -10.6067, -35.6604)
 disabled = true
+
+[node name="Head" type="Sprite2D" parent="."]
+z_index = 3
+scale = Vector2(0.3, 0.3)
+texture = SubResource("AtlasTexture_c8u2l")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
 "": SubResource("AnimationLibrary_muith")
+}
+
+[node name="WalkAnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_spl7o")
 }
