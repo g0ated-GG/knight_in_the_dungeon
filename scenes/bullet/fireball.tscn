@@ -94,29 +94,29 @@ polygon = PackedVector2Array(-640, 640, -640, -640, 640, -640, 640, 640)
 [node name="HP" parent="Node2D" index="0"]
 visible = false
 
-[node name="LifeTimer" type="Timer" parent="." index="7"]
+[node name="LifeTimer" type="Timer" parent="." index="6"]
 wait_time = 7.0
 one_shot = true
 autostart = true
 
-[node name="AfterLifeTimer" type="Timer" parent="." index="8"]
+[node name="AfterLifeTimer" type="Timer" parent="." index="7"]
 
-[node name="GPUParticles2D" type="GPUParticles2D" parent="." index="9"]
+[node name="GPUParticles2D" type="GPUParticles2D" parent="." index="8"]
 position = Vector2(-10, 0)
 amount = 30
 process_material = SubResource("ParticleProcessMaterial_npoxy")
 texture = SubResource("AtlasTexture_ahk04")
 
-[node name="ExplosionAnimationPlayer" type="AnimationPlayer" parent="." index="10"]
+[node name="ExplosionAnimationPlayer" type="AnimationPlayer" parent="." index="9"]
 
-[node name="ExplosionParticles2D" type="GPUParticles2D" parent="." index="11"]
+[node name="ExplosionParticles2D" type="GPUParticles2D" parent="." index="10"]
 emitting = false
 amount = 300
 process_material = SubResource("ParticleProcessMaterial_lprc6")
 texture = SubResource("AtlasTexture_htmcd")
 one_shot = true
 
-[node name="ExplosionArea2D" type="Area2D" parent="." index="12"]
+[node name="ExplosionArea2D" type="Area2D" parent="." index="11"]
 collision_layer = 0
 collision_mask = 186
 

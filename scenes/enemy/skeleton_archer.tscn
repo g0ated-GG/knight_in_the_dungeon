@@ -13,7 +13,7 @@ region = Rect2(1640, 1500, 270, 210)
 [node name="Skeleton archer" instance=ExtResource("1_3txf3")]
 script = ExtResource("2_b7evk")
 attack_delay = 1.0
-desired_distance = 500.0
+desired_distance = 400.0
 speed = 250.0
 hp = 70
 hp_max = 70
@@ -31,10 +31,7 @@ position = Vector2(-8, 0)
 [node name="CollisionPolygon2D" parent="ViewField" index="0"]
 polygon = PackedVector2Array(0, 0, 576, -448, 576, 448)
 
-[node name="Bullets" parent="." index="5"]
-visible = false
-
-[node name="ShootTimer" type="Timer" parent="." index="7"]
+[node name="ShootTimer" type="Timer" parent="." index="6"]
 autostart = true
 
 [connection signal="timeout" from="ShootTimer" to="." method="_on_shoot_timer_timeout"]

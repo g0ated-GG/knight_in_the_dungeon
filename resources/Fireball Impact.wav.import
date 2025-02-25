@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://lghlgiu5yxi6"
+path="res://.godot/imported/Fireball Impact.wav-5354e4d597884b84a5d9e21cd36650cb.sample"
+
+[deps]
+
+source_file="res://resources/Fireball Impact.wav"
+dest_files=["res://.godot/imported/Fireball Impact.wav-5354e4d597884b84a5d9e21cd36650cb.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://cbv8kd8au3ic" path="res://scenes/player/player.tscn" id="1_spxja"]
 [ext_resource type="PackedScene" uid="uid://dcp7dodgvnmor" path="res://scenes/player/hud.tscn" id="2_su4ny"]
-[ext_resource type="PackedScene" uid="uid://c5vnrc1iawpts" path="res://scenes/enemy/skeleton_mage.tscn" id="3_7t54q"]
+[ext_resource type="PackedScene" uid="uid://yufl3x3nrlh7" path="res://scenes/enemy/mimic.tscn" id="3_4gls4"]
 
 [sub_resource type="Gradient" id="Gradient_y8x8s"]
 colors = PackedColorArray(0, 0, 0, 1, 0, 0, 0, 1)
@@ -25,5 +25,6 @@ position = Vector2(584, 328)
 [node name="HUD" parent="CanvasLayer" node_paths=PackedStringArray("player") instance=ExtResource("2_su4ny")]
 player = NodePath("../../Player")
 
-[node name="Skeleton mage" parent="." instance=ExtResource("3_7t54q")]
-position = Vector2(647, 130)
+[node name="Mimic" parent="." instance=ExtResource("3_4gls4")]
+position = Vector2(672, 132)
+attack_damage = 5

@@ -19,24 +19,24 @@ tangential_accel_max = 5.0
 scale_min = 0.01
 scale_max = 0.05
 
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_gaydr"]
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_wmaa2"]
 load_path = "res://.godot/imported/world_sprites.svg-86afb6dc52fe0dcc8a43c1f0b2fdf631.ctex"
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_3tfcp"]
-atlas = SubResource("CompressedTexture2D_gaydr")
+atlas = SubResource("CompressedTexture2D_wmaa2")
 region = Rect2(3097, 891, 192, 193)
 
 [node name="Lava" instance=ExtResource("1_s1vx8")]
 collision_layer = 0
 collision_mask = 0
 script = ExtResource("2_ly11x")
-attack_damage = 5
 attack_delay = 0.25
 desired_distance = 0.0
 speed = 0.0
 hp = 0
 hp_max = 0
 show_dead_head = false
+attack_damage = 5
 
 [node name="Body" parent="." index="0"]
 visible = false
@@ -61,19 +61,19 @@ polygon = PackedVector2Array(-32, -32, 32, -32, 32, 32, -32, 32)
 [node name="Node2D" parent="." index="4"]
 visible = false
 
-[node name="AnimationPlayer" parent="." index="6"]
+[node name="AnimationPlayer" parent="." index="5"]
 autoplay = "walk"
 
-[node name="ShootTimer" parent="." index="7"]
+[node name="ShootTimer" parent="." index="6"]
 wait_time = 0.25
 
-[node name="GPUParticles2D" type="GPUParticles2D" parent="." index="8"]
+[node name="GPUParticles2D" type="GPUParticles2D" parent="." index="7"]
 amount = 50
 process_material = SubResource("ParticleProcessMaterial_uvkld")
 texture = SubResource("AtlasTexture_3tfcp")
 lifetime = 2.0
 
-[node name="PointLight2D" type="PointLight2D" parent="." index="9"]
+[node name="PointLight2D" type="PointLight2D" parent="." index="8"]
 scale = Vector2(0.2, 0.2)
 color = Color(1, 1, 0, 1)
 texture = ExtResource("3_81gta")

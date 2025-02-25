@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://dh574f5n4h0bf"
+path="res://.godot/imported/Hit Swing Sword Small 3.wav-73a95bcea3344b6e46de05df4a8910d6.sample"
+
+[deps]
+
+source_file="res://resources/Hit Swing Sword Small 3.wav"
+dest_files=["res://.godot/imported/Hit Swing Sword Small 3.wav-73a95bcea3344b6e46de05df4a8910d6.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

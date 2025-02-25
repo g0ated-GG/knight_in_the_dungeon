@@ -21,8 +21,8 @@ func _ready() -> void:
 	$Node2D.global_rotation = 0
 
 func sync_hp_bar() -> void:
-	$Node2D/HP.value = hp
 	$Node2D/HP.max_value = hp_max
+	$Node2D/HP.value = hp
 	$Node2D/HP/Value.text = '%d / %d' % [hp, hp_max]
 
 func _physics_process(_delta: float) -> void:
@@ -54,6 +54,7 @@ func damage(points : int) -> void:
 	if hp == 0 and alive:
 		alive = false
 		death.emit()
+		$CollisionShape2D.set_deferred('disabled', true)
 		if show_dead_head:
 			$Neck/Head.hide()
 			$Neck/DeadHead.show()

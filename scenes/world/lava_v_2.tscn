@@ -1,0 +1,54 @@
+[gd_scene load_steps=7 format=3 uid="uid://diuuntjgrkkv7"]
+
+[ext_resource type="Texture2D" uid="uid://bwpp8sttuibr2" path="res://img/lamp.png" id="1_0tk7r"]
+[ext_resource type="Script" path="res://scenes/world/lava_v_2.gd" id="1_foq0s"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2qes0"]
+size = Vector2(64, 64)
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_6bl1b"]
+lifetime_randomness = 0.3
+particle_flag_disable_z = true
+emission_shape = 3
+emission_box_extents = Vector3(32, 32, 0)
+gravity = Vector3(0, 0, 0)
+linear_accel_min = -2.23517e-06
+linear_accel_max = -2.23517e-06
+radial_accel_min = -2.23517e-06
+radial_accel_max = 5.0
+tangential_accel_min = -2.23517e-06
+tangential_accel_max = 5.0
+scale_min = 0.01
+scale_max = 0.05
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_gaydr"]
+load_path = "res://.godot/imported/world_sprites.svg-86afb6dc52fe0dcc8a43c1f0b2fdf631.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l1tet"]
+atlas = SubResource("CompressedTexture2D_gaydr")
+region = Rect2(3097, 891, 192, 193)
+
+[node name="LavaV2" type="Area2D"]
+collision_layer = 16
+collision_mask = 10
+script = ExtResource("1_foq0s")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_2qes0")
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="CollisionShape2D"]
+amount = 20
+process_material = SubResource("ParticleProcessMaterial_6bl1b")
+texture = SubResource("AtlasTexture_l1tet")
+lifetime = 2.0
+
+[node name="PointLight2D" type="PointLight2D" parent="CollisionShape2D"]
+scale = Vector2(0.2, 0.2)
+color = Color(1, 1, 0, 1)
+texture = ExtResource("1_0tk7r")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.25
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

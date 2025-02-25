@@ -1,18 +1,28 @@
 [gd_scene load_steps=4 format=3 uid="uid://bd36blim1knl0"]
 
-[ext_resource type="PackedScene" uid="uid://cxpyxm0hexr7o" path="res://scenes/bullet/generic_bullet.tscn" id="1_08dv1"]
+[ext_resource type="Script" path="res://scenes/bullet/arrow.gd" id="1_ibni2"]
 [ext_resource type="Texture2D" uid="uid://cf880tqyh4lsu" path="res://img/world_sprites.svg" id="2_0ppr6"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_nqaln"]
 atlas = ExtResource("2_0ppr6")
 region = Rect2(1651, 1831, 128, 48)
 
-[node name="Arrow" instance=ExtResource("1_08dv1")]
-speed = 300.0
+[node name="Arrow" type="CharacterBody2D"]
+collision_layer = 17
+collision_mask = 298
+motion_mode = 1
+platform_floor_layers = 4294901760
+script = ExtResource("1_ibni2")
 
-[node name="Sprite2D" parent="." index="0"]
+[node name="Sprite2D" type="Sprite2D" parent="."]
 rotation = 3.14159
+scale = Vector2(0.3, 0.3)
 texture = SubResource("AtlasTexture_nqaln")
 
-[node name="CollisionPolygon2D" parent="." index="1"]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
 polygon = PackedVector2Array(-13, -2, 18, -2, 18, 2, -13, 2)
+
+[node name="LifeTimer" type="Timer" parent="."]
+wait_time = 7.0
+one_shot = true
+autostart = true

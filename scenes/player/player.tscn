@@ -1,7 +1,8 @@
-[gd_scene load_steps=16 format=3 uid="uid://cbv8kd8au3ic"]
+[gd_scene load_steps=17 format=3 uid="uid://cbv8kd8au3ic"]
 
 [ext_resource type="Script" path="res://scenes/player/player.gd" id="1_07msp"]
 [ext_resource type="Texture2D" uid="uid://cf880tqyh4lsu" path="res://img/world_sprites.svg" id="2_llpwy"]
+[ext_resource type="AudioStream" uid="uid://dh574f5n4h0bf" path="res://resources/Hit Swing Sword Small 3.wav" id="3_fqb1l"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ysu0c"]
 atlas = ExtResource("2_llpwy")
@@ -292,6 +293,21 @@ tracks/3/keys = {
 "update": 1,
 "values": [true, false]
 }
+tracks/4/type = "audio"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("AudioStreamPlayer2D")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("3_fqb1l")
+}],
+"times": PackedFloat32Array(0)
+}
+tracks/4/use_blend = true
 
 [sub_resource type="Animation" id="Animation_kcfbd"]
 resource_name = "right_to_left"
@@ -344,6 +360,21 @@ tracks/3/keys = {
 "update": 1,
 "values": [true, false]
 }
+tracks/4/type = "audio"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("AudioStreamPlayer2D")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("3_fqb1l")
+}],
+"times": PackedFloat32Array(0)
+}
+tracks/4/use_blend = true
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_muith"]
 _data = {
@@ -458,3 +489,6 @@ monitoring = false
 [node name="CollisionShape2D" type="CollisionShape2D" parent="SuccessDodgeArea"]
 position = Vector2(-10, 0)
 shape = SubResource("CircleShape2D_7ymd7")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+volume_db = -10.0

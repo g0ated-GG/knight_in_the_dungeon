@@ -21,10 +21,9 @@ func _on_shoot_timer_timeout() -> void:
 
 func shoot_timeout() -> void:
 	if shooting:
-		if $Bullets.get_child_count() == 0:
-			var new_arrow : GenericBullet = arrow_scene.instantiate()
-			$Bullets.add_child(new_arrow)
-			new_arrow.archer = self
-			new_arrow.shoot()
-		else:
-			$Bullets.get_child(0).shoot()
+		var new_arrow : Arrow = arrow_scene.instantiate()
+		new_arrow.archer = self
+		get_parent().add_child(new_arrow)
+		new_arrow.global_position = global_position + Vector2(64, 0).rotated(global_rotation)
+		new_arrow.global_rotation = global_rotation
+		new_arrow.shoot()

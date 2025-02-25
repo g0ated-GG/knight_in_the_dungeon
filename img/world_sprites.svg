@@ -25,9 +25,9 @@
      inkscape:deskcolor="#d1d1d1"
      inkscape:document-units="mm"
      showgrid="true"
-     inkscape:zoom="8.516629"
-     inkscape:cx="353.9546"
-     inkscape:cy="308.45538"
+     inkscape:zoom="6.0221661"
+     inkscape:cx="187.22499"
+     inkscape:cy="142.47365"
      inkscape:window-width="1920"
      inkscape:window-height="1008"
      inkscape:window-x="0"
@@ -1113,12 +1113,13 @@
        r="1.3229166" />
     <path
        style="font-variation-settings:normal;vector-effect:none;fill:#552200;fill-opacity:1;stroke:none;stroke-width:0.264583;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;-inkscape-stroke:none;stop-color:#000000"
-       d="m 52.3875,39.422917 1.322917,0.529166 -1.322917,0.79375 z"
-       id="path9702-8" />
+       d="m 51.59375,39.422915 2.116667,0.529168 -2.116667,0.793749 z"
+       id="path9702-8"
+       sodipodi:nodetypes="cccc" />
     <circle
        style="font-variation-settings:normal;vector-effect:none;fill:#00aad4;fill-opacity:1;stroke:#55ddff;stroke-width:0.264583;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;-inkscape-stroke:none;stop-color:#000000"
        id="path9232-4"
-       cx="52.255207"
+       cx="51.59375"
        cy="40.084373"
        r="0.66145831" />
     <rect

@@ -1,0 +1,37 @@
+[gd_scene load_steps=5 format=3 uid="uid://bwo0x34lbadye"]
+
+[ext_resource type="PackedScene" uid="uid://diuuntjgrkkv7" path="res://scenes/world/lava_v_2.tscn" id="1_6ww7c"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_spskw"]
+size = Vector2(192, 64)
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_6n4ye"]
+lifetime_randomness = 0.3
+particle_flag_disable_z = true
+emission_shape = 3
+emission_box_extents = Vector3(96, 32, 0)
+gravity = Vector3(0, 0, 0)
+linear_accel_min = -2.23517e-06
+linear_accel_max = -2.23517e-06
+radial_accel_min = -2.23517e-06
+radial_accel_max = 5.0
+tangential_accel_min = -2.23517e-06
+tangential_accel_max = 5.0
+scale_min = 0.01
+scale_max = 0.05
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_umd3j"]
+load_path = "res://.godot/imported/lamp.png-34d7388570324e2dad57b72f9b35eb48.ctex"
+
+[node name="LavaV2_x3" instance=ExtResource("1_6ww7c")]
+
+[node name="CollisionShape2D" parent="." index="0"]
+shape = SubResource("RectangleShape2D_spskw")
+
+[node name="GPUParticles2D" parent="CollisionShape2D" index="0"]
+amount = 60
+process_material = SubResource("ParticleProcessMaterial_6n4ye")
+
+[node name="PointLight2D" parent="CollisionShape2D" index="1"]
+energy = 3.0
+texture = SubResource("CompressedTexture2D_umd3j")

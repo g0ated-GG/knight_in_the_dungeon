@@ -1,47 +1,8 @@
-[gd_scene load_steps=9 format=3 uid="uid://bfbjy6cbe4qw5"]
+[gd_scene load_steps=10 format=3 uid="uid://bfbjy6cbe4qw5"]
 
 [ext_resource type="PackedScene" uid="uid://mbx1a73w157t" path="res://scenes/enemy/generic_enemy.tscn" id="1_v3oqj"]
 [ext_resource type="Script" path="res://scenes/enemy/skeleton_swordman.gd" id="2_2wqx3"]
-
-[sub_resource type="Animation" id="Animation_4haty"]
-resource_name = "attack"
-length = 0.6
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Hand:rotation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.6),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [-1.0472, 1.0472]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Hand/Sword:visible")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.6),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [true, false]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("Hand/Sword:monitoring")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0, 0.6),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [true, false]
-}
+[ext_resource type="AudioStream" uid="uid://bgfnynpr54cjw" path="res://resources/Hit Swing Sword Small 2.wav" id="3_q1crw"]
 
 [sub_resource type="Animation" id="Animation_qa76v"]
 length = 0.001
@@ -82,6 +43,61 @@ tracks/2/keys = {
 "values": [false]
 }
 
+[sub_resource type="Animation" id="Animation_4haty"]
+resource_name = "attack"
+length = 0.6
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Hand:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.6),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [-1.0472, 1.0472]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Hand/Sword:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.6),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Hand/Sword:monitoring")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.6),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/3/type = "audio"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("AudioStreamPlayer2D")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("3_q1crw")
+}],
+"times": PackedFloat32Array(0)
+}
+tracks/3/use_blend = true
+
 [sub_resource type="Animation" id="Animation_5dqij"]
 resource_name = "right_to_left"
 length = 0.6
@@ -121,6 +137,21 @@ tracks/2/keys = {
 "update": 1,
 "values": [true, false]
 }
+tracks/3/type = "audio"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("AudioStreamPlayer2D")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("3_q1crw")
+}],
+"times": PackedFloat32Array(0)
+}
+tracks/3/use_blend = true
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_wh4og"]
 _data = {
@@ -144,12 +175,12 @@ show_dead_head = true
 [node name="CollisionPolygon2D" parent="ViewField" index="0"]
 polygon = PackedVector2Array(0, 0, 576, -448, 576, 448)
 
-[node name="SwordAnimationPlayer" type="AnimationPlayer" parent="." index="7"]
+[node name="SwordAnimationPlayer" type="AnimationPlayer" parent="." index="6"]
 libraries = {
 "": SubResource("AnimationLibrary_wh4og")
 }
 
-[node name="Hand" type="Node2D" parent="." index="8"]
+[node name="Hand" type="Node2D" parent="." index="7"]
 
 [node name="Sword" type="Area2D" parent="Hand" index="0"]
 visible = false
@@ -166,3 +197,6 @@ texture = SubResource("AtlasTexture_xajhv")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Hand/Sword" index="1"]
 polygon = PackedVector2Array(-2.99993, 19, 3.00007, 19, 5.99994, -17, -9.77397e-05, -27, -6.00006, -17)
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." index="8"]
+volume_db = -10.0

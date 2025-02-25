@@ -6,7 +6,7 @@
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_odkda"]
 atlas = ExtResource("3_f57pa")
-region = Rect2(1950, 1490, 300, 220)
+region = Rect2(1925, 1490, 325, 220)
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_oovee"]
 lifetime_randomness = 0.3
@@ -14,8 +14,8 @@ particle_flag_disable_z = true
 emission_shape = 2
 emission_sphere_radius = 2.0
 gravity = Vector3(0, 0, 0)
-linear_accel_min = 6.22
-linear_accel_max = 37.33
+linear_accel_min = 26.66
+linear_accel_max = 57.77
 radial_accel_min = 36.45
 radial_accel_max = 66.67
 tangential_accel_min = 1.78
@@ -44,19 +44,16 @@ texture = SubResource("AtlasTexture_odkda")
 position = Vector2(4, 0)
 
 [node name="CollisionShape2D" parent="." index="2"]
-position = Vector2(4, 0)
+position = Vector2(0, 0)
 
-[node name="ViewField" parent="." index="3"]
-collision_mask = 2
-
-[node name="AnimationPlayer" parent="." index="6"]
+[node name="AnimationPlayer" parent="." index="5"]
 autoplay = "walk"
 
-[node name="ShootTimer" parent="." index="7"]
+[node name="ShootTimer" parent="." index="6"]
 wait_time = 2.0
 
-[node name="GPUParticles2D" type="GPUParticles2D" parent="." index="8"]
-position = Vector2(36, 25)
+[node name="GPUParticles2D" type="GPUParticles2D" parent="." index="7"]
+position = Vector2(40, 25)
 amount = 10
 process_material = SubResource("ParticleProcessMaterial_oovee")
 texture = SubResource("AtlasTexture_p8iwq")

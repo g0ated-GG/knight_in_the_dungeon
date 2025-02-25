@@ -1,16 +1,36 @@
-extends SkeletonArcher
+extends GenericEnemy
 
-@export var attack_damage : int = 10
+@export var attack_damage : int = 5
 
-func _on_shoot_timer_timeout() -> void:
-	if shooting:
-		for target in $TeethArea2D.get_overlapping_bodies():
-			target.damage(attack_damage)
+func _ready() -> void:
+	super._ready()
+	$TeethArea2D.body_entered.connect(bite)
+
+func bite(target) -> void:
+	if target != self:
+		target.damage(attack_damage)
+
+func _physics_process(_delta: float) -> void:
+	if hp == 0 or not alive:
+		return
+	var targets = $ViewField.get_overlapping_bodies()
+	if not targets.is_empty():
+		var player : Node2D = targets[0]
+		look_at(player.global_position)
+		$Node2D.global_rotation = 0
+		velocity = global_position.direction_to(player.global_position) * speed
+		attack()
+		move_and_slide()
+	else:
+		velocity = Vector2.ZERO
+		idle()
 
 func attack() -> void:
 	super.attack()
-	$TeethAnimationPlayer.play('bite')
+	if not $TeethAnimationPlayer.is_playing():
+		$TeethAnimationPlayer.play('bite')
 
 func idle() -> void:
 	super.idle()
 	$TeethAnimationPlayer.stop()
+	$TeethAnimationPlayer.play('RESET')

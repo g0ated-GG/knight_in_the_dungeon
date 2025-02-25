@@ -19,17 +19,11 @@ scale_max = 0.05
 
 [node name="Lava3" instance=ExtResource("1_01e6b")]
 
-[node name="Neck" parent="." index="1"]
-scale = Vector2(1, 1)
-
 [node name="CollisionShape2D" parent="." index="2"]
 position = Vector2(0, 0)
 
 [node name="CollisionPolygon2D" parent="ViewField" index="0"]
 polygon = PackedVector2Array(-96, -32, 96, -32, 96, 32, -96, 32)
-
-[node name="Value" parent="Node2D/HP" index="0"]
-visible = true
 
 [node name="GPUParticles2D" parent="." index="8"]
 amount = 150
@@ -37,5 +31,3 @@ process_material = SubResource("ParticleProcessMaterial_l1oji")
 
 [node name="PointLight2D" parent="." index="9"]
 energy = 2.0
-
-[connection signal="timeout" from="ShootTimer" to="." method="_on_shoot_timer_timeout"]
