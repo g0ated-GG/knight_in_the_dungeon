@@ -11,7 +11,7 @@ var begin_point : Vector2
 func shoot():
 	get_parent().remove_child(self)
 	archer.get_parent().add_child(self)
-	global_position = archer.global_position + Vector2(20, 0).rotated(archer.global_rotation)
+	global_position = archer.global_position + Vector2(64, 0).rotated(archer.global_rotation)
 	global_rotation = archer.global_rotation
 	begin_point = global_position
 

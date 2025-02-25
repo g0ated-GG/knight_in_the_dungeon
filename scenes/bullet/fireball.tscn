@@ -65,13 +65,16 @@ atlas = ExtResource("2_5py1q")
 region = Rect2(2845, 1145, 1120, 1120)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_b1vf1"]
-radius = 60.0
+radius = 40.0
 
 [node name="Fireball" instance=ExtResource("1_w04fc")]
 collision_layer = 145
 collision_mask = 394
 script = ExtResource("2_1e67s")
-explosion_damage = 100
+explosion_damage = 40
+speed_min = 100
+speed_max = 150
+desired_distance = 0.0
 speed = 50.0
 hp = 1
 hp_max = 1
@@ -85,6 +88,9 @@ texture = SubResource("AtlasTexture_w2xc2")
 [node name="CollisionShape2D" parent="." index="2"]
 shape = SubResource("CircleShape2D_lsb2n")
 
+[node name="CollisionPolygon2D" parent="ViewField" index="0"]
+polygon = PackedVector2Array(-640, 640, -640, -640, 640, -640, 640, 640)
+
 [node name="HP" parent="Node2D" index="0"]
 visible = false
 
@@ -93,26 +99,29 @@ wait_time = 7.0
 one_shot = true
 autostart = true
 
-[node name="GPUParticles2D" type="GPUParticles2D" parent="." index="8"]
+[node name="AfterLifeTimer" type="Timer" parent="." index="8"]
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="." index="9"]
 position = Vector2(-10, 0)
 amount = 30
 process_material = SubResource("ParticleProcessMaterial_npoxy")
 texture = SubResource("AtlasTexture_ahk04")
 
-[node name="ExplosionAnimationPlayer" type="AnimationPlayer" parent="." index="9"]
+[node name="ExplosionAnimationPlayer" type="AnimationPlayer" parent="." index="10"]
 
-[node name="ExplosionParticles2D" type="GPUParticles2D" parent="." index="10"]
+[node name="ExplosionParticles2D" type="GPUParticles2D" parent="." index="11"]
 emitting = false
 amount = 300
 process_material = SubResource("ParticleProcessMaterial_lprc6")
 texture = SubResource("AtlasTexture_htmcd")
 one_shot = true
 
-[node name="ExplosionArea2D" type="Area2D" parent="." index="11"]
+[node name="ExplosionArea2D" type="Area2D" parent="." index="12"]
 collision_layer = 0
-collision_mask = 10
+collision_mask = 186
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ExplosionArea2D" index="0"]
 shape = SubResource("CircleShape2D_b1vf1")
 
 [connection signal="timeout" from="LifeTimer" to="." method="_on_life_timer_timeout"]
+[connection signal="timeout" from="AfterLifeTimer" to="." method="_on_after_life_timer_timeout"]

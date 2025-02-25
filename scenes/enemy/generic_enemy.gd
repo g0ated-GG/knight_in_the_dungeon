@@ -9,6 +9,8 @@ extends CharacterBody2D
 
 @export var show_dead_head : bool = false
 
+@export var alive : bool = true
+
 signal hp_changed
 signal death
 
@@ -24,7 +26,7 @@ func sync_hp_bar() -> void:
 	$Node2D/HP/Value.text = '%d / %d' % [hp, hp_max]
 
 func _physics_process(_delta: float) -> void:
-	if hp == 0:
+	if hp == 0 or not alive:
 		return
 	var targets = $ViewField.get_overlapping_bodies()
 	if not targets.is_empty():
@@ -49,7 +51,8 @@ func _physics_process(_delta: float) -> void:
 func damage(points : int) -> void:
 	hp = clamp(hp - points, 0, hp_max)
 	hp_changed.emit()
-	if hp == 0:
+	if hp == 0 and alive:
+		alive = false
 		death.emit()
 		if show_dead_head:
 			$Neck/Head.hide()

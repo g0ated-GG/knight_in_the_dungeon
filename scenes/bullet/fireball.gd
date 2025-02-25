@@ -4,22 +4,29 @@ extends GenericEnemy
 @export var explosion_damage : int = 40
 @export var caster : GenericEnemy
 
-func _ready() -> void:
-	death.connect(explosion)
+@export var speed_min : int = 100
+@export var speed_max : int = 150
 
-func attack() -> void:
-	var targets = $ViewField.get_overlapping_bodies()
-	if not targets.is_empty():
-		var player : Node2D = targets[0]
-		if global_position.distance_to(player.global_position) <= desired_distance:
-			self.damage(1)
+func _ready() -> void:
+	$ExplosionArea2D.body_entered.connect(ignition)
+	death.connect(explosion)
+	speed = randi_range(speed_min, speed_max)
+
+func ignition(target) -> void:
+	if target != self and target != caster:
+		explosion()
 
 func explosion() -> void:
+	alive = false
 	$LifeTimer.stop()
 	$ExplosionParticles2D.emitting = true
-	$LifeTimer.start(1.0)
+	$AfterLifeTimer.start(1.0)
 	for target in $ExplosionArea2D.get_overlapping_bodies():
-		target.damage(explosion_damage)
+		if target != self:
+			target.damage(explosion_damage)
 
 func _on_life_timer_timeout() -> void:
 	self.damage(1)
+
+func _on_after_life_timer_timeout() -> void:
+	queue_free()
