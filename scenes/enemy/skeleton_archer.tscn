@@ -2,23 +2,37 @@
 
 [ext_resource type="PackedScene" uid="uid://mbx1a73w157t" path="res://scenes/enemy/generic_enemy.tscn" id="1_3txf3"]
 [ext_resource type="Script" path="res://scenes/enemy/skeleton_archer.gd" id="2_b7evk"]
-[ext_resource type="Texture2D" uid="uid://cf880tqyh4lsu" path="res://img/world_sprites.svg" id="3_5jyo2"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_5u3fj"]
-atlas = ExtResource("3_5jyo2")
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_aylxy"]
+load_path = "res://.godot/imported/world_sprites.svg-86afb6dc52fe0dcc8a43c1f0b2fdf631.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gsbd7"]
+atlas = SubResource("CompressedTexture2D_aylxy")
 region = Rect2(1640, 1500, 270, 210)
 
 [node name="Skeleton archer" instance=ExtResource("1_3txf3")]
 script = ExtResource("2_b7evk")
 attack_delay = 1.0
-hp = 60
-hp_max = 60
+desired_distance = 500.0
+speed = 250.0
+hp = 70
+hp_max = 70
+show_dead_head = true
 
-[node name="Head" parent="." index="1"]
-texture = SubResource("AtlasTexture_5u3fj")
+[node name="Head" parent="Neck" index="0"]
+texture = SubResource("AtlasTexture_gsbd7")
+
+[node name="DeadHead" parent="Neck" index="1"]
+position = Vector2(-8, 0)
+
+[node name="CollisionShape2D" parent="." index="2"]
+position = Vector2(-8, 0)
 
 [node name="CollisionPolygon2D" parent="ViewField" index="0"]
 polygon = PackedVector2Array(0, 0, 576, -448, 576, 448)
+
+[node name="Bullets" parent="." index="5"]
+visible = false
 
 [node name="ShootTimer" type="Timer" parent="." index="7"]
 autostart = true

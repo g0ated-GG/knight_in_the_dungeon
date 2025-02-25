@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://mbx1a73w157t"]
+[gd_scene load_steps=13 format=3 uid="uid://mbx1a73w157t"]
 
 [ext_resource type="Script" path="res://scenes/enemy/generic_enemy.gd" id="1_51bku"]
 [ext_resource type="Texture2D" uid="uid://cf880tqyh4lsu" path="res://img/world_sprites.svg" id="2_yys55"]
@@ -10,6 +10,10 @@ region = Rect2(1420, 1450, 70, 310)
 [sub_resource type="AtlasTexture" id="AtlasTexture_5qud3"]
 atlas = ExtResource("2_yys55")
 region = Rect2(1150, 1500, 210, 210)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b7trh"]
+atlas = ExtResource("2_yys55")
+region = Rect2(850, 1500, 210, 210)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_uhh0y"]
 radius = 32.0
@@ -66,7 +70,7 @@ _data = {
 collision_layer = 9
 motion_mode = 1
 platform_on_leave = 2
-platform_floor_layers = 4294967040
+platform_floor_layers = 4294901760
 platform_wall_layers = 3
 script = ExtResource("1_51bku")
 
@@ -74,17 +78,25 @@ script = ExtResource("1_51bku")
 scale = Vector2(0.3, 0.3)
 texture = SubResource("AtlasTexture_wrhcw")
 
-[node name="Head" type="Sprite2D" parent="."]
+[node name="Neck" type="Node2D" parent="."]
+
+[node name="Head" type="Sprite2D" parent="Neck"]
 rotation = 3.14159
 scale = Vector2(0.3, 0.3)
 texture = SubResource("AtlasTexture_5qud3")
+
+[node name="DeadHead" type="Sprite2D" parent="Neck"]
+visible = false
+rotation = -3.14159
+scale = Vector2(0.3, 0.3)
+texture = SubResource("AtlasTexture_b7trh")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_uhh0y")
 
 [node name="ViewField" type="Area2D" parent="."]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 66
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="ViewField"]
 polygon = PackedVector2Array(0, 0, 384, -256, 384, 256)
@@ -117,4 +129,3 @@ vertical_alignment = 1
 libraries = {
 "": SubResource("AnimationLibrary_8uolb")
 }
-autoplay = "walk"

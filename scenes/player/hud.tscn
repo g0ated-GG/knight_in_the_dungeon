@@ -1,7 +1,9 @@
-[gd_scene load_steps=11 format=3 uid="uid://dcp7dodgvnmor"]
+[gd_scene load_steps=16 format=3 uid="uid://dcp7dodgvnmor"]
 
 [ext_resource type="Script" path="res://scenes/player/hud.gd" id="1_mqmef"]
+[ext_resource type="FontFile" uid="uid://bi8vnxe7rn1ft" path="res://fonts/liberation-fonts-ttf-2.1.5/LiberationMono-Bold.ttf" id="2_r7e3d"]
 [ext_resource type="FontFile" uid="uid://bfub2kbyi1bw6" path="res://fonts/liberation-fonts-ttf-2.1.5/LiberationSerif-Regular.ttf" id="2_wak6e"]
+[ext_resource type="Script" path="res://scenes/player/menu.gd" id="3_vjlu0"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wwjjb"]
 bg_color = Color(0.498039, 0, 0, 1)
@@ -12,6 +14,15 @@ bg_color = Color(1, 0, 0, 1)
 [sub_resource type="Theme" id="Theme_8wx8o"]
 ProgressBar/styles/background = SubResource("StyleBoxFlat_wwjjb")
 ProgressBar/styles/fill = SubResource("StyleBoxFlat_44gtt")
+
+[sub_resource type="LabelSettings" id="LabelSettings_1kvf2"]
+font = ExtResource("2_r7e3d")
+
+[sub_resource type="LabelSettings" id="LabelSettings_vutpb"]
+font = ExtResource("2_r7e3d")
+
+[sub_resource type="LabelSettings" id="LabelSettings_h8blq"]
+font = ExtResource("2_r7e3d")
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3cfed"]
 bg_color = Color(0.118581, 0.118581, 0.118581, 1)
@@ -93,6 +104,7 @@ offset_bottom = 11.5
 grow_horizontal = 2
 grow_vertical = 2
 text = "100 / 100"
+label_settings = SubResource("LabelSettings_1kvf2")
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -101,6 +113,7 @@ layout_mode = 1
 offset_right = 40.0
 offset_bottom = 23.0
 text = "FPS: 0.0"
+label_settings = SubResource("LabelSettings_vutpb")
 
 [node name="Death" type="Label" parent="."]
 layout_mode = 1
@@ -111,6 +124,7 @@ offset_left = -40.0
 offset_bottom = 23.0
 grow_horizontal = 0
 text = "0 смертей"
+label_settings = SubResource("LabelSettings_h8blq")
 
 [node name="Message" type="Label" parent="."]
 modulate = Color(1, 1, 1, 0)
@@ -140,6 +154,7 @@ one_shot = true
 
 [node name="Menu" type="Panel" parent="."]
 process_mode = 3
+visible = false
 custom_minimum_size = Vector2(200, 150)
 layout_mode = 1
 anchors_preset = 8
@@ -149,6 +164,7 @@ anchor_right = 0.5
 anchor_bottom = 0.5
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("3_vjlu0")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Menu"]
 layout_mode = 1
@@ -170,19 +186,36 @@ text = "МЕНЮ"
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="ResumeButton" type="Button" parent="Menu/VBoxContainer"]
+layout_mode = 2
+focus_neighbor_bottom = NodePath("../RestartButton")
+focus_next = NodePath("../RestartButton")
+text = "Вернуться"
+
 [node name="RestartButton" type="Button" parent="Menu/VBoxContainer"]
 layout_mode = 2
+focus_neighbor_top = NodePath("../ResumeButton")
+focus_neighbor_bottom = NodePath("../MainMenuButton")
+focus_next = NodePath("../MainMenuButton")
+focus_previous = NodePath("../ResumeButton")
 text = "Начать заново"
 
 [node name="MainMenuButton" type="Button" parent="Menu/VBoxContainer"]
 layout_mode = 2
+focus_neighbor_top = NodePath("../RestartButton")
+focus_neighbor_bottom = NodePath("../DesktopButton")
+focus_next = NodePath("../DesktopButton")
+focus_previous = NodePath("../RestartButton")
 text = "Выйти в главное меню"
 
 [node name="DesktopButton" type="Button" parent="Menu/VBoxContainer"]
 layout_mode = 2
+focus_neighbor_top = NodePath("../MainMenuButton")
+focus_previous = NodePath("../MainMenuButton")
 text = "Выйти на рабочий стол"
 
 [connection signal="timeout" from="RestartGameTimer" to="." method="_on_restart_timer_timeout"]
-[connection signal="pressed" from="Menu/VBoxContainer/RestartButton" to="." method="_on_restart_button_pressed"]
-[connection signal="pressed" from="Menu/VBoxContainer/MainMenuButton" to="." method="_on_main_menu_button_pressed"]
-[connection signal="pressed" from="Menu/VBoxContainer/DesktopButton" to="." method="_on_desktop_button_pressed"]
+[connection signal="pressed" from="Menu/VBoxContainer/ResumeButton" to="Menu" method="_on_resume_button_pressed"]
+[connection signal="pressed" from="Menu/VBoxContainer/RestartButton" to="Menu" method="_on_restart_button_pressed"]
+[connection signal="pressed" from="Menu/VBoxContainer/MainMenuButton" to="Menu" method="_on_main_menu_button_pressed"]
+[connection signal="pressed" from="Menu/VBoxContainer/DesktopButton" to="Menu" method="_on_desktop_button_pressed"]

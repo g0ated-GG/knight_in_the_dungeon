@@ -1,18 +1,22 @@
 class_name GenericEnemy
 extends CharacterBody2D
 
-@export var minimal_distance : float = 100.0
+@export var desired_distance : float = 100.0
 @export var speed : float = 200.0
-@export var max_attack_distance : float = 400.0
 
 @export var hp : int = 100
 @export var hp_max : int = 100
+
+@export var show_dead_head : bool = false
 
 signal hp_changed
 signal death
 
 func _ready() -> void:
 	hp_changed.connect(sync_hp_bar)
+	sync_hp_bar()
+	death.connect(idle)
+	$Node2D.global_rotation = 0
 
 func sync_hp_bar() -> void:
 	$Node2D/HP.value = hp
@@ -27,13 +31,19 @@ func _physics_process(_delta: float) -> void:
 		var player : Node2D = targets[0]
 		look_at(player.global_position)
 		$Node2D.global_rotation = 0
-		if global_position.distance_to(player.global_position) > minimal_distance:
+		if global_position.distance_to(player.global_position) > desired_distance:
 			velocity = global_position.direction_to(player.global_position) * speed
+			$AnimationPlayer.play('walk')
 		else:
 			velocity = Vector2.ZERO
+			$AnimationPlayer.stop()
+			$AnimationPlayer.play('RESET')
+			attack()
 		move_and_slide()
-		attack()
 	else:
+		velocity = Vector2.ZERO
+		$AnimationPlayer.stop()
+		$AnimationPlayer.play('RESET')
 		idle()
 
 func damage(points : int) -> void:
@@ -41,9 +51,14 @@ func damage(points : int) -> void:
 	hp_changed.emit()
 	if hp == 0:
 		death.emit()
+		if show_dead_head:
+			$Neck/Head.hide()
+			$Neck/DeadHead.show()
+		$AnimationPlayer.stop()
+		$AnimationPlayer.play('RESET')
 
-func attack():
+func attack() -> void:
 	pass
 
-func idle():
+func idle() -> void:
 	pass

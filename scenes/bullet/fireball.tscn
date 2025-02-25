@@ -1,18 +1,118 @@
-[gd_scene load_steps=4 format=3 uid="uid://blsug7llaerj"]
+[gd_scene load_steps=15 format=3 uid="uid://b03nfqb3kxpwd"]
 
-[ext_resource type="PackedScene" uid="uid://cxpyxm0hexr7o" path="res://scenes/bullet/generic_bullet.tscn" id="1_2cvx7"]
+[ext_resource type="PackedScene" uid="uid://mbx1a73w157t" path="res://scenes/enemy/generic_enemy.tscn" id="1_w04fc"]
+[ext_resource type="Script" path="res://scenes/bullet/fireball.gd" id="2_1e67s"]
 [ext_resource type="Texture2D" uid="uid://cf880tqyh4lsu" path="res://img/world_sprites.svg" id="2_5py1q"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_rlnns"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_w2xc2"]
 atlas = ExtResource("2_5py1q")
 region = Rect2(1860, 1760, 190, 190)
 
-[node name="Fireball" instance=ExtResource("1_2cvx7")]
-speed = 150.0
-damage = 30
+[sub_resource type="CircleShape2D" id="CircleShape2D_lsb2n"]
+radius = 25.0
 
-[node name="Sprite2D" parent="." index="0"]
-texture = SubResource("AtlasTexture_rlnns")
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_npoxy"]
+lifetime_randomness = 0.3
+particle_flag_disable_z = true
+emission_shape = 2
+emission_sphere_radius = 10.0
+gravity = Vector3(-100, 0, 0)
+linear_accel_min = 68.89
+linear_accel_max = 100.0
+radial_accel_min = 35.56
+radial_accel_max = 35.56
+tangential_accel_min = -2.23517e-06
+tangential_accel_max = 24.0
+scale_min = 0.01
+scale_max = 0.05
 
-[node name="CollisionPolygon2D" parent="." index="1"]
-polygon = PackedVector2Array(-8, -16, 8, -16, 16, -8, 16, 8, 8, 16, -8, 16, -16, 8, -16, -8)
+[sub_resource type="AtlasTexture" id="AtlasTexture_ahk04"]
+atlas = ExtResource("2_5py1q")
+region = Rect2(1860, 1760, 190, 190)
+
+[sub_resource type="Gradient" id="Gradient_tvp87"]
+colors = PackedColorArray(0.74558, 0.74558, 0.74558, 1, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_keyy5"]
+gradient = SubResource("Gradient_tvp87")
+
+[sub_resource type="Gradient" id="Gradient_hc4el"]
+offsets = PackedFloat32Array(0.0124224, 0.0372671, 1)
+colors = PackedColorArray(1, 1, 0, 1, 1, 0, 0, 1, 0.572988, 0.572988, 0.572988, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_2wvtp"]
+gradient = SubResource("Gradient_hc4el")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_lprc6"]
+lifetime_randomness = 0.3
+particle_flag_disable_z = true
+emission_shape = 2
+emission_sphere_radius = 10.0
+gravity = Vector3(0, 0, 0)
+linear_accel_min = 68.89
+linear_accel_max = 100.0
+radial_accel_min = 80.89
+radial_accel_max = 80.89
+tangential_accel_min = -2.23517e-06
+tangential_accel_max = 24.0
+scale_min = 0.01
+scale_max = 0.05
+color_ramp = SubResource("GradientTexture1D_2wvtp")
+color_initial_ramp = SubResource("GradientTexture1D_keyy5")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_htmcd"]
+atlas = ExtResource("2_5py1q")
+region = Rect2(2845, 1145, 1120, 1120)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_b1vf1"]
+radius = 60.0
+
+[node name="Fireball" instance=ExtResource("1_w04fc")]
+collision_layer = 145
+collision_mask = 394
+script = ExtResource("2_1e67s")
+explosion_damage = 100
+speed = 50.0
+hp = 1
+hp_max = 1
+
+[node name="Body" parent="." index="0"]
+texture = null
+
+[node name="Head" parent="Neck" index="0"]
+texture = SubResource("AtlasTexture_w2xc2")
+
+[node name="CollisionShape2D" parent="." index="2"]
+shape = SubResource("CircleShape2D_lsb2n")
+
+[node name="HP" parent="Node2D" index="0"]
+visible = false
+
+[node name="LifeTimer" type="Timer" parent="." index="7"]
+wait_time = 7.0
+one_shot = true
+autostart = true
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="." index="8"]
+position = Vector2(-10, 0)
+amount = 30
+process_material = SubResource("ParticleProcessMaterial_npoxy")
+texture = SubResource("AtlasTexture_ahk04")
+
+[node name="ExplosionAnimationPlayer" type="AnimationPlayer" parent="." index="9"]
+
+[node name="ExplosionParticles2D" type="GPUParticles2D" parent="." index="10"]
+emitting = false
+amount = 300
+process_material = SubResource("ParticleProcessMaterial_lprc6")
+texture = SubResource("AtlasTexture_htmcd")
+one_shot = true
+
+[node name="ExplosionArea2D" type="Area2D" parent="." index="11"]
+collision_layer = 0
+collision_mask = 10
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ExplosionArea2D" index="0"]
+shape = SubResource("CircleShape2D_b1vf1")
+
+[connection signal="timeout" from="LifeTimer" to="." method="_on_life_timer_timeout"]

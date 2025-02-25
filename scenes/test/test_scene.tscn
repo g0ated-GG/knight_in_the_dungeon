@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://cbv8kd8au3ic" path="res://scenes/player/player.tscn" id="1_spxja"]
 [ext_resource type="PackedScene" uid="uid://dcp7dodgvnmor" path="res://scenes/player/hud.tscn" id="2_su4ny"]
-[ext_resource type="PackedScene" uid="uid://mbx1a73w157t" path="res://scenes/enemy/generic_enemy.tscn" id="3_gmqur"]
+[ext_resource type="PackedScene" uid="uid://blfx4gmc8o7dg" path="res://scenes/enemy/skeleton_archer.tscn" id="3_jrafs"]
 
 [sub_resource type="Gradient" id="Gradient_y8x8s"]
 colors = PackedColorArray(0, 0, 0, 1, 0, 0, 0, 1)
@@ -22,7 +22,8 @@ position = Vector2(584, 328)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
-[node name="HUD" parent="CanvasLayer" instance=ExtResource("2_su4ny")]
+[node name="HUD" parent="CanvasLayer" node_paths=PackedStringArray("player") instance=ExtResource("2_su4ny")]
+player = NodePath("../../Player")
 
-[node name="Generic enemy" parent="." instance=ExtResource("3_gmqur")]
-position = Vector2(695, 199)
+[node name="Skeleton archer" parent="." instance=ExtResource("3_jrafs")]
+position = Vector2(863, 128)

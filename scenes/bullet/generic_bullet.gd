@@ -9,10 +9,11 @@ extends CharacterBody2D
 var begin_point : Vector2
 
 func shoot():
+	get_parent().remove_child(self)
+	archer.get_parent().add_child(self)
+	global_position = archer.global_position + Vector2(20, 0).rotated(archer.global_rotation)
 	global_rotation = archer.global_rotation
 	begin_point = global_position
-	get_parent().remove_child(self)
-	get_parent().get_parent().add_child(self)
 
 func _physics_process(delta: float) -> void:
 	if get_parent().name != 'Bullets' and begin_point != null:
@@ -21,7 +22,7 @@ func _physics_process(delta: float) -> void:
 			var collision : KinematicCollision2D = move_and_collide(velocity * delta)
 			if collision:
 				var collider = collision.get_collider()
-				if collider != self:
+				if collider != archer:
 					if collider is Player or collider is GenericEnemy:
 						collider.damage(damage)
 					return_to_pool()

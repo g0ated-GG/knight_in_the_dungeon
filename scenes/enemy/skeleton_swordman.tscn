@@ -1,0 +1,168 @@
+[gd_scene load_steps=9 format=3 uid="uid://bfbjy6cbe4qw5"]
+
+[ext_resource type="PackedScene" uid="uid://mbx1a73w157t" path="res://scenes/enemy/generic_enemy.tscn" id="1_v3oqj"]
+[ext_resource type="Script" path="res://scenes/enemy/skeleton_swordman.gd" id="2_2wqx3"]
+
+[sub_resource type="Animation" id="Animation_4haty"]
+resource_name = "attack"
+length = 0.6
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Hand:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.6),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [-1.0472, 1.0472]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Hand/Sword:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.6),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Hand/Sword:monitoring")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.6),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
+[sub_resource type="Animation" id="Animation_qa76v"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Hand:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Hand/Sword:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Hand/Sword:monitoring")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_5dqij"]
+resource_name = "right_to_left"
+length = 0.6
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Hand:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.6),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [1.0472, -1.0472]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Hand/Sword:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.6),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Hand/Sword:monitoring")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.6),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_wh4og"]
+_data = {
+"RESET": SubResource("Animation_qa76v"),
+"left_to_right": SubResource("Animation_4haty"),
+"right_to_left": SubResource("Animation_5dqij")
+}
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_47koe"]
+load_path = "res://.godot/imported/world_sprites.svg-86afb6dc52fe0dcc8a43c1f0b2fdf631.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xajhv"]
+atlas = SubResource("CompressedTexture2D_47koe")
+region = Rect2(1120, 1895, 194, 70)
+
+[node name="Skeleton swordman" instance=ExtResource("1_v3oqj")]
+script = ExtResource("2_2wqx3")
+attack_damage = 30
+show_dead_head = true
+
+[node name="CollisionPolygon2D" parent="ViewField" index="0"]
+polygon = PackedVector2Array(0, 0, 576, -448, 576, 448)
+
+[node name="SwordAnimationPlayer" type="AnimationPlayer" parent="." index="7"]
+libraries = {
+"": SubResource("AnimationLibrary_wh4og")
+}
+
+[node name="Hand" type="Node2D" parent="." index="8"]
+
+[node name="Sword" type="Area2D" parent="Hand" index="0"]
+visible = false
+position = Vector2(65, 0)
+rotation = 1.5708
+collision_layer = 48
+collision_mask = 138
+monitoring = false
+
+[node name="Sprite2D" type="Sprite2D" parent="Hand/Sword" index="0"]
+rotation = -1.5708
+scale = Vector2(0.3, 0.3)
+texture = SubResource("AtlasTexture_xajhv")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Hand/Sword" index="1"]
+polygon = PackedVector2Array(-2.99993, 19, 3.00007, 19, 5.99994, -17, -9.77397e-05, -27, -6.00006, -17)

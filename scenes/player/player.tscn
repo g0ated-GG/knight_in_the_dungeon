@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://cbv8kd8au3ic"]
+[gd_scene load_steps=16 format=3 uid="uid://cbv8kd8au3ic"]
 
 [ext_resource type="Script" path="res://scenes/player/player.gd" id="1_07msp"]
 [ext_resource type="Texture2D" uid="uid://cf880tqyh4lsu" path="res://img/world_sprites.svg" id="2_llpwy"]
@@ -6,6 +6,9 @@
 [sub_resource type="AtlasTexture" id="AtlasTexture_ysu0c"]
 atlas = ExtResource("2_llpwy")
 region = Rect2(375, 1050, 160, 310)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_jfmrc"]
+radius = 30.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_mhubp"]
 atlas = ExtResource("2_llpwy")
@@ -125,6 +128,30 @@ tracks/8/keys = {
 "update": 1,
 "values": [3]
 }
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("SuccessDodgeArea:visible")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("SuccessDodgeArea:monitoring")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
 
 [sub_resource type="Animation" id="Animation_0trkf"]
 resource_name = "dodge"
@@ -188,6 +215,30 @@ tracks/4/keys = {
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
 "values": [3, 1, 3]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("SuccessDodgeArea:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 0.8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("SuccessDodgeArea:monitoring")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 0.8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
 }
 
 [sub_resource type="Animation" id="Animation_emqgp"]
@@ -340,10 +391,14 @@ _data = {
 "walk": SubResource("Animation_7j8hq")
 }
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_7ymd7"]
+radius = 90.0
+
 [node name="Player" type="CharacterBody2D"]
 collision_layer = 67
 motion_mode = 1
 script = ExtResource("1_07msp")
+god_mode = true
 
 [node name="Body" type="Sprite2D" parent="."]
 z_index = 2
@@ -351,9 +406,9 @@ position = Vector2(-15, 0)
 scale = Vector2(0.3, 0.3)
 texture = SubResource("AtlasTexture_ysu0c")
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
-rotation = 1.5708
-polygon = PackedVector2Array(0, -42, -24, 0, -27, 8, -28, 15, -27, 23, -23, 31, -16, 38, -8, 42, 0, 42, 8, 41, 16, 38, 23, 31, 28, 21, 28, 9, 24, 0)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-13, 0)
+shape = SubResource("CircleShape2D_jfmrc")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 limit_smoothed = true
@@ -367,7 +422,7 @@ visible = false
 position = Vector2(90, 0)
 rotation = 1.5708
 collision_layer = 32
-collision_mask = 8
+collision_mask = 136
 
 [node name="Sprite2D" type="Sprite2D" parent="Hand/Sword"]
 rotation = -1.5708
@@ -393,3 +448,13 @@ libraries = {
 libraries = {
 "": SubResource("AnimationLibrary_spl7o")
 }
+
+[node name="SuccessDodgeArea" type="Area2D" parent="."]
+visible = false
+collision_layer = 0
+collision_mask = 144
+monitoring = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SuccessDodgeArea"]
+position = Vector2(-10, 0)
+shape = SubResource("CircleShape2D_7ymd7")

@@ -3,7 +3,7 @@ extends Control
 @export var player : Player
 
 func _ready() -> void:
-	$Death.text = 'Смертей: %d' % Globals.deaths
+	$Death.text = '%d смертей' % Globals.deaths
 	if player != null:
 		player.hp_changed.connect(sync_hp_bar)
 		player.death.connect(defeat)
@@ -33,12 +33,3 @@ func show_message(text : String, color : Color, custom_speed = 1.0):
 
 func _on_restart_timer_timeout() -> void:
 	get_tree().reload_current_scene()
-
-func _on_restart_button_pressed() -> void:
-	get_tree().reload_current_scene()
-
-func _on_main_menu_button_pressed() -> void:
-	get_tree().change_scene_to_file('res://scenes/menu/main_menu.tscn')
-
-func _on_desktop_button_pressed() -> void:
-	get_tree().quit()

@@ -1,0 +1,79 @@
+[gd_scene load_steps=7 format=3 uid="uid://be66qmcurdk8e"]
+
+[ext_resource type="PackedScene" uid="uid://blfx4gmc8o7dg" path="res://scenes/enemy/skeleton_archer.tscn" id="1_s1vx8"]
+[ext_resource type="Script" path="res://scenes/enemy/lava.gd" id="2_ly11x"]
+[ext_resource type="Texture2D" uid="uid://bwpp8sttuibr2" path="res://img/lamp.png" id="3_81gta"]
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_uvkld"]
+lifetime_randomness = 0.3
+particle_flag_disable_z = true
+emission_shape = 3
+emission_box_extents = Vector3(32, 32, 0)
+gravity = Vector3(0, 0, 0)
+linear_accel_min = -2.23517e-06
+linear_accel_max = -2.23517e-06
+radial_accel_min = -2.23517e-06
+radial_accel_max = 5.0
+tangential_accel_min = -2.23517e-06
+tangential_accel_max = 5.0
+scale_min = 0.01
+scale_max = 0.05
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_gaydr"]
+load_path = "res://.godot/imported/world_sprites.svg-86afb6dc52fe0dcc8a43c1f0b2fdf631.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3tfcp"]
+atlas = SubResource("CompressedTexture2D_gaydr")
+region = Rect2(3097, 891, 192, 193)
+
+[node name="Lava" instance=ExtResource("1_s1vx8")]
+collision_layer = 0
+collision_mask = 0
+script = ExtResource("2_ly11x")
+attack_damage = 5
+attack_delay = 0.25
+desired_distance = 0.0
+speed = 0.0
+hp = 0
+hp_max = 0
+show_dead_head = false
+
+[node name="Body" parent="." index="0"]
+visible = false
+
+[node name="Neck" parent="." index="1"]
+visible = false
+
+[node name="Head" parent="Neck" index="0"]
+visible = false
+
+[node name="CollisionShape2D" parent="." index="2"]
+visible = false
+disabled = true
+
+[node name="ViewField" parent="." index="3"]
+collision_layer = 0
+collision_mask = 26
+
+[node name="CollisionPolygon2D" parent="ViewField" index="0"]
+polygon = PackedVector2Array(-32, -32, 32, -32, 32, 32, -32, 32)
+
+[node name="Node2D" parent="." index="4"]
+visible = false
+
+[node name="AnimationPlayer" parent="." index="6"]
+autoplay = "walk"
+
+[node name="ShootTimer" parent="." index="7"]
+wait_time = 0.25
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="." index="8"]
+amount = 50
+process_material = SubResource("ParticleProcessMaterial_uvkld")
+texture = SubResource("AtlasTexture_3tfcp")
+lifetime = 2.0
+
+[node name="PointLight2D" type="PointLight2D" parent="." index="9"]
+scale = Vector2(0.2, 0.2)
+color = Color(1, 1, 0, 1)
+texture = ExtResource("3_81gta")

@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://dah36w80s8ho6"]
+[gd_scene load_steps=8 format=3 uid="uid://dah36w80s8ho6"]
 
 [ext_resource type="PackedScene" uid="uid://di1psgm2krpc3" path="res://scenes/props/generic_prop.tscn" id="1_v6b20"]
 [ext_resource type="Texture2D" uid="uid://cf880tqyh4lsu" path="res://img/world_sprites.svg" id="2_1m0gy"]
@@ -10,6 +10,25 @@ region = Rect2(950, 550, 110, 110)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_qphil"]
 radius = 30.0
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_qcsjc"]
+lifetime_randomness = 0.3
+particle_flag_disable_z = true
+emission_shape = 2
+emission_sphere_radius = 3.0
+gravity = Vector3(0, 0, 0)
+linear_accel_min = 6.22
+linear_accel_max = 37.33
+radial_accel_min = 36.45
+radial_accel_max = 66.67
+tangential_accel_min = 1.78
+tangential_accel_max = 27.56
+scale_min = 0.01
+scale_max = 0.05
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yxct2"]
+atlas = ExtResource("2_1m0gy")
+region = Rect2(1860, 1760, 190, 190)
 
 [node name="Lamp" instance=ExtResource("1_v6b20")]
 
@@ -24,3 +43,8 @@ texture = SubResource("AtlasTexture_yrebg")
 
 [node name="CollisionShape2D" parent="." index="2"]
 shape = SubResource("CircleShape2D_qphil")
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="." index="3"]
+amount = 20
+process_material = SubResource("ParticleProcessMaterial_qcsjc")
+texture = SubResource("AtlasTexture_yxct2")

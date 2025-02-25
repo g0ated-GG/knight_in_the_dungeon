@@ -1,0 +1,63 @@
+[gd_scene load_steps=8 format=3 uid="uid://c5vnrc1iawpts"]
+
+[ext_resource type="PackedScene" uid="uid://blfx4gmc8o7dg" path="res://scenes/enemy/skeleton_archer.tscn" id="1_pcfcs"]
+[ext_resource type="Script" path="res://scenes/enemy/skeleton_mage.gd" id="2_1yijl"]
+[ext_resource type="Texture2D" uid="uid://cf880tqyh4lsu" path="res://img/world_sprites.svg" id="3_f57pa"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_odkda"]
+atlas = ExtResource("3_f57pa")
+region = Rect2(1950, 1490, 300, 220)
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_oovee"]
+lifetime_randomness = 0.3
+particle_flag_disable_z = true
+emission_shape = 2
+emission_sphere_radius = 2.0
+gravity = Vector3(0, 0, 0)
+linear_accel_min = 6.22
+linear_accel_max = 37.33
+radial_accel_min = 36.45
+radial_accel_max = 66.67
+tangential_accel_min = 1.78
+tangential_accel_max = 27.56
+scale_min = 0.01
+scale_max = 0.05
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_i07oq"]
+load_path = "res://.godot/imported/world_sprites.svg-86afb6dc52fe0dcc8a43c1f0b2fdf631.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p8iwq"]
+atlas = SubResource("CompressedTexture2D_i07oq")
+region = Rect2(2187, 1771, 96, 96)
+
+[node name="Skeleton mage" instance=ExtResource("1_pcfcs")]
+script = ExtResource("2_1yijl")
+attack_delay = 2.0
+speed = 150.0
+hp = 60
+hp_max = 60
+
+[node name="Head" parent="Neck" index="0"]
+texture = SubResource("AtlasTexture_odkda")
+
+[node name="DeadHead" parent="Neck" index="1"]
+position = Vector2(4, 0)
+
+[node name="CollisionShape2D" parent="." index="2"]
+position = Vector2(4, 0)
+
+[node name="ViewField" parent="." index="3"]
+collision_mask = 2
+
+[node name="AnimationPlayer" parent="." index="6"]
+autoplay = "walk"
+
+[node name="ShootTimer" parent="." index="7"]
+wait_time = 2.0
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="." index="8"]
+position = Vector2(36, 25)
+amount = 10
+process_material = SubResource("ParticleProcessMaterial_oovee")
+texture = SubResource("AtlasTexture_p8iwq")
+lifetime = 0.5
