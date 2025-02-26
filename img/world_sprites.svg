@@ -25,9 +25,9 @@
      inkscape:deskcolor="#d1d1d1"
      inkscape:document-units="mm"
      showgrid="true"
-     inkscape:zoom="5.6568543"
-     inkscape:cx="178.72124"
-     inkscape:cy="212.48559"
+     inkscape:zoom="11.313709"
+     inkscape:cx="160.95518"
+     inkscape:cy="291.23961"
      inkscape:window-width="1920"
      inkscape:window-height="1008"
      inkscape:window-x="0"
@@ -45,6 +45,38 @@
   </sodipodi:namedview>
   <defs
      id="defs2">
+    <linearGradient
+       id="linearGradient3"
+       inkscape:collect="always">
+      <stop
+         style="stop-color:#ffff00;stop-opacity:1;"
+         offset="0"
+         id="stop1" />
+      <stop
+         style="stop-color:#ffff00;stop-opacity:0.50136954;"
+         offset="0.30404985"
+         id="stop2" />
+      <stop
+         style="stop-color:#ff0000;stop-opacity:0;"
+         offset="1"
+         id="stop3" />
+    </linearGradient>
+    <linearGradient
+       id="linearGradient13"
+       inkscape:collect="always">
+      <stop
+         style="stop-color:#ffff00;stop-opacity:1;"
+         offset="0"
+         id="stop13" />
+      <stop
+         style="stop-color:#ffff00;stop-opacity:0.50136954;"
+         offset="0.60347885"
+         id="stop15" />
+      <stop
+         style="stop-color:#ff0000;stop-opacity:0;"
+         offset="1"
+         id="stop14" />
+    </linearGradient>
     <inkscape:path-effect
        effect="simplify"
        id="path-effect24"
@@ -226,12 +258,40 @@
        helper_size="0"
        simplify_individual_paths="false"
        simplify_just_coalesce="false" />
+    <radialGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient13"
+       id="radialGradient14"
+       cx="47.5"
+       cy="77.5"
+       fx="47.5"
+       fy="77.5"
+       r="2.4999998"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="translate(-7.0000037,-15.500002)" />
+    <radialGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient3"
+       id="radialGradient14-3"
+       cx="47.5"
+       cy="77.5"
+       fx="47.5"
+       fy="77.5"
+       r="2.4999998"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="matrix(2.0000001,0,0,2.0000001,-51.239485,-75.000027)" />
   </defs>
   <g
      inkscape:label="Слой 1"
      inkscape:groupmode="layer"
      id="layer1"
      transform="translate(0.1322915,0.1322915)">
+    <circle
+       style="fill:#164450;stroke:#0b2228;stroke-width:0.264583;font-variation-settings:normal;opacity:1;vector-effect:none;fill-opacity:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;-inkscape-stroke:none;stop-color:#000000;stop-opacity:1"
+       id="path12"
+       cx="45.999996"
+       cy="68.999992"
+       r="3.9999998" />
     <rect
        style="fill:#164450;stroke:#0b2228;stroke-width:0.264583"
        id="rect190"
@@ -2332,5 +2392,135 @@
        style="fill:none;stroke:#000000;stroke-width:0.264999;stroke-dasharray:none"
        d="M 57.861702,57.283103 V 56.49922"
        id="path28" />
+    <ellipse
+       style="fill:#666666;stroke:#000000;stroke-width:0.264999"
+       id="path3"
+       cx="46"
+       cy="66"
+       rx="1.0014255"
+       ry="1.0000007" />
+    <ellipse
+       style="fill:#666666;stroke:#000000;stroke-width:0.264999"
+       id="path3-3"
+       cx="48"
+       cy="67"
+       rx="1.0014255"
+       ry="1.0000007" />
+    <ellipse
+       style="fill:#666666;stroke:#000000;stroke-width:0.264999"
+       id="path3-6"
+       cx="49"
+       cy="69"
+       rx="1.0014255"
+       ry="1.0000007" />
+    <ellipse
+       style="fill:#666666;stroke:#000000;stroke-width:0.264999"
+       id="path3-7"
+       cx="48"
+       cy="71"
+       rx="1.0014255"
+       ry="1.0000007" />
+    <ellipse
+       style="fill:#666666;stroke:#000000;stroke-width:0.264999"
+       id="path3-5"
+       cx="46"
+       cy="72"
+       rx="1.0014255"
+       ry="1.0000007" />
+    <ellipse
+       style="fill:#666666;stroke:#000000;stroke-width:0.264999"
+       id="path3-35"
+       cx="44"
+       cy="71"
+       rx="1.0014255"
+       ry="1.0000007" />
+    <ellipse
+       style="fill:#666666;stroke:#000000;stroke-width:0.264999"
+       id="path3-62"
+       cx="43"
+       cy="69"
+       rx="1.0014255"
+       ry="1.0000007" />
+    <ellipse
+       style="fill:#666666;stroke:#000000;stroke-width:0.264999"
+       id="path3-9"
+       cx="44"
+       cy="67"
+       rx="1.0014255"
+       ry="1.0000007" />
+    <rect
+       style="fill:#552200;stroke:#000000;stroke-width:0.264999"
+       id="rect5"
+       width="1.0000017"
+       height="2.0000019"
+       x="45.499996"
+       y="69" />
+    <rect
+       style="fill:#552200;stroke:#000000;stroke-width:0.264999"
+       id="rect5-1"
+       width="1.0000017"
+       height="2.0000019"
+       x="45.499996"
+       y="67" />
+    <rect
+       style="fill:#552200;stroke:#000000;stroke-width:0.264999"
+       id="rect5-2"
+       width="1.0000017"
+       height="2.0000019"
+       x="68.5"
+       y="-48"
+       transform="rotate(90)" />
+    <rect
+       style="fill:#552200;stroke:#000000;stroke-width:0.264999"
+       id="rect5-7"
+       width="1.0000017"
+       height="2.0000019"
+       x="68.5"
+       y="-46"
+       transform="rotate(90)" />
+    <rect
+       style="fill:#552200;stroke:#000000;stroke-width:0.264999"
+       id="rect5-2-9"
+       width="1.0000017"
+       height="2.0000019"
+       x="15.763455"
+       y="-83.380707"
+       transform="rotate(135)" />
+    <rect
+       style="fill:#552200;stroke:#000000;stroke-width:0.264999"
+       id="rect5-2-3"
+       width="1.0000017"
+       height="2.0000019"
+       x="80.817276"
+       y="16.326881"
+       transform="rotate(45)" />
+    <rect
+       style="fill:#552200;stroke:#000000;stroke-width:0.264999"
+       id="rect5-2-6"
+       width="1.0000017"
+       height="2.0000019"
+       x="15.763455"
+       y="-81.253853"
+       transform="rotate(135)" />
+    <rect
+       style="fill:#552200;stroke:#000000;stroke-width:0.264999"
+       id="rect5-2-0"
+       width="1.0000017"
+       height="2.0000019"
+       x="80.817276"
+       y="14.200028"
+       transform="rotate(45)" />
+    <circle
+       style="font-variation-settings:normal;opacity:1;vector-effect:none;fill:url(#radialGradient14);stroke:none;stroke-width:0.264583;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;-inkscape-stroke:none"
+       id="path13"
+       cx="40.5"
+       cy="62"
+       r="2.4999998" />
+    <circle
+       style="font-variation-settings:normal;vector-effect:none;fill:url(#radialGradient14-3);stroke:none;stroke-width:0.529166;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;-inkscape-stroke:none"
+       id="path13-3"
+       cx="43.760536"
+       cy="80"
+       r="5" />
   </g>
 </svg>

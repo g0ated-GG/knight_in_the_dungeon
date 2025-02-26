@@ -1,0 +1,51 @@
+[gd_scene load_steps=10 format=3 uid="uid://c2vvc45tkhr2o"]
+
+[ext_resource type="Script" path="res://zones/checkpoint.gd" id="1_eudqv"]
+[ext_resource type="Texture2D" uid="uid://cf880tqyh4lsu" path="res://img/world_sprites.svg" id="1_ux6k0"]
+[ext_resource type="Shader" path="res://zones/checkpoint.gdshader" id="2_i32dq"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_web8b"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jbrwk"]
+atlas = ExtResource("1_ux6k0")
+region = Rect2(1587, 2457, 313, 312)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_g4lm5"]
+shader = ExtResource("2_i32dq")
+shader_parameter/speed = 4.0
+shader_parameter/amplitude = 0.005
+shader_parameter/frequency = 10.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dprqj"]
+atlas = ExtResource("1_ux6k0")
+region = Rect2(1448, 2261, 175, 174)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_cbd6n"]
+radius = 45.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_5no8m"]
+radius = 100.0
+
+[node name="Checkpoint" type="StaticBody2D"]
+script = ExtResource("1_eudqv")
+number = 1
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_web8b")
+scale = Vector2(0.3, 0.3)
+texture = SubResource("AtlasTexture_jbrwk")
+
+[node name="FireSprite2D" type="Sprite2D" parent="Sprite2D"]
+material = SubResource("ShaderMaterial_g4lm5")
+texture = SubResource("AtlasTexture_dprqj")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_cbd6n")
+
+[node name="SaveArea2D" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 2
+monitorable = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SaveArea2D"]
+shape = SubResource("CircleShape2D_5no8m")

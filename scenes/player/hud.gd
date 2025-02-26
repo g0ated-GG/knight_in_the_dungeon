@@ -7,6 +7,7 @@ func _ready() -> void:
 	if player != null:
 		player.hp_changed.connect(sync_hp_bar)
 		player.death.connect(defeat)
+	Globals.new_checkpoint.connect(checkpoint)
 
 func sync_hp_bar():
 	$HP.value = player.hp
@@ -15,7 +16,9 @@ func sync_hp_bar():
 
 func win():
 	show_message('ПОДЗЕМЕЛЬЕ ПРОЙДЕНО', Color.GOLD, 1.5)
-	$RestartGameTimer.start()
+
+func checkpoint():
+	show_message('УТРАЧЕННАЯ БЛАГОДАТЬ ОБРЕТЕНА', Color.GOLD)
 
 func defeat():
 	show_message('ПОМЕР', Color.RED)

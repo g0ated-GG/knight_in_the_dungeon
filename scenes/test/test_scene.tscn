@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://dn5eepk8sqbbi"]
+[gd_scene load_steps=13 format=3 uid="uid://dn5eepk8sqbbi"]
 
 [ext_resource type="PackedScene" uid="uid://cbv8kd8au3ic" path="res://scenes/player/player.tscn" id="1_spxja"]
 [ext_resource type="PackedScene" uid="uid://dcp7dodgvnmor" path="res://scenes/player/hud.tscn" id="2_su4ny"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://yufl3x3nrlh7" path="res://scenes/enemy/mimic.tscn" id="7_w5lls"]
 [ext_resource type="PackedScene" uid="uid://dah36w80s8ho6" path="res://scenes/props/lamp.tscn" id="8_qm8pv"]
 [ext_resource type="PackedScene" uid="uid://dem531mewpu8i" path="res://scenes/props/gargoules/gargoyle_f_x3_d2s.tscn" id="9_lbxxh"]
+[ext_resource type="PackedScene" uid="uid://c2vvc45tkhr2o" path="res://zones/checkpoint.tscn" id="10_jng2k"]
 
 [sub_resource type="Gradient" id="Gradient_y8x8s"]
 colors = PackedColorArray(0, 0, 0, 1, 0, 0, 0, 1)
@@ -51,3 +52,6 @@ position = Vector2(406, 255)
 
 [node name="Gargoyle_a_x3_d2s" parent="." instance=ExtResource("9_lbxxh")]
 position = Vector2(328, 572)
+
+[node name="Checkpoint" parent="." instance=ExtResource("10_jng2k")]
+position = Vector2(146, 452)

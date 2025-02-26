@@ -138,7 +138,7 @@ offset_bottom = 11.5
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/normal = SubResource("StyleBoxFlat_3cfed")
-text = "Сообщение"
+text = "СООБЩЕНИЕ"
 label_settings = SubResource("LabelSettings_sdkpi")
 horizontal_alignment = 1
 
