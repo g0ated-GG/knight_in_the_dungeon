@@ -69,6 +69,11 @@ offset_bottom = 33.0
 grow_horizontal = 2
 grow_vertical = 2
 
+[node name="ContinueButton" type="Button" parent="CanvasLayer/Buttons"]
+visible = false
+layout_mode = 2
+text = "Продолжить"
+
 [node name="PlayButton" type="Button" parent="CanvasLayer/Buttons"]
 layout_mode = 2
 text = "Играть"
@@ -90,5 +95,6 @@ label_settings = SubResource("LabelSettings_mvcuf")
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[connection signal="pressed" from="CanvasLayer/Buttons/ContinueButton" to="." method="_on_continue_button_pressed"]
 [connection signal="pressed" from="CanvasLayer/Buttons/PlayButton" to="." method="_on_play_button_pressed"]
 [connection signal="pressed" from="CanvasLayer/Buttons/ExitButton" to="." method="_on_exit_button_pressed"]
