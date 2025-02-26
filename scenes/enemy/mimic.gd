@@ -34,3 +34,13 @@ func idle() -> void:
 	super.idle()
 	$TeethAnimationPlayer.stop()
 	$TeethAnimationPlayer.play('RESET')
+
+func damage(points : int) -> void:
+	hp = clamp(hp - points, 0, hp_max)
+	hp_changed.emit()
+	if hp == 0 and alive:
+		alive = false
+		death.emit()
+		$MimicAnimationPlayer.play('death')
+	if alive:
+		check_back()

@@ -1,8 +1,13 @@
-[gd_scene load_steps=6 format=3 uid="uid://dn5eepk8sqbbi"]
+[gd_scene load_steps=11 format=3 uid="uid://dn5eepk8sqbbi"]
 
 [ext_resource type="PackedScene" uid="uid://cbv8kd8au3ic" path="res://scenes/player/player.tscn" id="1_spxja"]
 [ext_resource type="PackedScene" uid="uid://dcp7dodgvnmor" path="res://scenes/player/hud.tscn" id="2_su4ny"]
-[ext_resource type="PackedScene" uid="uid://yufl3x3nrlh7" path="res://scenes/enemy/mimic.tscn" id="3_4gls4"]
+[ext_resource type="PackedScene" uid="uid://bfbjy6cbe4qw5" path="res://scenes/enemy/skeleton_swordman.tscn" id="3_84rje"]
+[ext_resource type="PackedScene" uid="uid://blfx4gmc8o7dg" path="res://scenes/enemy/skeleton_archer.tscn" id="3_smcif"]
+[ext_resource type="PackedScene" uid="uid://c5vnrc1iawpts" path="res://scenes/enemy/skeleton_mage.tscn" id="3_th7xd"]
+[ext_resource type="PackedScene" uid="uid://diuuntjgrkkv7" path="res://scenes/world/lava_v_2.tscn" id="4_byq8t"]
+[ext_resource type="PackedScene" uid="uid://yufl3x3nrlh7" path="res://scenes/enemy/mimic.tscn" id="7_w5lls"]
+[ext_resource type="PackedScene" uid="uid://dah36w80s8ho6" path="res://scenes/props/lamp.tscn" id="8_qm8pv"]
 
 [sub_resource type="Gradient" id="Gradient_y8x8s"]
 colors = PackedColorArray(0, 0, 0, 1, 0, 0, 0, 1)
@@ -25,6 +30,20 @@ position = Vector2(584, 328)
 [node name="HUD" parent="CanvasLayer" node_paths=PackedStringArray("player") instance=ExtResource("2_su4ny")]
 player = NodePath("../../Player")
 
-[node name="Mimic" parent="." instance=ExtResource("3_4gls4")]
-position = Vector2(672, 132)
-attack_damage = 5
+[node name="Skeleton swordman" parent="." instance=ExtResource("3_84rje")]
+position = Vector2(876, 134)
+
+[node name="Skeleton archer" parent="." instance=ExtResource("3_smcif")]
+position = Vector2(887, 285)
+
+[node name="Skeleton mage" parent="." instance=ExtResource("3_th7xd")]
+position = Vector2(879, 446)
+
+[node name="LavaV2" parent="." instance=ExtResource("4_byq8t")]
+position = Vector2(325, 378)
+
+[node name="Mimic" parent="." instance=ExtResource("7_w5lls")]
+position = Vector2(533, 110)
+
+[node name="Lamp" parent="." instance=ExtResource("8_qm8pv")]
+position = Vector2(406, 255)

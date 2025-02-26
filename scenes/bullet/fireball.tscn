@@ -1,8 +1,9 @@
-[gd_scene load_steps=15 format=3 uid="uid://b03nfqb3kxpwd"]
+[gd_scene load_steps=19 format=3 uid="uid://b03nfqb3kxpwd"]
 
 [ext_resource type="PackedScene" uid="uid://mbx1a73w157t" path="res://scenes/enemy/generic_enemy.tscn" id="1_w04fc"]
 [ext_resource type="Script" path="res://scenes/bullet/fireball.gd" id="2_1e67s"]
 [ext_resource type="Texture2D" uid="uid://cf880tqyh4lsu" path="res://img/world_sprites.svg" id="2_5py1q"]
+[ext_resource type="AudioStream" uid="uid://lghlgiu5yxi6" path="res://resources/Fireball Impact.wav" id="4_80eh0"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_w2xc2"]
 atlas = ExtResource("2_5py1q")
@@ -67,13 +68,65 @@ region = Rect2(2845, 1145, 1120, 1120)
 [sub_resource type="CircleShape2D" id="CircleShape2D_b1vf1"]
 radius = 40.0
 
+[sub_resource type="Animation" id="Animation_jeova"]
+resource_name = "explosion"
+length = 1.25
+tracks/0/type = "audio"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AudioStreamPlayer2D")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("4_80eh0")
+}],
+"times": PackedFloat32Array(0)
+}
+tracks/0/use_blend = true
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("ExplosionParticles2D:emitting")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_nkcxu"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ExplosionParticles2D:emitting")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_0pq26"]
+_data = {
+"RESET": SubResource("Animation_nkcxu"),
+"explosion": SubResource("Animation_jeova")
+}
+
 [node name="Fireball" instance=ExtResource("1_w04fc")]
 collision_layer = 145
 collision_mask = 394
 script = ExtResource("2_1e67s")
 explosion_damage = 40
-speed_min = 100
-speed_max = 150
+speed_min = 150
+speed_max = 200
 desired_distance = 0.0
 speed = 50.0
 hp = 1
@@ -111,17 +164,22 @@ texture = SubResource("AtlasTexture_ahk04")
 
 [node name="ExplosionParticles2D" type="GPUParticles2D" parent="." index="10"]
 emitting = false
-amount = 300
+amount = 100
 process_material = SubResource("ParticleProcessMaterial_lprc6")
 texture = SubResource("AtlasTexture_htmcd")
 one_shot = true
 
 [node name="ExplosionArea2D" type="Area2D" parent="." index="11"]
 collision_layer = 0
-collision_mask = 186
+collision_mask = 250
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ExplosionArea2D" index="0"]
 shape = SubResource("CircleShape2D_b1vf1")
+
+[node name="FireballAnimationPlayer" type="AnimationPlayer" parent="." index="13"]
+libraries = {
+"": SubResource("AnimationLibrary_0pq26")
+}
 
 [connection signal="timeout" from="LifeTimer" to="." method="_on_life_timer_timeout"]
 [connection signal="timeout" from="AfterLifeTimer" to="." method="_on_after_life_timer_timeout"]

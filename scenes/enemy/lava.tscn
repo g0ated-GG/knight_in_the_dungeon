@@ -30,13 +30,12 @@ region = Rect2(3097, 891, 192, 193)
 collision_layer = 0
 collision_mask = 0
 script = ExtResource("2_ly11x")
+attack_damage = 5
 attack_delay = 0.25
 desired_distance = 0.0
 speed = 0.0
 hp = 0
 hp_max = 0
-show_dead_head = false
-attack_damage = 5
 
 [node name="Body" parent="." index="0"]
 visible = false
@@ -44,12 +43,8 @@ visible = false
 [node name="Neck" parent="." index="1"]
 visible = false
 
-[node name="Head" parent="Neck" index="0"]
-visible = false
-
 [node name="CollisionShape2D" parent="." index="2"]
 visible = false
-disabled = true
 
 [node name="ViewField" parent="." index="3"]
 collision_layer = 0
@@ -64,9 +59,6 @@ visible = false
 [node name="AnimationPlayer" parent="." index="5"]
 autoplay = "walk"
 
-[node name="ShootTimer" parent="." index="6"]
-wait_time = 0.25
-
 [node name="GPUParticles2D" type="GPUParticles2D" parent="." index="7"]
 amount = 50
 process_material = SubResource("ParticleProcessMaterial_uvkld")
@@ -77,3 +69,6 @@ lifetime = 2.0
 scale = Vector2(0.2, 0.2)
 color = Color(1, 1, 0, 1)
 texture = ExtResource("3_81gta")
+
+[node name="ShootTimer" parent="." index="9"]
+wait_time = 0.25

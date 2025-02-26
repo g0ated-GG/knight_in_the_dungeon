@@ -3,12 +3,8 @@ extends CharacterBody2D
 
 @export var desired_distance : float = 100.0
 @export var speed : float = 200.0
-
 @export var hp : int = 100
 @export var hp_max : int = 100
-
-@export var show_dead_head : bool = false
-
 @export var alive : bool = true
 
 signal hp_changed
@@ -54,12 +50,14 @@ func damage(points : int) -> void:
 	if hp == 0 and alive:
 		alive = false
 		death.emit()
-		$CollisionShape2D.set_deferred('disabled', true)
-		if show_dead_head:
-			$Neck/Head.hide()
-			$Neck/DeadHead.show()
-		$AnimationPlayer.stop()
-		$AnimationPlayer.play('RESET')
+		$AnimationPlayer.play('death')
+	if alive:
+		check_back()
+
+func check_back() -> void:
+	if $ViewField.get_overlapping_bodies().is_empty():
+		rotate(PI)
+		$Node2D.global_rotation = 0
 
 func attack() -> void:
 	pass

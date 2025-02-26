@@ -45,7 +45,6 @@ tracks/2/keys = {
 
 [sub_resource type="Animation" id="Animation_4haty"]
 resource_name = "attack"
-length = 0.6
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -100,7 +99,6 @@ tracks/3/use_blend = true
 
 [sub_resource type="Animation" id="Animation_5dqij"]
 resource_name = "right_to_left"
-length = 0.6
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -170,7 +168,6 @@ region = Rect2(1120, 1895, 194, 70)
 [node name="Skeleton swordman" instance=ExtResource("1_v3oqj")]
 script = ExtResource("2_2wqx3")
 attack_damage = 30
-show_dead_head = true
 
 [node name="CollisionPolygon2D" parent="ViewField" index="0"]
 polygon = PackedVector2Array(0, 0, 576, -448, 576, 448)
@@ -197,6 +194,3 @@ texture = SubResource("AtlasTexture_xajhv")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Hand/Sword" index="1"]
 polygon = PackedVector2Array(-2.99993, 19, 3.00007, 19, 5.99994, -17, -9.77397e-05, -27, -6.00006, -17)
-
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." index="8"]
-volume_db = -10.0

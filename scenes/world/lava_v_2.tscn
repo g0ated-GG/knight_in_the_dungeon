@@ -1,7 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://diuuntjgrkkv7"]
+[gd_scene load_steps=10 format=3 uid="uid://diuuntjgrkkv7"]
 
 [ext_resource type="Texture2D" uid="uid://bwpp8sttuibr2" path="res://img/lamp.png" id="1_0tk7r"]
 [ext_resource type="Script" path="res://scenes/world/lava_v_2.gd" id="1_foq0s"]
+[ext_resource type="AudioStream" uid="uid://dx3upa0p7nyqn" path="res://resources/Lava loop.wav" id="3_pndt8"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2qes0"]
 size = Vector2(64, 64)
@@ -28,6 +29,30 @@ load_path = "res://.godot/imported/world_sprites.svg-86afb6dc52fe0dcc8a43c1f0b2f
 atlas = SubResource("CompressedTexture2D_gaydr")
 region = Rect2(3097, 891, 192, 193)
 
+[sub_resource type="Animation" id="Animation_wba4t"]
+resource_name = "damage"
+length = 0.25
+loop_mode = 1
+tracks/0/type = "method"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"damage"
+}]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_nd1tm"]
+_data = {
+"damage": SubResource("Animation_wba4t")
+}
+
 [node name="LavaV2" type="Area2D"]
 collision_layer = 16
 collision_mask = 10
@@ -47,8 +72,13 @@ scale = Vector2(0.2, 0.2)
 color = Color(1, 1, 0, 1)
 texture = ExtResource("1_0tk7r")
 
-[node name="Timer" type="Timer" parent="."]
-wait_time = 0.25
-autostart = true
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_nd1tm")
+}
+autoplay = "damage"
 
-[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_pndt8")
+volume_db = -20.0
+autoplay = true

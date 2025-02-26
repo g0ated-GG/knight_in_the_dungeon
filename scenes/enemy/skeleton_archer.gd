@@ -27,3 +27,4 @@ func shoot_timeout() -> void:
 		new_arrow.global_position = global_position + Vector2(64, 0).rotated(global_rotation)
 		new_arrow.global_rotation = global_rotation
 		new_arrow.shoot()
+		$ArcherAnimationPlayer.play('shoot')

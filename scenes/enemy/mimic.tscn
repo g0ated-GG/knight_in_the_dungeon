@@ -1,9 +1,10 @@
-[gd_scene load_steps=13 format=3 uid="uid://yufl3x3nrlh7"]
+[gd_scene load_steps=17 format=3 uid="uid://yufl3x3nrlh7"]
 
 [ext_resource type="PackedScene" uid="uid://blfx4gmc8o7dg" path="res://scenes/enemy/skeleton_archer.tscn" id="1_dw6pw"]
 [ext_resource type="Script" path="res://scenes/enemy/mimic.gd" id="2_6pb4l"]
 [ext_resource type="Texture2D" uid="uid://cf880tqyh4lsu" path="res://img/world_sprites.svg" id="2_el4lh"]
 [ext_resource type="AudioStream" uid="uid://cmwxk4q8664aq" path="res://resources/bite_3.wav" id="4_loj5a"]
+[ext_resource type="AudioStream" uid="uid://co7crn827o6m7" path="res://resources/Goblin Death.wav" id="5_swoyh"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_0yyi4"]
 load_path = "res://.godot/imported/world_sprites.svg-86afb6dc52fe0dcc8a43c1f0b2fdf631.ctex"
@@ -120,8 +121,59 @@ _data = {
 "bite": SubResource("Animation_hcmuo")
 }
 
+[sub_resource type="Animation" id="Animation_56poh"]
+resource_name = "death"
+tracks/0/type = "audio"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AudioStreamPlayer2D")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.4,
+"stream": ExtResource("5_swoyh")
+}],
+"times": PackedFloat32Array(0)
+}
+tracks/0/use_blend = true
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CollisionShape2D:disabled")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_rxglo"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CollisionShape2D:disabled")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_4p13c"]
+_data = {
+"RESET": SubResource("Animation_rxglo"),
+"death": SubResource("Animation_56poh")
+}
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xdail"]
-size = Vector2(40, 96)
+size = Vector2(24, 96)
 
 [node name="Mimic" instance=ExtResource("1_dw6pw")]
 script = ExtResource("2_6pb4l")
@@ -130,7 +182,6 @@ desired_distance = 0.0
 speed = 300.0
 hp = 200
 hp_max = 200
-show_dead_head = false
 
 [node name="Body" parent="." index="0"]
 visible = false
@@ -156,15 +207,17 @@ libraries = {
 "": SubResource("AnimationLibrary_8v8ja")
 }
 
-[node name="TeethArea2D" type="Area2D" parent="." index="9"]
+[node name="MimicAnimationPlayer" type="AnimationPlayer" parent="." index="9"]
+libraries = {
+"": SubResource("AnimationLibrary_4p13c")
+}
+
+[node name="TeethArea2D" type="Area2D" parent="." index="10"]
 collision_layer = 16
 collision_mask = 10
 monitoring = false
 monitorable = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TeethArea2D" index="0"]
-position = Vector2(44, 0)
+position = Vector2(36, 0)
 shape = SubResource("RectangleShape2D_xdail")
-
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." index="10"]
-volume_db = -20.0

@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://b4er28ts2w5jp"]
+
+[ext_resource type="TileSet" uid="uid://vk3mo16g3chg" path="res://img/world_tile_set.tres" id="1_toegl"]
+
+[node name="TemplateLevel" type="Node2D"]
+
+[node name="TileMapLayer" type="TileMapLayer" parent="."]
+scale = Vector2(0.3, 0.3)
+tile_set = ExtResource("1_toegl")

@@ -4,7 +4,7 @@ var fireball_scene = preload('res://scenes/bullet/fireball.tscn')
 
 func _ready() -> void:
 	super._ready()
-	death.connect(reveal_magic)
+	death.connect(dispel)
 
 func shoot_timeout() -> void:
 	if shooting:
@@ -13,6 +13,7 @@ func shoot_timeout() -> void:
 		get_parent().add_child(new_fireball)
 		new_fireball.global_position = global_position + Vector2(64, 0).rotated(global_rotation)
 		new_fireball.global_rotation = global_rotation
+		$MageAnimationPlayer.play('cast')
 
-func reveal_magic():
+func dispel():
 	$GPUParticles2D.emitting = false

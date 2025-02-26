@@ -1,8 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://dah36w80s8ho6"]
+[gd_scene load_steps=11 format=3 uid="uid://dah36w80s8ho6"]
 
 [ext_resource type="PackedScene" uid="uid://di1psgm2krpc3" path="res://scenes/props/generic_prop.tscn" id="1_v6b20"]
 [ext_resource type="Texture2D" uid="uid://cf880tqyh4lsu" path="res://img/world_sprites.svg" id="2_1m0gy"]
 [ext_resource type="Texture2D" uid="uid://bwpp8sttuibr2" path="res://img/lamp.png" id="2_8c77b"]
+[ext_resource type="Script" path="res://scenes/props/lamp.gd" id="2_pukns"]
+[ext_resource type="AudioStream" uid="uid://b2hffkfqycp3k" path="res://resources/Fire Burning.wav" id="5_k2i3c"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_yrebg"]
 atlas = ExtResource("2_1m0gy")
@@ -30,7 +32,11 @@ scale_max = 0.05
 atlas = ExtResource("2_1m0gy")
 region = Rect2(1860, 1760, 190, 190)
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_th1kn"]
+radius = 30.0
+
 [node name="Lamp" instance=ExtResource("1_v6b20")]
+script = ExtResource("2_pukns")
 
 [node name="PointLight2D" type="PointLight2D" parent="." index="0"]
 color = Color(1, 1, 0, 1)
@@ -48,3 +54,15 @@ shape = SubResource("CircleShape2D_qphil")
 amount = 20
 process_material = SubResource("ParticleProcessMaterial_qcsjc")
 texture = SubResource("AtlasTexture_yxct2")
+
+[node name="SwitchArea2D" type="Area2D" parent="." index="4"]
+collision_layer = 0
+collision_mask = 177
+monitorable = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SwitchArea2D" index="0"]
+shape = SubResource("CircleShape2D_th1kn")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." index="5"]
+stream = ExtResource("5_k2i3c")
+autoplay = true

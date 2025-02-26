@@ -1,8 +1,9 @@
-[gd_scene load_steps=8 format=3 uid="uid://c5vnrc1iawpts"]
+[gd_scene load_steps=11 format=3 uid="uid://c5vnrc1iawpts"]
 
 [ext_resource type="PackedScene" uid="uid://blfx4gmc8o7dg" path="res://scenes/enemy/skeleton_archer.tscn" id="1_pcfcs"]
 [ext_resource type="Script" path="res://scenes/enemy/skeleton_mage.gd" id="2_1yijl"]
 [ext_resource type="Texture2D" uid="uid://cf880tqyh4lsu" path="res://img/world_sprites.svg" id="3_f57pa"]
+[ext_resource type="AudioStream" uid="uid://dai18rapjk4w3" path="res://resources/Fireball Cast 1.wav" id="4_ii21i"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_odkda"]
 atlas = ExtResource("3_f57pa")
@@ -30,6 +31,29 @@ load_path = "res://.godot/imported/world_sprites.svg-86afb6dc52fe0dcc8a43c1f0b2f
 atlas = SubResource("CompressedTexture2D_i07oq")
 region = Rect2(2187, 1771, 96, 96)
 
+[sub_resource type="Animation" id="Animation_yux8f"]
+resource_name = "cast"
+tracks/0/type = "audio"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AudioStreamPlayer2D")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.75,
+"stream": ExtResource("4_ii21i")
+}],
+"times": PackedFloat32Array(0)
+}
+tracks/0/use_blend = true
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_1km0e"]
+_data = {
+"cast": SubResource("Animation_yux8f")
+}
+
 [node name="Skeleton mage" instance=ExtResource("1_pcfcs")]
 script = ExtResource("2_1yijl")
 attack_delay = 2.0
@@ -49,12 +73,17 @@ position = Vector2(0, 0)
 [node name="AnimationPlayer" parent="." index="5"]
 autoplay = "walk"
 
-[node name="ShootTimer" parent="." index="6"]
-wait_time = 2.0
-
 [node name="GPUParticles2D" type="GPUParticles2D" parent="." index="7"]
 position = Vector2(40, 25)
 amount = 10
 process_material = SubResource("ParticleProcessMaterial_oovee")
 texture = SubResource("AtlasTexture_p8iwq")
 lifetime = 0.5
+
+[node name="ShootTimer" parent="." index="8"]
+wait_time = 2.0
+
+[node name="MageAnimationPlayer" type="AnimationPlayer" parent="." index="10"]
+libraries = {
+"": SubResource("AnimationLibrary_1km0e")
+}
