@@ -1,0 +1,152 @@
+[gd_scene load_steps=15 format=3 uid="uid://bu4kudgj53ptk"]
+
+[ext_resource type="PackedScene" uid="uid://di1psgm2krpc3" path="res://scenes/props/generic_prop.tscn" id="1_edale"]
+[ext_resource type="Texture2D" uid="uid://cf880tqyh4lsu" path="res://img/world_sprites.svg" id="2_bri5n"]
+[ext_resource type="Script" path="res://scenes/props/gargoyle.gd" id="2_pc4jq"]
+[ext_resource type="AudioStream" uid="uid://cdubk46exxmaj" path="res://resources/Arrow_loose01.wav" id="4_wwlwk"]
+[ext_resource type="AudioStream" uid="uid://dai18rapjk4w3" path="res://resources/Fireball Cast 1.wav" id="5_ih62n"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nxnjg"]
+atlas = ExtResource("2_bri5n")
+region = Rect2(1656, 2079, 244, 199)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_tokgj"]
+radius = 30.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2kweg"]
+atlas = ExtResource("2_bri5n")
+region = Rect2(2033, 2079, 244, 199)
+
+[sub_resource type="Animation" id="Animation_85cdd"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("SleepSprite:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_1aq3d"]
+resource_name = "shoot-arrow"
+tracks/0/type = "audio"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AudioStreamPlayer2D")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("4_wwlwk")
+}],
+"times": PackedFloat32Array(0)
+}
+tracks/0/use_blend = true
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("SleepSprite:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_sa8qf"]
+resource_name = "shoot-fireball"
+tracks/0/type = "audio"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AudioStreamPlayer2D")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.75,
+"stream": ExtResource("5_ih62n")
+}],
+"times": PackedFloat32Array(0)
+}
+tracks/0/use_blend = true
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("SleepSprite:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_wywba"]
+resource_name = "sleep"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("SleepSprite:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ogjis"]
+_data = {
+"RESET": SubResource("Animation_85cdd"),
+"shoot-arrow": SubResource("Animation_1aq3d"),
+"shoot-fireball": SubResource("Animation_sa8qf"),
+"sleep": SubResource("Animation_wywba")
+}
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ynm4p"]
+radius = 30.0
+
+[node name="Gargoyle" instance=ExtResource("1_edale")]
+script = ExtResource("2_pc4jq")
+
+[node name="Sprite2D" parent="." index="0"]
+scale = Vector2(0.3, 0.3)
+texture = SubResource("AtlasTexture_nxnjg")
+
+[node name="CollisionShape2D" parent="." index="1"]
+position = Vector2(5, 0)
+shape = SubResource("CircleShape2D_tokgj")
+
+[node name="SleepSprite" type="Sprite2D" parent="." index="2"]
+visible = false
+scale = Vector2(0.3, 0.3)
+texture = SubResource("AtlasTexture_2kweg")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." index="3"]
+volume_db = -20.0
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." index="4"]
+libraries = {
+"": SubResource("AnimationLibrary_ogjis")
+}
+
+[node name="SwitchArea2D" type="Area2D" parent="." index="5"]
+collision_layer = 0
+collision_mask = 177
+monitorable = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SwitchArea2D" index="0"]
+position = Vector2(5, 0)
+shape = SubResource("CircleShape2D_ynm4p")

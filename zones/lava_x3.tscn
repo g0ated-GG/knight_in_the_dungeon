@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://bwo0x34lbadye"]
 
-[ext_resource type="PackedScene" uid="uid://diuuntjgrkkv7" path="res://scenes/world/lava_v_2.tscn" id="1_6ww7c"]
+[ext_resource type="PackedScene" uid="uid://diuuntjgrkkv7" path="res://zones/lava.tscn" id="1_6ww7c"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_spskw"]
 size = Vector2(192, 64)

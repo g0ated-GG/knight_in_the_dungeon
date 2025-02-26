@@ -1,7 +1,7 @@
 [gd_scene load_steps=10 format=3 uid="uid://diuuntjgrkkv7"]
 
 [ext_resource type="Texture2D" uid="uid://bwpp8sttuibr2" path="res://img/lamp.png" id="1_0tk7r"]
-[ext_resource type="Script" path="res://scenes/world/lava_v_2.gd" id="1_foq0s"]
+[ext_resource type="Script" path="res://zones/lava.gd" id="1_foq0s"]
 [ext_resource type="AudioStream" uid="uid://dx3upa0p7nyqn" path="res://resources/Lava loop.wav" id="3_pndt8"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2qes0"]

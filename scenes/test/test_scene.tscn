@@ -1,13 +1,14 @@
-[gd_scene load_steps=11 format=3 uid="uid://dn5eepk8sqbbi"]
+[gd_scene load_steps=12 format=3 uid="uid://dn5eepk8sqbbi"]
 
 [ext_resource type="PackedScene" uid="uid://cbv8kd8au3ic" path="res://scenes/player/player.tscn" id="1_spxja"]
 [ext_resource type="PackedScene" uid="uid://dcp7dodgvnmor" path="res://scenes/player/hud.tscn" id="2_su4ny"]
 [ext_resource type="PackedScene" uid="uid://bfbjy6cbe4qw5" path="res://scenes/enemy/skeleton_swordman.tscn" id="3_84rje"]
 [ext_resource type="PackedScene" uid="uid://blfx4gmc8o7dg" path="res://scenes/enemy/skeleton_archer.tscn" id="3_smcif"]
 [ext_resource type="PackedScene" uid="uid://c5vnrc1iawpts" path="res://scenes/enemy/skeleton_mage.tscn" id="3_th7xd"]
-[ext_resource type="PackedScene" uid="uid://diuuntjgrkkv7" path="res://scenes/world/lava_v_2.tscn" id="4_byq8t"]
+[ext_resource type="PackedScene" uid="uid://diuuntjgrkkv7" path="res://zones/lava.tscn" id="4_byq8t"]
 [ext_resource type="PackedScene" uid="uid://yufl3x3nrlh7" path="res://scenes/enemy/mimic.tscn" id="7_w5lls"]
 [ext_resource type="PackedScene" uid="uid://dah36w80s8ho6" path="res://scenes/props/lamp.tscn" id="8_qm8pv"]
+[ext_resource type="PackedScene" uid="uid://dem531mewpu8i" path="res://scenes/props/gargoules/gargoyle_f_x3_d2s.tscn" id="9_lbxxh"]
 
 [sub_resource type="Gradient" id="Gradient_y8x8s"]
 colors = PackedColorArray(0, 0, 0, 1, 0, 0, 0, 1)
@@ -47,3 +48,6 @@ position = Vector2(533, 110)
 
 [node name="Lamp" parent="." instance=ExtResource("8_qm8pv")]
 position = Vector2(406, 255)
+
+[node name="Gargoyle_a_x3_d2s" parent="." instance=ExtResource("9_lbxxh")]
+position = Vector2(328, 572)

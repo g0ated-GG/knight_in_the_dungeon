@@ -1,10 +1,16 @@
-[gd_resource type="TileSet" load_steps=11 format=3 uid="uid://vk3mo16g3chg"]
+[gd_resource type="TileSet" load_steps=13 format=3 uid="uid://vk3mo16g3chg"]
 
 [ext_resource type="Texture2D" uid="uid://bpotbi2grgmpd" path="res://img/floor.tres" id="1_353yv"]
 [ext_resource type="Texture2D" uid="uid://uwpxahik25ug" path="res://img/stairs.tres" id="1_f6an5"]
+[ext_resource type="Texture2D" uid="uid://cye8y803jqx8g" path="res://img/lava.tres" id="1_fkp6x"]
 [ext_resource type="Texture2D" uid="uid://dqpfsj36xtk32" path="res://img/lava_h.tres" id="2_inl2s"]
 [ext_resource type="Texture2D" uid="uid://bjbtpubddixmh" path="res://img/wall.tres" id="2_rugcb"]
 [ext_resource type="Texture2D" uid="uid://crdq7gqpb4j1h" path="res://img/lava_v.tres" id="5_u6me6"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_u3q8c"]
+texture = ExtResource("1_fkp6x")
+texture_region_size = Vector2i(300, 300)
+0:0/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lqg05"]
 texture = ExtResource("2_rugcb")
@@ -38,3 +44,4 @@ sources/3 = SubResource("TileSetAtlasSource_ur1s1")
 sources/5 = SubResource("TileSetAtlasSource_jutm7")
 sources/7 = SubResource("TileSetAtlasSource_4io1o")
 sources/8 = SubResource("TileSetAtlasSource_d7vil")
+sources/0 = SubResource("TileSetAtlasSource_u3q8c")

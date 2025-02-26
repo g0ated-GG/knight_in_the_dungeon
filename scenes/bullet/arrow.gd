@@ -21,3 +21,7 @@ func _physics_process(delta: float) -> void:
 		if target is Player or target is GenericEnemy:
 			target.damage(attack_damage)
 		queue_free()
+
+
+func _on_life_timer_timeout() -> void:
+	queue_free()

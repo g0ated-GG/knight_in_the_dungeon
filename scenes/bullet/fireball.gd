@@ -2,7 +2,7 @@ class_name Fireball
 extends GenericEnemy
 
 @export var explosion_damage : int = 40
-@export var caster : GenericEnemy
+@export var caster : Node2D
 @export var speed_min : int = 100
 @export var speed_max : int = 150
 
