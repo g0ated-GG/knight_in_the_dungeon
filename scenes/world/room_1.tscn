@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://kelsbpxb53af"]
+[gd_scene load_steps=4 format=3 uid="uid://kelsbpxb53af"]
 
 [ext_resource type="PackedScene" uid="uid://6drp3l3umlqc" path="res://scenes/world/level_map.tscn" id="1_wkym7"]
 [ext_resource type="PackedScene" uid="uid://dah36w80s8ho6" path="res://scenes/props/lamp.tscn" id="2_4t1cq"]
+[ext_resource type="PackedScene" uid="uid://c2vvc45tkhr2o" path="res://zones/checkpoint.tscn" id="3_0ponu"]
 
 [node name="Room1" instance=ExtResource("1_wkym7")]
 
@@ -18,3 +19,7 @@ position = Vector2(1032, 496)
 
 [node name="Lamp3" parent="." index="4" instance=ExtResource("2_4t1cq")]
 position = Vector2(1848, 408)
+
+[node name="Checkpoint" parent="." index="5" instance=ExtResource("3_0ponu")]
+position = Vector2(256, 320)
+number = 0

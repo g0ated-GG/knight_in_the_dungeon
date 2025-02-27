@@ -1,8 +1,9 @@
-[gd_scene load_steps=10 format=3 uid="uid://c2vvc45tkhr2o"]
+[gd_scene load_steps=11 format=3 uid="uid://c2vvc45tkhr2o"]
 
 [ext_resource type="Script" path="res://zones/checkpoint.gd" id="1_eudqv"]
 [ext_resource type="Texture2D" uid="uid://cf880tqyh4lsu" path="res://img/world_sprites.svg" id="1_ux6k0"]
 [ext_resource type="Shader" path="res://zones/checkpoint.gdshader" id="2_i32dq"]
+[ext_resource type="Texture2D" uid="uid://bwpp8sttuibr2" path="res://img/lamp.png" id="4_y40dt"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_web8b"]
 
@@ -49,3 +50,8 @@ monitorable = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="SaveArea2D"]
 shape = SubResource("CircleShape2D_5no8m")
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+color = Color(1, 1, 0, 1)
+energy = 2.0
+texture = ExtResource("4_y40dt")

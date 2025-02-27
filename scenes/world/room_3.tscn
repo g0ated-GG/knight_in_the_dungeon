@@ -1,0 +1,64 @@
+[gd_scene load_steps=7 format=3 uid="uid://dob4a1su2yp3s"]
+
+[ext_resource type="PackedScene" uid="uid://6drp3l3umlqc" path="res://scenes/world/level_map.tscn" id="1_hr06l"]
+[ext_resource type="PackedScene" uid="uid://cuhi7u7wqmxi5" path="res://scenes/props/gargoules/gargoyle_a_x1_d1s.tscn" id="2_smbhx"]
+[ext_resource type="PackedScene" uid="uid://bjwx2vevsxd6l" path="res://scenes/props/gargoules/gargoyle_a_x3_d2s.tscn" id="3_qe11d"]
+[ext_resource type="PackedScene" uid="uid://b732ftmqoeqms" path="res://scenes/props/gargoules/gargoyle_f_x1_d1.5s.tscn" id="5_seeut"]
+[ext_resource type="PackedScene" uid="uid://dem531mewpu8i" path="res://scenes/props/gargoules/gargoyle_f_x3_d2s.tscn" id="5_xh4k3"]
+[ext_resource type="PackedScene" uid="uid://dah36w80s8ho6" path="res://scenes/props/lamp.tscn" id="6_15fcq"]
+
+[node name="Room3" instance=ExtResource("1_hr06l")]
+
+[node name="Root" type="Node2D" parent="." index="1"]
+position = Vector2(1352, -1440)
+
+[node name="Borders" type="StaticBody2D" parent="Root" index="0"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Root/Borders" index="0"]
+polygon = PackedVector2Array(264, 0, 0, 0, 0, -808, 184, -808, 184, -1168, 264, -1168, 264, -720, 88, -720, 88, -88, 264, -88)
+
+[node name="Borders2" type="StaticBody2D" parent="Root" index="1"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Root/Borders2" index="0"]
+polygon = PackedVector2Array(536, -1160, 624, -1160, 624, -808, 808, -808, 808, 0, 536, 0, 536, -88, 720, -88, 720, -720, 536, -720)
+
+[node name="Gargoyle_a_x1_d1s" parent="Root" index="2" instance=ExtResource("2_smbhx")]
+position = Vector2(136, -128)
+
+[node name="Gargoyle_a_x1_d1s2" parent="Root" index="3" instance=ExtResource("2_smbhx")]
+position = Vector2(672, -192)
+rotation = 3.14159
+
+[node name="Gargoyle_a_x3_d2s" parent="Root" index="4" instance=ExtResource("3_qe11d")]
+position = Vector2(136, -256)
+
+[node name="Gargoyle_a_x3_d2s2" parent="Root" index="5" instance=ExtResource("3_qe11d")]
+position = Vector2(672, -320)
+rotation = 3.14159
+
+[node name="Gargoyle_f_x1_d1_5s" parent="Root" index="6" instance=ExtResource("5_seeut")]
+position = Vector2(136, -384)
+
+[node name="Gargoyle_f_x1_d1_5s2" parent="Root" index="7" instance=ExtResource("5_seeut")]
+position = Vector2(672, -448)
+rotation = 3.14159
+
+[node name="Gargoyle_a_x3_d2s3" parent="Root" index="8" instance=ExtResource("5_xh4k3")]
+position = Vector2(136, -512)
+
+[node name="Gargoyle_a_x3_d2s4" parent="Root" index="9" instance=ExtResource("5_xh4k3")]
+position = Vector2(672, -576)
+rotation = 3.14159
+
+[node name="Gargoyle_f_x1_d1_5s3" parent="Root" index="10" instance=ExtResource("5_seeut")]
+position = Vector2(136, -640)
+
+[node name="Gargoyle_f_x1_d1_5s4" parent="Root" index="11" instance=ExtResource("5_seeut")]
+position = Vector2(672, -640)
+rotation = -3.14159
+
+[node name="Lamp" parent="Root" index="12" instance=ExtResource("6_15fcq")]
+position = Vector2(296, -704)
+
+[node name="Lamp2" parent="Root" index="13" instance=ExtResource("6_15fcq")]
+position = Vector2(512, -704)

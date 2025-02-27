@@ -1,0 +1,55 @@
+[gd_scene load_steps=4 format=3 uid="uid://b1u8k3rmcsf28"]
+
+[ext_resource type="PackedScene" uid="uid://6drp3l3umlqc" path="res://scenes/world/level_map.tscn" id="1_h56iw"]
+[ext_resource type="PackedScene" uid="uid://dah36w80s8ho6" path="res://scenes/props/lamp.tscn" id="2_2vs55"]
+[ext_resource type="PackedScene" uid="uid://bwo0x34lbadye" path="res://zones/lava_x3.tscn" id="3_luvbs"]
+
+[node name="Room2" instance=ExtResource("1_h56iw")]
+position = Vector2(1, -2)
+
+[node name="Root" type="Node2D" parent="." index="1"]
+position = Vector2(1351, -270)
+
+[node name="Borders" type="StaticBody2D" parent="Root" index="0"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Root/Borders" index="0"]
+polygon = PackedVector2Array(0, 0, 0, -808, 184, -808, 184, -1168, 264, -1168, 264, -720, 88, -720, 88, -88, 264, -88, 264, 0)
+
+[node name="Borders2" type="StaticBody2D" parent="Root" index="1"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Root/Borders2" index="0"]
+position = Vector2(360, 0)
+polygon = PackedVector2Array(360, -88, 360, -720, 184, -720, 184, -1168, 264, -1168, 264, -808, 448, -808, 448, 0, 184, 0, 184, -88)
+
+[node name="Lamp" parent="Root" index="2" instance=ExtResource("2_2vs55")]
+position = Vector2(136, -672)
+
+[node name="Lamp2" parent="Root" index="3" instance=ExtResource("2_2vs55")]
+position = Vector2(672, -672)
+
+[node name="LavaV2_x3_1" parent="Root" index="4" instance=ExtResource("3_luvbs")]
+position = Vector2(192, -224)
+
+[node name="LavaV2_x4_2" parent="Root" index="5" instance=ExtResource("3_luvbs")]
+position = Vector2(400, -224)
+
+[node name="LavaV2_x3_2" parent="Root" index="6" instance=ExtResource("3_luvbs")]
+position = Vector2(608, -224)
+
+[node name="LavaV2_x4_3" parent="Root" index="7" instance=ExtResource("3_luvbs")]
+position = Vector2(192, -400)
+
+[node name="LavaV2_x4_4" parent="Root" index="8" instance=ExtResource("3_luvbs")]
+position = Vector2(400, -400)
+
+[node name="LavaV2_x4_5" parent="Root" index="9" instance=ExtResource("3_luvbs")]
+position = Vector2(608, -400)
+
+[node name="LavaV2_x4_6" parent="Root" index="10" instance=ExtResource("3_luvbs")]
+position = Vector2(192, -584)
+
+[node name="LavaV2_x4_7" parent="Root" index="11" instance=ExtResource("3_luvbs")]
+position = Vector2(400, -584)
+
+[node name="LavaV2_x4_8" parent="Root" index="12" instance=ExtResource("3_luvbs")]
+position = Vector2(608, -584)

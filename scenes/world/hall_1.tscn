@@ -1,0 +1,63 @@
+[gd_scene load_steps=5 format=3 uid="uid://od2lswh7vi8m"]
+
+[ext_resource type="PackedScene" uid="uid://6drp3l3umlqc" path="res://scenes/world/level_map.tscn" id="1_f815x"]
+[ext_resource type="PackedScene" uid="uid://dah36w80s8ho6" path="res://scenes/props/lamp.tscn" id="2_iay2x"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1d223"]
+size = Vector2(1354, 90)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_58poi"]
+size = Vector2(1352, 88)
+
+[node name="Hall1" instance=ExtResource("1_f815x")]
+
+[node name="Root" type="Node2D" parent="." index="1"]
+position = Vector2(1352, -3960)
+
+[node name="Borders" type="StaticBody2D" parent="Root" index="0"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Root/Borders" index="0"]
+position = Vector2(-675, -45)
+shape = SubResource("RectangleShape2D_1d223")
+
+[node name="Borders2" type="StaticBody2D" parent="Root" index="1"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Root/Borders2" index="0"]
+position = Vector2(-676, -404)
+shape = SubResource("RectangleShape2D_58poi")
+
+[node name="Lamp" parent="Root" index="2" instance=ExtResource("2_iay2x")]
+position = Vector2(-40, -136)
+
+[node name="Lamp2" parent="Root" index="3" instance=ExtResource("2_iay2x")]
+position = Vector2(-40, -312)
+
+[node name="Lamp3" parent="Root" index="4" instance=ExtResource("2_iay2x")]
+position = Vector2(-296, -136)
+
+[node name="Lamp4" parent="Root" index="5" instance=ExtResource("2_iay2x")]
+position = Vector2(-296, -312)
+
+[node name="Lamp5" parent="Root" index="6" instance=ExtResource("2_iay2x")]
+position = Vector2(-552, -136)
+
+[node name="Lamp6" parent="Root" index="7" instance=ExtResource("2_iay2x")]
+position = Vector2(-552, -312)
+
+[node name="Lamp7" parent="Root" index="8" instance=ExtResource("2_iay2x")]
+position = Vector2(-808, -136)
+
+[node name="Lamp8" parent="Root" index="9" instance=ExtResource("2_iay2x")]
+position = Vector2(-808, -312)
+
+[node name="Lamp9" parent="Root" index="10" instance=ExtResource("2_iay2x")]
+position = Vector2(-1064, -136)
+
+[node name="Lamp10" parent="Root" index="11" instance=ExtResource("2_iay2x")]
+position = Vector2(-1064, -312)
+
+[node name="Lamp11" parent="Root" index="12" instance=ExtResource("2_iay2x")]
+position = Vector2(-1320, -136)
+
+[node name="Lamp12" parent="Root" index="13" instance=ExtResource("2_iay2x")]
+position = Vector2(-1320, -312)

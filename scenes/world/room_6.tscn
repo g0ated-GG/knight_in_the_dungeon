@@ -1,0 +1,165 @@
+[gd_scene load_steps=8 format=3 uid="uid://cdsxsk7mutsql"]
+
+[ext_resource type="PackedScene" uid="uid://6drp3l3umlqc" path="res://scenes/world/level_map.tscn" id="1_vuaq2"]
+[ext_resource type="PackedScene" uid="uid://bwo0x34lbadye" path="res://zones/lava_x3.tscn" id="2_0qspp"]
+[ext_resource type="PackedScene" uid="uid://diuuntjgrkkv7" path="res://zones/lava.tscn" id="3_o7sxd"]
+[ext_resource type="PackedScene" uid="uid://dah36w80s8ho6" path="res://scenes/props/lamp.tscn" id="4_d72gt"]
+[ext_resource type="PackedScene" uid="uid://b5wwg5wusy628" path="res://scenes/props/treasure_chest.tscn" id="5_1m60c"]
+[ext_resource type="PackedScene" uid="uid://bfbjy6cbe4qw5" path="res://scenes/enemy/skeleton_swordman.tscn" id="6_yn70i"]
+[ext_resource type="PackedScene" uid="uid://blfx4gmc8o7dg" path="res://scenes/enemy/skeleton_archer.tscn" id="7_riymh"]
+
+[node name="Room6" instance=ExtResource("1_vuaq2")]
+
+[node name="Root" type="Node2D" parent="." index="1"]
+position = Vector2(0, -3960)
+
+[node name="Borders" type="StaticBody2D" parent="Root" index="0"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Root/Borders" index="0"]
+polygon = PackedVector2Array(0, -88, -88, -88, -88, 360, -1800, 360, -1800, -808, -1080, -808, -1080, -1536, -1168, -1536, -1168, -896, -1888, -896, -1888, 448, 0, 448)
+
+[node name="Borders2" type="StaticBody2D" parent="Root" index="1"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Root/Borders2" index="0"]
+polygon = PackedVector2Array(-88, -896, -184, -896, -184, -1352, 904, -1352, 904, -632, 0, -632, 0, -720, 808, -720, 808, -1256, -88, -1256)
+
+[node name="Borders3" type="StaticBody2D" parent="Root" index="2"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Root/Borders3" index="0"]
+polygon = PackedVector2Array(-88, -360, -88, -720, 0, -720, 0, -360)
+
+[node name="Borders4" type="StaticBody2D" parent="Root" index="3"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Root/Borders4" index="0"]
+polygon = PackedVector2Array(-808, -1528, -720, -1528, -720, -896, 0, -896, 0, -808, -808, -808)
+
+[node name="Borders5" type="StaticBody2D" parent="Root" index="4"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Root/Borders5" index="0"]
+polygon = PackedVector2Array(-1528, -536, -1440, -536, -1440, -632, -1352, -632, -1352, -536, -1264, -536, -1264, -448, -1352, -448, -1352, -360, -1440, -360, -1440, -448, -1528, -448)
+
+[node name="Borders6" type="StaticBody2D" parent="Root" index="5"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Root/Borders6" index="0"]
+position = Vector2(904, 0)
+polygon = PackedVector2Array(-1536, -536, -1448, -536, -1448, -632, -1352, -632, -1352, -536, -1264, -536, -1264, -448, -1352, -448, -1352, -360, -1448, -360, -1448, -448, -1536, -448)
+
+[node name="Borders7" type="StaticBody2D" parent="Root" index="6"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Root/Borders7" index="0"]
+position = Vector2(0, 536)
+polygon = PackedVector2Array(-1528, -536, -1440, -536, -1440, -624, -1352, -624, -1352, -536, -1264, -536, -1264, -448, -1352, -448, -1352, -352, -1440, -352, -1440, -448, -1528, -448)
+
+[node name="Borders8" type="StaticBody2D" parent="Root" index="7"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Root/Borders8" index="0"]
+position = Vector2(904, 536)
+polygon = PackedVector2Array(-1536, -536, -1440, -536, -1440, -624, -1352, -624, -1352, -536, -1264, -536, -1264, -448, -1352, -448, -1352, -352, -1440, -352, -1440, -448, -1536, -448)
+
+[node name="LavaV2_x3_1" parent="Root" index="8" instance=ExtResource("2_0qspp")]
+position = Vector2(-264, -760)
+attack_damage = 0
+
+[node name="LavaV2_x3_2" parent="Root" index="9" instance=ExtResource("2_0qspp")]
+position = Vector2(-176, -672)
+
+[node name="LavaV2_1" parent="Root" index="10" instance=ExtResource("3_o7sxd")]
+position = Vector2(-128, -760)
+attack_damage = 0
+
+[node name="LavaV2_2" parent="Root" index="11" instance=ExtResource("3_o7sxd")]
+position = Vector2(-136, -584)
+
+[node name="LavaV2_3" parent="Root" index="12" instance=ExtResource("3_o7sxd")]
+position = Vector2(-128, 320)
+
+[node name="LavaV2_4" parent="Root" index="13" instance=ExtResource("3_o7sxd")]
+position = Vector2(-1760, 320)
+
+[node name="LavaV2_5" parent="Root" index="14" instance=ExtResource("3_o7sxd")]
+position = Vector2(-1760, -768)
+
+[node name="Lamp" parent="Root" index="15" instance=ExtResource("4_d72gt")]
+position = Vector2(-1488, -584)
+
+[node name="Lamp17" parent="Root" index="16" instance=ExtResource("4_d72gt")]
+position = Vector2(-1120, -772)
+
+[node name="Lamp18" parent="Root" index="17" instance=ExtResource("4_d72gt")]
+position = Vector2(-768, -772)
+
+[node name="Lamp19" parent="Root" index="18" instance=ExtResource("4_d72gt")]
+position = Vector2(224, -992)
+
+[node name="Lamp20" parent="Root" index="19" instance=ExtResource("4_d72gt")]
+position = Vector2(488, -992)
+
+[node name="Lamp2" parent="Root" index="20" instance=ExtResource("4_d72gt")]
+position = Vector2(-1304, -584)
+
+[node name="Lamp3" parent="Root" index="21" instance=ExtResource("4_d72gt")]
+position = Vector2(-1488, -400)
+
+[node name="Lamp4" parent="Root" index="22" instance=ExtResource("4_d72gt")]
+position = Vector2(-1304, -400)
+
+[node name="Lamp5" parent="Root" index="23" instance=ExtResource("4_d72gt")]
+position = Vector2(-584, -592)
+
+[node name="Lamp6" parent="Root" index="24" instance=ExtResource("4_d72gt")]
+position = Vector2(-400, -592)
+
+[node name="Lamp7" parent="Root" index="25" instance=ExtResource("4_d72gt")]
+position = Vector2(-584, -408)
+
+[node name="Lamp8" parent="Root" index="26" instance=ExtResource("4_d72gt")]
+position = Vector2(-400, -408)
+
+[node name="Lamp9" parent="Root" index="27" instance=ExtResource("4_d72gt")]
+position = Vector2(-1488, -48)
+
+[node name="Lamp10" parent="Root" index="28" instance=ExtResource("4_d72gt")]
+position = Vector2(-1304, -48)
+
+[node name="Lamp11" parent="Root" index="29" instance=ExtResource("4_d72gt")]
+position = Vector2(-1488, 136)
+
+[node name="Lamp12" parent="Root" index="30" instance=ExtResource("4_d72gt")]
+position = Vector2(-1304, 136)
+
+[node name="Lamp13" parent="Root" index="31" instance=ExtResource("4_d72gt")]
+position = Vector2(-584, -48)
+
+[node name="Lamp14" parent="Root" index="32" instance=ExtResource("4_d72gt")]
+position = Vector2(-400, -48)
+
+[node name="Lamp15" parent="Root" index="33" instance=ExtResource("4_d72gt")]
+position = Vector2(-584, 136)
+
+[node name="Lamp16" parent="Root" index="34" instance=ExtResource("4_d72gt")]
+position = Vector2(-400, 136)
+
+[node name="Treasure chest" parent="Root" index="35" instance=ExtResource("5_1m60c")]
+position = Vector2(360, -992)
+
+[node name="Skeleton swordman" parent="Root" index="36" instance=ExtResource("6_yn70i")]
+position = Vector2(-733, -218)
+
+[node name="Skeleton swordman2" parent="Root" index="37" instance=ExtResource("6_yn70i")]
+position = Vector2(-672, -104)
+rotation = -0.523599
+
+[node name="Skeleton swordman3" parent="Root" index="38" instance=ExtResource("6_yn70i")]
+position = Vector2(-669, -312)
+rotation = 0.523599
+
+[node name="Skeleton archer" parent="Root" index="39" instance=ExtResource("7_riymh")]
+position = Vector2(-1056, -358)
+rotation = -0.523599
+
+[node name="Skeleton archer2" parent="Root" index="40" instance=ExtResource("7_riymh")]
+position = Vector2(-1050, -75)
+rotation = 0.523599
+
+[node name="Skeleton archer3" parent="Root" index="41" instance=ExtResource("7_riymh")]
+position = Vector2(-1268, -218)
