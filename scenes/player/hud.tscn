@@ -190,7 +190,7 @@ vertical_alignment = 1
 layout_mode = 2
 focus_neighbor_bottom = NodePath("../RestartButton")
 focus_next = NodePath("../RestartButton")
-text = "Вернуться"
+text = "Продолжить"
 
 [node name="RestartButton" type="Button" parent="Menu/VBoxContainer"]
 layout_mode = 2
@@ -198,7 +198,7 @@ focus_neighbor_top = NodePath("../ResumeButton")
 focus_neighbor_bottom = NodePath("../MainMenuButton")
 focus_next = NodePath("../MainMenuButton")
 focus_previous = NodePath("../ResumeButton")
-text = "Начать заново"
+text = "Вернуться к костру"
 
 [node name="MainMenuButton" type="Button" parent="Menu/VBoxContainer"]
 layout_mode = 2
