@@ -1,8 +1,21 @@
-[gd_scene load_steps=2 format=3 uid="uid://bxgcrqrkp3g5k"]
+[gd_scene load_steps=12 format=3 uid="uid://bxgcrqrkp3g5k"]
 
 [ext_resource type="PackedScene" uid="uid://6drp3l3umlqc" path="res://scenes/world/level_map.tscn" id="1_71fsr"]
+[ext_resource type="Script" path="res://scenes/world/room_7.gd" id="2_4yy0p"]
+[ext_resource type="PackedScene" uid="uid://bwo0x34lbadye" path="res://zones/lava_x3.tscn" id="2_bn1rk"]
+[ext_resource type="PackedScene" uid="uid://diuuntjgrkkv7" path="res://zones/lava.tscn" id="3_byj3x"]
+[ext_resource type="PackedScene" uid="uid://cuhi7u7wqmxi5" path="res://scenes/props/gargoules/gargoyle_a_x1_d1s.tscn" id="4_ptj6u"]
+[ext_resource type="PackedScene" uid="uid://dah36w80s8ho6" path="res://scenes/props/lamp.tscn" id="5_yrbaw"]
+[ext_resource type="PackedScene" uid="uid://yufl3x3nrlh7" path="res://scenes/enemy/mimic.tscn" id="6_sjqm0"]
+[ext_resource type="PackedScene" uid="uid://blfx4gmc8o7dg" path="res://scenes/enemy/skeleton_archer.tscn" id="7_pfkgs"]
+[ext_resource type="PackedScene" uid="uid://bfbjy6cbe4qw5" path="res://scenes/enemy/skeleton_swordman.tscn" id="8_slyqm"]
+[ext_resource type="PackedScene" uid="uid://cv75142x3wp8q" path="res://zones/secret.tscn" id="10_7ob3f"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4oc6y"]
+size = Vector2(257.534, 20)
 
 [node name="Room7" instance=ExtResource("1_71fsr")]
+script = ExtResource("2_4yy0p")
 
 [node name="Root" type="Node2D" parent="." index="1"]
 position = Vector2(-1440, -5488)
@@ -42,3 +55,143 @@ polygon = PackedVector2Array(632, -904, 632, -1976, 720, -1976, 720, -1888, 808,
 position = Vector2(2880, 0)
 rotation = -1.5708
 polygon = PackedVector2Array(632, -904, 632, -1976, 720, -1976, 720, -1888, 808, -1888, 808, -1800, 896, -1800, 896, -1712, 992, -1712, 992, -1176, 896, -1176, 896, -1080, 808, -1080, 808, -992, 720, -992, 720, -904)
+
+[node name="LavaV2_x3_1" parent="Root" index="6" instance=ExtResource("2_bn1rk")]
+position = Vector2(632, -680)
+
+[node name="LavaV2_1" parent="Root" index="7" instance=ExtResource("3_byj3x")]
+position = Vector2(672, -592)
+
+[node name="LavaV2_x3_2" parent="Root" index="8" instance=ExtResource("2_bn1rk")]
+position = Vector2(2248, -672)
+
+[node name="LavaV2_2" parent="Root" index="9" instance=ExtResource("3_byj3x")]
+position = Vector2(2208, -584)
+
+[node name="LavaV2_x3_3" parent="Root" index="10" instance=ExtResource("2_bn1rk")]
+position = Vector2(632, -2204)
+
+[node name="LavaV2_3" parent="Root" index="11" instance=ExtResource("3_byj3x")]
+position = Vector2(680, -2296)
+
+[node name="LavaV2_x3_4" parent="Root" index="12" instance=ExtResource("2_bn1rk")]
+position = Vector2(2248, -2206)
+
+[node name="LavaV2_4" parent="Root" index="13" instance=ExtResource("3_byj3x")]
+position = Vector2(2208, -2298)
+
+[node name="Gargoyle_a_x1_d1s_1" parent="Root" index="14" instance=ExtResource("4_ptj6u")]
+position = Vector2(128, -128)
+rotation = -0.785398
+shooting = false
+
+[node name="Gargoyle_a_x1_d1s_2" parent="Root" index="15" instance=ExtResource("4_ptj6u")]
+position = Vector2(2744, -136)
+rotation = -2.35619
+shooting = false
+
+[node name="Gargoyle_a_x1_d1s_3" parent="Root" index="16" instance=ExtResource("4_ptj6u")]
+position = Vector2(128, -2752)
+rotation = 0.785398
+scale = Vector2(1, 1)
+shooting = false
+
+[node name="Gargoyle_a_x1_d1s_4" parent="Root" index="17" instance=ExtResource("4_ptj6u")]
+position = Vector2(2752, -2752)
+rotation = 2.35619
+scale = Vector2(1, 1)
+shooting = false
+
+[node name="Lamp" parent="Root" index="18" instance=ExtResource("5_yrbaw")]
+position = Vector2(1024, -1040)
+enabled = false
+
+[node name="Lamp2" parent="Root" index="19" instance=ExtResource("5_yrbaw")]
+position = Vector2(1856, -1040)
+enabled = false
+
+[node name="Lamp3" parent="Root" index="20" instance=ExtResource("5_yrbaw")]
+position = Vector2(1024, -1856)
+enabled = false
+
+[node name="Lamp4" parent="Root" index="21" instance=ExtResource("5_yrbaw")]
+position = Vector2(1856, -1856)
+
+[node name="Lamp5" parent="Root" index="22" instance=ExtResource("5_yrbaw")]
+position = Vector2(2208, -2752)
+
+[node name="Lamp6" parent="Root" index="23" instance=ExtResource("5_yrbaw")]
+position = Vector2(2560, -2752)
+
+[node name="SecretBorders" type="StaticBody2D" parent="Root" index="24"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Root/SecretBorders" index="0"]
+position = Vector2(1082.95, -1081.05)
+rotation = 0.785398
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_4oc6y")
+
+[node name="SecretBorders2" type="StaticBody2D" parent="Root" index="25"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Root/SecretBorders2" index="0"]
+position = Vector2(1800, -1080)
+rotation = -0.785398
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_4oc6y")
+
+[node name="SecretBorders3" type="StaticBody2D" parent="Root" index="26"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Root/SecretBorders3" index="0"]
+position = Vector2(1080, -1800)
+rotation = -0.785398
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_4oc6y")
+
+[node name="SecretBorders4" type="StaticBody2D" parent="Root" index="27"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Root/SecretBorders4" index="0"]
+position = Vector2(1800, -1800)
+rotation = 0.785398
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_4oc6y")
+
+[node name="Mimic" parent="Root" index="28" instance=ExtResource("6_sjqm0")]
+position = Vector2(1440, -1440)
+rotation = -0.785398
+
+[node name="Skeleton archer" parent="Root" index="29" instance=ExtResource("7_pfkgs")]
+position = Vector2(264, -684)
+rotation = 0.785398
+
+[node name="Skeleton archer2" parent="Root" index="30" instance=ExtResource("7_pfkgs")]
+position = Vector2(320, -2440)
+rotation = 0.785398
+
+[node name="Skeleton archer3" parent="Root" index="31" instance=ExtResource("7_pfkgs")]
+position = Vector2(2496, -2448)
+rotation = 2.35619
+
+[node name="Skeleton archer4" parent="Root" index="32" instance=ExtResource("7_pfkgs")]
+position = Vector2(2488, -312)
+rotation = -2.35619
+
+[node name="Skeleton swordman" parent="Root" index="33" instance=ExtResource("8_slyqm")]
+position = Vector2(1440, -484)
+rotation = 3.14159
+
+[node name="Skeleton swordman2" parent="Root" index="34" instance=ExtResource("8_slyqm")]
+position = Vector2(1440, -2392)
+rotation = 3.14159
+
+[node name="Skeleton swordman3" parent="Root" index="35" instance=ExtResource("8_slyqm")]
+position = Vector2(504, -1440)
+rotation = 1.5708
+
+[node name="Skeleton swordman4" parent="Root" index="36" instance=ExtResource("8_slyqm")]
+position = Vector2(2392, -1440)
+rotation = 1.5708
+
+[node name="Secret" parent="Root" index="37" node_paths=PackedStringArray("hiders") instance=ExtResource("10_7ob3f")]
+monitoring = false
+monitorable = false
+hiders = [NodePath("../SecretBorders"), NodePath("../SecretBorders2"), NodePath("../SecretBorders3"), NodePath("../SecretBorders4")]
