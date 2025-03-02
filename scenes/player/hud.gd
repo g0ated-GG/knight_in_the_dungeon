@@ -28,6 +28,11 @@ func defeat():
 
 func _physics_process(_delta: float) -> void:
 	$FPS.text = 'FPS: %.1f' % Engine.get_frames_per_second()
+	if Input.is_action_just_pressed('fullscreen'):
+		if DisplayServer.window_get_mode() == DisplayServer.WINDOW_MODE_FULLSCREEN:
+			DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_MAXIMIZED)
+		else:
+			DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_FULLSCREEN)
 
 func show_message(text : String, color : Color, custom_speed = 1.0):
 	$Message.text = text
