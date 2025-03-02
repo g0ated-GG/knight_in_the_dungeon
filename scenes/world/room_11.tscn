@@ -1,0 +1,1322 @@
+[gd_scene load_steps=7 format=3 uid="uid://bd540h01xtn3w"]
+
+[ext_resource type="PackedScene" uid="uid://6drp3l3umlqc" path="res://scenes/world/level_map.tscn" id="1_1fc7s"]
+[ext_resource type="PackedScene" uid="uid://br4wnt71vay1" path="res://scenes/props/maze_wall_v.tscn" id="2_6ljh1"]
+[ext_resource type="Texture2D" uid="uid://bqoao1i5lvyf6" path="res://img/ImageGenerator.svg" id="2_t2g20"]
+[ext_resource type="PackedScene" uid="uid://c7qs84fmomwum" path="res://scenes/props/maze_wall_h.tscn" id="3_17u7y"]
+[ext_resource type="PackedScene" uid="uid://diuuntjgrkkv7" path="res://zones/lava.tscn" id="5_w20ss"]
+[ext_resource type="PackedScene" uid="uid://bfbjy6cbe4qw5" path="res://scenes/enemy/skeleton_swordman.tscn" id="6_k5uqe"]
+
+[node name="Room11" instance=ExtResource("1_1fc7s")]
+
+[node name="TileMapLayer" parent="." index="0"]
+visible = false
+
+[node name="Root" type="Node2D" parent="." index="1"]
+position = Vector2(-360, -13856)
+
+[node name="MazeSolution" type="Sprite2D" parent="Root" index="0"]
+visible = false
+position = Vector2(768, -1440)
+scale = Vector2(8, 8)
+texture = ExtResource("2_t2g20")
+
+[node name="Maze" type="Node2D" parent="Root" index="1"]
+position = Vector2(720, -96)
+
+[node name="MazeWall_h" parent="Root/Maze" index="0" instance=ExtResource("3_17u7y")]
+position = Vector2(48, -128)
+
+[node name="MazeWall_h6" parent="Root/Maze" index="1" instance=ExtResource("3_17u7y")]
+position = Vector2(304, -128)
+
+[node name="MazeWall_h25" parent="Root/Maze" index="2" instance=ExtResource("3_17u7y")]
+position = Vector2(560, -256)
+
+[node name="MazeWall_h35" parent="Root/Maze" index="3" instance=ExtResource("3_17u7y")]
+position = Vector2(432, -384)
+
+[node name="MazeWall_h36" parent="Root/Maze" index="4" instance=ExtResource("3_17u7y")]
+position = Vector2(560, -384)
+
+[node name="MazeWall_h81" parent="Root/Maze" index="5" instance=ExtResource("3_17u7y")]
+position = Vector2(808, -768)
+
+[node name="MazeWall_h82" parent="Root/Maze" index="6" instance=ExtResource("3_17u7y")]
+position = Vector2(936, -768)
+
+[node name="MazeWall_h83" parent="Root/Maze" index="7" instance=ExtResource("3_17u7y")]
+position = Vector2(1064, -768)
+
+[node name="MazeWall_h84" parent="Root/Maze" index="8" instance=ExtResource("3_17u7y")]
+position = Vector2(688, -640)
+
+[node name="MazeWall_h85" parent="Root/Maze" index="9" instance=ExtResource("3_17u7y")]
+position = Vector2(816, -640)
+
+[node name="MazeWall_h86" parent="Root/Maze" index="10" instance=ExtResource("3_17u7y")]
+position = Vector2(944, -640)
+
+[node name="MazeWall_h87" parent="Root/Maze" index="11" instance=ExtResource("3_17u7y")]
+position = Vector2(552, -1024)
+
+[node name="MazeWall_h88" parent="Root/Maze" index="12" instance=ExtResource("3_17u7y")]
+position = Vector2(680, -1024)
+
+[node name="MazeWall_h89" parent="Root/Maze" index="13" instance=ExtResource("3_17u7y")]
+position = Vector2(808, -1024)
+
+[node name="MazeWall_h90" parent="Root/Maze" index="14" instance=ExtResource("3_17u7y")]
+position = Vector2(568, -1152)
+
+[node name="MazeWall_h91" parent="Root/Maze" index="15" instance=ExtResource("3_17u7y")]
+position = Vector2(696, -1152)
+
+[node name="MazeWall_h94" parent="Root/Maze" index="16" instance=ExtResource("3_17u7y")]
+position = Vector2(296, -896)
+
+[node name="MazeWall_h95" parent="Root/Maze" index="17" instance=ExtResource("3_17u7y")]
+position = Vector2(424, -896)
+
+[node name="MazeWall_h98" parent="Root/Maze" index="18" instance=ExtResource("3_17u7y")]
+position = Vector2(-216, -1024)
+
+[node name="MazeWall_h99" parent="Root/Maze" index="19" instance=ExtResource("3_17u7y")]
+position = Vector2(-88, -1024)
+
+[node name="MazeWall_h100" parent="Root/Maze" index="20" instance=ExtResource("3_17u7y")]
+position = Vector2(-584, -1024)
+
+[node name="MazeWall_h101" parent="Root/Maze" index="21" instance=ExtResource("3_17u7y")]
+position = Vector2(-456, -1024)
+
+[node name="MazeWall_h102" parent="Root/Maze" index="22" instance=ExtResource("3_17u7y")]
+position = Vector2(-968, -1024)
+
+[node name="MazeWall_h103" parent="Root/Maze" index="23" instance=ExtResource("3_17u7y")]
+position = Vector2(-840, -1024)
+
+[node name="MazeWall_h104" parent="Root/Maze" index="24" instance=ExtResource("3_17u7y")]
+position = Vector2(-600, -1408)
+
+[node name="MazeWall_h105" parent="Root/Maze" index="25" instance=ExtResource("3_17u7y")]
+position = Vector2(-472, -1408)
+
+[node name="MazeWall_h122" parent="Root/Maze" index="26" instance=ExtResource("3_17u7y")]
+position = Vector2(-456, -1536)
+
+[node name="MazeWall_h123" parent="Root/Maze" index="27" instance=ExtResource("3_17u7y")]
+position = Vector2(-712, -1664)
+
+[node name="MazeWall_h124" parent="Root/Maze" index="28" instance=ExtResource("3_17u7y")]
+position = Vector2(-728, -1280)
+
+[node name="MazeWall_h125" parent="Root/Maze" index="29" instance=ExtResource("3_17u7y")]
+position = Vector2(-968, -1408)
+
+[node name="MazeWall_h126" parent="Root/Maze" index="30" instance=ExtResource("3_17u7y")]
+position = Vector2(-1112, -1280)
+
+[node name="MazeWall_h127" parent="Root/Maze" index="31" instance=ExtResource("3_17u7y")]
+position = Vector2(-1240, -1024)
+
+[node name="MazeWall_h147" parent="Root/Maze" index="32" instance=ExtResource("3_17u7y")]
+position = Vector2(-1304, -1024)
+
+[node name="MazeWall_h148" parent="Root/Maze" index="33" instance=ExtResource("3_17u7y")]
+position = Vector2(-1320, -1536)
+
+[node name="MazeWall_h106" parent="Root/Maze" index="34" instance=ExtResource("3_17u7y")]
+position = Vector2(-840, -1792)
+
+[node name="MazeWall_h107" parent="Root/Maze" index="35" instance=ExtResource("3_17u7y")]
+position = Vector2(-712, -1792)
+
+[node name="MazeWall_h108" parent="Root/Maze" index="36" instance=ExtResource("3_17u7y")]
+position = Vector2(-216, -1536)
+
+[node name="MazeWall_h109" parent="Root/Maze" index="37" instance=ExtResource("3_17u7y")]
+position = Vector2(-88, -1536)
+
+[node name="MazeWall_h110" parent="Root/Maze" index="38" instance=ExtResource("3_17u7y")]
+position = Vector2(424, -1280)
+
+[node name="MazeWall_h111" parent="Root/Maze" index="39" instance=ExtResource("3_17u7y")]
+position = Vector2(552, -1280)
+
+[node name="MazeWall_h112" parent="Root/Maze" index="40" instance=ExtResource("3_17u7y")]
+position = Vector2(1192, -1536)
+
+[node name="MazeWall_h113" parent="Root/Maze" index="41" instance=ExtResource("3_17u7y")]
+position = Vector2(1320, -1536)
+
+[node name="MazeWall_h151" parent="Root/Maze" index="42" instance=ExtResource("3_17u7y")]
+position = Vector2(1383, -1536)
+
+[node name="MazeWall_h114" parent="Root/Maze" index="43" instance=ExtResource("3_17u7y")]
+position = Vector2(936, -2304)
+
+[node name="MazeWall_h139" parent="Root/Maze" index="44" instance=ExtResource("3_17u7y")]
+position = Vector2(936, -2048)
+
+[node name="MazeWall_h140" parent="Root/Maze" index="45" instance=ExtResource("3_17u7y")]
+position = Vector2(824, -2176)
+
+[node name="MazeWall_h141" parent="Root/Maze" index="46" instance=ExtResource("3_17u7y")]
+position = Vector2(568, -2304)
+
+[node name="MazeWall_h142" parent="Root/Maze" index="47" instance=ExtResource("3_17u7y")]
+position = Vector2(440, -2176)
+
+[node name="MazeWall_h143" parent="Root/Maze" index="48" instance=ExtResource("3_17u7y")]
+position = Vector2(312, -2048)
+
+[node name="MazeWall_h115" parent="Root/Maze" index="49" instance=ExtResource("3_17u7y")]
+position = Vector2(1080, -2304)
+
+[node name="MazeWall_h146" parent="Root/Maze" index="50" instance=ExtResource("3_17u7y")]
+position = Vector2(1064, -2560)
+
+[node name="MazeWall_h96" parent="Root/Maze" index="51" instance=ExtResource("3_17u7y")]
+position = Vector2(296, -1152)
+
+[node name="MazeWall_h97" parent="Root/Maze" index="52" instance=ExtResource("3_17u7y")]
+position = Vector2(440, -1152)
+
+[node name="MazeWall_h92" parent="Root/Maze" index="53" instance=ExtResource("3_17u7y")]
+position = Vector2(824, -1152)
+
+[node name="MazeWall_h93" parent="Root/Maze" index="54" instance=ExtResource("3_17u7y")]
+position = Vector2(552, -1408)
+
+[node name="MazeWall_h116" parent="Root/Maze" index="55" instance=ExtResource("3_17u7y")]
+position = Vector2(680, -1408)
+
+[node name="MazeWall_h117" parent="Root/Maze" index="56" instance=ExtResource("3_17u7y")]
+position = Vector2(808, -1408)
+
+[node name="MazeWall_h118" parent="Root/Maze" index="57" instance=ExtResource("3_17u7y")]
+position = Vector2(936, -1664)
+
+[node name="MazeWall_h119" parent="Root/Maze" index="58" instance=ExtResource("3_17u7y")]
+position = Vector2(1064, -1664)
+
+[node name="MazeWall_h120" parent="Root/Maze" index="59" instance=ExtResource("3_17u7y")]
+position = Vector2(1192, -1664)
+
+[node name="MazeWall_h121" parent="Root/Maze" index="60" instance=ExtResource("3_17u7y")]
+position = Vector2(552, -1920)
+
+[node name="MazeWall_h128" parent="Root/Maze" index="61" instance=ExtResource("3_17u7y")]
+position = Vector2(680, -1920)
+
+[node name="MazeWall_h129" parent="Root/Maze" index="62" instance=ExtResource("3_17u7y")]
+position = Vector2(808, -1920)
+
+[node name="MazeWall_h130" parent="Root/Maze" index="63" instance=ExtResource("3_17u7y")]
+position = Vector2(-72, -1664)
+
+[node name="MazeWall_h131" parent="Root/Maze" index="64" instance=ExtResource("3_17u7y")]
+position = Vector2(56, -1664)
+
+[node name="MazeWall_h132" parent="Root/Maze" index="65" instance=ExtResource("3_17u7y")]
+position = Vector2(184, -1664)
+
+[node name="MazeWall_h133" parent="Root/Maze" index="66" instance=ExtResource("3_17u7y")]
+position = Vector2(-80, -1792)
+
+[node name="MazeWall_h134" parent="Root/Maze" index="67" instance=ExtResource("3_17u7y")]
+position = Vector2(48, -1792)
+
+[node name="MazeWall_h135" parent="Root/Maze" index="68" instance=ExtResource("3_17u7y")]
+position = Vector2(176, -1792)
+
+[node name="MazeWall_h136" parent="Root/Maze" index="69" instance=ExtResource("3_17u7y")]
+position = Vector2(48, -1536)
+
+[node name="MazeWall_h137" parent="Root/Maze" index="70" instance=ExtResource("3_17u7y")]
+position = Vector2(176, -1536)
+
+[node name="MazeWall_h138" parent="Root/Maze" index="71" instance=ExtResource("3_17u7y")]
+position = Vector2(304, -1536)
+
+[node name="MazeWall_h144" parent="Root/Maze" index="72" instance=ExtResource("3_17u7y")]
+position = Vector2(-600, -1280)
+
+[node name="MazeWall_h145" parent="Root/Maze" index="73" instance=ExtResource("3_17u7y")]
+position = Vector2(-472, -1280)
+
+[node name="MazeWall_h149" parent="Root/Maze" index="74" instance=ExtResource("3_17u7y")]
+position = Vector2(-344, -1280)
+
+[node name="MazeWall_h150" parent="Root/Maze" index="75" instance=ExtResource("3_17u7y")]
+position = Vector2(-584, -1664)
+
+[node name="MazeWall_h152" parent="Root/Maze" index="76" instance=ExtResource("3_17u7y")]
+position = Vector2(-456, -1664)
+
+[node name="MazeWall_h153" parent="Root/Maze" index="77" instance=ExtResource("3_17u7y")]
+position = Vector2(-328, -1664)
+
+[node name="MazeWall_h154" parent="Root/Maze" index="78" instance=ExtResource("3_17u7y")]
+position = Vector2(-600, -2176)
+
+[node name="MazeWall_h155" parent="Root/Maze" index="79" instance=ExtResource("3_17u7y")]
+position = Vector2(-472, -2176)
+
+[node name="MazeWall_h156" parent="Root/Maze" index="80" instance=ExtResource("3_17u7y")]
+position = Vector2(-456, -2048)
+
+[node name="MazeWall_h157" parent="Root/Maze" index="81" instance=ExtResource("3_17u7y")]
+position = Vector2(-328, -1920)
+
+[node name="MazeWall_h158" parent="Root/Maze" index="82" instance=ExtResource("3_17u7y")]
+position = Vector2(-200, -1792)
+
+[node name="MazeWall_h159" parent="Root/Maze" index="83" instance=ExtResource("3_17u7y")]
+position = Vector2(-344, -2176)
+
+[node name="MazeWall_h160" parent="Root/Maze" index="84" instance=ExtResource("3_17u7y")]
+position = Vector2(-336, -2432)
+
+[node name="MazeWall_h161" parent="Root/Maze" index="85" instance=ExtResource("3_17u7y")]
+position = Vector2(-344, -2560)
+
+[node name="MazeWall_h162" parent="Root/Maze" index="86" instance=ExtResource("3_17u7y")]
+position = Vector2(-456, -2304)
+
+[node name="MazeWall_h163" parent="Root/Maze" index="87" instance=ExtResource("3_17u7y")]
+position = Vector2(-208, -2432)
+
+[node name="MazeWall_h164" parent="Root/Maze" index="88" instance=ExtResource("3_17u7y")]
+position = Vector2(-80, -2432)
+
+[node name="MazeWall_h165" parent="Root/Maze" index="89" instance=ExtResource("3_17u7y")]
+position = Vector2(-88, -2048)
+
+[node name="MazeWall_h166" parent="Root/Maze" index="90" instance=ExtResource("3_17u7y")]
+position = Vector2(40, -2048)
+
+[node name="MazeWall_h167" parent="Root/Maze" index="91" instance=ExtResource("3_17u7y")]
+position = Vector2(168, -2048)
+
+[node name="MazeWall_h168" parent="Root/Maze" index="92" instance=ExtResource("3_17u7y")]
+position = Vector2(184, -2432)
+
+[node name="MazeWall_h169" parent="Root/Maze" index="93" instance=ExtResource("3_17u7y")]
+position = Vector2(312, -2432)
+
+[node name="MazeWall_h170" parent="Root/Maze" index="94" instance=ExtResource("3_17u7y")]
+position = Vector2(440, -2432)
+
+[node name="MazeWall_h171" parent="Root/Maze" index="95" instance=ExtResource("3_17u7y")]
+position = Vector2(568, -2432)
+
+[node name="MazeWall_h172" parent="Root/Maze" index="96" instance=ExtResource("3_17u7y")]
+position = Vector2(696, -2432)
+
+[node name="MazeWall_h173" parent="Root/Maze" index="97" instance=ExtResource("3_17u7y")]
+position = Vector2(680, -2560)
+
+[node name="MazeWall_h174" parent="Root/Maze" index="98" instance=ExtResource("3_17u7y")]
+position = Vector2(808, -2560)
+
+[node name="MazeWall_h175" parent="Root/Maze" index="99" instance=ExtResource("3_17u7y")]
+position = Vector2(-88, -2304)
+
+[node name="MazeWall_h176" parent="Root/Maze" index="100" instance=ExtResource("3_17u7y")]
+position = Vector2(40, -2304)
+
+[node name="MazeWall_h177" parent="Root/Maze" index="101" instance=ExtResource("3_17u7y")]
+position = Vector2(40, -2560)
+
+[node name="MazeWall_h178" parent="Root/Maze" index="102" instance=ExtResource("3_17u7y")]
+position = Vector2(56, -2176)
+
+[node name="MazeWall_h179" parent="Root/Maze" index="103" instance=ExtResource("3_17u7y")]
+position = Vector2(-712, -2560)
+
+[node name="MazeWall_h180" parent="Root/Maze" index="104" instance=ExtResource("3_17u7y")]
+position = Vector2(-584, -2560)
+
+[node name="MazeWall_h181" parent="Root/Maze" index="105" instance=ExtResource("3_17u7y")]
+position = Vector2(824, -2432)
+
+[node name="MazeWall_h182" parent="Root/Maze" index="106" instance=ExtResource("3_17u7y")]
+position = Vector2(-1224, -1792)
+
+[node name="MazeWall_h183" parent="Root/Maze" index="107" instance=ExtResource("3_17u7y")]
+position = Vector2(-1287, -1792)
+
+[node name="MazeWall_h184" parent="Root/Maze" index="108" instance=ExtResource("3_17u7y")]
+position = Vector2(-1096, -1792)
+
+[node name="MazeWall_h185" parent="Root/Maze" index="109" instance=ExtResource("3_17u7y")]
+position = Vector2(-1096, -1664)
+
+[node name="MazeWall_h186" parent="Root/Maze" index="110" instance=ExtResource("3_17u7y")]
+position = Vector2(-1224, -1536)
+
+[node name="MazeWall_h187" parent="Root/Maze" index="111" instance=ExtResource("3_17u7y")]
+position = Vector2(-968, -1792)
+
+[node name="MazeWall_h188" parent="Root/Maze" index="112" instance=ExtResource("3_17u7y")]
+position = Vector2(-1104, -1920)
+
+[node name="MazeWall_h189" parent="Root/Maze" index="113" instance=ExtResource("3_17u7y")]
+position = Vector2(-1224, -2048)
+
+[node name="MazeWall_h190" parent="Root/Maze" index="114" instance=ExtResource("3_17u7y")]
+position = Vector2(-1287, -2048)
+
+[node name="MazeWall_h191" parent="Root/Maze" index="115" instance=ExtResource("3_17u7y")]
+position = Vector2(-976, -1920)
+
+[node name="MazeWall_h192" parent="Root/Maze" index="116" instance=ExtResource("3_17u7y")]
+position = Vector2(-848, -1920)
+
+[node name="MazeWall_h193" parent="Root/Maze" index="117" instance=ExtResource("3_17u7y")]
+position = Vector2(-856, -2176)
+
+[node name="MazeWall_h194" parent="Root/Maze" index="118" instance=ExtResource("3_17u7y")]
+position = Vector2(-968, -2304)
+
+[node name="MazeWall_h195" parent="Root/Maze" index="119" instance=ExtResource("3_17u7y")]
+position = Vector2(-856, -2432)
+
+[node name="MazeWall_h196" parent="Root/Maze" index="120" instance=ExtResource("3_17u7y")]
+position = Vector2(-720, -1920)
+
+[node name="MazeWall_h197" parent="Root/Maze" index="121" instance=ExtResource("3_17u7y")]
+position = Vector2(-592, -1920)
+
+[node name="MazeWall_h37" parent="Root/Maze" index="122" instance=ExtResource("3_17u7y")]
+position = Vector2(688, -384)
+
+[node name="MazeWall_h38" parent="Root/Maze" index="123" instance=ExtResource("3_17u7y")]
+position = Vector2(816, -384)
+
+[node name="MazeWall_h26" parent="Root/Maze" index="124" instance=ExtResource("3_17u7y")]
+position = Vector2(680, -128)
+
+[node name="MazeWall_h27" parent="Root/Maze" index="125" instance=ExtResource("3_17u7y")]
+position = Vector2(808, -128)
+
+[node name="MazeWall_h28" parent="Root/Maze" index="126" instance=ExtResource("3_17u7y")]
+position = Vector2(936, -256)
+
+[node name="MazeWall_h29" parent="Root/Maze" index="127" instance=ExtResource("3_17u7y")]
+position = Vector2(1080, -128)
+
+[node name="MazeWall_h31" parent="Root/Maze" index="128" instance=ExtResource("3_17u7y")]
+position = Vector2(1208, -256)
+
+[node name="MazeWall_h30" parent="Root/Maze" index="129" instance=ExtResource("3_17u7y")]
+position = Vector2(1064, -384)
+
+[node name="MazeWall_h5" parent="Root/Maze" index="130" instance=ExtResource("3_17u7y")]
+position = Vector2(176, -384)
+
+[node name="MazeWall_h39" parent="Root/Maze" index="131" instance=ExtResource("3_17u7y")]
+position = Vector2(304, -512)
+
+[node name="MazeWall_h40" parent="Root/Maze" index="132" instance=ExtResource("3_17u7y")]
+position = Vector2(176, -512)
+
+[node name="MazeWall_h41" parent="Root/Maze" index="133" instance=ExtResource("3_17u7y")]
+position = Vector2(48, -512)
+
+[node name="MazeWall_h42" parent="Root/Maze" index="134" instance=ExtResource("3_17u7y")]
+position = Vector2(48, -640)
+
+[node name="MazeWall_h7" parent="Root/Maze" index="135" instance=ExtResource("3_17u7y")]
+position = Vector2(-88, -384)
+
+[node name="MazeWall_h8" parent="Root/Maze" index="136" instance=ExtResource("3_17u7y")]
+position = Vector2(-216, -384)
+
+[node name="MazeWall_h9" parent="Root/Maze" index="137" instance=ExtResource("3_17u7y")]
+position = Vector2(-344, -384)
+
+[node name="MazeWall_h11" parent="Root/Maze" index="138" instance=ExtResource("3_17u7y")]
+position = Vector2(-344, -256)
+
+[node name="MazeWall_h12" parent="Root/Maze" index="139" instance=ExtResource("3_17u7y")]
+position = Vector2(-472, -256)
+
+[node name="MazeWall_h13" parent="Root/Maze" index="140" instance=ExtResource("3_17u7y")]
+position = Vector2(-600, -256)
+
+[node name="MazeWall_h14" parent="Root/Maze" index="141" instance=ExtResource("3_17u7y")]
+position = Vector2(-728, -256)
+
+[node name="MazeWall_h20" parent="Root/Maze" index="142" instance=ExtResource("3_17u7y")]
+position = Vector2(-848, -384)
+
+[node name="MazeWall_h21" parent="Root/Maze" index="143" instance=ExtResource("3_17u7y")]
+position = Vector2(-976, -384)
+
+[node name="MazeWall_h15" parent="Root/Maze" index="144" instance=ExtResource("3_17u7y")]
+position = Vector2(-728, -128)
+
+[node name="MazeWall_h16" parent="Root/Maze" index="145" instance=ExtResource("3_17u7y")]
+position = Vector2(-984, -128)
+
+[node name="MazeWall_h17" parent="Root/Maze" index="146" instance=ExtResource("3_17u7y")]
+position = Vector2(-1104, -256)
+
+[node name="MazeWall_h18" parent="Root/Maze" index="147" instance=ExtResource("3_17u7y")]
+position = Vector2(-1232, -384)
+
+[node name="MazeWall_h19" parent="Root/Maze" index="148" instance=ExtResource("3_17u7y")]
+position = Vector2(-1295, -384)
+
+[node name="MazeWall_h10" parent="Root/Maze" index="149" instance=ExtResource("3_17u7y")]
+position = Vector2(-472, -384)
+
+[node name="MazeWall_h22" parent="Root/Maze" index="150" instance=ExtResource("3_17u7y")]
+position = Vector2(-600, -512)
+
+[node name="MazeWall_h32" parent="Root/Maze" index="151" instance=ExtResource("3_17u7y")]
+position = Vector2(-472, -640)
+
+[node name="MazeWall_h33" parent="Root/Maze" index="152" instance=ExtResource("3_17u7y")]
+position = Vector2(-344, -640)
+
+[node name="MazeWall_h48" parent="Root/Maze" index="153" instance=ExtResource("3_17u7y")]
+position = Vector2(-344, -768)
+
+[node name="MazeWall_h75" parent="Root/Maze" index="154" instance=ExtResource("3_17u7y")]
+position = Vector2(-472, -896)
+
+[node name="MazeWall_h76" parent="Root/Maze" index="155" instance=ExtResource("3_17u7y")]
+position = Vector2(-728, -896)
+
+[node name="MazeWall_h77" parent="Root/Maze" index="156" instance=ExtResource("3_17u7y")]
+position = Vector2(-712, -1152)
+
+[node name="MazeWall_h49" parent="Root/Maze" index="157" instance=ExtResource("3_17u7y")]
+position = Vector2(-88, -768)
+
+[node name="MazeWall_h50" parent="Root/Maze" index="158" instance=ExtResource("3_17u7y")]
+position = Vector2(40, -768)
+
+[node name="MazeWall_h51" parent="Root/Maze" index="159" instance=ExtResource("3_17u7y")]
+position = Vector2(304, -768)
+
+[node name="MazeWall_h52" parent="Root/Maze" index="160" instance=ExtResource("3_17u7y")]
+position = Vector2(424, -640)
+
+[node name="MazeWall_h53" parent="Root/Maze" index="161" instance=ExtResource("3_17u7y")]
+position = Vector2(696, -512)
+
+[node name="MazeWall_h54" parent="Root/Maze" index="162" instance=ExtResource("3_17u7y")]
+position = Vector2(936, -512)
+
+[node name="MazeWall_h55" parent="Root/Maze" index="163" instance=ExtResource("3_17u7y")]
+position = Vector2(1064, -512)
+
+[node name="MazeWall_h58" parent="Root/Maze" index="164" instance=ExtResource("3_17u7y")]
+position = Vector2(1192, -640)
+
+[node name="MazeWall_h59" parent="Root/Maze" index="165" instance=ExtResource("3_17u7y")]
+position = Vector2(568, -768)
+
+[node name="MazeWall_h60" parent="Root/Maze" index="166" instance=ExtResource("3_17u7y")]
+position = Vector2(680, -896)
+
+[node name="MazeWall_h61" parent="Root/Maze" index="167" instance=ExtResource("3_17u7y")]
+position = Vector2(952, -896)
+
+[node name="MazeWall_h62" parent="Root/Maze" index="168" instance=ExtResource("3_17u7y")]
+position = Vector2(1080, -1024)
+
+[node name="MazeWall_h63" parent="Root/Maze" index="169" instance=ExtResource("3_17u7y")]
+position = Vector2(1192, -1152)
+
+[node name="MazeWall_h64" parent="Root/Maze" index="170" instance=ExtResource("3_17u7y")]
+position = Vector2(1208, -1280)
+
+[node name="MazeWall_h79" parent="Root/Maze" index="171" instance=ExtResource("3_17u7y")]
+position = Vector2(1320, -1408)
+
+[node name="MazeWall_h80" parent="Root/Maze" index="172" instance=ExtResource("3_17u7y")]
+position = Vector2(1376, -1408)
+
+[node name="MazeWall_h65" parent="Root/Maze" index="173" instance=ExtResource("3_17u7y")]
+position = Vector2(952, -1280)
+
+[node name="MazeWall_h66" parent="Root/Maze" index="174" instance=ExtResource("3_17u7y")]
+position = Vector2(1064, -1408)
+
+[node name="MazeWall_h67" parent="Root/Maze" index="175" instance=ExtResource("3_17u7y")]
+position = Vector2(1064, -1792)
+
+[node name="MazeWall_h68" parent="Root/Maze" index="176" instance=ExtResource("3_17u7y")]
+position = Vector2(808, -1792)
+
+[node name="MazeWall_h69" parent="Root/Maze" index="177" instance=ExtResource("3_17u7y")]
+position = Vector2(696, -1664)
+
+[node name="MazeWall_h70" parent="Root/Maze" index="178" instance=ExtResource("3_17u7y")]
+position = Vector2(552, -1536)
+
+[node name="MazeWall_h78" parent="Root/Maze" index="179" instance=ExtResource("3_17u7y")]
+position = Vector2(440, -1664)
+
+[node name="MazeWall_h71" parent="Root/Maze" index="180" instance=ExtResource("3_17u7y")]
+position = Vector2(168, -1408)
+
+[node name="MazeWall_h72" parent="Root/Maze" index="181" instance=ExtResource("3_17u7y")]
+position = Vector2(40, -1152)
+
+[node name="MazeWall_h74" parent="Root/Maze" index="182" instance=ExtResource("3_17u7y")]
+position = Vector2(-72, -1280)
+
+[node name="MazeWall_h73" parent="Root/Maze" index="183" instance=ExtResource("3_17u7y")]
+position = Vector2(184, -1024)
+
+[node name="MazeWall_h56" parent="Root/Maze" index="184" instance=ExtResource("3_17u7y")]
+position = Vector2(1320, -384)
+
+[node name="MazeWall_h57" parent="Root/Maze" index="185" instance=ExtResource("3_17u7y")]
+position = Vector2(1448, -384)
+
+[node name="MazeWall_h34" parent="Root/Maze" index="186" instance=ExtResource("3_17u7y")]
+position = Vector2(-216, -640)
+
+[node name="MazeWall_h24" parent="Root/Maze" index="187" instance=ExtResource("3_17u7y")]
+position = Vector2(-856, -512)
+
+[node name="MazeWall_h43" parent="Root/Maze" index="188" instance=ExtResource("3_17u7y")]
+position = Vector2(-1104, -768)
+
+[node name="MazeWall_h44" parent="Root/Maze" index="189" instance=ExtResource("3_17u7y")]
+position = Vector2(-976, -768)
+
+[node name="MazeWall_h45" parent="Root/Maze" index="190" instance=ExtResource("3_17u7y")]
+position = Vector2(-848, -768)
+
+[node name="MazeWall_h46" parent="Root/Maze" index="191" instance=ExtResource("3_17u7y")]
+position = Vector2(-728, -640)
+
+[node name="MazeWall_h47" parent="Root/Maze" index="192" instance=ExtResource("3_17u7y")]
+position = Vector2(-600, -768)
+
+[node name="MazeWall_h23" parent="Root/Maze" index="193" instance=ExtResource("3_17u7y")]
+position = Vector2(-728, -512)
+
+[node name="MazeWall_h2" parent="Root/Maze" index="194" instance=ExtResource("3_17u7y")]
+position = Vector2(-80, -128)
+
+[node name="MazeWall_h3" parent="Root/Maze" index="195" instance=ExtResource("3_17u7y")]
+position = Vector2(-208, -128)
+
+[node name="MazeWall_h4" parent="Root/Maze" index="196" instance=ExtResource("3_17u7y")]
+position = Vector2(-336, -128)
+
+[node name="MazeWall_v" parent="Root/Maze" index="197" instance=ExtResource("2_6ljh1")]
+position = Vector2(112, -72)
+
+[node name="MazeWall_v21" parent="Root/Maze" index="198" instance=ExtResource("2_6ljh1")]
+position = Vector2(496, -72)
+
+[node name="MazeWall_v22" parent="Root/Maze" index="199" instance=ExtResource("2_6ljh1")]
+position = Vector2(496, -200)
+
+[node name="MazeWall_v23" parent="Root/Maze" index="200" instance=ExtResource("2_6ljh1")]
+position = Vector2(624, -200)
+
+[node name="MazeWall_v24" parent="Root/Maze" index="201" instance=ExtResource("2_6ljh1")]
+position = Vector2(880, -184)
+
+[node name="MazeWall_v25" parent="Root/Maze" index="202" instance=ExtResource("2_6ljh1")]
+position = Vector2(1136, -200)
+
+[node name="MazeWall_v27" parent="Root/Maze" index="203" instance=ExtResource("2_6ljh1")]
+position = Vector2(1008, -312)
+
+[node name="MazeWall_v48" parent="Root/Maze" index="204" instance=ExtResource("2_6ljh1")]
+position = Vector2(881, -440)
+
+[node name="MazeWall_v28" parent="Root/Maze" index="205" instance=ExtResource("2_6ljh1")]
+position = Vector2(1136, -328)
+
+[node name="MazeWall_v26" parent="Root/Maze" index="206" instance=ExtResource("2_6ljh1")]
+position = Vector2(1264, -184)
+
+[node name="MazeWall_v5" parent="Root/Maze" index="207" instance=ExtResource("2_6ljh1")]
+position = Vector2(112, -200)
+
+[node name="MazeWall_v8" parent="Root/Maze" index="208" instance=ExtResource("2_6ljh1")]
+position = Vector2(240, -200)
+
+[node name="MazeWall_v6" parent="Root/Maze" index="209" instance=ExtResource("2_6ljh1")]
+position = Vector2(112, -328)
+
+[node name="MazeWall_v9" parent="Root/Maze" index="210" instance=ExtResource("2_6ljh1")]
+position = Vector2(-16, -328)
+
+[node name="MazeWall_v34" parent="Root/Maze" index="211" instance=ExtResource("2_6ljh1")]
+position = Vector2(-16, -456)
+
+[node name="MazeWall_v35" parent="Root/Maze" index="212" instance=ExtResource("2_6ljh1")]
+position = Vector2(-16, -584)
+
+[node name="MazeWall_v10" parent="Root/Maze" index="213" instance=ExtResource("2_6ljh1")]
+position = Vector2(-273, -312)
+
+[node name="MazeWall_v29" parent="Root/Maze" index="214" instance=ExtResource("2_6ljh1")]
+position = Vector2(-400, -456)
+
+[node name="MazeWall_v31" parent="Root/Maze" index="215" instance=ExtResource("2_6ljh1")]
+position = Vector2(-272, -568)
+
+[node name="MazeWall_v32" parent="Root/Maze" index="216" instance=ExtResource("2_6ljh1")]
+position = Vector2(-144, -568)
+
+[node name="MazeWall_v33" parent="Root/Maze" index="217" instance=ExtResource("2_6ljh1")]
+position = Vector2(-144, -696)
+
+[node name="MazeWall_v30" parent="Root/Maze" index="218" instance=ExtResource("2_6ljh1")]
+position = Vector2(-528, -568)
+
+[node name="MazeWall_v7" parent="Root/Maze" index="219" instance=ExtResource("2_6ljh1")]
+position = Vector2(240, -328)
+
+[node name="MazeWall_v36" parent="Root/Maze" index="220" instance=ExtResource("2_6ljh1")]
+position = Vector2(368, -328)
+
+[node name="MazeWall_v38" parent="Root/Maze" index="221" instance=ExtResource("2_6ljh1")]
+position = Vector2(368, -456)
+
+[node name="MazeWall_v39" parent="Root/Maze" index="222" instance=ExtResource("2_6ljh1")]
+position = Vector2(240, -584)
+
+[node name="MazeWall_v49" parent="Root/Maze" index="223" instance=ExtResource("2_6ljh1")]
+position = Vector2(496, -568)
+
+[node name="MazeWall_v51" parent="Root/Maze" index="224" instance=ExtResource("2_6ljh1")]
+position = Vector2(624, -568)
+
+[node name="MazeWall_v52" parent="Root/Maze" index="225" instance=ExtResource("2_6ljh1")]
+position = Vector2(624, -696)
+
+[node name="MazeWall_v102" parent="Root/Maze" index="226" instance=ExtResource("2_6ljh1")]
+position = Vector2(752, -840)
+
+[node name="MazeWall_v103" parent="Root/Maze" index="227" instance=ExtResource("2_6ljh1")]
+position = Vector2(1008, -584)
+
+[node name="MazeWall_v104" parent="Root/Maze" index="228" instance=ExtResource("2_6ljh1")]
+position = Vector2(1264, -456)
+
+[node name="MazeWall_v105" parent="Root/Maze" index="229" instance=ExtResource("2_6ljh1")]
+position = Vector2(1264, -584)
+
+[node name="MazeWall_v106" parent="Root/Maze" index="230" instance=ExtResource("2_6ljh1")]
+position = Vector2(1264, -712)
+
+[node name="MazeWall_v107" parent="Root/Maze" index="231" instance=ExtResource("2_6ljh1")]
+position = Vector2(1264, -840)
+
+[node name="MazeWall_v108" parent="Root/Maze" index="232" instance=ExtResource("2_6ljh1")]
+position = Vector2(1264, -968)
+
+[node name="MazeWall_v109" parent="Root/Maze" index="233" instance=ExtResource("2_6ljh1")]
+position = Vector2(1264, -1096)
+
+[node name="MazeWall_v110" parent="Root/Maze" index="234" instance=ExtResource("2_6ljh1")]
+position = Vector2(1136, -696)
+
+[node name="MazeWall_v111" parent="Root/Maze" index="235" instance=ExtResource("2_6ljh1")]
+position = Vector2(1136, -824)
+
+[node name="MazeWall_v112" parent="Root/Maze" index="236" instance=ExtResource("2_6ljh1")]
+position = Vector2(1136, -952)
+
+[node name="MazeWall_v113" parent="Root/Maze" index="237" instance=ExtResource("2_6ljh1")]
+position = Vector2(1008, -1080)
+
+[node name="MazeWall_v114" parent="Root/Maze" index="238" instance=ExtResource("2_6ljh1")]
+position = Vector2(1008, -1208)
+
+[node name="MazeWall_v115" parent="Root/Maze" index="239" instance=ExtResource("2_6ljh1")]
+position = Vector2(880, -1336)
+
+[node name="MazeWall_v143" parent="Root/Maze" index="240" instance=ExtResource("2_6ljh1")]
+position = Vector2(1136, -1336)
+
+[node name="MazeWall_v144" parent="Root/Maze" index="241" instance=ExtResource("2_6ljh1")]
+position = Vector2(1136, -1464)
+
+[node name="MazeWall_v145" parent="Root/Maze" index="242" instance=ExtResource("2_6ljh1")]
+position = Vector2(1008, -1592)
+
+[node name="MazeWall_v146" parent="Root/Maze" index="243" instance=ExtResource("2_6ljh1")]
+position = Vector2(1264, -1720)
+
+[node name="MazeWall_v147" parent="Root/Maze" index="244" instance=ExtResource("2_6ljh1")]
+position = Vector2(1264, -1848)
+
+[node name="MazeWall_v148" parent="Root/Maze" index="245" instance=ExtResource("2_6ljh1")]
+position = Vector2(1264, -1976)
+
+[node name="MazeWall_v149" parent="Root/Maze" index="246" instance=ExtResource("2_6ljh1")]
+position = Vector2(1264, -2104)
+
+[node name="MazeWall_v150" parent="Root/Maze" index="247" instance=ExtResource("2_6ljh1")]
+position = Vector2(1264, -2232)
+
+[node name="MazeWall_v153" parent="Root/Maze" index="248" instance=ExtResource("2_6ljh1")]
+position = Vector2(1136, -1848)
+
+[node name="MazeWall_v154" parent="Root/Maze" index="249" instance=ExtResource("2_6ljh1")]
+position = Vector2(1136, -1976)
+
+[node name="MazeWall_v155" parent="Root/Maze" index="250" instance=ExtResource("2_6ljh1")]
+position = Vector2(1136, -2104)
+
+[node name="MazeWall_v156" parent="Root/Maze" index="251" instance=ExtResource("2_6ljh1")]
+position = Vector2(1136, -2232)
+
+[node name="MazeWall_v157" parent="Root/Maze" index="252" instance=ExtResource("2_6ljh1")]
+position = Vector2(1008, -2104)
+
+[node name="MazeWall_v158" parent="Root/Maze" index="253" instance=ExtResource("2_6ljh1")]
+position = Vector2(1008, -2232)
+
+[node name="MazeWall_v159" parent="Root/Maze" index="254" instance=ExtResource("2_6ljh1")]
+position = Vector2(1008, -2360)
+
+[node name="MazeWall_v160" parent="Root/Maze" index="255" instance=ExtResource("2_6ljh1")]
+position = Vector2(752, -2104)
+
+[node name="MazeWall_v161" parent="Root/Maze" index="256" instance=ExtResource("2_6ljh1")]
+position = Vector2(752, -2232)
+
+[node name="MazeWall_v162" parent="Root/Maze" index="257" instance=ExtResource("2_6ljh1")]
+position = Vector2(752, -2360)
+
+[node name="MazeWall_v163" parent="Root/Maze" index="258" instance=ExtResource("2_6ljh1")]
+position = Vector2(-272, -2104)
+
+[node name="MazeWall_v164" parent="Root/Maze" index="259" instance=ExtResource("2_6ljh1")]
+position = Vector2(-272, -2232)
+
+[node name="MazeWall_v165" parent="Root/Maze" index="260" instance=ExtResource("2_6ljh1")]
+position = Vector2(-272, -2360)
+
+[node name="MazeWall_v151" parent="Root/Maze" index="261" instance=ExtResource("2_6ljh1")]
+position = Vector2(1264, -2360)
+
+[node name="MazeWall_v152" parent="Root/Maze" index="262" instance=ExtResource("2_6ljh1")]
+position = Vector2(1264, -2488)
+
+[node name="MazeWall_v138" parent="Root/Maze" index="263" instance=ExtResource("2_6ljh1")]
+position = Vector2(880, -1464)
+
+[node name="MazeWall_v139" parent="Root/Maze" index="264" instance=ExtResource("2_6ljh1")]
+position = Vector2(880, -1592)
+
+[node name="MazeWall_v140" parent="Root/Maze" index="265" instance=ExtResource("2_6ljh1")]
+position = Vector2(880, -1720)
+
+[node name="MazeWall_v141" parent="Root/Maze" index="266" instance=ExtResource("2_6ljh1")]
+position = Vector2(880, -1848)
+
+[node name="MazeWall_v198" parent="Root/Maze" index="267" instance=ExtResource("2_6ljh1")]
+position = Vector2(1008, -1864)
+
+[node name="MazeWall_v142" parent="Root/Maze" index="268" instance=ExtResource("2_6ljh1")]
+position = Vector2(880, -1976)
+
+[node name="MazeWall_v116" parent="Root/Maze" index="269" instance=ExtResource("2_6ljh1")]
+position = Vector2(624, -1336)
+
+[node name="MazeWall_v117" parent="Root/Maze" index="270" instance=ExtResource("2_6ljh1")]
+position = Vector2(368, -1336)
+
+[node name="MazeWall_v118" parent="Root/Maze" index="271" instance=ExtResource("2_6ljh1")]
+position = Vector2(368, -1464)
+
+[node name="MazeWall_v119" parent="Root/Maze" index="272" instance=ExtResource("2_6ljh1")]
+position = Vector2(368, -1592)
+
+[node name="MazeWall_v122" parent="Root/Maze" index="273" instance=ExtResource("2_6ljh1")]
+position = Vector2(368, -1720)
+
+[node name="MazeWall_v123" parent="Root/Maze" index="274" instance=ExtResource("2_6ljh1")]
+position = Vector2(368, -1848)
+
+[node name="MazeWall_v125" parent="Root/Maze" index="275" instance=ExtResource("2_6ljh1")]
+position = Vector2(240, -1848)
+
+[node name="MazeWall_v126" parent="Root/Maze" index="276" instance=ExtResource("2_6ljh1")]
+position = Vector2(-16, -1848)
+
+[node name="MazeWall_v127" parent="Root/Maze" index="277" instance=ExtResource("2_6ljh1")]
+position = Vector2(-400, -1848)
+
+[node name="MazeWall_v128" parent="Root/Maze" index="278" instance=ExtResource("2_6ljh1")]
+position = Vector2(-400, -1976)
+
+[node name="MazeWall_v196" parent="Root/Maze" index="279" instance=ExtResource("2_6ljh1")]
+position = Vector2(-528, -1736)
+
+[node name="MazeWall_v197" parent="Root/Maze" index="280" instance=ExtResource("2_6ljh1")]
+position = Vector2(-528, -1864)
+
+[node name="MazeWall_v129" parent="Root/Maze" index="281" instance=ExtResource("2_6ljh1")]
+position = Vector2(-272, -1976)
+
+[node name="MazeWall_v166" parent="Root/Maze" index="282" instance=ExtResource("2_6ljh1")]
+position = Vector2(-656, -2232)
+
+[node name="MazeWall_v167" parent="Root/Maze" index="283" instance=ExtResource("2_6ljh1")]
+position = Vector2(-656, -2360)
+
+[node name="MazeWall_v168" parent="Root/Maze" index="284" instance=ExtResource("2_6ljh1")]
+position = Vector2(-656, -2488)
+
+[node name="MazeWall_v184" parent="Root/Maze" index="285" instance=ExtResource("2_6ljh1")]
+position = Vector2(-528, -2360)
+
+[node name="MazeWall_v185" parent="Root/Maze" index="286" instance=ExtResource("2_6ljh1")]
+position = Vector2(-528, -2488)
+
+[node name="MazeWall_v186" parent="Root/Maze" index="287" instance=ExtResource("2_6ljh1")]
+position = Vector2(-144, -2504)
+
+[node name="MazeWall_v187" parent="Root/Maze" index="288" instance=ExtResource("2_6ljh1")]
+position = Vector2(-144, -2632)
+
+[node name="MazeWall_v201" parent="Root/Maze" index="289" instance=ExtResource("2_6ljh1")]
+position = Vector2(-400, -2632)
+
+[node name="MazeWall_v188" parent="Root/Maze" index="290" instance=ExtResource("2_6ljh1")]
+position = Vector2(112, -2376)
+
+[node name="MazeWall_v200" parent="Root/Maze" index="291" instance=ExtResource("2_6ljh1")]
+position = Vector2(112, -2248)
+
+[node name="MazeWall_v189" parent="Root/Maze" index="292" instance=ExtResource("2_6ljh1")]
+position = Vector2(112, -2504)
+
+[node name="MazeWall_v204" parent="Root/Maze" index="293" instance=ExtResource("2_6ljh1")]
+position = Vector2(240, -2632)
+
+[node name="MazeWall_v205" parent="Root/Maze" index="294" instance=ExtResource("2_6ljh1")]
+position = Vector2(368, -2632)
+
+[node name="MazeWall_v206" parent="Root/Maze" index="295" instance=ExtResource("2_6ljh1")]
+position = Vector2(624, -2632)
+
+[node name="MazeWall_v209" parent="Root/Maze" index="296" instance=ExtResource("2_6ljh1")]
+position = Vector2(496, -2504)
+
+[node name="MazeWall_v207" parent="Root/Maze" index="297" instance=ExtResource("2_6ljh1")]
+position = Vector2(1008, -2632)
+
+[node name="MazeWall_v208" parent="Root/Maze" index="298" instance=ExtResource("2_6ljh1")]
+position = Vector2(1136, -2504)
+
+[node name="MazeWall_v190" parent="Root/Maze" index="299" instance=ExtResource("2_6ljh1")]
+position = Vector2(-144, -2104)
+
+[node name="MazeWall_v191" parent="Root/Maze" index="300" instance=ExtResource("2_6ljh1")]
+position = Vector2(-144, -2232)
+
+[node name="MazeWall_v192" parent="Root/Maze" index="301" instance=ExtResource("2_6ljh1")]
+position = Vector2(240, -2104)
+
+[node name="MazeWall_v193" parent="Root/Maze" index="302" instance=ExtResource("2_6ljh1")]
+position = Vector2(240, -2232)
+
+[node name="MazeWall_v194" parent="Root/Maze" index="303" instance=ExtResource("2_6ljh1")]
+position = Vector2(368, -2232)
+
+[node name="MazeWall_v195" parent="Root/Maze" index="304" instance=ExtResource("2_6ljh1")]
+position = Vector2(368, -2360)
+
+[node name="MazeWall_v169" parent="Root/Maze" index="305" instance=ExtResource("2_6ljh1")]
+position = Vector2(-656, -2104)
+
+[node name="MazeWall_v170" parent="Root/Maze" index="306" instance=ExtResource("2_6ljh1")]
+position = Vector2(-784, -2120)
+
+[node name="MazeWall_v203" parent="Root/Maze" index="307" instance=ExtResource("2_6ljh1")]
+position = Vector2(-912, -2104)
+
+[node name="MazeWall_v171" parent="Root/Maze" index="308" instance=ExtResource("2_6ljh1")]
+position = Vector2(-784, -2248)
+
+[node name="MazeWall_v172" parent="Root/Maze" index="309" instance=ExtResource("2_6ljh1")]
+position = Vector2(-784, -2376)
+
+[node name="MazeWall_v202" parent="Root/Maze" index="310" instance=ExtResource("2_6ljh1")]
+position = Vector2(-912, -2504)
+
+[node name="MazeWall_v173" parent="Root/Maze" index="311" instance=ExtResource("2_6ljh1")]
+position = Vector2(-784, -1992)
+
+[node name="MazeWall_v174" parent="Root/Maze" index="312" instance=ExtResource("2_6ljh1")]
+position = Vector2(-1040, -2120)
+
+[node name="MazeWall_v175" parent="Root/Maze" index="313" instance=ExtResource("2_6ljh1")]
+position = Vector2(-1040, -2248)
+
+[node name="MazeWall_v176" parent="Root/Maze" index="314" instance=ExtResource("2_6ljh1")]
+position = Vector2(-1040, -2376)
+
+[node name="MazeWall_v177" parent="Root/Maze" index="315" instance=ExtResource("2_6ljh1")]
+position = Vector2(-1040, -1992)
+
+[node name="MazeWall_v178" parent="Root/Maze" index="316" instance=ExtResource("2_6ljh1")]
+position = Vector2(-1168, -2248)
+
+[node name="MazeWall_v179" parent="Root/Maze" index="317" instance=ExtResource("2_6ljh1")]
+position = Vector2(-1168, -2376)
+
+[node name="MazeWall_v180" parent="Root/Maze" index="318" instance=ExtResource("2_6ljh1")]
+position = Vector2(-1168, -2504)
+
+[node name="MazeWall_v182" parent="Root/Maze" index="319" instance=ExtResource("2_6ljh1")]
+position = Vector2(-1040, -2504)
+
+[node name="MazeWall_v183" parent="Root/Maze" index="320" instance=ExtResource("2_6ljh1")]
+position = Vector2(-1040, -2632)
+
+[node name="MazeWall_v181" parent="Root/Maze" index="321" instance=ExtResource("2_6ljh1")]
+position = Vector2(-1168, -2120)
+
+[node name="MazeWall_v130" parent="Root/Maze" index="322" instance=ExtResource("2_6ljh1")]
+position = Vector2(-144, -1976)
+
+[node name="MazeWall_v131" parent="Root/Maze" index="323" instance=ExtResource("2_6ljh1")]
+position = Vector2(112, -1976)
+
+[node name="MazeWall_v132" parent="Root/Maze" index="324" instance=ExtResource("2_6ljh1")]
+position = Vector2(368, -1976)
+
+[node name="MazeWall_v124" parent="Root/Maze" index="325" instance=ExtResource("2_6ljh1")]
+position = Vector2(496, -1736)
+
+[node name="MazeWall_v120" parent="Root/Maze" index="326" instance=ExtResource("2_6ljh1")]
+position = Vector2(624, -1592)
+
+[node name="MazeWall_v133" parent="Root/Maze" index="327" instance=ExtResource("2_6ljh1")]
+position = Vector2(624, -1720)
+
+[node name="MazeWall_v134" parent="Root/Maze" index="328" instance=ExtResource("2_6ljh1")]
+position = Vector2(624, -1848)
+
+[node name="MazeWall_v135" parent="Root/Maze" index="329" instance=ExtResource("2_6ljh1")]
+position = Vector2(624, -1976)
+
+[node name="MazeWall_v136" parent="Root/Maze" index="330" instance=ExtResource("2_6ljh1")]
+position = Vector2(624, -2104)
+
+[node name="MazeWall_v199" parent="Root/Maze" index="331" instance=ExtResource("2_6ljh1")]
+position = Vector2(624, -2232)
+
+[node name="MazeWall_v137" parent="Root/Maze" index="332" instance=ExtResource("2_6ljh1")]
+position = Vector2(496, -2104)
+
+[node name="MazeWall_v121" parent="Root/Maze" index="333" instance=ExtResource("2_6ljh1")]
+position = Vector2(752, -1592)
+
+[node name="MazeWall_v50" parent="Root/Maze" index="334" instance=ExtResource("2_6ljh1")]
+position = Vector2(496, -696)
+
+[node name="MazeWall_v53" parent="Root/Maze" index="335" instance=ExtResource("2_6ljh1")]
+position = Vector2(496, -824)
+
+[node name="MazeWall_v54" parent="Root/Maze" index="336" instance=ExtResource("2_6ljh1")]
+position = Vector2(496, -952)
+
+[node name="MazeWall_v55" parent="Root/Maze" index="337" instance=ExtResource("2_6ljh1")]
+position = Vector2(368, -1096)
+
+[node name="MazeWall_v99" parent="Root/Maze" index="338" instance=ExtResource("2_6ljh1")]
+position = Vector2(752, -1224)
+
+[node name="MazeWall_v100" parent="Root/Maze" index="339" instance=ExtResource("2_6ljh1")]
+position = Vector2(880, -952)
+
+[node name="MazeWall_v101" parent="Root/Maze" index="340" instance=ExtResource("2_6ljh1")]
+position = Vector2(880, -1080)
+
+[node name="MazeWall_v40" parent="Root/Maze" index="341" instance=ExtResource("2_6ljh1")]
+position = Vector2(240, -712)
+
+[node name="MazeWall_v56" parent="Root/Maze" index="342" instance=ExtResource("2_6ljh1")]
+position = Vector2(112, -824)
+
+[node name="MazeWall_v61" parent="Root/Maze" index="343" instance=ExtResource("2_6ljh1")]
+position = Vector2(-144, -840)
+
+[node name="MazeWall_v89" parent="Root/Maze" index="344" instance=ExtResource("2_6ljh1")]
+position = Vector2(-16, -968)
+
+[node name="MazeWall_v62" parent="Root/Maze" index="345" instance=ExtResource("2_6ljh1")]
+position = Vector2(-272, -824)
+
+[node name="MazeWall_v64" parent="Root/Maze" index="346" instance=ExtResource("2_6ljh1")]
+position = Vector2(-528, -824)
+
+[node name="MazeWall_v67" parent="Root/Maze" index="347" instance=ExtResource("2_6ljh1")]
+position = Vector2(-656, -952)
+
+[node name="MazeWall_v68" parent="Root/Maze" index="348" instance=ExtResource("2_6ljh1")]
+position = Vector2(-656, -1080)
+
+[node name="MazeWall_v84" parent="Root/Maze" index="349" instance=ExtResource("2_6ljh1")]
+position = Vector2(-528, -1208)
+
+[node name="MazeWall_v69" parent="Root/Maze" index="350" instance=ExtResource("2_6ljh1")]
+position = Vector2(-784, -1096)
+
+[node name="MazeWall_v70" parent="Root/Maze" index="351" instance=ExtResource("2_6ljh1")]
+position = Vector2(-1040, -1080)
+
+[node name="MazeWall_v76" parent="Root/Maze" index="352" instance=ExtResource("2_6ljh1")]
+position = Vector2(-912, -1208)
+
+[node name="MazeWall_v77" parent="Root/Maze" index="353" instance=ExtResource("2_6ljh1")]
+position = Vector2(-912, -1336)
+
+[node name="MazeWall_v82" parent="Root/Maze" index="354" instance=ExtResource("2_6ljh1")]
+position = Vector2(-784, -1336)
+
+[node name="MazeWall_v83" parent="Root/Maze" index="355" instance=ExtResource("2_6ljh1")]
+position = Vector2(-784, -1464)
+
+[node name="MazeWall_v90" parent="Root/Maze" index="356" instance=ExtResource("2_6ljh1")]
+position = Vector2(-656, -1464)
+
+[node name="MazeWall_v91" parent="Root/Maze" index="357" instance=ExtResource("2_6ljh1")]
+position = Vector2(-656, -1592)
+
+[node name="MazeWall_v92" parent="Root/Maze" index="358" instance=ExtResource("2_6ljh1")]
+position = Vector2(-400, -1464)
+
+[node name="MazeWall_v93" parent="Root/Maze" index="359" instance=ExtResource("2_6ljh1")]
+position = Vector2(-272, -1336)
+
+[node name="MazeWall_v94" parent="Root/Maze" index="360" instance=ExtResource("2_6ljh1")]
+position = Vector2(-272, -1464)
+
+[node name="MazeWall_v78" parent="Root/Maze" index="361" instance=ExtResource("2_6ljh1")]
+position = Vector2(-1040, -1464)
+
+[node name="MazeWall_v79" parent="Root/Maze" index="362" instance=ExtResource("2_6ljh1")]
+position = Vector2(-1040, -1592)
+
+[node name="MazeWall_v80" parent="Root/Maze" index="363" instance=ExtResource("2_6ljh1")]
+position = Vector2(-912, -1592)
+
+[node name="MazeWall_v81" parent="Root/Maze" index="364" instance=ExtResource("2_6ljh1")]
+position = Vector2(-912, -1720)
+
+[node name="MazeWall_v72" parent="Root/Maze" index="365" instance=ExtResource("2_6ljh1")]
+position = Vector2(-1168, -1080)
+
+[node name="MazeWall_v73" parent="Root/Maze" index="366" instance=ExtResource("2_6ljh1")]
+position = Vector2(-1168, -1208)
+
+[node name="MazeWall_v74" parent="Root/Maze" index="367" instance=ExtResource("2_6ljh1")]
+position = Vector2(-1040, -1336)
+
+[node name="MazeWall_v75" parent="Root/Maze" index="368" instance=ExtResource("2_6ljh1")]
+position = Vector2(-1168, -1464)
+
+[node name="MazeWall_v71" parent="Root/Maze" index="369" instance=ExtResource("2_6ljh1")]
+position = Vector2(-1040, -952)
+
+[node name="MazeWall_v65" parent="Root/Maze" index="370" instance=ExtResource("2_6ljh1")]
+position = Vector2(-400, -952)
+
+[node name="MazeWall_v66" parent="Root/Maze" index="371" instance=ExtResource("2_6ljh1")]
+position = Vector2(-400, -1096)
+
+[node name="MazeWall_v85" parent="Root/Maze" index="372" instance=ExtResource("2_6ljh1")]
+position = Vector2(-272, -1208)
+
+[node name="MazeWall_v86" parent="Root/Maze" index="373" instance=ExtResource("2_6ljh1")]
+position = Vector2(-144, -1096)
+
+[node name="MazeWall_v87" parent="Root/Maze" index="374" instance=ExtResource("2_6ljh1")]
+position = Vector2(-144, -1224)
+
+[node name="MazeWall_v88" parent="Root/Maze" index="375" instance=ExtResource("2_6ljh1")]
+position = Vector2(-144, -1352)
+
+[node name="MazeWall_v95" parent="Root/Maze" index="376" instance=ExtResource("2_6ljh1")]
+position = Vector2(-16, -1352)
+
+[node name="MazeWall_v96" parent="Root/Maze" index="377" instance=ExtResource("2_6ljh1")]
+position = Vector2(-16, -1480)
+
+[node name="MazeWall_v210" parent="Root/Maze" index="378" instance=ExtResource("2_6ljh1")]
+position = Vector2(-144, -1608)
+
+[node name="MazeWall_v211" parent="Root/Maze" index="379" instance=ExtResource("2_6ljh1")]
+position = Vector2(-272, -1736)
+
+[node name="MazeWall_v63" parent="Root/Maze" index="380" instance=ExtResource("2_6ljh1")]
+position = Vector2(-272, -952)
+
+[node name="MazeWall_v57" parent="Root/Maze" index="381" instance=ExtResource("2_6ljh1")]
+position = Vector2(112, -952)
+
+[node name="MazeWall_v58" parent="Root/Maze" index="382" instance=ExtResource("2_6ljh1")]
+position = Vector2(112, -1080)
+
+[node name="MazeWall_v59" parent="Root/Maze" index="383" instance=ExtResource("2_6ljh1")]
+position = Vector2(112, -1208)
+
+[node name="MazeWall_v97" parent="Root/Maze" index="384" instance=ExtResource("2_6ljh1")]
+position = Vector2(240, -1224)
+
+[node name="MazeWall_v98" parent="Root/Maze" index="385" instance=ExtResource("2_6ljh1")]
+position = Vector2(240, -1352)
+
+[node name="MazeWall_v60" parent="Root/Maze" index="386" instance=ExtResource("2_6ljh1")]
+position = Vector2(112, -1336)
+
+[node name="MazeWall_v37" parent="Root/Maze" index="387" instance=ExtResource("2_6ljh1")]
+position = Vector2(753, -328)
+
+[node name="MazeWall_v2" parent="Root/Maze" index="388" instance=ExtResource("2_6ljh1")]
+position = Vector2(-144, -200)
+
+[node name="MazeWall_v3" parent="Root/Maze" index="389" instance=ExtResource("2_6ljh1")]
+position = Vector2(-528, -72)
+
+[node name="MazeWall_v4" parent="Root/Maze" index="390" instance=ExtResource("2_6ljh1")]
+position = Vector2(-528, -200)
+
+[node name="MazeWall_v11" parent="Root/Maze" index="391" instance=ExtResource("2_6ljh1")]
+position = Vector2(-784, -184)
+
+[node name="MazeWall_v15" parent="Root/Maze" index="392" instance=ExtResource("2_6ljh1")]
+position = Vector2(-784, -328)
+
+[node name="MazeWall_v19" parent="Root/Maze" index="393" instance=ExtResource("2_6ljh1")]
+position = Vector2(-656, -440)
+
+[node name="MazeWall_v20" parent="Root/Maze" index="394" instance=ExtResource("2_6ljh1")]
+position = Vector2(-912, -584)
+
+[node name="MazeWall_v16" parent="Root/Maze" index="395" instance=ExtResource("2_6ljh1")]
+position = Vector2(-912, -328)
+
+[node name="MazeWall_v17" parent="Root/Maze" index="396" instance=ExtResource("2_6ljh1")]
+position = Vector2(-1040, -456)
+
+[node name="MazeWall_v18" parent="Root/Maze" index="397" instance=ExtResource("2_6ljh1")]
+position = Vector2(-1040, -584)
+
+[node name="MazeWall_v41" parent="Root/Maze" index="398" instance=ExtResource("2_6ljh1")]
+position = Vector2(-1040, -712)
+
+[node name="MazeWall_v42" parent="Root/Maze" index="399" instance=ExtResource("2_6ljh1")]
+position = Vector2(-1168, -712)
+
+[node name="MazeWall_v44" parent="Root/Maze" index="400" instance=ExtResource("2_6ljh1")]
+position = Vector2(-1168, -840)
+
+[node name="MazeWall_v45" parent="Root/Maze" index="401" instance=ExtResource("2_6ljh1")]
+position = Vector2(-912, -840)
+
+[node name="MazeWall_v46" parent="Root/Maze" index="402" instance=ExtResource("2_6ljh1")]
+position = Vector2(-784, -712)
+
+[node name="MazeWall_v47" parent="Root/Maze" index="403" instance=ExtResource("2_6ljh1")]
+position = Vector2(-656, -696)
+
+[node name="MazeWall_v43" parent="Root/Maze" index="404" instance=ExtResource("2_6ljh1")]
+position = Vector2(-1168, -584)
+
+[node name="MazeWall_v12" parent="Root/Maze" index="405" instance=ExtResource("2_6ljh1")]
+position = Vector2(-912, -72)
+
+[node name="MazeWall_v13" parent="Root/Maze" index="406" instance=ExtResource("2_6ljh1")]
+position = Vector2(-1168, -200)
+
+[node name="MazeWall_v14" parent="Root/Maze" index="407" instance=ExtResource("2_6ljh1")]
+position = Vector2(-1167, -328)
+
+[node name="Borders" type="StaticBody2D" parent="Root" index="2"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Root/Borders" index="0"]
+polygon = PackedVector2Array(720, -8, -720, -8, -720, -2880, 712, -2880, 712, -2792, -632, -2792, -632, -96, 720, -96)
+
+[node name="Borders2" type="StaticBody2D" parent="Root" index="3"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Root/Borders2" index="0"]
+polygon = PackedVector2Array(808, -8, 2248, -8, 2248, -2880, 816, -2880, 816, -2792, 2160, -2792, 2160, -96, 808, -96)
+
+[node name="LavaV2_1" parent="Root" index="4" instance=ExtResource("5_w20ss")]
+position = Vector2(767, -320)
+
+[node name="LavaV2_2" parent="Root" index="5" instance=ExtResource("5_w20ss")]
+position = Vector2(1400, -857)
+
+[node name="LavaV2_3" parent="Root" index="6" instance=ExtResource("5_w20ss")]
+position = Vector2(504, -1040)
+
+[node name="LavaV2_4" parent="Root" index="7" instance=ExtResource("5_w20ss")]
+position = Vector2(400, -1488)
+
+[node name="LavaV2_5" parent="Root" index="8" instance=ExtResource("5_w20ss")]
+position = Vector2(767, -1576)
+
+[node name="LavaV2_7" parent="Root" index="9" instance=ExtResource("5_w20ss")]
+position = Vector2(496, -1944)
+
+[node name="LavaV2_8" parent="Root" index="10" instance=ExtResource("5_w20ss")]
+position = Vector2(767, -2480)
+
+[node name="LavaV2_6" parent="Root" index="11" instance=ExtResource("5_w20ss")]
+position = Vector2(1392, -1312)
+
+[node name="Skeleton swordman" parent="Root" index="12" instance=ExtResource("6_k5uqe")]
+position = Vector2(400, -408)
+rotation = 0.785398
+
+[node name="Skeleton swordman3" parent="Root" index="13" instance=ExtResource("6_k5uqe")]
+position = Vector2(1292, -808)
+rotation = -0.785398
+
+[node name="Skeleton swordman4" parent="Root" index="14" instance=ExtResource("6_k5uqe")]
+position = Vector2(1144, -1432)
+rotation = 2.35619
+
+[node name="Skeleton swordman5" parent="Root" index="15" instance=ExtResource("6_k5uqe")]
+position = Vector2(880, -1064)
+rotation = 3.14159
+
+[node name="Skeleton swordman6" parent="Root" index="16" instance=ExtResource("6_k5uqe")]
+position = Vector2(264, -1056)
+
+[node name="Skeleton swordman7" parent="Root" index="17" instance=ExtResource("6_k5uqe")]
+position = Vector2(272, -1576)
+rotation = -0.785398
+
+[node name="Skeleton swordman8" parent="Root" index="18" instance=ExtResource("6_k5uqe")]
+position = Vector2(384, -2072)
+rotation = 0.785398
+
+[node name="Skeleton swordman9" parent="Root" index="19" instance=ExtResource("6_k5uqe")]
+position = Vector2(520, -2592)
+rotation = 0.785398
+
+[node name="Skeleton swordman10" parent="Root" index="20" instance=ExtResource("6_k5uqe")]
+position = Vector2(888, -2592)
+rotation = 2.35619
+
+[node name="Skeleton swordman2" parent="Root" index="21" instance=ExtResource("6_k5uqe")]
+position = Vector2(1264, -304)
+rotation = 3.92699

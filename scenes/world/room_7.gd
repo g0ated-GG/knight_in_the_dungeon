@@ -9,5 +9,9 @@ func _ready() -> void:
 func secret() -> void:
 	var secret_solved : bool = $Root/Lamp.enabled and $Root/Lamp2.enabled and $Root/Lamp3.enabled \
 	and not $Root/Lamp4.enabled
+	if secret_solved:
+		$Root/Lamp.queue_free()
+		$Root/Lamp2.queue_free()
+		$Root/Lamp3.queue_free()
+		$Root/Lamp4.queue_free()
 	$Root/Secret.set_secret_state(secret_solved)
-	$Root/Lamp4/CollisionShape2D.disabled = secret_solved

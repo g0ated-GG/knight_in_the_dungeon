@@ -5,11 +5,13 @@ extends GenericEnemy
 @export var caster : Node2D
 @export var speed_min : int = 100
 @export var speed_max : int = 150
+@export var life_time : float = 7.0
 
 func _ready() -> void:
 	$ExplosionArea2D.body_entered.connect(ignition)
 	death.connect(explosion)
 	speed = randi_range(speed_min, speed_max)
+	$LifeTimer.start(life_time)
 
 func ignition(target) -> void:
 	if alive and target != self and target != caster:

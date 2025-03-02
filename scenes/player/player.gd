@@ -11,6 +11,7 @@ extends CharacterBody2D
 		hp_max = value
 		hp_changed.emit()
 @export var attack_damage : int = 30
+@export var alive : bool = true
 
 @export var god_mode : bool = false
 
@@ -23,12 +24,15 @@ func _ready() -> void:
 	$SuccessDodgeArea.body_entered.connect(success_dodge_reward)
 
 func hit(target : Node2D):
-	target.damage(attack_damage)
+	if target is not Arrow:
+		target.damage(attack_damage)
 
 func success_dodge_reward(_target):
 	heal(5)
 
 func _physics_process(_delta: float) -> void:
+	if hp == 0:
+		return
 	var direction := Input.get_vector('ui_left', 'ui_right', 'ui_up', 'ui_down')
 	if direction:
 		velocity = direction * speed
@@ -48,10 +52,12 @@ func _physics_process(_delta: float) -> void:
 func damage(points : int):
 	hp = clamp(hp - points, 0, hp_max)
 	hp_changed.emit()
-	if hp == 0:
+	if hp == 0 and alive:
 		if god_mode:
 			hp = hp_max
 		else:
+			$CollisionShape2D.set_deferred('disabled', true)
+			alive = false
 			death.emit()
 
 func heal(points : int):

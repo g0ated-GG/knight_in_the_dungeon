@@ -1,0 +1,54 @@
+[gd_scene load_steps=17 format=3 uid="uid://bblx5r5e0rrey"]
+
+[ext_resource type="PackedScene" uid="uid://6drp3l3umlqc" path="res://scenes/world/level_map.tscn" id="1_uvr00"]
+[ext_resource type="PackedScene" uid="uid://kelsbpxb53af" path="res://scenes/world/room_1.tscn" id="2_iosm5"]
+[ext_resource type="PackedScene" uid="uid://b1u8k3rmcsf28" path="res://scenes/world/room_2.tscn" id="3_5idn2"]
+[ext_resource type="PackedScene" uid="uid://dob4a1su2yp3s" path="res://scenes/world/room_3.tscn" id="4_1mhui"]
+[ext_resource type="PackedScene" uid="uid://c6r5es566f0cx" path="res://scenes/world/room_4.tscn" id="5_d074y"]
+[ext_resource type="PackedScene" uid="uid://quhjh64m8w1g" path="res://scenes/world/room_5.tscn" id="6_dtymi"]
+[ext_resource type="PackedScene" uid="uid://od2lswh7vi8m" path="res://scenes/world/hall_1.tscn" id="7_fbpoy"]
+[ext_resource type="PackedScene" uid="uid://cdsxsk7mutsql" path="res://scenes/world/room_6.tscn" id="8_mssm6"]
+[ext_resource type="PackedScene" uid="uid://bxgcrqrkp3g5k" path="res://scenes/world/room_7.tscn" id="9_d4ca2"]
+[ext_resource type="PackedScene" uid="uid://urjxw5pimmi5" path="res://scenes/world/room_8.tscn" id="10_5cp4g"]
+[ext_resource type="PackedScene" uid="uid://d1h4pxcbhimb2" path="res://scenes/world/room_9.tscn" id="11_lvo66"]
+[ext_resource type="PackedScene" uid="uid://cuyajnvkum6xy" path="res://scenes/world/hall_2.tscn" id="12_654vc"]
+[ext_resource type="PackedScene" uid="uid://b1jebc7puxbus" path="res://scenes/world/room_10.tscn" id="13_b6xce"]
+[ext_resource type="PackedScene" uid="uid://bd540h01xtn3w" path="res://scenes/world/room_11.tscn" id="14_vpck5"]
+[ext_resource type="PackedScene" uid="uid://ykhwcptdcl7v" path="res://scenes/world/room_12.tscn" id="15_i8hnq"]
+[ext_resource type="PackedScene" uid="uid://dcp7dodgvnmor" path="res://scenes/player/hud.tscn" id="16_rlntw"]
+
+[node name="World" type="Node2D"]
+
+[node name="LevelMap" parent="." instance=ExtResource("1_uvr00")]
+
+[node name="Room1" parent="." instance=ExtResource("2_iosm5")]
+
+[node name="Room2" parent="." instance=ExtResource("3_5idn2")]
+
+[node name="Room3" parent="." instance=ExtResource("4_1mhui")]
+
+[node name="Room4" parent="." instance=ExtResource("5_d074y")]
+
+[node name="Room5" parent="." instance=ExtResource("6_dtymi")]
+
+[node name="Hall1" parent="." instance=ExtResource("7_fbpoy")]
+
+[node name="Room6" parent="." instance=ExtResource("8_mssm6")]
+
+[node name="Room7" parent="." instance=ExtResource("9_d4ca2")]
+
+[node name="Room8" parent="." instance=ExtResource("10_5cp4g")]
+
+[node name="Room9" parent="." instance=ExtResource("11_lvo66")]
+
+[node name="Hall2" parent="." instance=ExtResource("12_654vc")]
+
+[node name="Room10" parent="." instance=ExtResource("13_b6xce")]
+
+[node name="Room11" parent="." instance=ExtResource("14_vpck5")]
+
+[node name="Room12" parent="." instance=ExtResource("15_i8hnq")]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="HUD" parent="CanvasLayer" instance=ExtResource("16_rlntw")]

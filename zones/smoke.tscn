@@ -1,0 +1,46 @@
+[gd_scene load_steps=7 format=3 uid="uid://cjvotlics32e6"]
+
+[ext_resource type="Texture2D" uid="uid://cf880tqyh4lsu" path="res://img/world_sprites.svg" id="1_8fm4s"]
+[ext_resource type="Script" path="res://zones/smoke.gd" id="2_i6nge"]
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_gd6ir"]
+particle_flag_disable_z = true
+emission_shape = 1
+emission_sphere_radius = 200.0
+orbit_velocity_min = 9.49949e-08
+orbit_velocity_max = 0.125
+radial_velocity_min = 350.0
+radial_velocity_max = 350.0
+gravity = Vector3(0, 0, 0)
+scale_min = 0.5
+scale_max = 0.6
+color = Color(0.788235, 0, 1, 1)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rmmik"]
+atlas = ExtResource("1_8fm4s")
+region = Rect2(2845, 1145, 1120, 1120)
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_qfvj5"]
+particle_flag_disable_z = true
+emission_shape = 1
+emission_sphere_radius = 200.0
+angular_velocity_min = -1.60933e-05
+angular_velocity_max = 50.0
+radial_velocity_min = 300.0
+radial_velocity_max = 300.0
+gravity = Vector3(0, 0, 0)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n30up"]
+atlas = ExtResource("1_8fm4s")
+region = Rect2(2197, 3066, 16, 16)
+
+[node name="Smoke" type="GPUParticles2D"]
+amount = 50
+process_material = SubResource("ParticleProcessMaterial_gd6ir")
+texture = SubResource("AtlasTexture_rmmik")
+script = ExtResource("2_i6nge")
+
+[node name="Sparkles" type="GPUParticles2D" parent="."]
+amount = 20
+process_material = SubResource("ParticleProcessMaterial_qfvj5")
+texture = SubResource("AtlasTexture_n30up")

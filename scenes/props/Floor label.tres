@@ -1,0 +1,9 @@
+[gd_resource type="LabelSettings" load_steps=2 format=3 uid="uid://4qrxnohtkh4n"]
+
+[ext_resource type="FontFile" uid="uid://mhmhy4xnwhwe" path="res://fonts/liberation-fonts-ttf-2.1.5/LiberationSerif-Bold.ttf" id="1_2sexd"]
+
+[resource]
+font = ExtResource("1_2sexd")
+font_size = 32
+shadow_size = 5
+shadow_color = Color(0, 0, 0, 0.623529)

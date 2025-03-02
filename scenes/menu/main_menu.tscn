@@ -76,7 +76,7 @@ text = "Продолжить"
 
 [node name="PlayButton" type="Button" parent="CanvasLayer/Buttons"]
 layout_mode = 2
-text = "Играть"
+text = "Новая игра"
 
 [node name="ExitButton" type="Button" parent="CanvasLayer/Buttons"]
 layout_mode = 2

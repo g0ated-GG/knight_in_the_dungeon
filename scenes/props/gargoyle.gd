@@ -8,6 +8,9 @@ enum BulletType { ARROW, FIREBALL }
 @export var bulletType : BulletType
 @export var shooting : bool = false
 @export var bullet_speed : int = 200
+@export var bullet_lifetime : float = 7.0
+
+signal state_changed
 
 func _ready() -> void:
 	$SwitchArea2D.body_entered.connect(switch)
@@ -20,6 +23,7 @@ func switch(_target):
 	$AnimationPlayer.play('RESET')
 	if not shooting:
 		$AnimationPlayer.play('sleep')
+	state_changed.emit(null)
 
 # Function for animations
 func shoot():
@@ -35,6 +39,7 @@ func shoot():
 		bullet.caster = self
 		bullet.speed_min = bullet_speed
 		bullet.speed_max = bullet_speed
+	bullet.life_time = bullet_lifetime
 	get_parent().add_child(bullet)
 	bullet.global_position = global_position + Vector2(64, 0).rotated(global_rotation)
 	bullet.global_rotation = global_rotation

@@ -442,10 +442,10 @@ _data = {
 radius = 90.0
 
 [node name="Player" type="CharacterBody2D"]
+z_index = 5
 collision_layer = 3
 motion_mode = 1
 script = ExtResource("1_07msp")
-god_mode = true
 
 [node name="Body" type="Sprite2D" parent="."]
 z_index = 2

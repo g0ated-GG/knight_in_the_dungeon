@@ -1,29 +1,40 @@
-[gd_scene load_steps=4 format=3 uid="uid://quhjh64m8w1g"]
+[gd_scene load_steps=5 format=3 uid="uid://quhjh64m8w1g"]
 
 [ext_resource type="PackedScene" uid="uid://6drp3l3umlqc" path="res://scenes/world/level_map.tscn" id="1_1hhby"]
 [ext_resource type="PackedScene" uid="uid://c2vvc45tkhr2o" path="res://zones/checkpoint.tscn" id="2_asty5"]
 [ext_resource type="PackedScene" uid="uid://dah36w80s8ho6" path="res://scenes/props/lamp.tscn" id="3_leb6s"]
+[ext_resource type="PackedScene" uid="uid://b1frxxj7dbhyg" path="res://scenes/props/floor_label.tscn" id="4_npubq"]
 
 [node name="Room5" instance=ExtResource("1_1hhby")]
+
+[node name="TileMapLayer" parent="." index="0"]
+visible = false
 
 [node name="Root" type="Node2D" parent="." index="1"]
 position = Vector2(1352, -3784)
 
-[node name="Borders" type="StaticBody2D" parent="Root" index="0"]
+[node name="Floor label" parent="Root" index="0" instance=ExtResource("4_npubq")]
+offset_left = 176.0
+offset_top = -280.0
+offset_right = 640.0
+offset_bottom = -166.0
+text = "Своевременный отдых приводит в гармонию тело и разум."
+
+[node name="Borders" type="StaticBody2D" parent="Root" index="1"]
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Root/Borders" index="0"]
 polygon = PackedVector2Array(264, 0, 0, 0, 0, -264, 88, -264, 88, -88, 264, -88)
 
-[node name="Borders2" type="StaticBody2D" parent="Root" index="1"]
+[node name="Borders2" type="StaticBody2D" parent="Root" index="2"]
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Root/Borders2" index="0"]
 polygon = PackedVector2Array(88, -536, 88, -720, 720, -720, 720, -88, 536, -88, 536, 8, 808, 8, 808, -808, 0, -808, 0, -536)
 
-[node name="Checkpoint" parent="Root" index="2" instance=ExtResource("2_asty5")]
+[node name="Checkpoint" parent="Root" index="3" instance=ExtResource("2_asty5")]
 position = Vector2(410, -376)
 
-[node name="Lamp" parent="Root" index="3" instance=ExtResource("3_leb6s")]
+[node name="Lamp" parent="Root" index="4" instance=ExtResource("3_leb6s")]
 position = Vector2(120, -240)
 
-[node name="Lamp2" parent="Root" index="4" instance=ExtResource("3_leb6s")]
+[node name="Lamp2" parent="Root" index="5" instance=ExtResource("3_leb6s")]
 position = Vector2(120, -560)

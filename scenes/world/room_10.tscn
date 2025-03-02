@@ -1,0 +1,41 @@
+[gd_scene load_steps=5 format=3 uid="uid://b1jebc7puxbus"]
+
+[ext_resource type="PackedScene" uid="uid://6drp3l3umlqc" path="res://scenes/world/level_map.tscn" id="1_ws3l3"]
+[ext_resource type="PackedScene" uid="uid://b1frxxj7dbhyg" path="res://scenes/props/floor_label.tscn" id="2_blh80"]
+[ext_resource type="PackedScene" uid="uid://c2vvc45tkhr2o" path="res://zones/checkpoint.tscn" id="2_d5x4r"]
+[ext_resource type="PackedScene" uid="uid://dah36w80s8ho6" path="res://scenes/props/lamp.tscn" id="3_ipwpr"]
+
+[node name="Room10" instance=ExtResource("1_ws3l3")]
+
+[node name="TileMapLayer" parent="." index="0"]
+visible = false
+
+[node name="Root" type="Node2D" parent="." index="1"]
+position = Vector2(176.28, -12511.3)
+
+[node name="Floor label" parent="Root" index="0" instance=ExtResource("2_blh80")]
+offset_left = -80.0
+offset_top = -961.0
+offset_right = 536.0
+offset_bottom = -905.0
+text = "Испытание ловкости и ума."
+
+[node name="Borders" type="StaticBody2D" parent="Root" index="1"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Root/Borders" index="0"]
+polygon = PackedVector2Array(7.71994, -0.734375, 7.71994, -272.734, -176.28, -272.734, -176.28, -1088.73, 87.7199, -1088.73, 87.7199, -1352.73, 183.72, -1352.73, 183.72, -1080.73, 95.7199, -1080.73, 95.7199, -992.734, -88.2801, -992.734, -88.2801, -360.734, 95.7199, -360.734, 95.7199, -0.734375)
+
+[node name="Borders2" type="StaticBody2D" parent="Root" index="2"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Root/Borders2" index="0"]
+polygon = PackedVector2Array(367.72, -0.734375, 367.72, -360.734, 543.72, -360.734, 543.72, -992.734, 367.72, -992.734, 367.72, -1080.73, 271.72, -1080.73, 271.72, -1352.73, 367.72, -1352.73, 367.72, -1088.73, 639.72, -1088.73, 639.72, -896.734, 631.72, -896.734, 631.72, -272.734, 455.72, -272.734, 455.72, -0.734375)
+
+[node name="Checkpoint" parent="Root" index="3" instance=ExtResource("2_d5x4r")]
+position = Vector2(239.72, -672.734)
+number = 4
+
+[node name="Lamp" parent="Root" index="4" instance=ExtResource("3_ipwpr")]
+position = Vector2(143.72, -1032.73)
+
+[node name="Lamp2" parent="Root" index="5" instance=ExtResource("3_ipwpr")]
+position = Vector2(319.72, -1032.73)

@@ -1,0 +1,33 @@
+[gd_scene load_steps=4 format=3 uid="uid://d1h4pxcbhimb2"]
+
+[ext_resource type="PackedScene" uid="uid://6drp3l3umlqc" path="res://scenes/world/level_map.tscn" id="1_ur263"]
+[ext_resource type="PackedScene" uid="uid://c2vvc45tkhr2o" path="res://zones/checkpoint.tscn" id="2_4y7wi"]
+[ext_resource type="PackedScene" uid="uid://dah36w80s8ho6" path="res://scenes/props/lamp.tscn" id="3_iu8tk"]
+
+[node name="Room9" instance=ExtResource("1_ur263")]
+
+[node name="TileMapLayer" parent="." index="0"]
+visible = false
+
+[node name="Root" type="Node2D" parent="." index="1"]
+position = Vector2(-536, -9632)
+
+[node name="Borders" type="StaticBody2D" parent="Root" index="0"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Root/Borders" index="0"]
+polygon = PackedVector2Array(0, -264, -96, -264, -96, -88, -728, -88, -728, -264, -1176, -264, -1176, -176, -816, -176, -816, 8, 0, 8)
+
+[node name="Borders2" type="StaticBody2D" parent="Root" index="1"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Root/Borders2" index="0"]
+polygon = PackedVector2Array(-96, -536, -96, -720, -728, -720, -728, -536, -1176, -536, -1176, -632, -816, -632, -816, -808, 0, -808, 0, -536)
+
+[node name="Checkpoint" parent="Root" index="2" instance=ExtResource("2_4y7wi")]
+position = Vector2(-398, -406)
+number = 3
+
+[node name="Lamp" parent="Root" index="3" instance=ExtResource("3_iu8tk")]
+position = Vector2(-688, -240)
+
+[node name="Lamp2" parent="Root" index="4" instance=ExtResource("3_iu8tk")]
+position = Vector2(-688, -560)

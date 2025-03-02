@@ -7,7 +7,8 @@ func _ready() -> void:
 	$Hand/Sword.body_entered.connect(hit)
 
 func hit(target : Node2D):
-	target.damage(attack_damage)
+	if target is not Arrow:
+		target.damage(attack_damage)
 
 func attack() -> void:
 	if not $SwordAnimationPlayer.is_playing():

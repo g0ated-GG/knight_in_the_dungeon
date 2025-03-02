@@ -1,0 +1,22 @@
+[gd_scene load_steps=5 format=3 uid="uid://c7qs84fmomwum"]
+
+[ext_resource type="PackedScene" uid="uid://br4wnt71vay1" path="res://scenes/props/maze_wall_v.tscn" id="1_bh0io"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_wbp0v"]
+load_path = "res://.godot/imported/world_sprites.svg-86afb6dc52fe0dcc8a43c1f0b2fdf631.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uwlnv"]
+atlas = SubResource("CompressedTexture2D_wbp0v")
+region = Rect2(2360, 1765, 395, 45)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_holqq"]
+size = Vector2(128, 16)
+
+[node name="MazeWall_h" instance=ExtResource("1_bh0io")]
+
+[node name="Sprite2D" parent="." index="0"]
+position = Vector2(1.90735e-06, -3.03745e-06)
+texture = SubResource("AtlasTexture_uwlnv")
+
+[node name="CollisionShape2D" parent="." index="1"]
+shape = SubResource("RectangleShape2D_holqq")

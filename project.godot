@@ -16,7 +16,7 @@ warnings/name="Рыцарь в под"
 
 config/name="Рыцарь в подземелье"
 config/description="Игра на КОД23 \"Мал, да удал\" https://gamin.me/compos/kod/23"
-run/main_scene="res://scenes/test/test_scene.tscn"
+run/main_scene="res://scenes/menu/main_menu.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
 config/icon="res://icon.svg"
 

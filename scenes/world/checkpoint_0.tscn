@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://mma7suk4y0iv"]
+
+[ext_resource type="PackedScene" uid="uid://bblx5r5e0rrey" path="res://scenes/world/world.tscn" id="1_awswa"]
+[ext_resource type="PackedScene" uid="uid://cbv8kd8au3ic" path="res://scenes/player/player.tscn" id="2_xfydc"]
+
+[node name="Checkpoint0" instance=ExtResource("1_awswa")]
+
+[node name="HUD" parent="CanvasLayer" index="0" node_paths=PackedStringArray("player")]
+player = NodePath("../../Player")
+
+[node name="Player" parent="." index="16" instance=ExtResource("2_xfydc")]
+position = Vector2(576, 320)

@@ -13,6 +13,7 @@ var checkpoint : int = 0 :
 		save('checkpoint', checkpoint)
 		if old_checkpoint != checkpoint:
 			new_checkpoint.emit()
+var final_checkpoint : int = 6
 
 func save(param_name : String, value) -> void:
 	var config = ConfigFile.new()

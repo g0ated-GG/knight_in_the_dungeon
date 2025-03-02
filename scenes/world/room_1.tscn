@@ -1,25 +1,37 @@
-[gd_scene load_steps=4 format=3 uid="uid://kelsbpxb53af"]
+[gd_scene load_steps=5 format=3 uid="uid://kelsbpxb53af"]
 
 [ext_resource type="PackedScene" uid="uid://6drp3l3umlqc" path="res://scenes/world/level_map.tscn" id="1_wkym7"]
 [ext_resource type="PackedScene" uid="uid://dah36w80s8ho6" path="res://scenes/props/lamp.tscn" id="2_4t1cq"]
 [ext_resource type="PackedScene" uid="uid://c2vvc45tkhr2o" path="res://zones/checkpoint.tscn" id="3_0ponu"]
+[ext_resource type="PackedScene" uid="uid://b1frxxj7dbhyg" path="res://scenes/props/floor_label.tscn" id="4_n1l0x"]
 
 [node name="Room1" instance=ExtResource("1_wkym7")]
 
-[node name="Borders" type="StaticBody2D" parent="." index="1"]
+[node name="TileMapLayer" parent="." index="0"]
+visible = false
+
+[node name="Floor label" parent="." index="1" instance=ExtResource("4_n1l0x")]
+offset_left = 856.0
+offset_top = 280.0
+offset_right = 1208.0
+offset_bottom = 355.0
+text = "Свет факелов укажет Вам путь."
+
+[node name="Borders" type="StaticBody2D" parent="." index="2"]
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Borders" index="0"]
 polygon = PackedVector2Array(0, 0, 1168, 0, 1168, 88, 1528, 88, 1528, -272, 1616, -272, 1616, 176, 1080, 176, 1080, 88, 88, 88, 88, 544, 1080, 544, 1080, 448, 1896, 448, 1896, -272, 1984, -272, 1984, 536, 1168, 536, 1168, 632, 0, 632, 0, 0)
 
-[node name="Lamp" parent="." index="2" instance=ExtResource("2_4t1cq")]
+[node name="Lamp" parent="." index="3" instance=ExtResource("2_4t1cq")]
 position = Vector2(1028, 136)
 
-[node name="Lamp2" parent="." index="3" instance=ExtResource("2_4t1cq")]
+[node name="Lamp2" parent="." index="4" instance=ExtResource("2_4t1cq")]
 position = Vector2(1032, 496)
 
-[node name="Lamp3" parent="." index="4" instance=ExtResource("2_4t1cq")]
+[node name="Lamp3" parent="." index="5" instance=ExtResource("2_4t1cq")]
 position = Vector2(1848, 408)
 
-[node name="Checkpoint" parent="." index="5" instance=ExtResource("3_0ponu")]
+[node name="Checkpoint" parent="." index="6" instance=ExtResource("3_0ponu")]
 position = Vector2(256, 320)
 number = 0
+enabled = true

@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://bxgcrqrkp3g5k"]
+[gd_scene load_steps=16 format=3 uid="uid://bxgcrqrkp3g5k"]
 
 [ext_resource type="PackedScene" uid="uid://6drp3l3umlqc" path="res://scenes/world/level_map.tscn" id="1_71fsr"]
 [ext_resource type="Script" path="res://scenes/world/room_7.gd" id="2_4yy0p"]
@@ -10,6 +10,10 @@
 [ext_resource type="PackedScene" uid="uid://blfx4gmc8o7dg" path="res://scenes/enemy/skeleton_archer.tscn" id="7_pfkgs"]
 [ext_resource type="PackedScene" uid="uid://bfbjy6cbe4qw5" path="res://scenes/enemy/skeleton_swordman.tscn" id="8_slyqm"]
 [ext_resource type="PackedScene" uid="uid://cv75142x3wp8q" path="res://zones/secret.tscn" id="10_7ob3f"]
+[ext_resource type="PackedScene" uid="uid://cjvotlics32e6" path="res://zones/smoke.tscn" id="11_drp6o"]
+[ext_resource type="PackedScene" uid="uid://c04ccvp2uwfx2" path="res://zones/hider.tscn" id="12_d2c4w"]
+[ext_resource type="PackedScene" uid="uid://b1frxxj7dbhyg" path="res://scenes/props/floor_label.tscn" id="12_wndvu"]
+[ext_resource type="PackedScene" uid="uid://c2vvc45tkhr2o" path="res://zones/checkpoint.tscn" id="13_av28x"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4oc6y"]
 size = Vector2(257.534, 20)
@@ -17,181 +21,260 @@ size = Vector2(257.534, 20)
 [node name="Room7" instance=ExtResource("1_71fsr")]
 script = ExtResource("2_4yy0p")
 
+[node name="TileMapLayer" parent="." index="0"]
+visible = false
+
 [node name="Root" type="Node2D" parent="." index="1"]
 position = Vector2(-1440, -5488)
 
-[node name="Borders" type="StaticBody2D" parent="Root" index="0"]
+[node name="Floor label" parent="Root" index="0" instance=ExtResource("12_wndvu")]
+offset_left = 1184.0
+offset_top = -1680.0
+offset_right = 1696.0
+offset_bottom = -1552.0
+text = "Кажется, Ваша награда рада вас видеть!"
+
+[node name="Floor label2" parent="Root" index="1" instance=ExtResource("12_wndvu")]
+visible = false
+offset_left = 840.0
+offset_top = -1088.0
+offset_right = 1197.0
+offset_bottom = -1029.0
+rotation = 0.785397
+text = "Не выпускай его!"
+
+[node name="Floor label5" parent="Root" index="2" instance=ExtResource("12_wndvu")]
+visible = false
+offset_left = 1829.0
+offset_top = -2080.0
+offset_right = 2186.0
+offset_bottom = -2021.0
+rotation = 0.785397
+text = "Выпусти его немедленно!"
+
+[node name="Floor label3" parent="Root" index="3" instance=ExtResource("12_wndvu")]
+visible = false
+offset_left = 1776.0
+offset_top = -832.0
+offset_right = 2164.0
+offset_bottom = -773.0
+rotation = -0.785398
+text = "Не смотри на него!"
+
+[node name="Floor label4" parent="Root" index="4" instance=ExtResource("12_wndvu")]
+visible = false
+offset_left = 792.0
+offset_top = -1824.0
+offset_right = 1180.0
+offset_bottom = -1765.0
+rotation = -0.785398
+text = "Не верь ему!"
+
+[node name="Borders" type="StaticBody2D" parent="Root" index="5"]
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Root/Borders" index="0"]
 polygon = PackedVector2Array(360, 0, 0, 0, 0, -992, 272, -992, 272, -1896, 0, -1896, 0, -2880, 992, -2880, 992, -2608, 1888, -2608, 1888, -2880, 2160, -2880, 2160, -3336, 2248, -3336, 2248, -2792, 1976, -2792, 1976, -2520, 904, -2520, 904, -2792, 88, -2792, 88, -1976, 360, -1976, 360, -904, 88, -904, 88, -88, 360, -88)
 
-[node name="Borders2" type="StaticBody2D" parent="Root" index="1"]
+[node name="Borders2" type="StaticBody2D" parent="Root" index="6"]
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Root/Borders2" index="0"]
 polygon = PackedVector2Array(632, 0, 992, 0, 992, -272, 1888, -272, 1888, 0, 2880, 0, 2880, -992, 2608, -992, 2608, -1896, 2880, -1896, 2880, -2880, 2608, -2880, 2608, -3336, 2520, -3336, 2520, -2792, 2792, -2792, 2792, -1976, 2520, -1976, 2520, -904, 2792, -904, 2792, -88, 1976, -88, 1976, -360, 904, -360, 904, -88, 632, -88)
 
-[node name="Borders3" type="StaticBody2D" parent="Root" index="2"]
+[node name="Borders3" type="StaticBody2D" parent="Root" index="7"]
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Root/Borders3" index="0"]
 polygon = PackedVector2Array(632, -904, 632, -1976, 720, -1976, 720, -1888, 808, -1888, 808, -1800, 896, -1800, 896, -1712, 992, -1712, 992, -1176, 896, -1176, 896, -1080, 808, -1080, 808, -992, 720, -992, 720, -904)
 
-[node name="Borders4" type="StaticBody2D" parent="Root" index="3"]
+[node name="Borders4" type="StaticBody2D" parent="Root" index="8"]
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Root/Borders4" index="0"]
 position = Vector2(0, -2880)
 rotation = 1.5708
 polygon = PackedVector2Array(632, -904, 632, -1976, 720, -1976, 720, -1888, 808, -1888, 808, -1800, 896, -1800, 896, -1712, 992, -1712, 992, -1176, 896, -1176, 896, -1080, 808, -1080, 808, -992, 720, -992, 720, -904)
 
-[node name="Borders5" type="StaticBody2D" parent="Root" index="4"]
+[node name="Borders5" type="StaticBody2D" parent="Root" index="9"]
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Root/Borders5" index="0"]
 position = Vector2(2880, -2880)
 rotation = 3.14159
 polygon = PackedVector2Array(632, -904, 632, -1976, 720, -1976, 720, -1888, 808, -1888, 808, -1800, 896, -1800, 896, -1712, 992, -1712, 992, -1176, 896, -1176, 896, -1080, 808, -1080, 808, -992, 720, -992, 720, -904)
 
-[node name="Borders6" type="StaticBody2D" parent="Root" index="5"]
+[node name="Borders6" type="StaticBody2D" parent="Root" index="10"]
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Root/Borders6" index="0"]
 position = Vector2(2880, 0)
 rotation = -1.5708
 polygon = PackedVector2Array(632, -904, 632, -1976, 720, -1976, 720, -1888, 808, -1888, 808, -1800, 896, -1800, 896, -1712, 992, -1712, 992, -1176, 896, -1176, 896, -1080, 808, -1080, 808, -992, 720, -992, 720, -904)
 
-[node name="LavaV2_x3_1" parent="Root" index="6" instance=ExtResource("2_bn1rk")]
+[node name="LavaV2_x3_1" parent="Root" index="11" instance=ExtResource("2_bn1rk")]
 position = Vector2(632, -680)
 
-[node name="LavaV2_1" parent="Root" index="7" instance=ExtResource("3_byj3x")]
+[node name="LavaV2_1" parent="Root" index="12" instance=ExtResource("3_byj3x")]
 position = Vector2(672, -592)
 
-[node name="LavaV2_x3_2" parent="Root" index="8" instance=ExtResource("2_bn1rk")]
+[node name="LavaV2_x3_2" parent="Root" index="13" instance=ExtResource("2_bn1rk")]
 position = Vector2(2248, -672)
 
-[node name="LavaV2_2" parent="Root" index="9" instance=ExtResource("3_byj3x")]
+[node name="LavaV2_2" parent="Root" index="14" instance=ExtResource("3_byj3x")]
 position = Vector2(2208, -584)
 
-[node name="LavaV2_x3_3" parent="Root" index="10" instance=ExtResource("2_bn1rk")]
+[node name="LavaV2_x3_3" parent="Root" index="15" instance=ExtResource("2_bn1rk")]
 position = Vector2(632, -2204)
 
-[node name="LavaV2_3" parent="Root" index="11" instance=ExtResource("3_byj3x")]
+[node name="LavaV2_3" parent="Root" index="16" instance=ExtResource("3_byj3x")]
 position = Vector2(680, -2296)
 
-[node name="LavaV2_x3_4" parent="Root" index="12" instance=ExtResource("2_bn1rk")]
-position = Vector2(2248, -2206)
+[node name="LavaV2_x3_4" parent="Root" index="17" instance=ExtResource("2_bn1rk")]
+position = Vector2(2248, -2298)
 
-[node name="LavaV2_4" parent="Root" index="13" instance=ExtResource("3_byj3x")]
-position = Vector2(2208, -2298)
+[node name="LavaV2_4" parent="Root" index="18" instance=ExtResource("3_byj3x")]
+position = Vector2(2296, -2208)
 
-[node name="Gargoyle_a_x1_d1s_1" parent="Root" index="14" instance=ExtResource("4_ptj6u")]
+[node name="Gargoyle_a_x1_d1s_1" parent="Root" index="19" instance=ExtResource("4_ptj6u")]
 position = Vector2(128, -128)
 rotation = -0.785398
 shooting = false
 
-[node name="Gargoyle_a_x1_d1s_2" parent="Root" index="15" instance=ExtResource("4_ptj6u")]
+[node name="Gargoyle_a_x1_d1s_2" parent="Root" index="20" instance=ExtResource("4_ptj6u")]
 position = Vector2(2744, -136)
 rotation = -2.35619
 shooting = false
 
-[node name="Gargoyle_a_x1_d1s_3" parent="Root" index="16" instance=ExtResource("4_ptj6u")]
+[node name="Gargoyle_a_x1_d1s_3" parent="Root" index="21" instance=ExtResource("4_ptj6u")]
 position = Vector2(128, -2752)
 rotation = 0.785398
-scale = Vector2(1, 1)
 shooting = false
 
-[node name="Gargoyle_a_x1_d1s_4" parent="Root" index="17" instance=ExtResource("4_ptj6u")]
+[node name="Gargoyle_a_x1_d1s_4" parent="Root" index="22" instance=ExtResource("4_ptj6u")]
 position = Vector2(2752, -2752)
 rotation = 2.35619
-scale = Vector2(1, 1)
 shooting = false
 
-[node name="Lamp" parent="Root" index="18" instance=ExtResource("5_yrbaw")]
+[node name="Lamp" parent="Root" index="23" instance=ExtResource("5_yrbaw")]
 position = Vector2(1024, -1040)
 enabled = false
 
-[node name="Lamp2" parent="Root" index="19" instance=ExtResource("5_yrbaw")]
+[node name="Lamp2" parent="Root" index="24" instance=ExtResource("5_yrbaw")]
 position = Vector2(1856, -1040)
 enabled = false
 
-[node name="Lamp3" parent="Root" index="20" instance=ExtResource("5_yrbaw")]
+[node name="Lamp3" parent="Root" index="25" instance=ExtResource("5_yrbaw")]
 position = Vector2(1024, -1856)
 enabled = false
 
-[node name="Lamp4" parent="Root" index="21" instance=ExtResource("5_yrbaw")]
+[node name="Lamp4" parent="Root" index="26" instance=ExtResource("5_yrbaw")]
 position = Vector2(1856, -1856)
 
-[node name="Lamp5" parent="Root" index="22" instance=ExtResource("5_yrbaw")]
+[node name="Lamp5" parent="Root" index="27" instance=ExtResource("5_yrbaw")]
 position = Vector2(2208, -2752)
 
-[node name="Lamp6" parent="Root" index="23" instance=ExtResource("5_yrbaw")]
+[node name="Lamp6" parent="Root" index="28" instance=ExtResource("5_yrbaw")]
 position = Vector2(2560, -2752)
 
-[node name="SecretBorders" type="StaticBody2D" parent="Root" index="24"]
+[node name="SecretBorders" type="StaticBody2D" parent="Root" index="29"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Root/SecretBorders" index="0"]
 position = Vector2(1082.95, -1081.05)
 rotation = 0.785398
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_4oc6y")
 
-[node name="SecretBorders2" type="StaticBody2D" parent="Root" index="25"]
+[node name="SecretBorders2" type="StaticBody2D" parent="Root" index="30"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Root/SecretBorders2" index="0"]
 position = Vector2(1800, -1080)
 rotation = -0.785398
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_4oc6y")
 
-[node name="SecretBorders3" type="StaticBody2D" parent="Root" index="26"]
+[node name="SecretBorders3" type="StaticBody2D" parent="Root" index="31"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Root/SecretBorders3" index="0"]
 position = Vector2(1080, -1800)
 rotation = -0.785398
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_4oc6y")
 
-[node name="SecretBorders4" type="StaticBody2D" parent="Root" index="27"]
+[node name="SecretBorders4" type="StaticBody2D" parent="Root" index="32"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Root/SecretBorders4" index="0"]
 position = Vector2(1800, -1800)
 rotation = 0.785398
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_4oc6y")
 
-[node name="Mimic" parent="Root" index="28" instance=ExtResource("6_sjqm0")]
+[node name="Giant Mimic" parent="Root" index="33" instance=ExtResource("6_sjqm0")]
 position = Vector2(1440, -1440)
 rotation = -0.785398
+scale = Vector2(1.7, 1.7)
+attack_damage = 10
+hp = 300
+hp_max = 300
 
-[node name="Skeleton archer" parent="Root" index="29" instance=ExtResource("7_pfkgs")]
+[node name="Skeleton archer" parent="Root" index="34" instance=ExtResource("7_pfkgs")]
 position = Vector2(264, -684)
 rotation = 0.785398
 
-[node name="Skeleton archer2" parent="Root" index="30" instance=ExtResource("7_pfkgs")]
+[node name="Skeleton archer2" parent="Root" index="35" instance=ExtResource("7_pfkgs")]
 position = Vector2(320, -2440)
 rotation = 0.785398
 
-[node name="Skeleton archer3" parent="Root" index="31" instance=ExtResource("7_pfkgs")]
+[node name="Skeleton archer3" parent="Root" index="36" instance=ExtResource("7_pfkgs")]
 position = Vector2(2496, -2448)
 rotation = 2.35619
 
-[node name="Skeleton archer4" parent="Root" index="32" instance=ExtResource("7_pfkgs")]
+[node name="Skeleton archer4" parent="Root" index="37" instance=ExtResource("7_pfkgs")]
 position = Vector2(2488, -312)
 rotation = -2.35619
 
-[node name="Skeleton swordman" parent="Root" index="33" instance=ExtResource("8_slyqm")]
+[node name="Skeleton swordman" parent="Root" index="38" instance=ExtResource("8_slyqm")]
 position = Vector2(1440, -484)
 rotation = 3.14159
 
-[node name="Skeleton swordman2" parent="Root" index="34" instance=ExtResource("8_slyqm")]
+[node name="Skeleton swordman2" parent="Root" index="39" instance=ExtResource("8_slyqm")]
 position = Vector2(1440, -2392)
 rotation = 3.14159
 
-[node name="Skeleton swordman3" parent="Root" index="35" instance=ExtResource("8_slyqm")]
+[node name="Skeleton swordman3" parent="Root" index="40" instance=ExtResource("8_slyqm")]
 position = Vector2(504, -1440)
 rotation = 1.5708
 
-[node name="Skeleton swordman4" parent="Root" index="36" instance=ExtResource("8_slyqm")]
+[node name="Skeleton swordman4" parent="Root" index="41" instance=ExtResource("8_slyqm")]
 position = Vector2(2392, -1440)
 rotation = 1.5708
 
-[node name="Secret" parent="Root" index="37" node_paths=PackedStringArray("hiders") instance=ExtResource("10_7ob3f")]
+[node name="Secret" parent="Root" index="42" node_paths=PackedStringArray("hiders") instance=ExtResource("10_7ob3f")]
 monitoring = false
 monitorable = false
-hiders = [NodePath("../SecretBorders"), NodePath("../SecretBorders2"), NodePath("../SecretBorders3"), NodePath("../SecretBorders4")]
+hiders = [NodePath("../SecretBorders"), NodePath("../SecretBorders2"), NodePath("../SecretBorders3"), NodePath("../SecretBorders4"), NodePath("../Smoke"), NodePath("Hider"), NodePath("Hider2"), NodePath("Hider3"), NodePath("Hider4"), NodePath("Hider5"), NodePath("Hider6")]
+
+[node name="Hider" parent="Root/Secret" index="0" instance=ExtResource("12_d2c4w")]
+position = Vector2(1132.72, -1748.72)
+rotation = 0.785398
+scale = Vector2(0.5, 254.479)
+
+[node name="Hider2" parent="Root/Secret" index="1" instance=ExtResource("12_d2c4w")]
+position = Vector2(1752, -1128)
+rotation = 0.785398
+scale = Vector2(0.5, 254.479)
+
+[node name="Hider3" parent="Root/Secret" index="2" instance=ExtResource("12_d2c4w")]
+position = Vector2(1181.7, -1178.3)
+rotation = 0.785398
+scale = Vector2(1.0049, 254.479)
+
+[node name="Hider4" parent="Root/Secret" index="3" instance=ExtResource("12_d2c4w")]
+position = Vector2(1704, -1704)
+rotation = 0.785398
+scale = Vector2(1.0049, 254.479)
+
+[node name="Hider5" parent="Root/Secret" index="4" instance=ExtResource("12_d2c4w")]
+position = Vector2(1439.69, -1439.62)
+scale = Vector2(2.06495, 895.24)
+
+[node name="Hider6" parent="Root/Secret" index="5" instance=ExtResource("12_d2c4w")]
+position = Vector2(1442.5, -1436)
+scale = Vector2(3.48047, 536)
+
+[node name="Smoke" parent="Root" index="43" instance=ExtResource("11_drp6o")]
+position = Vector2(1440, -1440)
+
+[node name="Checkpoint" parent="Root" index="44" instance=ExtResource("13_av28x")]
+position = Vector2(2096, -2616)
+number = 2

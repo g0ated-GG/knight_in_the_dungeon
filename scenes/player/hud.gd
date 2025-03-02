@@ -14,14 +14,14 @@ func sync_hp_bar():
 	$HP.max_value = player.hp_max
 	$HP/Value.text = '%d / %d' % [player.hp, player.hp_max]
 
-func win():
-	show_message('ПОДЗЕМЕЛЬЕ ПРОЙДЕНО', Color.GOLD, 1.5)
-
 func checkpoint():
-	show_message('УТРАЧЕННАЯ БЛАГОДАТЬ ОБРЕТЕНА', Color.GOLD)
+	if Globals.checkpoint < Globals.final_checkpoint:
+		show_message('КОСТЁР РАЗОЖЖЁН', Color.GOLD)
+	else:
+		show_message('ПОДЗЕМЕЛЬЕ ПРОЙДЕНО', Color.GOLD, 1.5)
 
 func defeat():
-	show_message('ПОМЕР', Color.RED)
+	show_message('ГЕРОЙ ПОГИБ', Color.RED)
 	Globals.deaths += 1
 	$Death.text = 'Смертей: %d' % Globals.deaths
 	$RestartGameTimer.start()
@@ -35,4 +35,4 @@ func show_message(text : String, color : Color, custom_speed = 1.0):
 	$AnimationPlayer.play('show_message', custom_speed)
 
 func _on_restart_timer_timeout() -> void:
-	get_tree().reload_current_scene()
+	get_tree().change_scene_to_file("res://scenes/world/checkpoint_%d.tscn" % Globals.checkpoint)

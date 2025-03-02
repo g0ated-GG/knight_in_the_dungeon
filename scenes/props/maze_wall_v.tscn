@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://br4wnt71vay1"]
+
+[ext_resource type="Texture2D" uid="uid://cf880tqyh4lsu" path="res://img/world_sprites.svg" id="1_dqeog"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4yrxq"]
+atlas = ExtResource("1_dqeog")
+region = Rect2(2485, 1515, 50, 395)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_a2ho2"]
+size = Vector2(16, 128)
+
+[node name="MazeWall_v" type="StaticBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(2.38419e-07, -3.03745e-06)
+scale = Vector2(0.32, 0.32)
+texture = SubResource("AtlasTexture_4yrxq")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_a2ho2")

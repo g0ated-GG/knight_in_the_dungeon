@@ -1,0 +1,203 @@
+[gd_scene load_steps=13 format=3 uid="uid://urjxw5pimmi5"]
+
+[ext_resource type="PackedScene" uid="uid://6drp3l3umlqc" path="res://scenes/world/level_map.tscn" id="1_p1xek"]
+[ext_resource type="PackedScene" uid="uid://b732ftmqoeqms" path="res://scenes/props/gargoules/gargoyle_f_x1_d1.5s.tscn" id="2_f0xk3"]
+[ext_resource type="Script" path="res://scenes/world/room_8.gd" id="2_xd76t"]
+[ext_resource type="PackedScene" uid="uid://cjvotlics32e6" path="res://zones/smoke.tscn" id="3_wco6s"]
+[ext_resource type="PackedScene" uid="uid://c5vnrc1iawpts" path="res://scenes/enemy/skeleton_mage.tscn" id="4_avcqv"]
+[ext_resource type="PackedScene" uid="uid://cv75142x3wp8q" path="res://zones/secret.tscn" id="6_o5gyr"]
+[ext_resource type="PackedScene" uid="uid://b1frxxj7dbhyg" path="res://scenes/props/floor_label.tscn" id="7_4nwtc"]
+[ext_resource type="PackedScene" uid="uid://dah36w80s8ho6" path="res://scenes/props/lamp.tscn" id="8_bsfir"]
+[ext_resource type="PackedScene" uid="uid://c04ccvp2uwfx2" path="res://zones/hider.tscn" id="8_s5cep"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_eogma"]
+size = Vector2(272, 88)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4j130"]
+size = Vector2(272, 88)
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_s6fs6"]
+particle_flag_disable_z = true
+orbit_velocity_min = 9.49949e-08
+orbit_velocity_max = 0.125
+radial_velocity_min = 350.0
+radial_velocity_max = 350.0
+gravity = Vector3(0, 0, 0)
+scale_min = 0.5
+scale_max = 0.6
+color = Color(0.788235, 0, 1, 1)
+
+[node name="Room8" instance=ExtResource("1_p1xek")]
+script = ExtResource("2_xd76t")
+
+[node name="TileMapLayer" parent="." index="0"]
+visible = false
+
+[node name="Root" type="Node2D" parent="." index="1"]
+position = Vector2(632, -8824)
+
+[node name="Floor label" parent="Root" index="0" instance=ExtResource("7_4nwtc")]
+visible = false
+offset_left = 192.0
+offset_top = -1248.0
+offset_right = 448.0
+offset_bottom = -992.0
+text = "Ты попал к настоящему колдуну!"
+
+[node name="Borders" type="StaticBody2D" parent="Root" index="1"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Root/Borders" index="0"]
+polygon = PackedVector2Array(176, -88, 0, -88, 0, -176, -184, -176, -184, -264, -360, -264, -360, -352, -456, -352, -456, -448, -544, -448, -544, -536, -632, -536, -632, -712, -720, -712, -720, -1072, -1168, -1072, -1168, -984, -816, -984, -816, -712, -728, -712, -728, -528, -640, -528, -640, -440, -544, -440, -544, -344, -456, -344, -456, -256, -368, -256, -368, -168, -192, -168, -192, -80, -8, -80, -8, 0, 176, 0)
+
+[node name="Borders2" type="StaticBody2D" parent="Root" index="2"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Root/Borders2" index="0"]
+polygon = PackedVector2Array(448, 0, 640, 0, 640, -72, 824, -72, 824, -160, 1000, -160, 1000, -248, 1096, -248, 1096, -344, 1184, -344, 1184, -432, 1272, -432, 1272, -520, 1360, -520, 1360, -704, 1448, -704, 1448, -1624, 1360, -1624, 1360, -1808, 1272, -1808, 1272, -1896, 1184, -1896, 1184, -1992, 1096, -1992, 1096, -2080, 1000, -2080, 1000, -2168, 824, -2168, 824, -2256, 640, -2256, 640, -2336, 448, -2336, 448, -2248, 632, -2248, 632, -2152, 808, -2152, 808, -2064, 984, -2064, 984, -1976, 1080, -1976, 1080, -1888, 1168, -1888, 1168, -1792, 1256, -1792, 1256, -1616, 1344, -1616, 1344, -712, 1256, -712, 1256, -536, 1168, -536, 1168, -448, 1080, -448, 1080, -352, 992, -352, 992, -264, 808, -264, 808, -176, 632, -176, 632, -88, 448, -88)
+
+[node name="Borders3" type="StaticBody2D" parent="Root" index="3"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Root/Borders3" index="0"]
+polygon = PackedVector2Array(176, -2248, 0, -2248, 0, -2152, -184, -2152, -184, -2064, -360, -2064, -360, -1976, -448, -1976, -448, -1888, -544, -1888, -544, -1800, -632, -1800, -632, -1616, -720, -1616, -720, -1344, -1168, -1344, -1168, -1432, -808, -1432, -808, -1624, -728, -1624, -728, -1808, -640, -1808, -640, -1896, -544, -1896, -544, -1984, -456, -1984, -456, -2072, -368, -2072, -368, -2160, -184, -2160, -184, -2256, 0, -2256, 0, -2336, 176, -2336)
+
+[node name="Borders4" type="StaticBody2D" parent="Root" index="4"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Root/Borders4" index="0"]
+polygon = PackedVector2Array(176, -1256, 88, -1256, 88, -984, 176, -984, 176, -896, 448, -896, 448, -984, 536, -984, 536, -1256, 448, -1256, 448, -992, 440, -992, 440, -984, 184, -984, 184, -992, 176, -992)
+
+[node name="SecretBorders" type="StaticBody2D" parent="Root" index="5"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Root/SecretBorders" index="0"]
+position = Vector2(312, -1300)
+shape = SubResource("RectangleShape2D_eogma")
+
+[node name="SecretBorders2" type="StaticBody2D" parent="Root" index="6"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Root/SecretBorders2" index="0"]
+position = Vector2(312, -2292)
+shape = SubResource("RectangleShape2D_4j130")
+
+[node name="Gargoyle_f_x1_d1_5s_1" parent="Root" index="7" instance=ExtResource("2_f0xk3")]
+position = Vector2(136, -944)
+rotation = 2.35619
+
+[node name="Gargoyle_f_x1_d1_5s_2" parent="Root" index="8" instance=ExtResource("2_f0xk3")]
+position = Vector2(488, -944)
+rotation = 0.785398
+
+[node name="Gargoyle_f_x1_d1_5s_3" parent="Root" index="9" instance=ExtResource("2_f0xk3")]
+position = Vector2(136, -1296)
+rotation = -2.35619
+scale = Vector2(1, 1)
+shooting = false
+
+[node name="Gargoyle_f_x1_d1_5s_4" parent="Root" index="10" instance=ExtResource("2_f0xk3")]
+position = Vector2(488, -1296)
+rotation = -0.785398
+scale = Vector2(1, 1)
+shooting = false
+
+[node name="Skeleton archmage" parent="Root" index="11" instance=ExtResource("4_avcqv")]
+position = Vector2(320, -1120)
+rotation = -1.5708
+scale = Vector2(2, 2)
+attack_delay = 1.0
+hp = 200
+hp_max = 200
+alive = false
+
+[node name="Secret" parent="Root" index="12" node_paths=PackedStringArray("hiders") instance=ExtResource("6_o5gyr")]
+monitoring = false
+monitorable = false
+hiders = [NodePath("../Smoke"), NodePath("../SecretBorders"), NodePath("Hider")]
+
+[node name="Hider" parent="Root/Secret" index="0" instance=ExtResource("8_s5cep")]
+position = Vector2(312, -1120)
+scale = Vector2(1.0625, 272)
+
+[node name="Smoke" parent="Root" index="13" instance=ExtResource("3_wco6s")]
+position = Vector2(312, -1120)
+amount = 10
+process_material = SubResource("ParticleProcessMaterial_s6fs6")
+
+[node name="Lamp" parent="Root" index="14" instance=ExtResource("8_bsfir")]
+position = Vector2(-408, -392)
+
+[node name="Lamp7" parent="Root" index="15" instance=ExtResource("8_bsfir")]
+position = Vector2(312, -856)
+
+[node name="Lamp8" parent="Root" index="16" instance=ExtResource("8_bsfir")]
+position = Vector2(48, -1120)
+
+[node name="Lamp9" parent="Root" index="17" instance=ExtResource("8_bsfir")]
+position = Vector2(579, -1120)
+
+[node name="Lamp3" parent="Root" index="18" instance=ExtResource("8_bsfir")]
+position = Vector2(-688, -1046)
+
+[node name="Lamp4" parent="Root" index="19" instance=ExtResource("8_bsfir")]
+position = Vector2(-680, -1368)
+
+[node name="Lamp5" parent="Root" index="20" instance=ExtResource("8_bsfir")]
+position = Vector2(-504, -1848)
+
+[node name="Lamp6" parent="Root" index="21" instance=ExtResource("8_bsfir")]
+position = Vector2(1128, -1848)
+
+[node name="Lamp2" parent="Root" index="22" instance=ExtResource("8_bsfir")]
+position = Vector2(1040, -392)
+
+[node name="Skeleton mage" parent="Root" index="23" instance=ExtResource("4_avcqv")]
+position = Vector2(-120, -456)
+rotation = 0.261799
+
+[node name="Skeleton mage5" parent="Root" index="24" instance=ExtResource("4_avcqv")]
+position = Vector2(136, -712)
+rotation = 1.0472
+
+[node name="Skeleton mage6" parent="Root" index="25" instance=ExtResource("4_avcqv")]
+position = Vector2(488, -712)
+rotation = 2.0944
+
+[node name="Skeleton mage7" parent="Root" index="26" instance=ExtResource("4_avcqv")]
+position = Vector2(136, -1864)
+rotation = 1.0472
+
+[node name="Skeleton mage8" parent="Root" index="27" instance=ExtResource("4_avcqv")]
+position = Vector2(488, -1864)
+rotation = 2.0944
+
+[node name="Skeleton mage9" parent="Root" index="28" instance=ExtResource("4_avcqv")]
+position = Vector2(-528, -904)
+rotation = 0.523599
+
+[node name="Skeleton mage10" parent="Root" index="29" instance=ExtResource("4_avcqv")]
+position = Vector2(-200, -1128)
+rotation = 1.5708
+
+[node name="Skeleton mage13" parent="Root" index="30" instance=ExtResource("4_avcqv")]
+position = Vector2(-504, -1544)
+rotation = 1.0472
+
+[node name="Skeleton mage14" parent="Root" index="31" instance=ExtResource("4_avcqv")]
+position = Vector2(1096, -1544)
+rotation = 2.0944
+
+[node name="Skeleton mage11" parent="Root" index="32" instance=ExtResource("4_avcqv")]
+position = Vector2(808, -1128)
+rotation = 1.5708
+
+[node name="Skeleton mage12" parent="Root" index="33" instance=ExtResource("4_avcqv")]
+position = Vector2(1160, -904)
+rotation = 2.61799
+
+[node name="Skeleton mage3" parent="Root" index="34" instance=ExtResource("4_avcqv")]
+position = Vector2(-120, -232)
+rotation = -0.261799
+
+[node name="Skeleton mage4" parent="Root" index="35" instance=ExtResource("4_avcqv")]
+position = Vector2(744, -240)
+rotation = 3.40339
+
+[node name="Skeleton mage2" parent="Root" index="36" instance=ExtResource("4_avcqv")]
+position = Vector2(744, -456)
+rotation = 2.87979

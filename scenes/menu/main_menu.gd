@@ -9,8 +9,8 @@ func _ready() -> void:
 		$CanvasLayer/Buttons/ContinueButton.show()
 
 func _on_continue_button_pressed() -> void:
-	if Globals.checkpoint in range(0, 2):
-		get_tree().change_scene_to_file("res://scenes/world/checkpoint_%d.tscn" % Globals.checkpoint)
+	var checkpoint = clamp(Globals.checkpoint, 0, Globals.final_checkpoint - 1)
+	get_tree().change_scene_to_file("res://scenes/world/checkpoint_%d.tscn" % checkpoint)
 
 func _on_play_button_pressed() -> void:
 	Globals.deaths = 0

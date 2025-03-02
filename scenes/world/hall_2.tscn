@@ -1,0 +1,126 @@
+[gd_scene load_steps=8 format=3 uid="uid://cuyajnvkum6xy"]
+
+[ext_resource type="PackedScene" uid="uid://6drp3l3umlqc" path="res://scenes/world/level_map.tscn" id="1_27fpa"]
+[ext_resource type="PackedScene" uid="uid://b1frxxj7dbhyg" path="res://scenes/props/floor_label.tscn" id="2_pe5yn"]
+[ext_resource type="PackedScene" uid="uid://dem531mewpu8i" path="res://scenes/props/gargoules/gargoyle_f_x3_d2s.tscn" id="2_xph7j"]
+[ext_resource type="PackedScene" uid="uid://b732ftmqoeqms" path="res://scenes/props/gargoules/gargoyle_f_x1_d1.5s.tscn" id="3_ldlj3"]
+[ext_resource type="PackedScene" uid="uid://diuuntjgrkkv7" path="res://zones/lava.tscn" id="4_y83o1"]
+[ext_resource type="PackedScene" uid="uid://dah36w80s8ho6" path="res://scenes/props/lamp.tscn" id="5_b5jj4"]
+[ext_resource type="PackedScene" uid="uid://r5imracu4tic" path="res://scenes/props/gargoules/gargoyle_f_1.5s.tscn" id="7_huisl"]
+
+[node name="Hall2" instance=ExtResource("1_27fpa")]
+
+[node name="TileMapLayer" parent="." index="0"]
+visible = false
+
+[node name="Root" type="Node2D" parent="." index="1"]
+position = Vector2(-2072, -9632)
+
+[node name="Floor label" parent="Root" index="0" instance=ExtResource("2_pe5yn")]
+offset_left = 1240.0
+offset_top = -2720.0
+offset_right = 1880.0
+offset_bottom = -2656.0
+text = "Не буди лихо, пока оно тихо."
+
+[node name="Borders" type="StaticBody2D" parent="Root" index="1"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Root/Borders" index="0"]
+polygon = PackedVector2Array(360, -264, 360, 0, 0, 0, 0, -896, -88, -896, -88, -1168, 0, -1168, 0, -1440, -88, -1440, -88, -1704, 0, -1704, 0, -1976, -88, -1976, -88, -2248, 0, -2248, 0, -2520, -176, -2520, -176, -2880, 0, -2880, 0, -3056, 360, -3056, 360, -2880, 632, -2880, 632, -2968, 904, -2968, 904, -2880, 1176, -2880, 1176, -2968, 1440, -2968, 1440, -2880, 1712, -2880, 1712, -2968, 1984, -2968, 1984, -2880, 2344, -2880, 2344, -2792, 1896, -2792, 1896, -2880, 1800, -2880, 1800, -2792, 1352, -2792, 1352, -2880, 1264, -2880, 1264, -2792, 816, -2792, 816, -2880, 720, -2880, 720, -2792, 272, -2792, 272, -2968, 88, -2968, 88, -2792, -88, -2792, -88, -2608, 88, -2608, 88, -2160, 0, -2160, 0, -2064, 88, -2064, 88, -1616, 0, -1616, 0, -1528, 88, -1528, 88, -1080, 0, -1080, 0, -984, 88, -984, 88, -88, 272, -88, 272, -264)
+
+[node name="Borders2" type="StaticBody2D" parent="Root" index="2"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Root/Borders2" index="0"]
+polygon = PackedVector2Array(360, -536, 272, -536, 272, -984, 360, -984, 360, -1080, 272, -1080, 272, -1528, 360, -1528, 360, -1616, 272, -1616, 272, -2072, 360, -2072, 360, -2160, 272, -2160, 272, -2520, 360, -2520, 360, -2608, 720, -2608, 720, -2512, 816, -2512, 816, -2608, 1264, -2608, 1264, -2512, 1352, -2512, 1352, -2608, 1800, -2608, 1800, -2512, 1896, -2512, 1896, -2608, 2792, -2608, 2792, -2784, 2608, -2784, 2608, -2880, 2880, -2880, 2880, -2520, 1984, -2520, 1984, -2424, 1712, -2424, 1712, -2520, 1440, -2520, 1440, -2432, 1176, -2432, 1176, -2520, 904, -2520, 904, -2424, 632, -2424, 632, -2520, 448, -2520, 448, -2424, 360, -2424, 360, -2248, 456, -2248, 456, -1976, 360, -1976, 360, -1704, 456, -1704, 456, -1440, 360, -1440, 360, -1168, 456, -1168, 456, -896, 360, -896)
+
+[node name="Gargoyle_f_x3_d2s_1" parent="Root" index="3" instance=ExtResource("2_xph7j")]
+position = Vector2(144, -2848)
+rotation = 1.5708
+bullet_speed = 200
+bullet_lifetime = 12.0
+
+[node name="Gargoyle_f_x3_d2s_2" parent="Root" index="4" instance=ExtResource("2_xph7j")]
+position = Vector2(224, -2848)
+rotation = 1.5708
+bullet_speed = 200
+bullet_lifetime = 12.0
+
+[node name="Gargoyle_f_x3_d2s_3" parent="Root" index="5" instance=ExtResource("2_xph7j")]
+position = Vector2(2712, -2728)
+rotation = 3.14159
+bullet_speed = 200
+bullet_lifetime = 11.0
+
+[node name="Gargoyle_f_x3_d2s_4" parent="Root" index="6" instance=ExtResource("2_xph7j")]
+position = Vector2(2712, -2648)
+rotation = 3.14159
+bullet_speed = 200
+bullet_lifetime = 11.0
+
+[node name="Gargoyle_f_x1_d1_5s_1" parent="Root" index="7" instance=ExtResource("3_ldlj3")]
+position = Vector2(1312, -2840)
+rotation = 1.5708
+shooting = false
+
+[node name="Gargoyle_f_x1_d1_5s_2" parent="Root" index="8" instance=ExtResource("3_ldlj3")]
+position = Vector2(1848, -2840)
+rotation = 1.5708
+shooting = false
+
+[node name="Gargoyle_f_x1_d1_5s_3" parent="Root" index="9" instance=ExtResource("3_ldlj3")]
+position = Vector2(1848, -2552)
+rotation = -1.5708
+shooting = false
+
+[node name="LavaV2_1" parent="Root" index="10" instance=ExtResource("4_y83o1")]
+position = Vector2(224, -672)
+
+[node name="LavaV2_2" parent="Root" index="11" instance=ExtResource("4_y83o1")]
+position = Vector2(136, -856)
+
+[node name="LavaV2_3" parent="Root" index="12" instance=ExtResource("4_y83o1")]
+position = Vector2(224, -1208)
+
+[node name="LavaV2_4" parent="Root" index="13" instance=ExtResource("4_y83o1")]
+position = Vector2(136, -1392)
+
+[node name="LavaV2_5" parent="Root" index="14" instance=ExtResource("4_y83o1")]
+position = Vector2(320, -1576)
+
+[node name="LavaV2_6" parent="Root" index="15" instance=ExtResource("4_y83o1")]
+position = Vector2(136, -1752)
+
+[node name="LavaV2_7" parent="Root" index="16" instance=ExtResource("4_y83o1")]
+position = Vector2(224, -1936)
+
+[node name="LavaV2_8" parent="Root" index="17" instance=ExtResource("4_y83o1")]
+position = Vector2(48, -2112)
+
+[node name="LavaV2_9" parent="Root" index="18" instance=ExtResource("4_y83o1")]
+position = Vector2(320, -2112)
+
+[node name="LavaV2_10" parent="Root" index="19" instance=ExtResource("4_y83o1")]
+position = Vector2(1936, -2648)
+
+[node name="LavaV2_11" parent="Root" index="20" instance=ExtResource("4_y83o1")]
+position = Vector2(2032, -2744)
+
+[node name="LavaV2_12" parent="Root" index="21" instance=ExtResource("4_y83o1")]
+position = Vector2(2120, -2648)
+
+[node name="LavaV2_13" parent="Root" index="22" instance=ExtResource("4_y83o1")]
+position = Vector2(2208, -2744)
+
+[node name="LavaV2_14" parent="Root" index="23" instance=ExtResource("4_y83o1")]
+position = Vector2(2296, -2648)
+
+[node name="Lamp" parent="Root" index="24" instance=ExtResource("5_b5jj4")]
+position = Vector2(2376, -2848)
+
+[node name="Lamp2" parent="Root" index="25" instance=ExtResource("5_b5jj4")]
+position = Vector2(2576, -2848)
+
+[node name="Gargoyle_f_1_5s" parent="Root" index="26" instance=ExtResource("7_huisl")]
+position = Vector2(360, -496)
+rotation = 1.5708
+shooting = false

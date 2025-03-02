@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://od2lswh7vi8m"]
+[gd_scene load_steps=12 format=3 uid="uid://od2lswh7vi8m"]
 
 [ext_resource type="PackedScene" uid="uid://6drp3l3umlqc" path="res://scenes/world/level_map.tscn" id="1_f815x"]
 [ext_resource type="PackedScene" uid="uid://dah36w80s8ho6" path="res://scenes/props/lamp.tscn" id="2_iay2x"]
+[ext_resource type="Script" path="res://scenes/world/hall_1.gd" id="2_iret2"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1d223"]
 size = Vector2(1354, 90)
@@ -9,7 +10,29 @@ size = Vector2(1354, 90)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_58poi"]
 size = Vector2(1352, 88)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_f68h3"]
+size = Vector2(162, 274)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_c7lim"]
+size = Vector2(225, 274)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_n7r64"]
+size = Vector2(256.5, 274)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wiiap"]
+size = Vector2(256.5, 274)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_an066"]
+size = Vector2(256.5, 274)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jd05x"]
+size = Vector2(192.25, 274)
+
 [node name="Hall1" instance=ExtResource("1_f815x")]
+script = ExtResource("2_iret2")
+
+[node name="TileMapLayer" parent="." index="0"]
+visible = false
 
 [node name="Root" type="Node2D" parent="." index="1"]
 position = Vector2(1352, -3960)
@@ -26,38 +49,98 @@ shape = SubResource("RectangleShape2D_1d223")
 position = Vector2(-676, -404)
 shape = SubResource("RectangleShape2D_58poi")
 
-[node name="Lamp" parent="Root" index="2" instance=ExtResource("2_iay2x")]
+[node name="Lamp1" parent="Root" index="2" instance=ExtResource("2_iay2x")]
 position = Vector2(-40, -136)
+enabled = false
 
 [node name="Lamp2" parent="Root" index="3" instance=ExtResource("2_iay2x")]
 position = Vector2(-40, -312)
+enabled = false
 
 [node name="Lamp3" parent="Root" index="4" instance=ExtResource("2_iay2x")]
 position = Vector2(-296, -136)
+enabled = false
 
 [node name="Lamp4" parent="Root" index="5" instance=ExtResource("2_iay2x")]
 position = Vector2(-296, -312)
+enabled = false
 
 [node name="Lamp5" parent="Root" index="6" instance=ExtResource("2_iay2x")]
 position = Vector2(-552, -136)
+enabled = false
 
 [node name="Lamp6" parent="Root" index="7" instance=ExtResource("2_iay2x")]
 position = Vector2(-552, -312)
+enabled = false
 
 [node name="Lamp7" parent="Root" index="8" instance=ExtResource("2_iay2x")]
 position = Vector2(-808, -136)
+enabled = false
 
 [node name="Lamp8" parent="Root" index="9" instance=ExtResource("2_iay2x")]
 position = Vector2(-808, -312)
+enabled = false
 
 [node name="Lamp9" parent="Root" index="10" instance=ExtResource("2_iay2x")]
 position = Vector2(-1064, -136)
+enabled = false
 
 [node name="Lamp10" parent="Root" index="11" instance=ExtResource("2_iay2x")]
 position = Vector2(-1064, -312)
+enabled = false
 
 [node name="Lamp11" parent="Root" index="12" instance=ExtResource("2_iay2x")]
 position = Vector2(-1320, -136)
+enabled = false
 
 [node name="Lamp12" parent="Root" index="13" instance=ExtResource("2_iay2x")]
 position = Vector2(-1320, -312)
+enabled = false
+
+[node name="Area2D" type="Area2D" parent="Root" index="14"]
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Root/Area2D" index="0"]
+position = Vector2(-87, -225)
+shape = SubResource("RectangleShape2D_f68h3")
+
+[node name="Area2D2" type="Area2D" parent="Root" index="15"]
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Root/Area2D2" index="0"]
+position = Vector2(-279.5, -224)
+shape = SubResource("RectangleShape2D_c7lim")
+
+[node name="Area2D3" type="Area2D" parent="Root" index="16"]
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Root/Area2D3" index="0"]
+position = Vector2(-519.75, -224)
+shape = SubResource("RectangleShape2D_n7r64")
+
+[node name="Area2D4" type="Area2D" parent="Root" index="17"]
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Root/Area2D4" index="0"]
+position = Vector2(-776, -225)
+shape = SubResource("RectangleShape2D_wiiap")
+
+[node name="Area2D5" type="Area2D" parent="Root" index="18"]
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Root/Area2D5" index="0"]
+position = Vector2(-1032, -225)
+shape = SubResource("RectangleShape2D_an066")
+
+[node name="Area2D6" type="Area2D" parent="Root" index="19"]
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Root/Area2D6" index="0"]
+position = Vector2(-1255.88, -225)
+shape = SubResource("RectangleShape2D_jd05x")

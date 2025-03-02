@@ -1,0 +1,281 @@
+[gd_scene load_steps=12 format=3 uid="uid://ykhwcptdcl7v"]
+
+[ext_resource type="PackedScene" uid="uid://6drp3l3umlqc" path="res://scenes/world/level_map.tscn" id="1_2o1f0"]
+[ext_resource type="PackedScene" uid="uid://bwo0x34lbadye" path="res://zones/lava_x3.tscn" id="2_rxkws"]
+[ext_resource type="PackedScene" uid="uid://diuuntjgrkkv7" path="res://zones/lava.tscn" id="3_2ywol"]
+[ext_resource type="PackedScene" uid="uid://dah36w80s8ho6" path="res://scenes/props/lamp.tscn" id="4_6sbko"]
+[ext_resource type="PackedScene" uid="uid://b5wwg5wusy628" path="res://scenes/props/treasure_chest.tscn" id="5_us587"]
+[ext_resource type="PackedScene" uid="uid://c2vvc45tkhr2o" path="res://zones/checkpoint.tscn" id="6_vr43c"]
+[ext_resource type="PackedScene" uid="uid://yufl3x3nrlh7" path="res://scenes/enemy/mimic.tscn" id="7_v0dnj"]
+[ext_resource type="PackedScene" uid="uid://c5vnrc1iawpts" path="res://scenes/enemy/skeleton_mage.tscn" id="8_qyr2a"]
+[ext_resource type="PackedScene" uid="uid://blfx4gmc8o7dg" path="res://scenes/enemy/skeleton_archer.tscn" id="9_6e0ok"]
+[ext_resource type="PackedScene" uid="uid://bfbjy6cbe4qw5" path="res://scenes/enemy/skeleton_swordman.tscn" id="10_i6ysx"]
+[ext_resource type="PackedScene" uid="uid://b1frxxj7dbhyg" path="res://scenes/props/floor_label.tscn" id="11_5va2b"]
+
+[node name="Room12" instance=ExtResource("1_2o1f0")]
+
+[node name="TileMapLayer" parent="." index="0"]
+visible = false
+
+[node name="Root" type="Node2D" parent="." index="1"]
+position = Vector2(88, -16744)
+
+[node name="Floor label" parent="Root" index="0" instance=ExtResource("11_5va2b")]
+offset_left = -216.0
+offset_top = -2112.0
+offset_right = 871.0
+offset_bottom = -2048.0
+text = "Пришло время сразиться с достойным противником!"
+
+[node name="Floor label2" parent="Root" index="1" instance=ExtResource("11_5va2b")]
+offset_left = 96.0
+offset_top = -195.0
+offset_right = 544.0
+offset_bottom = -81.0
+text = "У каждой истории есть начало и конец."
+
+[node name="Borders" type="StaticBody2D" parent="Root" index="2"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Root/Borders" index="0"]
+polygon = PackedVector2Array(88, 8, 0, 8, 0, -528, -96, -528, -96, -616, -184, -616, -184, -712, -272, -712, -272, -800, -368, -800, -368, -888, -456, -888, -456, -976, -544, -976, -544, -1064, -640, -1064, -640, -1152, -728, -1152, -728, -1248, -816, -1248, -816, -3424, -728, -3424, -728, -3512, -640, -3512, -640, -3608, -544, -3608, -544, -3696, -456, -3696, -456, -3784, -368, -3784, -368, -3872, 912, -3872, 912, -3784, 1000, -3784, 1000, -3696, 1088, -3696, 1088, -3608, 1184, -3608, 1184, -3520, 1272, -3520, 1272, -3424, 1360, -3424, 1360, -3336, 1456, -3336, 1456, -1240, 1360, -1240, 1360, -1152, 1272, -1152, 1272, -1064, 1176, -1064, 1176, -968, 1088, -968, 1088, -880, 1000, -880, 1000, -792, 912, -792, 912, -704, 824, -704, 824, -608, 728, -608, 728, -520, 640, -520, 640, 8, 544, 8, 544, -536, 632, -536, 632, -624, 720, -624, 720, -712, 816, -712, 816, -800, 904, -800, 904, -896, 992, -896, 992, -984, 1080, -984, 1080, -1072, 1176, -1072, 1176, -1168, 1264, -1168, 1264, -1256, 1352, -1256, 1352, -2248, 1264, -2248, 1264, -2336, 1176, -2336, 1176, -2424, 1080, -2424, 1080, -2512, 992, -2512, 992, -2608, 904, -2608, 904, -2696, 808, -2696, 808, -2784, 904, -2784, 904, -2704, 912, -2704, 912, -2696, 992, -2696, 992, -2616, 1000, -2616, 1000, -2608, 1080, -2608, 1080, -2520, 1088, -2520, 1088, -2512, 1168, -2512, 1168, -2432, 1184, -2432, 1184, -2424, 1264, -2424, 1264, -2344, 1272, -2344, 1272, -2336, 1352, -2336, 1352, -3328, 1264, -3328, 1264, -3416, 1176, -3416, 1176, -3504, 1080, -3504, 1080, -3600, 992, -3600, 992, -3688, 904, -3688, 904, -3776, -360, -3776, -360, -3688, -448, -3688, -448, -3592, -536, -3592, -536, -3504, -632, -3504, -632, -3416, -720, -3416, -720, -2336, -624, -2336, -624, -2424, -536, -2424, -536, -2512, -448, -2512, -448, -2608, -360, -2608, -360, -2696, -264, -2696, -264, -2784, -176, -2784, -176, -2696, -256, -2696, -256, -2688, -272, -2688, -272, -2608, -352, -2608, -352, -2600, -360, -2600, -360, -2520, -440, -2520, -440, -2504, -448, -2504, -448, -2424, -528, -2424, -528, -2416, -536, -2416, -536, -2336, -616, -2336, -616, -2328, -632, -2328, -632, -2248, -720, -2248, -720, -1256, -632, -1256, -632, -1168, -536, -1168, -536, -1072, -448, -1072, -448, -984, -360, -984, -360, -896, -272, -896, -272, -808, -176, -808, -176, -712, -88, -712, -88, -624, 0, -624, 0, -536, 88, -536)
+
+[node name="Borders2" type="StaticBody2D" parent="Root" index="3"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Root/Borders2" index="0"]
+polygon = PackedVector2Array(96, -3504, 544, -3504, 544, -3240, 456, -3240, 456, -3416, 184, -3416, 184, -3240, 96, -3240)
+
+[node name="Borders3" type="StaticBody2D" parent="Root" index="4"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Root/Borders3" index="0"]
+polygon = PackedVector2Array(-88, -1976, 184, -1976, 184, -1888, 272, -1888, 272, -1800, 280, -1800, 280, -1792, 360, -1792, 360, -1888, 456, -1888, 456, -1976, 720, -1976, 720, -1888, 464, -1888, 464, -1880, 448, -1880, 448, -1792, 368, -1792, 368, -1784, 360, -1784, 360, -1704, 272, -1704, 272, -1792, 184, -1792, 184, -1880, 176, -1880, 176, -1888, -88, -1888)
+
+[node name="Borders4" type="StaticBody2D" parent="Root" index="5"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Root/Borders4" index="0"]
+polygon = PackedVector2Array(-264, -1616, 88, -1616, 88, -1256, 0, -1256, 0, -1528, -264, -1528)
+
+[node name="Borders5" type="StaticBody2D" parent="Root" index="6"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Root/Borders5" index="0"]
+position = Vector2(544, 0)
+polygon = PackedVector2Array(360, -1528, 88, -1528, 88, -1256, 0, -1256, 0, -1616, 360, -1616)
+
+[node name="Borders6" type="StaticBody2D" parent="Root" index="7"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Root/Borders6" index="0"]
+polygon = PackedVector2Array(272, -1168, 272, -1256, 360, -1256, 360, -1168, 456, -1168, 456, -1072, 360, -1072, 360, -984, 272, -984, 272, -1072, 184, -1072, 184, -1168)
+
+[node name="Borders7" type="StaticBody2D" parent="Root" index="8"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Root/Borders7" index="0"]
+polygon = PackedVector2Array(-448, -1344, -272, -1344, -272, -1168, -360, -1168, -360, -1256, -448, -1256)
+
+[node name="Borders8" type="StaticBody2D" parent="Root" index="9"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Root/Borders8" index="0"]
+position = Vector2(272, 272)
+polygon = PackedVector2Array(-448, -1344, -272, -1344, -272, -1168, -360, -1168, -360, -1256, -448, -1256)
+
+[node name="Borders9" type="StaticBody2D" parent="Root" index="10"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Root/Borders9" index="0"]
+position = Vector2(544, 544)
+polygon = PackedVector2Array(-448, -1344, -272, -1344, -272, -1168, -360, -1168, -360, -1256, -448, -1256)
+
+[node name="Borders10" type="StaticBody2D" parent="Root" index="11"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Root/Borders10" index="0"]
+position = Vector2(720, 544)
+polygon = PackedVector2Array(-176, -1256, -272, -1256, -272, -1168, -360, -1168, -360, -1344, -176, -1344)
+
+[node name="Borders11" type="StaticBody2D" parent="Root" index="12"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Root/Borders11" index="0"]
+position = Vector2(992, 272)
+polygon = PackedVector2Array(-176, -1256, -272, -1256, -272, -1168, -360, -1168, -360, -1344, -176, -1344)
+
+[node name="Borders12" type="StaticBody2D" parent="Root" index="13"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Root/Borders12" index="0"]
+position = Vector2(1264, 0)
+polygon = PackedVector2Array(-184, -1256, -272, -1256, -272, -1168, -360, -1168, -360, -1344, -184, -1344)
+
+[node name="LavaV2_x3_1" parent="Root" index="14" instance=ExtResource("2_rxkws")]
+position = Vector2(320, -1512)
+rotation = 1.5708
+
+[node name="LavaV2_1" parent="Root" index="15" instance=ExtResource("3_2ywol")]
+position = Vector2(320, -1385)
+
+[node name="LavaV2_x3_2" parent="Root" index="16" instance=ExtResource("2_rxkws")]
+position = Vector2(-496, -1872)
+rotation = 1.5708
+
+[node name="LavaV2_x3_4" parent="Root" index="17" instance=ExtResource("2_rxkws")]
+position = Vector2(48, -3424)
+rotation = 1.5708
+
+[node name="LavaV2_x3_6" parent="Root" index="18" instance=ExtResource("2_rxkws")]
+position = Vector2(112, -3552)
+
+[node name="LavaV2_x3_7" parent="Root" index="19" instance=ExtResource("2_rxkws")]
+position = Vector2(520, -3552)
+
+[node name="LavaV2_x3_8" parent="Root" index="20" instance=ExtResource("2_rxkws")]
+position = Vector2(320, -3552)
+
+[node name="LavaV2_x3_5" parent="Root" index="21" instance=ExtResource("2_rxkws")]
+position = Vector2(584, -3424)
+rotation = 1.5708
+
+[node name="LavaV2_12" parent="Root" index="22" instance=ExtResource("3_2ywol")]
+position = Vector2(-496, -1745)
+
+[node name="LavaV2_14" parent="Root" index="23" instance=ExtResource("3_2ywol")]
+position = Vector2(-408, -2024)
+
+[node name="LavaV2_x3_3" parent="Root" index="24" instance=ExtResource("2_rxkws")]
+position = Vector2(1128, -1872)
+rotation = 1.5708
+
+[node name="LavaV2_13" parent="Root" index="25" instance=ExtResource("3_2ywol")]
+position = Vector2(1128, -1745)
+
+[node name="LavaV2_15" parent="Root" index="26" instance=ExtResource("3_2ywol")]
+position = Vector2(1040, -2024)
+
+[node name="LavaV2_2" parent="Root" index="27" instance=ExtResource("3_2ywol")]
+position = Vector2(-128, -2744)
+
+[node name="LavaV2_3" parent="Root" index="28" instance=ExtResource("3_2ywol")]
+position = Vector2(-40, -2648)
+
+[node name="LavaV2_4" parent="Root" index="29" instance=ExtResource("3_2ywol")]
+position = Vector2(-128, -2560)
+
+[node name="LavaV2_5" parent="Root" index="30" instance=ExtResource("3_2ywol")]
+position = Vector2(-40, -2472)
+
+[node name="LavaV2_6" parent="Root" index="31" instance=ExtResource("3_2ywol")]
+position = Vector2(-128, -2384)
+
+[node name="LavaV2_7" parent="Root" index="32" instance=ExtResource("3_2ywol")]
+position = Vector2(768, -2744)
+
+[node name="LavaV2_8" parent="Root" index="33" instance=ExtResource("3_2ywol")]
+position = Vector2(680, -2648)
+
+[node name="LavaV2_9" parent="Root" index="34" instance=ExtResource("3_2ywol")]
+position = Vector2(768, -2560)
+
+[node name="LavaV2_10" parent="Root" index="35" instance=ExtResource("3_2ywol")]
+position = Vector2(680, -2472)
+
+[node name="LavaV2_11" parent="Root" index="36" instance=ExtResource("3_2ywol")]
+position = Vector2(768, -2384)
+
+[node name="Lamp" parent="Root" index="37" instance=ExtResource("4_6sbko")]
+position = Vector2(232, -32)
+
+[node name="Lamp3" parent="Root" index="38" instance=ExtResource("4_6sbko")]
+position = Vector2(-36, -1485)
+
+[node name="Lamp4" parent="Root" index="39" instance=ExtResource("4_6sbko")]
+position = Vector2(672, -1485)
+
+[node name="Lamp5" parent="Root" index="40" instance=ExtResource("4_6sbko")]
+position = Vector2(232, -1936)
+
+[node name="Lamp6" parent="Root" index="41" instance=ExtResource("4_6sbko")]
+position = Vector2(400, -1936)
+
+[node name="Lamp7" parent="Root" index="42" instance=ExtResource("4_6sbko")]
+position = Vector2(320, -2024)
+
+[node name="Lamp8" parent="Root" index="43" instance=ExtResource("4_6sbko")]
+position = Vector2(136, -3188)
+
+[node name="Lamp9" parent="Root" index="44" instance=ExtResource("4_6sbko")]
+position = Vector2(504, -3192)
+
+[node name="Lamp2" parent="Root" index="45" instance=ExtResource("4_6sbko")]
+position = Vector2(400, -32)
+
+[node name="Checkpoint" parent="Root" index="46" instance=ExtResource("6_vr43c")]
+position = Vector2(320, -288)
+number = 5
+
+[node name="Treasure chest" parent="Root" index="47" instance=ExtResource("5_us587")]
+position = Vector2(320, -3328)
+
+[node name="Checkpoint" parent="Root/Treasure chest" index="4" instance=ExtResource("6_vr43c")]
+visible = false
+number = 6
+
+[node name="Mimic" parent="Root" index="48" instance=ExtResource("7_v0dnj")]
+position = Vector2(-256, -2984)
+
+[node name="Mimic2" parent="Root" index="49" instance=ExtResource("7_v0dnj")]
+position = Vector2(896, -2984)
+rotation = 3.14159
+
+[node name="Skeleton mage" parent="Root" index="50" instance=ExtResource("8_qyr2a")]
+position = Vector2(-120, -1176)
+
+[node name="Skeleton mage2" parent="Root" index="51" instance=ExtResource("8_qyr2a")]
+position = Vector2(760, -1176)
+rotation = 3.14159
+
+[node name="Skeleton archer" parent="Root" index="52" instance=ExtResource("9_6e0ok")]
+position = Vector2(-152, -856)
+rotation = 0.785398
+
+[node name="Skeleton archer2" parent="Root" index="53" instance=ExtResource("9_6e0ok")]
+position = Vector2(808, -856)
+rotation = 2.35619
+
+[node name="Skeleton swordman" parent="Root" index="54" instance=ExtResource("10_i6ysx")]
+position = Vector2(-432, -1176)
+rotation = 0.785398
+
+[node name="Skeleton swordman3" parent="Root" index="55" instance=ExtResource("10_i6ysx")]
+position = Vector2(-370, -1560)
+rotation = 0.785398
+
+[node name="Skeleton swordman2" parent="Root" index="56" instance=ExtResource("10_i6ysx")]
+position = Vector2(1056, -1176)
+rotation = 2.35619
+
+[node name="Skeleton swordman4" parent="Root" index="57" instance=ExtResource("10_i6ysx")]
+position = Vector2(1008, -1560)
+rotation = 2.35619
+
+[node name="Skeleton mage3" parent="Root" index="58" instance=ExtResource("8_qyr2a")]
+position = Vector2(-488, -2368)
+rotation = 0.785398
+
+[node name="Skeleton mage4" parent="Root" index="59" instance=ExtResource("8_qyr2a")]
+position = Vector2(-400, -2464)
+rotation = 0.436332
+
+[node name="Skeleton mage5" parent="Root" index="60" instance=ExtResource("8_qyr2a")]
+position = Vector2(-308, -2560)
+
+[node name="Skeleton mage6" parent="Root" index="61" instance=ExtResource("8_qyr2a")]
+position = Vector2(1128, -2368)
+rotation = 2.35619
+
+[node name="Skeleton mage7" parent="Root" index="62" instance=ExtResource("8_qyr2a")]
+position = Vector2(1028, -2464)
+rotation = -3.57792
+
+[node name="Skeleton mage8" parent="Root" index="63" instance=ExtResource("8_qyr2a")]
+position = Vector2(944, -2560)
+rotation = 3.14159
+
+[node name="Skeleton knight" parent="Root" index="64" instance=ExtResource("10_i6ysx")]
+position = Vector2(320, -3136)
+rotation = 1.5708
+scale = Vector2(2, 2)
+hp = 300
+hp_max = 300

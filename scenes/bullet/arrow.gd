@@ -5,6 +5,10 @@ extends CharacterBody2D
 @export var attack_damage : int = 20
 @export var shooting : bool = false
 @export var archer : Node2D
+@export var life_time : float = 7.0
+
+func _ready() -> void:
+	$LifeTimer.start(life_time)
 
 func shoot() -> void:
 	shooting = true

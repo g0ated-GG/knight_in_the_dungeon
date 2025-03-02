@@ -12,8 +12,10 @@ func set_secret_state(is_opened : bool):
 		if hider is StaticBody2D:
 			for node in hider.get_children():
 				if node is CollisionPolygon2D or node is CollisionShape2D:
-					node.disabled = is_opened
+					node.set_deferred('disabled', is_opened)
 					break
+		elif hider is Smoke:
+			hider.enabled = !is_opened
 		elif hider is GPUParticles2D:
 			hider.emitting = !is_opened
 		else:

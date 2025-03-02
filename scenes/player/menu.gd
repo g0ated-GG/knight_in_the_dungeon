@@ -13,7 +13,8 @@ func _on_resume_button_pressed() -> void:
 
 func _on_restart_button_pressed() -> void:
 	get_tree().paused = false
-	get_tree().reload_current_scene()
+	var checkpoint = clamp(Globals.checkpoint, 0, Globals.final_checkpoint - 1)
+	get_tree().change_scene_to_file("res://scenes/world/checkpoint_%d.tscn" % checkpoint)
 
 func _on_main_menu_button_pressed() -> void:
 	get_tree().paused = false

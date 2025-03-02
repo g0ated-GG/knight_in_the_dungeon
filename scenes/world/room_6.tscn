@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://cdsxsk7mutsql"]
+[gd_scene load_steps=12 format=3 uid="uid://cdsxsk7mutsql"]
 
 [ext_resource type="PackedScene" uid="uid://6drp3l3umlqc" path="res://scenes/world/level_map.tscn" id="1_vuaq2"]
 [ext_resource type="PackedScene" uid="uid://bwo0x34lbadye" path="res://zones/lava_x3.tscn" id="2_0qspp"]
@@ -7,8 +7,17 @@
 [ext_resource type="PackedScene" uid="uid://b5wwg5wusy628" path="res://scenes/props/treasure_chest.tscn" id="5_1m60c"]
 [ext_resource type="PackedScene" uid="uid://bfbjy6cbe4qw5" path="res://scenes/enemy/skeleton_swordman.tscn" id="6_yn70i"]
 [ext_resource type="PackedScene" uid="uid://blfx4gmc8o7dg" path="res://scenes/enemy/skeleton_archer.tscn" id="7_riymh"]
+[ext_resource type="PackedScene" uid="uid://b1frxxj7dbhyg" path="res://scenes/props/floor_label.tscn" id="8_tbyyi"]
+[ext_resource type="PackedScene" uid="uid://cv75142x3wp8q" path="res://zones/secret.tscn" id="9_i77t7"]
+[ext_resource type="PackedScene" uid="uid://c04ccvp2uwfx2" path="res://zones/hider.tscn" id="10_g1hte"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_x6m54"]
+size = Vector2(896, 536)
 
 [node name="Room6" instance=ExtResource("1_vuaq2")]
+
+[node name="TileMapLayer" parent="." index="0"]
+visible = false
 
 [node name="Root" type="Node2D" parent="." index="1"]
 position = Vector2(0, -3960)
@@ -163,3 +172,25 @@ rotation = 0.523599
 
 [node name="Skeleton archer3" parent="Root" index="41" instance=ExtResource("7_riymh")]
 position = Vector2(-1268, -218)
+
+[node name="Floor label" parent="Root" index="42" instance=ExtResource("8_tbyyi")]
+offset_top = -968.0
+offset_right = 704.0
+offset_bottom = -848.0
+text = "Награда была совсем близко!
+К сожалению, в ваших карманах нет свободного места. Очень жаль!"
+
+[node name="Secret" parent="Root" index="43" node_paths=PackedStringArray("hiders") instance=ExtResource("9_i77t7")]
+hiders = [NodePath("Hider"), NodePath("Hider2")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Root/Secret" index="0"]
+position = Vector2(360, -988)
+shape = SubResource("RectangleShape2D_x6m54")
+
+[node name="Hider" parent="Root/Secret" index="1" instance=ExtResource("10_g1hte")]
+position = Vector2(364, -1130)
+scale = Vector2(4.34375, 460)
+
+[node name="Hider2" parent="Root/Secret" index="2" instance=ExtResource("10_g1hte")]
+position = Vector2(456, -766)
+scale = Vector2(3.5625, 284)
