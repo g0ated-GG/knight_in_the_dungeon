@@ -87,13 +87,11 @@ rotation = 0.785398
 [node name="Gargoyle_f_x1_d1_5s_3" parent="Root" index="9" instance=ExtResource("2_f0xk3")]
 position = Vector2(136, -1296)
 rotation = -2.35619
-scale = Vector2(1, 1)
 shooting = false
 
 [node name="Gargoyle_f_x1_d1_5s_4" parent="Root" index="10" instance=ExtResource("2_f0xk3")]
 position = Vector2(488, -1296)
 rotation = -0.785398
-scale = Vector2(1, 1)
 shooting = false
 
 [node name="Skeleton archmage" parent="Root" index="11" instance=ExtResource("4_avcqv")]
@@ -101,6 +99,8 @@ position = Vector2(320, -1120)
 rotation = -1.5708
 scale = Vector2(2, 2)
 attack_delay = 1.0
+desired_distance = 700.0
+speed = 120.0
 hp = 200
 hp_max = 200
 alive = false

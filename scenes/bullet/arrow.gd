@@ -22,7 +22,7 @@ func _physics_process(delta: float) -> void:
 		var target = collider_info.get_collider()
 		if target == self or target == archer:
 			return
-		if target is Player or target is GenericEnemy:
+		if target is Player and not target.get_collision_layer_value(7) or target is GenericEnemy:
 			target.damage(attack_damage)
 		queue_free()
 

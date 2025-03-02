@@ -37,6 +37,7 @@ radius = 30.0
 
 [node name="Lamp" instance=ExtResource("1_v6b20")]
 script = ExtResource("2_pukns")
+enabled = null
 
 [node name="PointLight2D" type="PointLight2D" parent="." index="0"]
 color = Color(1, 1, 0, 1)
@@ -57,7 +58,7 @@ texture = SubResource("AtlasTexture_yxct2")
 
 [node name="SwitchArea2D" type="Area2D" parent="." index="4"]
 collision_layer = 0
-collision_mask = 177
+collision_mask = 689
 monitorable = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="SwitchArea2D" index="0"]

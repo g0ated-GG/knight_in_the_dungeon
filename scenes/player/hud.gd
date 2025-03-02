@@ -35,4 +35,5 @@ func show_message(text : String, color : Color, custom_speed = 1.0):
 	$AnimationPlayer.play('show_message', custom_speed)
 
 func _on_restart_timer_timeout() -> void:
-	get_tree().change_scene_to_file("res://scenes/world/checkpoint_%d.tscn" % Globals.checkpoint)
+	var checkpoint_number = clamp(Globals.checkpoint, 0, Globals.final_checkpoint - 1)
+	get_tree().change_scene_to_file("res://scenes/world/checkpoint_%d.tscn" % checkpoint_number)

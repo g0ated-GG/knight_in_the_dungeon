@@ -3,5 +3,5 @@
 /android/
 
 # custom
-./dist/
+dist/
 

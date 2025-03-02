@@ -277,5 +277,6 @@ rotation = 3.14159
 position = Vector2(320, -3136)
 rotation = 1.5708
 scale = Vector2(2, 2)
+desired_distance = 200.0
 hp = 300
 hp_max = 300

@@ -18,7 +18,9 @@ config/name="Рыцарь в подземелье"
 config/description="Игра на КОД23 \"Мал, да удал\" https://gamin.me/compos/kod/23"
 run/main_scene="res://scenes/menu/main_menu.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
+boot_splash/image="res://img/logo_white_transparent.png"
 config/icon="res://icon.svg"
+boot_splash/minimum_display_time=2000
 
 [autoload]
 

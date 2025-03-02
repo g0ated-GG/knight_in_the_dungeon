@@ -1,8 +1,9 @@
-[gd_scene load_steps=15 format=3 uid="uid://mbx1a73w157t"]
+[gd_scene load_steps=17 format=3 uid="uid://mbx1a73w157t"]
 
 [ext_resource type="Script" path="res://scenes/enemy/generic_enemy.gd" id="1_51bku"]
 [ext_resource type="Texture2D" uid="uid://cf880tqyh4lsu" path="res://img/world_sprites.svg" id="2_yys55"]
 [ext_resource type="AudioStream" uid="uid://co7crn827o6m7" path="res://resources/Goblin Death.wav" id="3_43n6r"]
+[ext_resource type="FontFile" uid="uid://bi8vnxe7rn1ft" path="res://fonts/liberation-fonts-ttf-2.1.5/LiberationMono-Bold.ttf" id="3_enig3"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_wrhcw"]
 atlas = ExtResource("2_yys55")
@@ -28,6 +29,9 @@ bg_color = Color(1, 0, 0, 1)
 [sub_resource type="Theme" id="Theme_km2a8"]
 ProgressBar/styles/background = SubResource("StyleBoxFlat_qx4cq")
 ProgressBar/styles/fill = SubResource("StyleBoxFlat_pkjiq")
+
+[sub_resource type="LabelSettings" id="LabelSettings_q2sn4"]
+font = ExtResource("3_enig3")
 
 [sub_resource type="Animation" id="Animation_caioe"]
 length = 0.001
@@ -260,6 +264,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 text = "100 / 100"
+label_settings = SubResource("LabelSettings_q2sn4")
 horizontal_alignment = 1
 vertical_alignment = 1
 

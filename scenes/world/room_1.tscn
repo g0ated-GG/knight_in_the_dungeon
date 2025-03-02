@@ -11,11 +11,12 @@
 visible = false
 
 [node name="Floor label" parent="." index="1" instance=ExtResource("4_n1l0x")]
-offset_left = 856.0
-offset_top = 280.0
-offset_right = 1208.0
-offset_bottom = 355.0
-text = "Свет факелов укажет Вам путь."
+offset_left = 704.0
+offset_top = 248.0
+offset_right = 1344.0
+offset_bottom = 401.0
+text = "Движение [WASD/стрелки].
+Свет факелов укажет Вам путь."
 
 [node name="Borders" type="StaticBody2D" parent="." index="2"]
 

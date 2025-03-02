@@ -9,7 +9,7 @@ region = Rect2(1651, 1831, 128, 48)
 
 [node name="Arrow" type="CharacterBody2D"]
 collision_layer = 145
-collision_mask = 298
+collision_mask = 362
 motion_mode = 1
 platform_floor_layers = 4294901760
 script = ExtResource("1_ibni2")

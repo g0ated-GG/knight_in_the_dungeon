@@ -27,6 +27,7 @@ func explosion() -> void:
 			continue
 		if target != self and target is not Arrow:
 			target.damage(explosion_damage)
+	$CollisionShape2D.set_deferred('disabled', true)
 
 func damage(points : int) -> void:
 	hp = clamp(hp - points, 0, hp_max)
