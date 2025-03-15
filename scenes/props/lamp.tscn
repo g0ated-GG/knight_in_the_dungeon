@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://di1psgm2krpc3" path="res://scenes/props/generic_prop.tscn" id="1_v6b20"]
 [ext_resource type="Texture2D" uid="uid://cf880tqyh4lsu" path="res://img/world_sprites.svg" id="2_1m0gy"]
 [ext_resource type="Texture2D" uid="uid://bwpp8sttuibr2" path="res://img/lamp.png" id="2_8c77b"]
-[ext_resource type="Script" path="res://scenes/props/lamp.gd" id="2_pukns"]
+[ext_resource type="Script" uid="uid://c7ao6t48sbtfk" path="res://scenes/props/lamp.gd" id="2_pukns"]
 [ext_resource type="AudioStream" uid="uid://b2hffkfqycp3k" path="res://resources/Fire Burning.wav" id="5_k2i3c"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_yrebg"]
@@ -12,6 +12,10 @@ region = Rect2(950, 550, 110, 110)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_qphil"]
 radius = 30.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yxct2"]
+atlas = ExtResource("2_1m0gy")
+region = Rect2(1860, 1760, 190, 190)
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_qcsjc"]
 lifetime_randomness = 0.3
@@ -27,10 +31,6 @@ tangential_accel_min = 1.78
 tangential_accel_max = 27.56
 scale_min = 0.01
 scale_max = 0.05
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_yxct2"]
-atlas = ExtResource("2_1m0gy")
-region = Rect2(1860, 1760, 190, 190)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_th1kn"]
 radius = 30.0
@@ -53,8 +53,8 @@ shape = SubResource("CircleShape2D_qphil")
 
 [node name="GPUParticles2D" type="GPUParticles2D" parent="." index="3"]
 amount = 20
-process_material = SubResource("ParticleProcessMaterial_qcsjc")
 texture = SubResource("AtlasTexture_yxct2")
+process_material = SubResource("ParticleProcessMaterial_qcsjc")
 
 [node name="SwitchArea2D" type="Area2D" parent="." index="4"]
 collision_layer = 0

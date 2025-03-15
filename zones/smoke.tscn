@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://cjvotlics32e6"]
 
 [ext_resource type="Texture2D" uid="uid://cf880tqyh4lsu" path="res://img/world_sprites.svg" id="1_8fm4s"]
-[ext_resource type="Script" path="res://zones/smoke.gd" id="2_i6nge"]
+[ext_resource type="Script" uid="uid://i2q3mbc31515" path="res://zones/smoke.gd" id="2_i6nge"]
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_gd6ir"]
 particle_flag_disable_z = true

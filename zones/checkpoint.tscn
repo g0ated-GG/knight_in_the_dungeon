@@ -1,8 +1,8 @@
 [gd_scene load_steps=11 format=3 uid="uid://c2vvc45tkhr2o"]
 
-[ext_resource type="Script" path="res://zones/checkpoint.gd" id="1_eudqv"]
+[ext_resource type="Script" uid="uid://cdv12xswcvnfl" path="res://zones/checkpoint.gd" id="1_eudqv"]
 [ext_resource type="Texture2D" uid="uid://cf880tqyh4lsu" path="res://img/world_sprites.svg" id="1_ux6k0"]
-[ext_resource type="Shader" path="res://zones/checkpoint.gdshader" id="2_i32dq"]
+[ext_resource type="Shader" uid="uid://ryp0k5t3hron" path="res://zones/checkpoint.gdshader" id="2_i32dq"]
 [ext_resource type="Texture2D" uid="uid://bwpp8sttuibr2" path="res://img/lamp.png" id="4_y40dt"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_web8b"]

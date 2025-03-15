@@ -22,7 +22,7 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_bh376"]
 _data = {
-"shooting": SubResource("Animation_27vbu")
+&"shooting": SubResource("Animation_27vbu")
 }
 
 [node name="Gargoyle_f_1_5s" instance=ExtResource("1_kk41n")]

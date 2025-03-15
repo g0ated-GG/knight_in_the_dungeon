@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://bx0rapjdjlmfh"]
 
 [ext_resource type="PackedScene" uid="uid://b03nfqb3kxpwd" path="res://scenes/bullet/fireball.tscn" id="1_3s4iq"]
-[ext_resource type="Script" path="res://scenes/bullet/simple_fireball.gd" id="2_v2upp"]
+[ext_resource type="Script" uid="uid://bcso7formtf43" path="res://scenes/bullet/simple_fireball.gd" id="2_v2upp"]
 
 [node name="SimpleFireball" instance=ExtResource("1_3s4iq")]
 script = ExtResource("2_v2upp")

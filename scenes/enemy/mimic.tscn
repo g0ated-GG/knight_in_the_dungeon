@@ -1,7 +1,7 @@
 [gd_scene load_steps=17 format=3 uid="uid://yufl3x3nrlh7"]
 
 [ext_resource type="PackedScene" uid="uid://blfx4gmc8o7dg" path="res://scenes/enemy/skeleton_archer.tscn" id="1_dw6pw"]
-[ext_resource type="Script" path="res://scenes/enemy/mimic.gd" id="2_6pb4l"]
+[ext_resource type="Script" uid="uid://dbx3qsgt4e7c6" path="res://scenes/enemy/mimic.gd" id="2_6pb4l"]
 [ext_resource type="Texture2D" uid="uid://cf880tqyh4lsu" path="res://img/world_sprites.svg" id="2_el4lh"]
 [ext_resource type="AudioStream" uid="uid://cmwxk4q8664aq" path="res://resources/bite_3.wav" id="4_loj5a"]
 [ext_resource type="AudioStream" uid="uid://co7crn827o6m7" path="res://resources/Goblin Death.wav" id="5_swoyh"]
@@ -117,8 +117,23 @@ tracks/3/use_blend = true
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_8v8ja"]
 _data = {
-"RESET": SubResource("Animation_pwjnc"),
-"bite": SubResource("Animation_hcmuo")
+&"RESET": SubResource("Animation_pwjnc"),
+&"bite": SubResource("Animation_hcmuo")
+}
+
+[sub_resource type="Animation" id="Animation_rxglo"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CollisionShape2D:disabled")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
 }
 
 [sub_resource type="Animation" id="Animation_56poh"]
@@ -151,25 +166,10 @@ tracks/1/keys = {
 "values": [true]
 }
 
-[sub_resource type="Animation" id="Animation_rxglo"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("CollisionShape2D:disabled")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_4p13c"]
 _data = {
-"RESET": SubResource("Animation_rxglo"),
-"death": SubResource("Animation_56poh")
+&"RESET": SubResource("Animation_rxglo"),
+&"death": SubResource("Animation_56poh")
 }
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xdail"]

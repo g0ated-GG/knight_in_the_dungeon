@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=4 uid="uid://cah3jhknogeiw"]
 
-[ext_resource type="Script" path="res://scenes/menu/main_menu.gd" id="1_fqx82"]
+[ext_resource type="Script" uid="uid://b8dscsyubhuvb" path="res://scenes/menu/main_menu.gd" id="1_fqx82"]
 [ext_resource type="Texture2D" uid="uid://dxvcbo0dgkib5" path="res://img/logo_white_transparent.png" id="2_fsc7i"]
 [ext_resource type="FontFile" uid="uid://mhmhy4xnwhwe" path="res://fonts/liberation-fonts-ttf-2.1.5/LiberationSerif-Bold.ttf" id="3_dyspx"]
 [ext_resource type="TileSet" uid="uid://vk3mo16g3chg" path="res://img/world_tile_set.tres" id="4_4kwg6"]

@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://6drp3l3umlqc" path="res://scenes/world/level_map.tscn" id="1_p1xek"]
 [ext_resource type="PackedScene" uid="uid://b732ftmqoeqms" path="res://scenes/props/gargoules/gargoyle_f_x1_d1.5s.tscn" id="2_f0xk3"]
-[ext_resource type="Script" path="res://scenes/world/room_8.gd" id="2_xd76t"]
+[ext_resource type="Script" uid="uid://u4368ccg07bv" path="res://scenes/world/room_8.gd" id="2_xd76t"]
 [ext_resource type="PackedScene" uid="uid://cjvotlics32e6" path="res://zones/smoke.tscn" id="3_wco6s"]
 [ext_resource type="PackedScene" uid="uid://c5vnrc1iawpts" path="res://scenes/enemy/skeleton_mage.tscn" id="4_avcqv"]
 [ext_resource type="PackedScene" uid="uid://cv75142x3wp8q" path="res://zones/secret.tscn" id="6_o5gyr"]

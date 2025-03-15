@@ -1,6 +1,6 @@
 [gd_scene load_steps=18 format=3 uid="uid://cbv8kd8au3ic"]
 
-[ext_resource type="Script" path="res://scenes/player/player.gd" id="1_07msp"]
+[ext_resource type="Script" uid="uid://ceomjctecwl6q" path="res://scenes/player/player.gd" id="1_07msp"]
 [ext_resource type="Texture2D" uid="uid://cf880tqyh4lsu" path="res://img/world_sprites.svg" id="2_llpwy"]
 [ext_resource type="AudioStream" uid="uid://dh574f5n4h0bf" path="res://resources/Hit Swing Sword Small 3.wav" id="3_fqb1l"]
 [ext_resource type="AudioStream" uid="uid://b6etn8ljmt6oy" path="res://resources/body hitting the ground.wav" id="3_qd6it"]
@@ -394,10 +394,10 @@ tracks/4/use_blend = true
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_muith"]
 _data = {
-"RESET": SubResource("Animation_u3ylp"),
-"dodge": SubResource("Animation_0trkf"),
-"left_to_right": SubResource("Animation_emqgp"),
-"right_to_left": SubResource("Animation_kcfbd")
+&"RESET": SubResource("Animation_u3ylp"),
+&"dodge": SubResource("Animation_0trkf"),
+&"left_to_right": SubResource("Animation_emqgp"),
+&"right_to_left": SubResource("Animation_kcfbd")
 }
 
 [sub_resource type="Animation" id="Animation_tvjq3"]
@@ -434,8 +434,8 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_spl7o"]
 _data = {
-"RESET": SubResource("Animation_tvjq3"),
-"walk": SubResource("Animation_7j8hq")
+&"RESET": SubResource("Animation_tvjq3"),
+&"walk": SubResource("Animation_7j8hq")
 }
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_7ymd7"]
@@ -488,12 +488,12 @@ texture = SubResource("AtlasTexture_c8u2l")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
-"": SubResource("AnimationLibrary_muith")
+&"": SubResource("AnimationLibrary_muith")
 }
 
 [node name="WalkAnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
-"": SubResource("AnimationLibrary_spl7o")
+&"": SubResource("AnimationLibrary_spl7o")
 }
 
 [node name="SuccessDodgeArea" type="Area2D" parent="."]

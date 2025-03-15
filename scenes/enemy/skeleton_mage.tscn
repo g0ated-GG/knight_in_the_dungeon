@@ -1,7 +1,7 @@
 [gd_scene load_steps=11 format=3 uid="uid://c5vnrc1iawpts"]
 
 [ext_resource type="PackedScene" uid="uid://blfx4gmc8o7dg" path="res://scenes/enemy/skeleton_archer.tscn" id="1_pcfcs"]
-[ext_resource type="Script" path="res://scenes/enemy/skeleton_mage.gd" id="2_1yijl"]
+[ext_resource type="Script" uid="uid://c0b6gk5fyxxkr" path="res://scenes/enemy/skeleton_mage.gd" id="2_1yijl"]
 [ext_resource type="Texture2D" uid="uid://cf880tqyh4lsu" path="res://img/world_sprites.svg" id="3_f57pa"]
 [ext_resource type="AudioStream" uid="uid://dai18rapjk4w3" path="res://resources/Fireball Cast 1.wav" id="4_ii21i"]
 
@@ -51,7 +51,7 @@ tracks/0/use_blend = true
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_1km0e"]
 _data = {
-"cast": SubResource("Animation_yux8f")
+&"cast": SubResource("Animation_yux8f")
 }
 
 [node name="Skeleton mage" instance=ExtResource("1_pcfcs")]

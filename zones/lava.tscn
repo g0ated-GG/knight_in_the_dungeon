@@ -1,7 +1,7 @@
 [gd_scene load_steps=10 format=3 uid="uid://diuuntjgrkkv7"]
 
 [ext_resource type="Texture2D" uid="uid://bwpp8sttuibr2" path="res://img/lamp.png" id="1_0tk7r"]
-[ext_resource type="Script" path="res://zones/lava.gd" id="1_foq0s"]
+[ext_resource type="Script" uid="uid://c1osxek2vdape" path="res://zones/lava.gd" id="1_foq0s"]
 [ext_resource type="AudioStream" uid="uid://dx3upa0p7nyqn" path="res://resources/Lava loop.wav" id="3_pndt8"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2qes0"]
@@ -50,7 +50,7 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_nd1tm"]
 _data = {
-"damage": SubResource("Animation_wba4t")
+&"damage": SubResource("Animation_wba4t")
 }
 
 [node name="LavaV2" type="Area2D"]

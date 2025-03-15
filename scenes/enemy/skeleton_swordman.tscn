@@ -1,7 +1,7 @@
 [gd_scene load_steps=10 format=3 uid="uid://bfbjy6cbe4qw5"]
 
 [ext_resource type="PackedScene" uid="uid://mbx1a73w157t" path="res://scenes/enemy/generic_enemy.tscn" id="1_v3oqj"]
-[ext_resource type="Script" path="res://scenes/enemy/skeleton_swordman.gd" id="2_2wqx3"]
+[ext_resource type="Script" uid="uid://dx56v77muof4q" path="res://scenes/enemy/skeleton_swordman.gd" id="2_2wqx3"]
 [ext_resource type="AudioStream" uid="uid://bgfnynpr54cjw" path="res://resources/Hit Swing Sword Small 2.wav" id="3_q1crw"]
 
 [sub_resource type="Animation" id="Animation_qa76v"]
@@ -153,9 +153,9 @@ tracks/3/use_blend = true
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_wh4og"]
 _data = {
-"RESET": SubResource("Animation_qa76v"),
-"left_to_right": SubResource("Animation_4haty"),
-"right_to_left": SubResource("Animation_5dqij")
+&"RESET": SubResource("Animation_qa76v"),
+&"left_to_right": SubResource("Animation_4haty"),
+&"right_to_left": SubResource("Animation_5dqij")
 }
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_47koe"]

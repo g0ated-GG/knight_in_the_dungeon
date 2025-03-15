@@ -1,7 +1,7 @@
 [gd_scene load_steps=19 format=3 uid="uid://b03nfqb3kxpwd"]
 
 [ext_resource type="PackedScene" uid="uid://mbx1a73w157t" path="res://scenes/enemy/generic_enemy.tscn" id="1_w04fc"]
-[ext_resource type="Script" path="res://scenes/bullet/fireball.gd" id="2_1e67s"]
+[ext_resource type="Script" uid="uid://g6ys5po2jj1i" path="res://scenes/bullet/fireball.gd" id="2_1e67s"]
 [ext_resource type="Texture2D" uid="uid://cf880tqyh4lsu" path="res://img/world_sprites.svg" id="2_5py1q"]
 [ext_resource type="AudioStream" uid="uid://lghlgiu5yxi6" path="res://resources/Fireball Impact.wav" id="4_80eh0"]
 
@@ -11,6 +11,10 @@ region = Rect2(1860, 1760, 190, 190)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_lsb2n"]
 radius = 25.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ahk04"]
+atlas = ExtResource("2_5py1q")
+region = Rect2(1860, 1760, 190, 190)
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_npoxy"]
 lifetime_randomness = 0.3
@@ -27,9 +31,9 @@ tangential_accel_max = 24.0
 scale_min = 0.01
 scale_max = 0.05
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_ahk04"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_htmcd"]
 atlas = ExtResource("2_5py1q")
-region = Rect2(1860, 1760, 190, 190)
+region = Rect2(2845, 1145, 1120, 1120)
 
 [sub_resource type="Gradient" id="Gradient_tvp87"]
 colors = PackedColorArray(0.74558, 0.74558, 0.74558, 1, 1, 1, 1, 1)
@@ -60,10 +64,6 @@ scale_min = 0.01
 scale_max = 0.05
 color_ramp = SubResource("GradientTexture1D_2wvtp")
 color_initial_ramp = SubResource("GradientTexture1D_keyy5")
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_htmcd"]
-atlas = ExtResource("2_5py1q")
-region = Rect2(2845, 1145, 1120, 1120)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_b1vf1"]
 radius = 40.0
@@ -116,8 +116,8 @@ tracks/1/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_0pq26"]
 _data = {
-"RESET": SubResource("Animation_nkcxu"),
-"explosion": SubResource("Animation_jeova")
+&"RESET": SubResource("Animation_nkcxu"),
+&"explosion": SubResource("Animation_jeova")
 }
 
 [node name="Fireball" instance=ExtResource("1_w04fc")]
@@ -157,17 +157,17 @@ one_shot = true
 [node name="GPUParticles2D" type="GPUParticles2D" parent="." index="8"]
 position = Vector2(-10, 0)
 amount = 30
-process_material = SubResource("ParticleProcessMaterial_npoxy")
 texture = SubResource("AtlasTexture_ahk04")
+process_material = SubResource("ParticleProcessMaterial_npoxy")
 
 [node name="ExplosionAnimationPlayer" type="AnimationPlayer" parent="." index="9"]
 
 [node name="ExplosionParticles2D" type="GPUParticles2D" parent="." index="10"]
 emitting = false
 amount = 100
-process_material = SubResource("ParticleProcessMaterial_lprc6")
 texture = SubResource("AtlasTexture_htmcd")
 one_shot = true
+process_material = SubResource("ParticleProcessMaterial_lprc6")
 
 [node name="ExplosionArea2D" type="Area2D" parent="." index="11"]
 collision_layer = 0
@@ -178,7 +178,7 @@ shape = SubResource("CircleShape2D_b1vf1")
 
 [node name="FireballAnimationPlayer" type="AnimationPlayer" parent="." index="13"]
 libraries = {
-"": SubResource("AnimationLibrary_0pq26")
+&"": SubResource("AnimationLibrary_0pq26")
 }
 
 [connection signal="timeout" from="LifeTimer" to="." method="_on_life_timer_timeout"]

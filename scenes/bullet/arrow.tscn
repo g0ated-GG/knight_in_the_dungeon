@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://bd36blim1knl0"]
 
-[ext_resource type="Script" path="res://scenes/bullet/arrow.gd" id="1_ibni2"]
+[ext_resource type="Script" uid="uid://bvtuni3yogwhv" path="res://scenes/bullet/arrow.gd" id="1_ibni2"]
 [ext_resource type="Texture2D" uid="uid://cf880tqyh4lsu" path="res://img/world_sprites.svg" id="2_0ppr6"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_nqaln"]

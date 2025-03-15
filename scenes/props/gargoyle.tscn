@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://di1psgm2krpc3" path="res://scenes/props/generic_prop.tscn" id="1_edale"]
 [ext_resource type="Texture2D" uid="uid://cf880tqyh4lsu" path="res://img/world_sprites.svg" id="2_bri5n"]
-[ext_resource type="Script" path="res://scenes/props/gargoyle.gd" id="2_pc4jq"]
+[ext_resource type="Script" uid="uid://db6dnuhfo42qt" path="res://scenes/props/gargoyle.gd" id="2_pc4jq"]
 [ext_resource type="AudioStream" uid="uid://cdubk46exxmaj" path="res://resources/Arrow_loose01.wav" id="4_wwlwk"]
 [ext_resource type="AudioStream" uid="uid://dai18rapjk4w3" path="res://resources/Fireball Cast 1.wav" id="5_ih62n"]
 
@@ -109,10 +109,10 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_ogjis"]
 _data = {
-"RESET": SubResource("Animation_85cdd"),
-"shoot-arrow": SubResource("Animation_1aq3d"),
-"shoot-fireball": SubResource("Animation_sa8qf"),
-"sleep": SubResource("Animation_wywba")
+&"RESET": SubResource("Animation_85cdd"),
+&"shoot-arrow": SubResource("Animation_1aq3d"),
+&"shoot-fireball": SubResource("Animation_sa8qf"),
+&"sleep": SubResource("Animation_wywba")
 }
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ynm4p"]

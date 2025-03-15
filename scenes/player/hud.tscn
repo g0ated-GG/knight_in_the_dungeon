@@ -1,9 +1,9 @@
 [gd_scene load_steps=16 format=3 uid="uid://dcp7dodgvnmor"]
 
-[ext_resource type="Script" path="res://scenes/player/hud.gd" id="1_mqmef"]
+[ext_resource type="Script" uid="uid://t40b0q3fok6p" path="res://scenes/player/hud.gd" id="1_mqmef"]
 [ext_resource type="FontFile" uid="uid://bi8vnxe7rn1ft" path="res://fonts/liberation-fonts-ttf-2.1.5/LiberationMono-Bold.ttf" id="2_r7e3d"]
 [ext_resource type="FontFile" uid="uid://bfub2kbyi1bw6" path="res://fonts/liberation-fonts-ttf-2.1.5/LiberationSerif-Regular.ttf" id="2_wak6e"]
-[ext_resource type="Script" path="res://scenes/player/menu.gd" id="3_vjlu0"]
+[ext_resource type="Script" uid="uid://j43d3yvyp587" path="res://scenes/player/menu.gd" id="3_vjlu0"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wwjjb"]
 bg_color = Color(0.498039, 0, 0, 1)
@@ -64,8 +64,8 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_kxtoj"]
 _data = {
-"RESET": SubResource("Animation_a5pjv"),
-"show_message": SubResource("Animation_tkpul")
+&"RESET": SubResource("Animation_a5pjv"),
+&"show_message": SubResource("Animation_tkpul")
 }
 
 [node name="HUD" type="Control"]
@@ -145,7 +145,7 @@ horizontal_alignment = 1
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 root_node = NodePath("../Message")
 libraries = {
-"": SubResource("AnimationLibrary_kxtoj")
+&"": SubResource("AnimationLibrary_kxtoj")
 }
 
 [node name="RestartGameTimer" type="Timer" parent="."]

@@ -1,7 +1,7 @@
 [gd_scene load_steps=8 format=3 uid="uid://blfx4gmc8o7dg"]
 
 [ext_resource type="PackedScene" uid="uid://mbx1a73w157t" path="res://scenes/enemy/generic_enemy.tscn" id="1_3txf3"]
-[ext_resource type="Script" path="res://scenes/enemy/skeleton_archer.gd" id="2_b7evk"]
+[ext_resource type="Script" uid="uid://batuopp8gccqe" path="res://scenes/enemy/skeleton_archer.gd" id="2_b7evk"]
 [ext_resource type="AudioStream" uid="uid://cdubk46exxmaj" path="res://resources/Arrow_loose01.wav" id="3_xrys8"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_aylxy"]
@@ -32,7 +32,7 @@ tracks/0/use_blend = true
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_d78gy"]
 _data = {
-"shoot": SubResource("Animation_vl5o4")
+&"shoot": SubResource("Animation_vl5o4")
 }
 
 [node name="Skeleton archer" instance=ExtResource("1_3txf3")]

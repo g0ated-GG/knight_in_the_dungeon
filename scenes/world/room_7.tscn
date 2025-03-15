@@ -1,7 +1,7 @@
 [gd_scene load_steps=16 format=3 uid="uid://bxgcrqrkp3g5k"]
 
 [ext_resource type="PackedScene" uid="uid://6drp3l3umlqc" path="res://scenes/world/level_map.tscn" id="1_71fsr"]
-[ext_resource type="Script" path="res://scenes/world/room_7.gd" id="2_4yy0p"]
+[ext_resource type="Script" uid="uid://2qal8vt3fsl7" path="res://scenes/world/room_7.gd" id="2_4yy0p"]
 [ext_resource type="PackedScene" uid="uid://bwo0x34lbadye" path="res://zones/lava_x3.tscn" id="2_bn1rk"]
 [ext_resource type="PackedScene" uid="uid://diuuntjgrkkv7" path="res://zones/lava.tscn" id="3_byj3x"]
 [ext_resource type="PackedScene" uid="uid://cuhi7u7wqmxi5" path="res://scenes/props/gargoules/gargoyle_a_x1_d1s.tscn" id="4_ptj6u"]

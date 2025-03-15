@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://6drp3l3umlqc" path="res://scenes/world/level_map.tscn" id="1_f815x"]
 [ext_resource type="PackedScene" uid="uid://dah36w80s8ho6" path="res://scenes/props/lamp.tscn" id="2_iay2x"]
-[ext_resource type="Script" path="res://scenes/world/hall_1.gd" id="2_iret2"]
+[ext_resource type="Script" uid="uid://c25rosay6eq8" path="res://scenes/world/hall_1.gd" id="2_iret2"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1d223"]
 size = Vector2(1354, 90)
