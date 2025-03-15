@@ -18,7 +18,7 @@ offset_left = 176.0
 offset_top = -280.0
 offset_right = 640.0
 offset_bottom = -166.0
-text = "Своевременный отдых приводит в гармонию тело и разум."
+text = "TIP_REST"
 
 [node name="Borders" type="StaticBody2D" parent="Root" index="1"]
 

@@ -14,12 +14,17 @@ warnings/name="Рыцарь в под"
 
 [application]
 
-config/name="Рыцарь в подземелье"
+config/name="KNIGHT_IN_THE_DUNGEON"
+config/name_localized={
+"en": "Knight in the dungeon",
+"ru": "Рыцарь в подземелье"
+}
 config/description="Игра на КОД23 \"Мал, да удал\" https://gamin.me/compos/kod/23"
+config/version="3"
 run/main_scene="res://scenes/menu/main_menu.tscn"
 config/features=PackedStringArray("4.4", "Forward Plus")
 boot_splash/image="res://img/logo_white_transparent.png"
-config/icon="res://icon.svg"
+config/icon="uid://tcor3n7s22qq"
 boot_splash/minimum_display_time=2000
 
 [autoload]
@@ -91,6 +96,10 @@ fullscreen={
 ]
 }
 
+[internationalization]
+
+locale/translations=PackedStringArray("res://translation/text.ru.translation", "res://translation/text.en.translation")
+
 [layer_names]
 
 2d_physics/layer_1="world"
@@ -102,3 +111,7 @@ fullscreen={
 2d_physics/layer_7="player_dodge"
 2d_physics/layer_8="fireball"
 2d_physics/layer_9="wall"
+
+[rendering]
+
+textures/vram_compression/import_etc2_astc=true

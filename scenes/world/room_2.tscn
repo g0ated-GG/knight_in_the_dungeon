@@ -19,8 +19,7 @@ offset_left = 88.0
 offset_top = -176.0
 offset_right = 720.0
 offset_bottom = -62.0
-text = "Перекаты [Пробел / ПКМ]
-позволят избежать многих опасностей."
+text = "TIP_DODGE"
 
 [node name="Borders" type="StaticBody2D" parent="Root" index="1"]
 

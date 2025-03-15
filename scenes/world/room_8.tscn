@@ -42,7 +42,7 @@ offset_left = 192.0
 offset_top = -1248.0
 offset_right = 448.0
 offset_bottom = -992.0
-text = "Ты попал к настоящему колдуну!"
+text = "SECRET3"
 
 [node name="Borders" type="StaticBody2D" parent="Root" index="1"]
 

@@ -88,99 +88,62 @@ position = Vector2(-1760, 320)
 [node name="LavaV2_5" parent="Root" index="14" instance=ExtResource("3_o7sxd")]
 position = Vector2(-1760, -768)
 
-[node name="Lamp" parent="Root" index="15" instance=ExtResource("4_d72gt")]
-position = Vector2(-1488, -584)
-
-[node name="Lamp17" parent="Root" index="16" instance=ExtResource("4_d72gt")]
+[node name="Lamp17" parent="Root" index="15" instance=ExtResource("4_d72gt")]
 position = Vector2(-1120, -772)
 
-[node name="Lamp18" parent="Root" index="17" instance=ExtResource("4_d72gt")]
+[node name="Lamp18" parent="Root" index="16" instance=ExtResource("4_d72gt")]
 position = Vector2(-768, -772)
 
-[node name="Lamp19" parent="Root" index="18" instance=ExtResource("4_d72gt")]
+[node name="Lamp19" parent="Root" index="17" instance=ExtResource("4_d72gt")]
 position = Vector2(224, -992)
 
-[node name="Lamp20" parent="Root" index="19" instance=ExtResource("4_d72gt")]
+[node name="Lamp20" parent="Root" index="18" instance=ExtResource("4_d72gt")]
 position = Vector2(488, -992)
 
-[node name="Lamp2" parent="Root" index="20" instance=ExtResource("4_d72gt")]
-position = Vector2(-1304, -584)
-
-[node name="Lamp3" parent="Root" index="21" instance=ExtResource("4_d72gt")]
-position = Vector2(-1488, -400)
-
-[node name="Lamp4" parent="Root" index="22" instance=ExtResource("4_d72gt")]
+[node name="Lamp4" parent="Root" index="19" instance=ExtResource("4_d72gt")]
 position = Vector2(-1304, -400)
 
-[node name="Lamp5" parent="Root" index="23" instance=ExtResource("4_d72gt")]
-position = Vector2(-584, -592)
-
-[node name="Lamp6" parent="Root" index="24" instance=ExtResource("4_d72gt")]
-position = Vector2(-400, -592)
-
-[node name="Lamp7" parent="Root" index="25" instance=ExtResource("4_d72gt")]
+[node name="Lamp7" parent="Root" index="20" instance=ExtResource("4_d72gt")]
 position = Vector2(-584, -408)
 
-[node name="Lamp8" parent="Root" index="26" instance=ExtResource("4_d72gt")]
-position = Vector2(-400, -408)
-
-[node name="Lamp9" parent="Root" index="27" instance=ExtResource("4_d72gt")]
-position = Vector2(-1488, -48)
-
-[node name="Lamp10" parent="Root" index="28" instance=ExtResource("4_d72gt")]
+[node name="Lamp10" parent="Root" index="21" instance=ExtResource("4_d72gt")]
 position = Vector2(-1304, -48)
 
-[node name="Lamp11" parent="Root" index="29" instance=ExtResource("4_d72gt")]
-position = Vector2(-1488, 136)
-
-[node name="Lamp12" parent="Root" index="30" instance=ExtResource("4_d72gt")]
-position = Vector2(-1304, 136)
-
-[node name="Lamp13" parent="Root" index="31" instance=ExtResource("4_d72gt")]
+[node name="Lamp13" parent="Root" index="22" instance=ExtResource("4_d72gt")]
 position = Vector2(-584, -48)
 
-[node name="Lamp14" parent="Root" index="32" instance=ExtResource("4_d72gt")]
-position = Vector2(-400, -48)
-
-[node name="Lamp15" parent="Root" index="33" instance=ExtResource("4_d72gt")]
-position = Vector2(-584, 136)
-
-[node name="Lamp16" parent="Root" index="34" instance=ExtResource("4_d72gt")]
-position = Vector2(-400, 136)
-
-[node name="Treasure chest" parent="Root" index="35" instance=ExtResource("5_1m60c")]
+[node name="Treasure chest" parent="Root" index="23" instance=ExtResource("5_1m60c")]
 position = Vector2(360, -992)
 
-[node name="Skeleton swordman" parent="Root" index="36" instance=ExtResource("6_yn70i")]
+[node name="Skeleton swordman" parent="Root" index="24" instance=ExtResource("6_yn70i")]
 position = Vector2(-733, -218)
 
-[node name="Skeleton swordman2" parent="Root" index="37" instance=ExtResource("6_yn70i")]
+[node name="Skeleton swordman2" parent="Root" index="25" instance=ExtResource("6_yn70i")]
 position = Vector2(-672, -104)
 rotation = -0.523599
 
-[node name="Skeleton swordman3" parent="Root" index="38" instance=ExtResource("6_yn70i")]
+[node name="Skeleton swordman3" parent="Root" index="26" instance=ExtResource("6_yn70i")]
 position = Vector2(-669, -312)
 rotation = 0.523599
 
-[node name="Skeleton archer" parent="Root" index="39" instance=ExtResource("7_riymh")]
+[node name="Skeleton archer" parent="Root" index="27" instance=ExtResource("7_riymh")]
 position = Vector2(-1056, -358)
 rotation = -0.523599
 
-[node name="Skeleton archer2" parent="Root" index="40" instance=ExtResource("7_riymh")]
+[node name="Skeleton archer2" parent="Root" index="28" instance=ExtResource("7_riymh")]
 position = Vector2(-1050, -75)
 rotation = 0.523599
 
-[node name="Skeleton archer3" parent="Root" index="41" instance=ExtResource("7_riymh")]
+[node name="Skeleton archer3" parent="Root" index="29" instance=ExtResource("7_riymh")]
 position = Vector2(-1268, -218)
 
-[node name="Floor label" parent="Root" index="42" instance=ExtResource("8_tbyyi")]
+[node name="Floor label" parent="Root" index="30" instance=ExtResource("8_tbyyi")]
 offset_top = -968.0
 offset_right = 704.0
 offset_bottom = -848.0
-text = "Награда была совсем близко!
-К сожалению, в ваших карманах нет свободного места. Очень жаль!"
+text = "SECRET1"
 
-[node name="Secret" parent="Root" index="43" node_paths=PackedStringArray("hiders") instance=ExtResource("9_i77t7")]
+[node name="Secret" parent="Root" index="31" node_paths=PackedStringArray("hiders") instance=ExtResource("9_i77t7")]
 hiders = [NodePath("Hider"), NodePath("Hider2")]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Root/Secret" index="0"]

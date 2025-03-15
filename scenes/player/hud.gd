@@ -3,7 +3,7 @@ extends Control
 @export var player : Player
 
 func _ready() -> void:
-	$Death.text = '%d смертей' % Globals.deaths
+	$Death.text = tr('DEATHS') % Globals.deaths
 	if player != null:
 		player.hp_changed.connect(sync_hp_bar)
 		player.death.connect(defeat)
@@ -16,14 +16,14 @@ func sync_hp_bar():
 
 func checkpoint():
 	if Globals.checkpoint < Globals.final_checkpoint:
-		show_message('КОСТЁР РАЗОЖЖЁН', Color.GOLD)
+		show_message(tr('MESSAGE_REST'), Color.GOLD)
 	else:
-		show_message('ПОДЗЕМЕЛЬЕ ПРОЙДЕНО', Color.GOLD, 1.5)
+		show_message(tr('MESSAGE_FINAL'), Color.GOLD, 1.5)
 
 func defeat():
-	show_message('ГЕРОЙ ПОГИБ', Color.RED)
+	show_message(tr('MESSAGE_DEATH'), Color.RED)
 	Globals.deaths += 1
-	$Death.text = 'Смертей: %d' % Globals.deaths
+	$Death.text = tr('DEATHS') % Globals.deaths
 	$RestartGameTimer.start()
 
 func _physics_process(_delta: float) -> void:

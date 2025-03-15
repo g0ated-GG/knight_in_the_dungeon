@@ -1,9 +1,11 @@
-[gd_scene load_steps=6 format=4 uid="uid://cah3jhknogeiw"]
+[gd_scene load_steps=8 format=4 uid="uid://cah3jhknogeiw"]
 
 [ext_resource type="Script" uid="uid://b8dscsyubhuvb" path="res://scenes/menu/main_menu.gd" id="1_fqx82"]
 [ext_resource type="Texture2D" uid="uid://dxvcbo0dgkib5" path="res://img/logo_white_transparent.png" id="2_fsc7i"]
 [ext_resource type="FontFile" uid="uid://mhmhy4xnwhwe" path="res://fonts/liberation-fonts-ttf-2.1.5/LiberationSerif-Bold.ttf" id="3_dyspx"]
 [ext_resource type="TileSet" uid="uid://vk3mo16g3chg" path="res://img/world_tile_set.tres" id="4_4kwg6"]
+[ext_resource type="Texture2D" uid="uid://b1xjmnc25qrx0" path="res://img/ru.tres" id="5_xn6kt"]
+[ext_resource type="Texture2D" uid="uid://bhsbbvq7ypooo" path="res://img/en.tres" id="6_isoef"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_mvcuf"]
 font = ExtResource("3_dyspx")
@@ -53,7 +55,7 @@ offset_left = 25.0
 offset_bottom = -25.0
 grow_vertical = 0
 theme_override_colors/font_color = Color(1, 0.686275, 0, 1)
-text = "Игра для гейм-джема КОД23 \"Мал, да удал\" https://gamin.me/compos/kod/23"
+text = "LINK"
 uri = "https://gamin.me/compos/kod/23"
 
 [node name="Buttons" type="VBoxContainer" parent="CanvasLayer"]
@@ -72,15 +74,15 @@ grow_vertical = 2
 [node name="ContinueButton" type="Button" parent="CanvasLayer/Buttons"]
 visible = false
 layout_mode = 2
-text = "Продолжить"
+text = "CONTINUE_GAME"
 
 [node name="PlayButton" type="Button" parent="CanvasLayer/Buttons"]
 layout_mode = 2
-text = "Новая игра"
+text = "NEW_GAME"
 
 [node name="ExitButton" type="Button" parent="CanvasLayer/Buttons"]
 layout_mode = 2
-text = "Выход"
+text = "EXIT_GAME"
 
 [node name="Label" type="Label" parent="CanvasLayer"]
 anchors_preset = 5
@@ -90,11 +92,34 @@ offset_left = -20.0
 offset_right = 20.0
 offset_bottom = 23.0
 grow_horizontal = 2
-text = "РЫЦАРЬ В ПОДЗЕМЕЛЬЕ"
+text = "KNIGHT_IN_THE_DUNGEON"
 label_settings = SubResource("LabelSettings_mvcuf")
 horizontal_alignment = 1
 vertical_alignment = 1
+uppercase = true
+
+[node name="LanguageOptionButton" type="OptionButton" parent="CanvasLayer"]
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -194.0
+offset_top = -146.0
+offset_right = -25.0
+offset_bottom = -25.0
+grow_horizontal = 0
+grow_vertical = 0
+selected = 0
+item_count = 2
+popup/item_0/text = "ru"
+popup/item_0/icon = ExtResource("5_xn6kt")
+popup/item_0/id = 0
+popup/item_1/text = "en"
+popup/item_1/icon = ExtResource("6_isoef")
+popup/item_1/id = 1
 
 [connection signal="pressed" from="CanvasLayer/Buttons/ContinueButton" to="." method="_on_continue_button_pressed"]
 [connection signal="pressed" from="CanvasLayer/Buttons/PlayButton" to="." method="_on_play_button_pressed"]
 [connection signal="pressed" from="CanvasLayer/Buttons/ExitButton" to="." method="_on_exit_button_pressed"]
+[connection signal="item_selected" from="CanvasLayer/LanguageOptionButton" to="." method="_on_language_option_button_item_selected"]

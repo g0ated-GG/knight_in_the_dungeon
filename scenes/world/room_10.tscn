@@ -18,7 +18,7 @@ offset_left = -80.0
 offset_top = -961.0
 offset_right = 536.0
 offset_bottom = -905.0
-text = "Испытание ловкости и ума."
+text = "TIP_MAZE"
 
 [node name="Borders" type="StaticBody2D" parent="Root" index="1"]
 

@@ -1,0 +1,24 @@
+keys,ru,en
+KNIGHT_IN_THE_DUNGEON,Рыцарь в подземелье,Knight in the dungeon
+CONTINUE_GAME,Продолжить,Continue
+NEW_GAME,Новая игра,New game
+EXIT_GAME,Выход,Exit
+LINK,"Игра для гейм-джема КОД23 ""Мал, да удал"" https://gamin.me/compos/kod/23","Game for КОД23 ""Мал, да удал"" game jam https://gamin.me/compos/kod/23"
+TIP_MOVE,Движение [WASD/стрелки].\nСвет факелов укажет Вам путь.,Move [WASD/arrows].\nLight of the torches will show you the way.
+TIP_DODGE,Перекаты [Пробел / ПКМ]\nпозволят избежать многих опасностей.,Rolling [Space / RMB]\nwill allow you to avoid many dangers.
+TIP_ATTACK,Атака мечом [ЛКМ].,Attack with a sword [LMB].
+TIP_REST,Своевременный отдых приводит в гармонию тело и разум.,Timely rest brings body and mind into harmony.
+SECRET1,"Награда была совсем близко!\nК сожалению, в ваших карманах нет свободного места. Очень жаль!","The reward was very close!\nUnfortunately, there is no free space in your pockets. Too bad!"
+SECRET2,"Кажется, Ваша награда рада вас видеть!","It seems your reward is happy to see you!"
+TIP_MAZE,Испытание ловкости и ума.,A test of agility and mind.
+TIP_FINAL1,У каждой истории есть начало и конец.,Every story has a beginning and an end.
+TIP_FINAL2,Пришло время сразиться с достойным противником!,It's time to fight a worthy opponent!
+MESSAGE_REST,КОСТЁР РАЗОЖЖЁН,FIRE IS LIT
+MESSAGE_DEATH,ГЕРОЙ ПОГИБ,HERO DIED
+MESSAGE_FINAL,ПОДЗЕМЕЛЬЕ ПРОЙДЕНО,DUNGEON COMPLETED
+DEATHS,%d смертей,%d deaths
+MENU,МЕНЮ,MENU
+MENU_CONTINUE,Продолжить,Continue
+MENU_RESTART,Вернуться к костру,Return to the fire
+MENU_MAIN,Выйти в главное меню,Exit to the main menu
+MENU_DESKTOP,Выйти на рабочий стол,Exit to desktop

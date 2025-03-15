@@ -41,7 +41,6 @@ enabled = null
 
 [node name="PointLight2D" type="PointLight2D" parent="." index="0"]
 color = Color(1, 1, 0, 1)
-energy = 2.0
 texture = ExtResource("2_8c77b")
 
 [node name="Sprite2D" parent="." index="1"]

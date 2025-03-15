@@ -182,7 +182,7 @@ grow_vertical = 2
 
 [node name="Label" type="Label" parent="Menu/VBoxContainer"]
 layout_mode = 2
-text = "МЕНЮ"
+text = "MENU"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -190,7 +190,7 @@ vertical_alignment = 1
 layout_mode = 2
 focus_neighbor_bottom = NodePath("../RestartButton")
 focus_next = NodePath("../RestartButton")
-text = "Продолжить"
+text = "MENU_CONTINUE"
 
 [node name="RestartButton" type="Button" parent="Menu/VBoxContainer"]
 layout_mode = 2
@@ -198,7 +198,7 @@ focus_neighbor_top = NodePath("../ResumeButton")
 focus_neighbor_bottom = NodePath("../MainMenuButton")
 focus_next = NodePath("../MainMenuButton")
 focus_previous = NodePath("../ResumeButton")
-text = "Вернуться к костру"
+text = "MENU_RESTART"
 
 [node name="MainMenuButton" type="Button" parent="Menu/VBoxContainer"]
 layout_mode = 2
@@ -206,13 +206,13 @@ focus_neighbor_top = NodePath("../RestartButton")
 focus_neighbor_bottom = NodePath("../DesktopButton")
 focus_next = NodePath("../DesktopButton")
 focus_previous = NodePath("../RestartButton")
-text = "Выйти в главное меню"
+text = "MENU_MAIN"
 
 [node name="DesktopButton" type="Button" parent="Menu/VBoxContainer"]
 layout_mode = 2
 focus_neighbor_top = NodePath("../MainMenuButton")
 focus_previous = NodePath("../MainMenuButton")
-text = "Выйти на рабочий стол"
+text = "MENU_DESKTOP"
 
 [connection signal="timeout" from="RestartGameTimer" to="." method="_on_restart_timer_timeout"]
 [connection signal="pressed" from="Menu/VBoxContainer/ResumeButton" to="Menu" method="_on_resume_button_pressed"]

@@ -15,8 +15,7 @@ offset_left = 704.0
 offset_top = 248.0
 offset_right = 1344.0
 offset_bottom = 401.0
-text = "Движение [WASD/стрелки].
-Свет факелов укажет Вам путь."
+text = "TIP_MOVE"
 
 [node name="Borders" type="StaticBody2D" parent="." index="2"]
 

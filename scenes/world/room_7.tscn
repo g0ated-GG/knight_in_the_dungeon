@@ -32,7 +32,7 @@ offset_left = 1184.0
 offset_top = -1680.0
 offset_right = 1696.0
 offset_bottom = -1552.0
-text = "Кажется, Ваша награда рада вас видеть!"
+text = "SECRET2"
 
 [node name="Floor label2" parent="Root" index="1" instance=ExtResource("12_wndvu")]
 visible = false

@@ -25,14 +25,14 @@ offset_left = -216.0
 offset_top = -2112.0
 offset_right = 871.0
 offset_bottom = -2048.0
-text = "Пришло время сразиться с достойным противником!"
+text = "TIP_FINAL2"
 
 [node name="Floor label2" parent="Root" index="1" instance=ExtResource("11_5va2b")]
 offset_left = 96.0
 offset_top = -195.0
 offset_right = 544.0
 offset_bottom = -81.0
-text = "У каждой истории есть начало и конец."
+text = "TIP_FINAL1"
 
 [node name="Borders" type="StaticBody2D" parent="Root" index="2"]
 
@@ -184,96 +184,87 @@ position = Vector2(-36, -1485)
 position = Vector2(672, -1485)
 
 [node name="Lamp5" parent="Root" index="40" instance=ExtResource("4_6sbko")]
-position = Vector2(232, -1936)
+position = Vector2(152, -2008)
 
 [node name="Lamp6" parent="Root" index="41" instance=ExtResource("4_6sbko")]
-position = Vector2(400, -1936)
+position = Vector2(488, -2008)
 
-[node name="Lamp7" parent="Root" index="42" instance=ExtResource("4_6sbko")]
-position = Vector2(320, -2024)
-
-[node name="Lamp8" parent="Root" index="43" instance=ExtResource("4_6sbko")]
-position = Vector2(136, -3188)
-
-[node name="Lamp9" parent="Root" index="44" instance=ExtResource("4_6sbko")]
-position = Vector2(504, -3192)
-
-[node name="Lamp2" parent="Root" index="45" instance=ExtResource("4_6sbko")]
+[node name="Lamp2" parent="Root" index="42" instance=ExtResource("4_6sbko")]
 position = Vector2(400, -32)
 
-[node name="Checkpoint" parent="Root" index="46" instance=ExtResource("6_vr43c")]
+[node name="Checkpoint" parent="Root" index="43" instance=ExtResource("6_vr43c")]
 position = Vector2(320, -288)
 number = 5
 
-[node name="Treasure chest" parent="Root" index="47" instance=ExtResource("5_us587")]
+[node name="Treasure chest" parent="Root" index="44" instance=ExtResource("5_us587")]
 position = Vector2(320, -3328)
 
 [node name="Checkpoint" parent="Root/Treasure chest" index="4" instance=ExtResource("6_vr43c")]
 visible = false
 number = 6
 
-[node name="Mimic" parent="Root" index="48" instance=ExtResource("7_v0dnj")]
+[node name="Mimic" parent="Root" index="45" instance=ExtResource("7_v0dnj")]
 position = Vector2(-256, -2984)
 
-[node name="Mimic2" parent="Root" index="49" instance=ExtResource("7_v0dnj")]
+[node name="Mimic2" parent="Root" index="46" instance=ExtResource("7_v0dnj")]
 position = Vector2(896, -2984)
 rotation = 3.14159
 
-[node name="Skeleton mage" parent="Root" index="50" instance=ExtResource("8_qyr2a")]
+[node name="Skeleton mage" parent="Root" index="47" instance=ExtResource("8_qyr2a")]
 position = Vector2(-120, -1176)
 
-[node name="Skeleton mage2" parent="Root" index="51" instance=ExtResource("8_qyr2a")]
+[node name="Skeleton mage2" parent="Root" index="48" instance=ExtResource("8_qyr2a")]
 position = Vector2(760, -1176)
 rotation = 3.14159
 
-[node name="Skeleton archer" parent="Root" index="52" instance=ExtResource("9_6e0ok")]
+[node name="Skeleton archer" parent="Root" index="49" instance=ExtResource("9_6e0ok")]
 position = Vector2(-152, -856)
 rotation = 0.785398
 
-[node name="Skeleton archer2" parent="Root" index="53" instance=ExtResource("9_6e0ok")]
+[node name="Skeleton archer2" parent="Root" index="50" instance=ExtResource("9_6e0ok")]
 position = Vector2(808, -856)
 rotation = 2.35619
 
-[node name="Skeleton swordman" parent="Root" index="54" instance=ExtResource("10_i6ysx")]
+[node name="Skeleton swordman" parent="Root" index="51" instance=ExtResource("10_i6ysx")]
 position = Vector2(-432, -1176)
 rotation = 0.785398
 
-[node name="Skeleton swordman3" parent="Root" index="55" instance=ExtResource("10_i6ysx")]
+[node name="Skeleton swordman3" parent="Root" index="52" instance=ExtResource("10_i6ysx")]
 position = Vector2(-370, -1560)
 rotation = 0.785398
 
-[node name="Skeleton swordman2" parent="Root" index="56" instance=ExtResource("10_i6ysx")]
+[node name="Skeleton swordman2" parent="Root" index="53" instance=ExtResource("10_i6ysx")]
 position = Vector2(1056, -1176)
 rotation = 2.35619
 
-[node name="Skeleton swordman4" parent="Root" index="57" instance=ExtResource("10_i6ysx")]
+[node name="Skeleton swordman4" parent="Root" index="54" instance=ExtResource("10_i6ysx")]
 position = Vector2(1008, -1560)
 rotation = 2.35619
 
-[node name="Skeleton mage3" parent="Root" index="58" instance=ExtResource("8_qyr2a")]
-position = Vector2(-488, -2368)
+[node name="Skeleton mage3" parent="Root" index="55" instance=ExtResource("8_qyr2a")]
+position = Vector2(-408, -2264)
 rotation = 0.785398
 
-[node name="Skeleton mage4" parent="Root" index="59" instance=ExtResource("8_qyr2a")]
-position = Vector2(-400, -2464)
+[node name="Skeleton mage4" parent="Root" index="56" instance=ExtResource("8_qyr2a")]
+position = Vector2(-320, -2360)
 rotation = 0.436332
 
-[node name="Skeleton mage5" parent="Root" index="60" instance=ExtResource("8_qyr2a")]
-position = Vector2(-308, -2560)
+[node name="Skeleton mage5" parent="Root" index="57" instance=ExtResource("8_qyr2a")]
+position = Vector2(-228, -2456)
 
-[node name="Skeleton mage6" parent="Root" index="61" instance=ExtResource("8_qyr2a")]
-position = Vector2(1128, -2368)
+[node name="Skeleton mage6" parent="Root" index="58" instance=ExtResource("8_qyr2a")]
+position = Vector2(1064, -2264)
 rotation = 2.35619
 
-[node name="Skeleton mage7" parent="Root" index="62" instance=ExtResource("8_qyr2a")]
-position = Vector2(1028, -2464)
+[node name="Skeleton mage7" parent="Root" index="59" instance=ExtResource("8_qyr2a")]
+position = Vector2(964, -2360)
 rotation = -3.57792
 
-[node name="Skeleton mage8" parent="Root" index="63" instance=ExtResource("8_qyr2a")]
-position = Vector2(944, -2560)
+[node name="Skeleton mage8" parent="Root" index="60" instance=ExtResource("8_qyr2a")]
+position = Vector2(880, -2456)
 rotation = 3.14159
 
-[node name="Skeleton knight" parent="Root" index="64" instance=ExtResource("10_i6ysx")]
+[node name="Skeleton knight" parent="Root" index="61" instance=ExtResource("10_i6ysx")]
 position = Vector2(320, -3136)
 rotation = 1.5708
 scale = Vector2(2, 2)
