@@ -1,9 +1,11 @@
-[gd_scene load_steps=8 format=4 uid="uid://cah3jhknogeiw"]
+[gd_scene load_steps=10 format=4 uid="uid://cah3jhknogeiw"]
 
 [ext_resource type="Script" uid="uid://b8dscsyubhuvb" path="res://scenes/menu/main_menu.gd" id="1_fqx82"]
 [ext_resource type="Texture2D" uid="uid://dxvcbo0dgkib5" path="res://img/logo_white_transparent.png" id="2_fsc7i"]
 [ext_resource type="FontFile" uid="uid://mhmhy4xnwhwe" path="res://fonts/liberation-fonts-ttf-2.1.5/LiberationSerif-Bold.ttf" id="3_dyspx"]
 [ext_resource type="TileSet" uid="uid://vk3mo16g3chg" path="res://img/world_tile_set.tres" id="4_4kwg6"]
+[ext_resource type="Theme" uid="uid://bkbd6o6hdefv6" path="res://scenes/player/font.tres" id="4_isoef"]
+[ext_resource type="Theme" uid="uid://cti38vxpjm685" path="res://scenes/menu/main_menu_font.tres" id="5_qgo02"]
 [ext_resource type="Texture2D" uid="uid://b1xjmnc25qrx0" path="res://img/ru.tres" id="5_xn6kt"]
 [ext_resource type="Texture2D" uid="uid://bhsbbvq7ypooo" path="res://img/en.tres" id="6_isoef"]
 
@@ -54,6 +56,7 @@ anchor_bottom = 1.0
 offset_left = 25.0
 offset_bottom = -25.0
 grow_vertical = 0
+theme = ExtResource("5_qgo02")
 theme_override_colors/font_color = Color(1, 0.686275, 0, 1)
 text = "LINK"
 uri = "https://gamin.me/compos/kod/23"
@@ -74,14 +77,17 @@ grow_vertical = 2
 [node name="ContinueButton" type="Button" parent="CanvasLayer/Buttons"]
 visible = false
 layout_mode = 2
+theme = ExtResource("5_qgo02")
 text = "CONTINUE_GAME"
 
 [node name="PlayButton" type="Button" parent="CanvasLayer/Buttons"]
 layout_mode = 2
+theme = ExtResource("5_qgo02")
 text = "NEW_GAME"
 
 [node name="ExitButton" type="Button" parent="CanvasLayer/Buttons"]
 layout_mode = 2
+theme = ExtResource("5_qgo02")
 text = "EXIT_GAME"
 
 [node name="Label" type="Label" parent="CanvasLayer"]
@@ -110,6 +116,7 @@ offset_right = -25.0
 offset_bottom = -25.0
 grow_horizontal = 0
 grow_vertical = 0
+theme = ExtResource("4_isoef")
 selected = 0
 item_count = 2
 popup/item_0/text = "ru"

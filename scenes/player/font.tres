@@ -1,0 +1,13 @@
+[gd_resource type="Theme" load_steps=3 format=3 uid="uid://bkbd6o6hdefv6"]
+
+[ext_resource type="FontFile" uid="uid://dpyxecvkgu7s4" path="res://fonts/liberation-fonts-ttf-2.1.5/LiberationSans-Regular.ttf" id="1_6ye7u"]
+[ext_resource type="FontFile" uid="uid://bi8vnxe7rn1ft" path="res://fonts/liberation-fonts-ttf-2.1.5/LiberationMono-Bold.ttf" id="2_e635g"]
+
+[resource]
+Button/font_sizes/font_size = 24
+Button/fonts/font = ExtResource("1_6ye7u")
+Label/font_sizes/font_size = 24
+Label/fonts/font = ExtResource("2_e635g")
+OptionButton/font_sizes/font_size = 24
+OptionButton/fonts/font = ExtResource("1_6ye7u")
+PopupMenu/font_sizes/font_size = 24

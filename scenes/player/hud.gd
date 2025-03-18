@@ -1,6 +1,9 @@
 extends Control
 
-@export var player : Player
+@export var player : Player :
+	set(value):
+		player = value
+		#$JoystickPosition/Joystick.player = value
 
 func _ready() -> void:
 	$Death.text = tr('DEATHS') % Globals.deaths

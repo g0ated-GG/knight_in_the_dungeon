@@ -12,6 +12,7 @@ extends CharacterBody2D
 		hp_changed.emit()
 @export var attack_damage : int = 30
 @export var alive : bool = true
+@export var direction : Vector2 = Vector2.ZERO
 
 @export var god_mode : bool = false
 
@@ -33,9 +34,11 @@ func success_dodge_reward(_target):
 func _physics_process(_delta: float) -> void:
 	if hp == 0:
 		return
-	var direction := Input.get_vector('ui_left', 'ui_right', 'ui_up', 'ui_down')
-	if direction:
+	if direction.is_zero_approx():
+		direction = Input.get_vector('ui_left', 'ui_right', 'ui_up', 'ui_down')
+	if not direction.is_zero_approx():
 		velocity = direction * speed
+		direction = Vector2.ZERO
 		$WalkAnimationPlayer.play('walk')
 	else:
 		velocity = Vector2.ZERO

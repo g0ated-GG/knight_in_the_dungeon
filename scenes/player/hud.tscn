@@ -1,9 +1,10 @@
-[gd_scene load_steps=16 format=3 uid="uid://dcp7dodgvnmor"]
+[gd_scene load_steps=22 format=3 uid="uid://dcp7dodgvnmor"]
 
 [ext_resource type="Script" uid="uid://t40b0q3fok6p" path="res://scenes/player/hud.gd" id="1_mqmef"]
-[ext_resource type="FontFile" uid="uid://bi8vnxe7rn1ft" path="res://fonts/liberation-fonts-ttf-2.1.5/LiberationMono-Bold.ttf" id="2_r7e3d"]
+[ext_resource type="Theme" uid="uid://bkbd6o6hdefv6" path="res://scenes/player/font.tres" id="2_vas50"]
 [ext_resource type="FontFile" uid="uid://bfub2kbyi1bw6" path="res://fonts/liberation-fonts-ttf-2.1.5/LiberationSerif-Regular.ttf" id="2_wak6e"]
 [ext_resource type="Script" uid="uid://j43d3yvyp587" path="res://scenes/player/menu.gd" id="3_vjlu0"]
+[ext_resource type="Texture2D" uid="uid://t62nsa5xvmhe" path="res://img/touch.svg" id="6_nhg7b"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wwjjb"]
 bg_color = Color(0.498039, 0, 0, 1)
@@ -14,15 +15,6 @@ bg_color = Color(1, 0, 0, 1)
 [sub_resource type="Theme" id="Theme_8wx8o"]
 ProgressBar/styles/background = SubResource("StyleBoxFlat_wwjjb")
 ProgressBar/styles/fill = SubResource("StyleBoxFlat_44gtt")
-
-[sub_resource type="LabelSettings" id="LabelSettings_1kvf2"]
-font = ExtResource("2_r7e3d")
-
-[sub_resource type="LabelSettings" id="LabelSettings_vutpb"]
-font = ExtResource("2_r7e3d")
-
-[sub_resource type="LabelSettings" id="LabelSettings_h8blq"]
-font = ExtResource("2_r7e3d")
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3cfed"]
 bg_color = Color(0.118581, 0.118581, 0.118581, 1)
@@ -68,6 +60,36 @@ _data = {
 &"show_message": SubResource("Animation_tkpul")
 }
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_oxl5d"]
+atlas = ExtResource("6_nhg7b")
+region = Rect2(411, 14, 104, 105)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v82ke"]
+atlas = ExtResource("6_nhg7b")
+region = Rect2(411, 127, 104, 105)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_nhg7b"]
+load_path = "res://.godot/imported/touch.svg-bea03d00d921d21fb3b9a5518074c78c.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a6kbs"]
+atlas = SubResource("CompressedTexture2D_nhg7b")
+region = Rect2(552, 14, 105, 105)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_gbix8"]
+load_path = "res://.godot/imported/touch.svg-bea03d00d921d21fb3b9a5518074c78c.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ulf4u"]
+atlas = SubResource("CompressedTexture2D_gbix8")
+region = Rect2(552, 127, 105, 105)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nhg7b"]
+atlas = ExtResource("6_nhg7b")
+region = Rect2(694, 14, 105, 105)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gbix8"]
+atlas = ExtResource("6_nhg7b")
+region = Rect2(694, 127, 105, 105)
+
 [node name="HUD" type="Control"]
 layout_mode = 3
 anchors_preset = 15
@@ -103,8 +125,8 @@ offset_right = 0.5
 offset_bottom = 11.5
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("2_vas50")
 text = "100 / 100"
-label_settings = SubResource("LabelSettings_1kvf2")
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -112,8 +134,8 @@ vertical_alignment = 1
 layout_mode = 1
 offset_right = 40.0
 offset_bottom = 23.0
+theme = ExtResource("2_vas50")
 text = "FPS: 0.0"
-label_settings = SubResource("LabelSettings_vutpb")
 
 [node name="Death" type="Label" parent="."]
 layout_mode = 1
@@ -123,8 +145,8 @@ anchor_right = 1.0
 offset_left = -40.0
 offset_bottom = 23.0
 grow_horizontal = 0
+theme = ExtResource("2_vas50")
 text = "0 смертей"
-label_settings = SubResource("LabelSettings_h8blq")
 
 [node name="Message" type="Label" parent="."]
 modulate = Color(1, 1, 1, 0)
@@ -155,7 +177,7 @@ one_shot = true
 [node name="Menu" type="Panel" parent="."]
 process_mode = 3
 visible = false
-custom_minimum_size = Vector2(200, 150)
+custom_minimum_size = Vector2(300, 200)
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -182,6 +204,7 @@ grow_vertical = 2
 
 [node name="Label" type="Label" parent="Menu/VBoxContainer"]
 layout_mode = 2
+theme = ExtResource("2_vas50")
 text = "MENU"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -190,6 +213,7 @@ vertical_alignment = 1
 layout_mode = 2
 focus_neighbor_bottom = NodePath("../RestartButton")
 focus_next = NodePath("../RestartButton")
+theme = ExtResource("2_vas50")
 text = "MENU_CONTINUE"
 
 [node name="RestartButton" type="Button" parent="Menu/VBoxContainer"]
@@ -198,6 +222,7 @@ focus_neighbor_top = NodePath("../ResumeButton")
 focus_neighbor_bottom = NodePath("../MainMenuButton")
 focus_next = NodePath("../MainMenuButton")
 focus_previous = NodePath("../ResumeButton")
+theme = ExtResource("2_vas50")
 text = "MENU_RESTART"
 
 [node name="MainMenuButton" type="Button" parent="Menu/VBoxContainer"]
@@ -206,13 +231,77 @@ focus_neighbor_top = NodePath("../RestartButton")
 focus_neighbor_bottom = NodePath("../DesktopButton")
 focus_next = NodePath("../DesktopButton")
 focus_previous = NodePath("../RestartButton")
+theme = ExtResource("2_vas50")
 text = "MENU_MAIN"
 
 [node name="DesktopButton" type="Button" parent="Menu/VBoxContainer"]
 layout_mode = 2
 focus_neighbor_top = NodePath("../MainMenuButton")
 focus_previous = NodePath("../MainMenuButton")
+theme = ExtResource("2_vas50")
 text = "MENU_DESKTOP"
+
+[node name="JoystickPosition" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 150.0
+offset_top = -175.0
+offset_right = 150.0
+offset_bottom = -175.0
+grow_vertical = 0
+
+[node name="AttackButtonPosition" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -128.0
+offset_top = -153.0
+offset_right = -128.0
+offset_bottom = -153.0
+grow_horizontal = 0
+grow_vertical = 0
+
+[node name="AttackButton" type="TouchScreenButton" parent="AttackButtonPosition"]
+texture_normal = SubResource("AtlasTexture_oxl5d")
+texture_pressed = SubResource("AtlasTexture_v82ke")
+action = "attack"
+
+[node name="DodgeButtonPosition" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -128.0
+offset_top = -281.0
+offset_right = -128.0
+offset_bottom = -281.0
+grow_horizontal = 0
+grow_vertical = 0
+
+[node name="DodgeButton" type="TouchScreenButton" parent="DodgeButtonPosition"]
+texture_normal = SubResource("AtlasTexture_a6kbs")
+texture_pressed = SubResource("AtlasTexture_ulf4u")
+action = "dodge"
+
+[node name="MenuButtonPosition" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 0
+offset_left = 25.0
+offset_top = 25.0
+offset_right = 25.0
+offset_bottom = 25.0
+
+[node name="MenuButton" type="TouchScreenButton" parent="MenuButtonPosition"]
+texture_normal = SubResource("AtlasTexture_nhg7b")
+texture_pressed = SubResource("AtlasTexture_gbix8")
+action = "pause"
 
 [connection signal="timeout" from="RestartGameTimer" to="." method="_on_restart_timer_timeout"]
 [connection signal="pressed" from="Menu/VBoxContainer/ResumeButton" to="Menu" method="_on_resume_button_pressed"]
