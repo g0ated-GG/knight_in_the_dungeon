@@ -57,7 +57,7 @@ polygon = PackedVector2Array(0, 0, 576, -448, 576, 448)
 
 [node name="ArcherAnimationPlayer" type="AnimationPlayer" parent="." index="6"]
 libraries = {
-"": SubResource("AnimationLibrary_d78gy")
+&"": SubResource("AnimationLibrary_d78gy")
 }
 
 [node name="ShootTimer" type="Timer" parent="." index="7"]

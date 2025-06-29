@@ -32,9 +32,14 @@ var light : bool = true :
 	set(state):
 		light = state
 		save('light', light, 'config')
+var volume : float = 50.0 :
+	set(value):
+		volume = value
+		AudioServer.set_bus_volume_linear(0, volume / 100.0)
+		save('volume', volume, 'config')
 
 func get_config_file_path() -> String:
-	if OS.has_feature('mobile') or OS.has_feature('web'):
+	if OS.has_feature('web') or OS.has_feature('mobile'):
 		return 'user://save.cfg'
 	else:
 		return ProjectSettings.globalize_path('res://save.cfg')
@@ -55,4 +60,5 @@ func restore_default_settings() -> void:
 	config.set_value('config', 'ui_scale', 1.0)
 	config.set_value('config', 'particles', true)
 	config.set_value('config', 'light', true)
+	config.set_value('config', 'volume', 50.0)
 	config.save(config_path)

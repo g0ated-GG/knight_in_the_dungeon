@@ -8,6 +8,7 @@ LINK,"Игра для гейм-джема КОД23 ""Мал, да удал"" htt
 SETTINGS_UI_SCALE,Масштаб интерфейса,Interface scale
 SETTINGS_PARTICLES,Частицы,Particles
 SETTINGS_LIGHT,Освещение,Light
+SETTINGS_VOLUME,Громкость,Volume
 SETTINGS_ON,Вкл.,On
 SETTINGS_OFF,Откл.,Off
 RETURN,Вернуться,Return

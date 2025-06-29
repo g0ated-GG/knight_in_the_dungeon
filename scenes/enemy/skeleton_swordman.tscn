@@ -174,7 +174,7 @@ polygon = PackedVector2Array(0, 0, 576, -448, 576, 448)
 
 [node name="SwordAnimationPlayer" type="AnimationPlayer" parent="." index="6"]
 libraries = {
-"": SubResource("AnimationLibrary_wh4og")
+&"": SubResource("AnimationLibrary_wh4og")
 }
 
 [node name="Hand" type="Node2D" parent="." index="7"]

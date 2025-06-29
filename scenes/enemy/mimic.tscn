@@ -204,12 +204,12 @@ autoplay = "walk"
 
 [node name="TeethAnimationPlayer" type="AnimationPlayer" parent="." index="8"]
 libraries = {
-"": SubResource("AnimationLibrary_8v8ja")
+&"": SubResource("AnimationLibrary_8v8ja")
 }
 
 [node name="MimicAnimationPlayer" type="AnimationPlayer" parent="." index="9"]
 libraries = {
-"": SubResource("AnimationLibrary_4p13c")
+&"": SubResource("AnimationLibrary_4p13c")
 }
 
 [node name="TeethArea2D" type="Area2D" parent="." index="10"]

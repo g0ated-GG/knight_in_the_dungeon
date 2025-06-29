@@ -39,6 +39,6 @@ bullet_speed = 150
 
 [node name="AnimationPlayer2" type="AnimationPlayer" parent="." index="6"]
 libraries = {
-"": SubResource("AnimationLibrary_bh376")
+&"": SubResource("AnimationLibrary_bh376")
 }
 autoplay = "shooting"

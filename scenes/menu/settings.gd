@@ -18,5 +18,10 @@ func _on_particles_option_toggled(toggled_on: bool) -> void:
 func _on_light_option_toggled(toggled_on: bool) -> void:
 	Globals.light = toggled_on
 
+func _on_volume_option_value_changed(value: float) -> void:
+	Globals.volume = value
+	$CanvasLayer/Settings/Volume/Value.text = str(value)
+	$AudioStreamPlayer2D.play()
+
 func _on_return_button_pressed() -> void:
 	get_tree().change_scene_to_file("res://scenes/menu/main_menu.tscn")

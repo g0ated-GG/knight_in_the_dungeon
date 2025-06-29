@@ -9,6 +9,13 @@
 atlas = ExtResource("3_f57pa")
 region = Rect2(1925, 1490, 325, 220)
 
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_i07oq"]
+load_path = "res://.godot/imported/world_sprites.svg-86afb6dc52fe0dcc8a43c1f0b2fdf631.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p8iwq"]
+atlas = SubResource("CompressedTexture2D_i07oq")
+region = Rect2(2187, 1771, 96, 96)
+
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_oovee"]
 lifetime_randomness = 0.3
 particle_flag_disable_z = true
@@ -23,13 +30,6 @@ tangential_accel_min = 1.78
 tangential_accel_max = 27.56
 scale_min = 0.01
 scale_max = 0.05
-
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_i07oq"]
-load_path = "res://.godot/imported/world_sprites.svg-86afb6dc52fe0dcc8a43c1f0b2fdf631.ctex"
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_p8iwq"]
-atlas = SubResource("CompressedTexture2D_i07oq")
-region = Rect2(2187, 1771, 96, 96)
 
 [sub_resource type="Animation" id="Animation_yux8f"]
 resource_name = "cast"
@@ -76,14 +76,14 @@ autoplay = "walk"
 [node name="GPUParticles2D" type="GPUParticles2D" parent="." index="7"]
 position = Vector2(40, 25)
 amount = 10
-process_material = SubResource("ParticleProcessMaterial_oovee")
 texture = SubResource("AtlasTexture_p8iwq")
 lifetime = 0.5
+process_material = SubResource("ParticleProcessMaterial_oovee")
 
 [node name="ShootTimer" parent="." index="8"]
 wait_time = 2.0
 
 [node name="MageAnimationPlayer" type="AnimationPlayer" parent="." index="10"]
 libraries = {
-"": SubResource("AnimationLibrary_1km0e")
+&"": SubResource("AnimationLibrary_1km0e")
 }

@@ -7,6 +7,13 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2qes0"]
 size = Vector2(64, 64)
 
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_gaydr"]
+load_path = "res://.godot/imported/world_sprites.svg-86afb6dc52fe0dcc8a43c1f0b2fdf631.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l1tet"]
+atlas = SubResource("CompressedTexture2D_gaydr")
+region = Rect2(3097, 891, 192, 193)
+
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_6bl1b"]
 lifetime_randomness = 0.3
 particle_flag_disable_z = true
@@ -21,13 +28,6 @@ tangential_accel_min = -2.23517e-06
 tangential_accel_max = 5.0
 scale_min = 0.01
 scale_max = 0.05
-
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_gaydr"]
-load_path = "res://.godot/imported/world_sprites.svg-86afb6dc52fe0dcc8a43c1f0b2fdf631.ctex"
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_l1tet"]
-atlas = SubResource("CompressedTexture2D_gaydr")
-region = Rect2(3097, 891, 192, 193)
 
 [sub_resource type="Animation" id="Animation_wba4t"]
 resource_name = "damage"
@@ -63,9 +63,9 @@ shape = SubResource("RectangleShape2D_2qes0")
 
 [node name="GPUParticles2D" type="GPUParticles2D" parent="CollisionShape2D"]
 amount = 20
-process_material = SubResource("ParticleProcessMaterial_6bl1b")
 texture = SubResource("AtlasTexture_l1tet")
 lifetime = 2.0
+process_material = SubResource("ParticleProcessMaterial_6bl1b")
 
 [node name="PointLight2D" type="PointLight2D" parent="CollisionShape2D"]
 scale = Vector2(0.2, 0.2)
@@ -74,7 +74,7 @@ texture = ExtResource("1_0tk7r")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
-"": SubResource("AnimationLibrary_nd1tm")
+&"": SubResource("AnimationLibrary_nd1tm")
 }
 autoplay = "damage"
 
@@ -82,3 +82,4 @@ autoplay = "damage"
 stream = ExtResource("3_pndt8")
 volume_db = -20.0
 autoplay = true
+max_distance = 800.0

@@ -65,3 +65,4 @@ shape = SubResource("CircleShape2D_th1kn")
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." index="5"]
 stream = ExtResource("5_k2i3c")
 autoplay = true
+max_distance = 800.0
