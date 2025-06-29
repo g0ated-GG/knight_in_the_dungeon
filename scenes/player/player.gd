@@ -71,6 +71,7 @@ func damage(points : int):
 			$CollisionShape2D.set_deferred('disabled', true)
 			alive = false
 			death.emit()
+			$WalkAnimationPlayer.active = false
 
 func heal(points : int):
 	hp = clamp(hp + points, 0, hp_max)

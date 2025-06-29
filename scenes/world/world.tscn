@@ -1,5 +1,6 @@
-[gd_scene load_steps=17 format=3 uid="uid://bblx5r5e0rrey"]
+[gd_scene load_steps=18 format=3 uid="uid://bblx5r5e0rrey"]
 
+[ext_resource type="Script" uid="uid://3ijssocucov1" path="res://scenes/world/world.gd" id="1_71ii3"]
 [ext_resource type="PackedScene" uid="uid://6drp3l3umlqc" path="res://scenes/world/level_map.tscn" id="1_uvr00"]
 [ext_resource type="PackedScene" uid="uid://kelsbpxb53af" path="res://scenes/world/room_1.tscn" id="2_iosm5"]
 [ext_resource type="PackedScene" uid="uid://b1u8k3rmcsf28" path="res://scenes/world/room_2.tscn" id="3_5idn2"]
@@ -18,6 +19,7 @@
 [ext_resource type="PackedScene" uid="uid://dcp7dodgvnmor" path="res://scenes/player/hud.tscn" id="16_rlntw"]
 
 [node name="World" type="Node2D"]
+script = ExtResource("1_71ii3")
 
 [node name="LevelMap" parent="." instance=ExtResource("1_uvr00")]
 

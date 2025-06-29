@@ -1,25 +1,22 @@
-[gd_scene load_steps=10 format=4 uid="uid://cah3jhknogeiw"]
+[gd_scene load_steps=7 format=4 uid="uid://bdhkvvfelm5t2"]
 
-[ext_resource type="Script" uid="uid://b8dscsyubhuvb" path="res://scenes/menu/main_menu.gd" id="1_fqx82"]
-[ext_resource type="Texture2D" uid="uid://dxvcbo0dgkib5" path="res://img/logo_white_transparent.png" id="2_fsc7i"]
-[ext_resource type="FontFile" uid="uid://mhmhy4xnwhwe" path="res://fonts/liberation-fonts-ttf-2.1.5/LiberationSerif-Bold.ttf" id="3_dyspx"]
-[ext_resource type="TileSet" uid="uid://vk3mo16g3chg" path="res://img/world_tile_set.tres" id="4_4kwg6"]
-[ext_resource type="Theme" uid="uid://bkbd6o6hdefv6" path="res://scenes/player/font.tres" id="4_isoef"]
-[ext_resource type="Theme" uid="uid://cti38vxpjm685" path="res://scenes/menu/main_menu_font.tres" id="5_qgo02"]
-[ext_resource type="Texture2D" uid="uid://b1xjmnc25qrx0" path="res://img/ru.tres" id="5_xn6kt"]
-[ext_resource type="Texture2D" uid="uid://bhsbbvq7ypooo" path="res://img/en.tres" id="6_isoef"]
+[ext_resource type="Script" uid="uid://qaa7k0na07p5" path="res://scenes/menu/settings.gd" id="1_occy7"]
+[ext_resource type="TileSet" uid="uid://vk3mo16g3chg" path="res://img/world_tile_set.tres" id="2_ck4fc"]
+[ext_resource type="Texture2D" uid="uid://dxvcbo0dgkib5" path="res://img/logo_white_transparent.png" id="3_mst10"]
+[ext_resource type="Theme" uid="uid://cti38vxpjm685" path="res://scenes/menu/main_menu_font.tres" id="4_jmn0l"]
+[ext_resource type="FontFile" uid="uid://mhmhy4xnwhwe" path="res://fonts/liberation-fonts-ttf-2.1.5/LiberationSerif-Bold.ttf" id="5_6biaa"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_mvcuf"]
-font = ExtResource("3_dyspx")
+font = ExtResource("5_6biaa")
 font_size = 72
 font_color = Color(1, 0.686275, 0, 1)
 
-[node name="Main menu" type="Node2D"]
-script = ExtResource("1_fqx82")
+[node name="Settings" type="Node2D"]
+script = ExtResource("1_occy7")
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
 tile_map_data = PackedByteArray("AAAAAAAAAgAAAAAAAAABAAAAAgAAAAAAAAACAAAAAgAAAAAAAAADAAAAAgAAAAAAAAADAAEAAgAAAAAAAAACAAEAAgAAAAAAAAAAAAEAAgAAAAAAAAAAAAIAAgAAAAAAAAABAAIAAgAAAAAAAAACAAIAAgAAAAAAAAADAAIAAgAAAAAAAAABAAEAAgAAAAAAAAAEAAAAAgAAAAAAAAAEAAEAAgAAAAAAAAAEAAIAAgAAAAAAAAAFAAAAAgAAAAAAAAAFAAEAAgAAAAAAAAAFAAIAAgAAAAAAAAAGAAIAAgAAAAAAAAAGAAMAAgAAAAAAAAAHAAMAAgAAAAAAAAAIAAMAAgAAAAAAAAAIAAQAAgAAAAAAAAAJAAQAAgAAAAAAAAAKAAQAAgAAAAAAAAALAAMAAgAAAAAAAAAMAAMAAgAAAAAAAAAMAAIAAgAAAAAAAAAMAAEAAgAAAAAAAAALAAEAAgAAAAAAAAAKAAEAAgAAAAAAAAAJAAEAAgAAAAAAAAAIAAEAAgAAAAAAAAAHAAEAAgAAAAAAAAAHAAIAAgAAAAAAAAAJAAMAAgAAAAAAAAAKAAMAAgAAAAAAAAALAAIAAgAAAAAAAAAKAAIAAgAAAAAAAAAJAAIAAgAAAAAAAAAJAAAAAgAAAAAAAAAIAAAAAgAAAAAAAAAHAAAAAgAAAAAAAAAGAAAAAgAAAAAAAAAOAAAAAgAAAAAAAAANAAAAAgAAAAAAAAAMAAAAAgAAAAAAAAALAAAAAgAAAAAAAAAKAAAAAgAAAAAAAAAOAAEAAgAAAAAAAAAOAAIAAgAAAAAAAAAOAAMAAgAAAAAAAAAOAAQAAgAAAAAAAAAOAAUAAgAAAAAAAAAOAAYAAgAAAAAAAAAOAAcAAgAAAAAAAAAOAAgAAgAAAAAAAAAOAAkAAgAAAAAAAAANAAkAAgAAAAAAAAAMAAkAAgAAAAAAAAALAAkAAgAAAAAAAAAKAAkAAgAAAAAAAAAJAAkAAgAAAAAAAAAIAAkAAgAAAAAAAAAHAAkAAgAAAAAAAAAGAAkAAgAAAAAAAAAFAAkAAgAAAAAAAAAEAAkAAgAAAAAAAAADAAkAAgAAAAAAAAACAAkAAgAAAAAAAAABAAkAAgAAAAAAAAAAAAkAAgAAAAAAAAAAAAgAAgAAAAAAAAAAAAcAAgAAAAAAAAAAAAMAAgAAAAAAAAAAAAQAAgAAAAAAAAAAAAUAAgAAAAAAAAAAAAYAAgAAAAAAAAABAAcAAgAAAAAAAAACAAcAAgAAAAAAAAADAAcAAgAAAAAAAAAEAAcAAgAAAAAAAAAFAAcAAgAAAAAAAAAFAAgAAgAAAAAAAAAEAAgAAgAAAAAAAAADAAgAAgAAAAAAAAACAAgAAgAAAAAAAAABAAgAAgAAAAAAAAABAAYAAgAAAAAAAAABAAUAAgAAAAAAAAABAAQAAgAAAAAAAAABAAMAAgAAAAAAAAACAAYAAgAAAAAAAAADAAUAAgAAAAAAAAADAAQAAgAAAAAAAAADAAMAAgAAAAAAAAACAAMAAgAAAAAAAAACAAQAAgAAAAAAAAACAAUAAgAAAAAAAAAEAAQAAgAAAAAAAAAEAAMAAgAAAAAAAAAEAAYAAgAAAAAAAAAEAAUAAgAAAAAAAAAFAAQAAgAAAAAAAAAFAAMAAgAAAAAAAAADAAYAAgAAAAAAAAAFAAYAAgAAAAAAAAAGAAUAAgAAAAAAAAAGAAQAAgAAAAAAAAAFAAUAAgAAAAAAAAAGAAYAAgAAAAAAAAAHAAYAAgAAAAAAAAAHAAUAAgAAAAAAAAAHAAQAAgAAAAAAAAAGAAcAAgAAAAAAAAAHAAcAAgAAAAAAAAAIAAcAAgAAAAAAAAAIAAYAAgAAAAAAAAAJAAYAAgAAAAAAAAAJAAUAAgAAAAAAAAAIAAUAAgAAAAAAAAAGAAgAAgAAAAAAAAAHAAgAAgAAAAAAAAAJAAcAAgAAAAAAAAAIAAgAAgAAAAAAAAAJAAgAAgAAAAAAAAAKAAgAAgAAAAAAAAALAAgAAgAAAAAAAAALAAcAAgAAAAAAAAAMAAcAAgAAAAAAAAAMAAgAAgAAAAAAAAANAAgAAgAAAAAAAAANAAcAAgAAAAAAAAAMAAYAAgAAAAAAAAALAAYAAgAAAAAAAAAKAAYAAgAAAAAAAAAKAAcAAgAAAAAAAAANAAYAAgAAAAAAAAAMAAUAAgAAAAAAAAALAAUAAgAAAAAAAAANAAUAAgAAAAAAAAANAAQAAgAAAAAAAAAMAAQAAgAAAAAAAAALAAQAAgAAAAAAAAAKAAUAAgAAAAAAAAANAAMAAgAAAAAAAAANAAIAAgAAAAAAAAANAAEAAgAAAAAAAAAIAAIAAgAAAAAAAAAGAAEAAgAAAAAAAAA=")
-tile_set = ExtResource("4_4kwg6")
+tile_set = ExtResource("2_ck4fc")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -45,23 +42,11 @@ offset_right = 200.0
 offset_bottom = 200.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("2_fsc7i")
+texture = ExtResource("3_mst10")
 expand_mode = 4
 stretch_mode = 5
 
-[node name="JamLink" type="LinkButton" parent="CanvasLayer"]
-anchors_preset = 2
-anchor_top = 1.0
-anchor_bottom = 1.0
-offset_left = 25.0
-offset_bottom = -25.0
-grow_vertical = 0
-theme = ExtResource("5_qgo02")
-theme_override_colors/font_color = Color(1, 0.686275, 0, 1)
-text = "LINK"
-uri = "https://gamin.me/compos/kod/23"
-
-[node name="Buttons" type="VBoxContainer" parent="CanvasLayer"]
+[node name="Settings" type="VBoxContainer" parent="CanvasLayer"]
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -74,26 +59,59 @@ offset_bottom = 33.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="ContinueButton" type="Button" parent="CanvasLayer/Buttons"]
-visible = false
+[node name="UIScale" type="HBoxContainer" parent="CanvasLayer/Settings"]
 layout_mode = 2
-theme = ExtResource("5_qgo02")
-text = "CONTINUE_GAME"
+alignment = 1
 
-[node name="PlayButton" type="Button" parent="CanvasLayer/Buttons"]
+[node name="Label" type="Label" parent="CanvasLayer/Settings/UIScale"]
 layout_mode = 2
-theme = ExtResource("5_qgo02")
-text = "NEW_GAME"
+theme = ExtResource("4_jmn0l")
+text = "SETTINGS_UI_SCALE"
 
-[node name="SettingsButton" type="Button" parent="CanvasLayer/Buttons"]
+[node name="UIScaleOption" type="OptionButton" parent="CanvasLayer/Settings/UIScale"]
 layout_mode = 2
-theme = ExtResource("5_qgo02")
-text = "SETTINGS"
+theme = ExtResource("4_jmn0l")
+selected = 0
+item_count = 3
+popup/item_0/text = "x1"
+popup/item_0/id = 0
+popup/item_1/text = "x1.5"
+popup/item_1/id = 1
+popup/item_2/text = "x2"
+popup/item_2/id = 2
 
-[node name="ExitButton" type="Button" parent="CanvasLayer/Buttons"]
+[node name="Particles" type="HBoxContainer" parent="CanvasLayer/Settings"]
 layout_mode = 2
-theme = ExtResource("5_qgo02")
-text = "EXIT_GAME"
+alignment = 1
+
+[node name="Label" type="Label" parent="CanvasLayer/Settings/Particles"]
+layout_mode = 2
+theme = ExtResource("4_jmn0l")
+text = "SETTINGS_PARTICLES"
+
+[node name="ParticlesOption" type="CheckButton" parent="CanvasLayer/Settings/Particles"]
+layout_mode = 2
+theme = ExtResource("4_jmn0l")
+button_pressed = true
+
+[node name="Light" type="HBoxContainer" parent="CanvasLayer/Settings"]
+layout_mode = 2
+alignment = 1
+
+[node name="Label" type="Label" parent="CanvasLayer/Settings/Light"]
+layout_mode = 2
+theme = ExtResource("4_jmn0l")
+text = "SETTINGS_LIGHT"
+
+[node name="LightOption" type="CheckButton" parent="CanvasLayer/Settings/Light"]
+layout_mode = 2
+theme = ExtResource("4_jmn0l")
+button_pressed = true
+
+[node name="ReturnButton" type="Button" parent="CanvasLayer/Settings"]
+layout_mode = 2
+theme = ExtResource("4_jmn0l")
+text = "RETURN"
 
 [node name="Label" type="Label" parent="CanvasLayer"]
 anchors_preset = 5
@@ -103,36 +121,13 @@ offset_left = -20.0
 offset_right = 20.0
 offset_bottom = 23.0
 grow_horizontal = 2
-text = "KNIGHT_IN_THE_DUNGEON"
+text = "SETTINGS"
 label_settings = SubResource("LabelSettings_mvcuf")
 horizontal_alignment = 1
 vertical_alignment = 1
 uppercase = true
 
-[node name="LanguageOptionButton" type="OptionButton" parent="CanvasLayer"]
-anchors_preset = 3
-anchor_left = 1.0
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -194.0
-offset_top = -146.0
-offset_right = -25.0
-offset_bottom = -25.0
-grow_horizontal = 0
-grow_vertical = 0
-theme = ExtResource("4_isoef")
-selected = 0
-item_count = 2
-popup/item_0/text = "ru"
-popup/item_0/icon = ExtResource("5_xn6kt")
-popup/item_0/id = 0
-popup/item_1/text = "en"
-popup/item_1/icon = ExtResource("6_isoef")
-popup/item_1/id = 1
-
-[connection signal="pressed" from="CanvasLayer/Buttons/ContinueButton" to="." method="_on_continue_button_pressed"]
-[connection signal="pressed" from="CanvasLayer/Buttons/PlayButton" to="." method="_on_play_button_pressed"]
-[connection signal="pressed" from="CanvasLayer/Buttons/SettingsButton" to="." method="_on_settings_button_pressed"]
-[connection signal="pressed" from="CanvasLayer/Buttons/ExitButton" to="." method="_on_exit_button_pressed"]
-[connection signal="item_selected" from="CanvasLayer/LanguageOptionButton" to="." method="_on_language_option_button_item_selected"]
+[connection signal="item_selected" from="CanvasLayer/Settings/UIScale/UIScaleOption" to="." method="_on_ui_scale_option_item_selected"]
+[connection signal="toggled" from="CanvasLayer/Settings/Particles/ParticlesOption" to="." method="_on_particles_option_toggled"]
+[connection signal="toggled" from="CanvasLayer/Settings/Light/LightOption" to="." method="_on_light_option_toggled"]
+[connection signal="pressed" from="CanvasLayer/Settings/ReturnButton" to="." method="_on_return_button_pressed"]

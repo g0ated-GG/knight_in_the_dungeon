@@ -4,7 +4,8 @@
 light_mode = 1
 
 [sub_resource type="Gradient" id="Gradient_2a83u"]
-colors = PackedColorArray(0.129412, 0.129412, 0.129412, 1, 0.129412, 0.129412, 0.129412, 1)
+offsets = PackedFloat32Array(0)
+colors = PackedColorArray(0.301961, 0.301961, 0.301961, 1)
 
 [sub_resource type="GradientTexture1D" id="GradientTexture1D_dmrsh"]
 gradient = SubResource("Gradient_2a83u")

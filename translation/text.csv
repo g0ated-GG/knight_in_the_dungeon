@@ -2,8 +2,15 @@ keys,ru,en
 KNIGHT_IN_THE_DUNGEON,Рыцарь в подземелье,Knight in the dungeon
 CONTINUE_GAME,Продолжить,Continue
 NEW_GAME,Новая игра,New game
+SETTINGS,Настройки,Settings
 EXIT_GAME,Выход,Exit
 LINK,"Игра для гейм-джема КОД23 ""Мал, да удал"" https://gamin.me/compos/kod/23","Game for КОД23 ""Мал, да удал"" game jam https://gamin.me/compos/kod/23"
+SETTINGS_UI_SCALE,Масштаб интерфейса,Interface scale
+SETTINGS_PARTICLES,Частицы,Particles
+SETTINGS_LIGHT,Освещение,Light
+SETTINGS_ON,Вкл.,On
+SETTINGS_OFF,Откл.,Off
+RETURN,Вернуться,Return
 TIP_MOVE,Движение [WASD/стрелки].\nСвет факелов укажет Вам путь.,Move [WASD/arrows].\nLight of the torches will show you the way.
 TIP_DODGE,Перекаты [Пробел / ПКМ]\nпозволят избежать многих опасностей.,Rolling [Space / RMB]\nwill allow you to avoid many dangers.
 TIP_ATTACK,Атака мечом [ЛКМ].,Attack with a sword [LMB].

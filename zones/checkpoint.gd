@@ -5,7 +5,7 @@ extends StaticBody2D
 	set(state):
 		enabled = state
 		$Sprite2D/FireSprite2D.visible = enabled
-		$PointLight2D.enabled = enabled
+		$PointLight2D.enabled = enabled && Globals.light
 
 func _ready() -> void:
 	$SaveArea2D.body_entered.connect(save)

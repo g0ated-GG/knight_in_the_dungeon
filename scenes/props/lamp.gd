@@ -6,8 +6,8 @@ signal state_changed
 	set(state):
 		var old_state = enabled
 		enabled = state
-		$PointLight2D.enabled = state
-		$GPUParticles2D.emitting = state
+		$PointLight2D.enabled = state && Globals.light
+		$GPUParticles2D.emitting = state && Globals.particles
 		if old_state != state:
 			state_changed.emit()
 

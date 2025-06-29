@@ -24,12 +24,15 @@ polygon = PackedVector2Array(0, 0, 1168, 0, 1168, 88, 1528, 88, 1528, -272, 1616
 
 [node name="Lamp" parent="." index="3" instance=ExtResource("2_4t1cq")]
 position = Vector2(1028, 136)
+enabled = true
 
 [node name="Lamp2" parent="." index="4" instance=ExtResource("2_4t1cq")]
 position = Vector2(1032, 496)
+enabled = true
 
 [node name="Lamp3" parent="." index="5" instance=ExtResource("2_4t1cq")]
 position = Vector2(1848, 408)
+enabled = true
 
 [node name="Checkpoint" parent="." index="6" instance=ExtResource("3_0ponu")]
 position = Vector2(256, 320)

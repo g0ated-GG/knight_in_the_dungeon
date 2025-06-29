@@ -12,6 +12,7 @@ func _ready() -> void:
 	death.connect(explosion)
 	speed = randi_range(speed_min, speed_max)
 	$LifeTimer.start(life_time)
+	$GPUParticles2D.emitting = Globals.particles
 
 func ignition(target) -> void:
 	if alive and target != self and target != caster:
@@ -28,6 +29,12 @@ func explosion() -> void:
 		if target != self and target is not Arrow:
 			target.damage(explosion_damage)
 	$CollisionShape2D.set_deferred('disabled', true)
+
+func explosion_effect() -> void:
+	if Globals.particles:
+		$ExplosionParticles2D.emitting = true
+	else:
+		hide()
 
 func damage(points : int) -> void:
 	hp = clamp(hp - points, 0, hp_max)

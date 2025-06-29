@@ -5,5 +5,8 @@
 [resource]
 Button/font_sizes/font_size = 48
 Button/fonts/font = ExtResource("1_almbo")
+CheckButton/font_sizes/font_size = 48
+Label/font_sizes/font_size = 48
 LinkButton/font_sizes/font_size = 32
 LinkButton/fonts/font = ExtResource("1_almbo")
+PopupMenu/font_sizes/font_size = 48

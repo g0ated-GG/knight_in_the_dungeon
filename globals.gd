@@ -19,6 +19,19 @@ var language : String :
 		language = value
 		TranslationServer.set_locale(language)
 		save('language', language, 'config')
+var ui_scale : float = 1.0 :
+	set(value):
+		ui_scale = value
+		get_tree().root.content_scale_factor = ui_scale
+		save('ui_scale', ui_scale, 'config')
+var particles : bool = true :
+	set(state):
+		particles = state
+		save('particles', particles, 'config')
+var light : bool = true :
+	set(state):
+		light = state
+		save('light', light, 'config')
 
 func save(param_name : String, value, section : String = 'save') -> void:
 	var config = ConfigFile.new()

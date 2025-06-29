@@ -37,7 +37,6 @@ radius = 30.0
 
 [node name="Lamp" instance=ExtResource("1_v6b20")]
 script = ExtResource("2_pukns")
-enabled = null
 
 [node name="PointLight2D" type="PointLight2D" parent="." index="0"]
 color = Color(1, 1, 0, 1)
