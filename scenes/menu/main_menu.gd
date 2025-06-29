@@ -2,7 +2,11 @@ extends Node2D
 
 func _ready() -> void:
 	var config = ConfigFile.new()
-	if config.load(ProjectSettings.globalize_path('res://save.cfg')) == OK:
+	var config_loaded : bool = config.load(Globals.get_config_file_path()) == OK
+	if not config_loaded:
+		Globals.restore_default_settings()
+		config_loaded = config.load(Globals.get_config_file_path()) == OK
+	if config_loaded:
 		Globals.deaths = config.get_value('save', 'deaths')
 		Globals.checkpoint = config.get_value('save', 'checkpoint')
 		Globals.language = config.get_value('config', 'language')
