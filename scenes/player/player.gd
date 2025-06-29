@@ -13,6 +13,8 @@ extends CharacterBody2D
 @export var attack_damage : int = 30
 @export var alive : bool = true
 @export var direction : Vector2 = Vector2.ZERO
+@export var touch_control : bool = false
+@export var attack : bool = false
 
 @export var god_mode : bool = false
 
@@ -44,13 +46,20 @@ func _physics_process(_delta: float) -> void:
 		velocity = Vector2.ZERO
 		$WalkAnimationPlayer.stop()
 		$WalkAnimationPlayer.play('RESET')
-	look_at(get_global_mouse_position())
+	if not touch_control:
+		look_at(get_global_mouse_position())
 	if not $AnimationPlayer.is_playing():
-		if Input.is_action_just_pressed('attack'):
-			$AnimationPlayer.play('left_to_right' if [true, false].pick_random() else 'right_to_left')
+		if not touch_control and Input.is_action_just_pressed('attack'):
+			attack_animation()
+		elif touch_control and attack:
+			attack_animation()
+			attack = false
 		if Input.is_action_just_pressed('dodge'):
 			$AnimationPlayer.play('dodge')
 	move_and_slide()
+
+func attack_animation() -> void:
+	$AnimationPlayer.play('left_to_right' if [true, false].pick_random() else 'right_to_left')
 
 func damage(points : int):
 	hp = clamp(hp - points, 0, hp_max)

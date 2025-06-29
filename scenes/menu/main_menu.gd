@@ -1,5 +1,7 @@
 extends Node2D
 
+const TOUCH_SCREEN_SCALE_FACTOR = 2.0
+
 func _ready() -> void:
 	var config = ConfigFile.new()
 	if config.load(ProjectSettings.globalize_path('res://save.cfg')) == OK:
@@ -12,6 +14,8 @@ func _ready() -> void:
 		$CanvasLayer/LanguageOptionButton.select(language_options[config.get_value('config', 'language')])
 	if Globals.checkpoint > 0 or Globals.deaths > 0:
 		$CanvasLayer/Buttons/ContinueButton.show()
+	if DisplayServer.is_touchscreen_available():
+		get_tree().root.content_scale_factor = TOUCH_SCREEN_SCALE_FACTOR
 
 func _on_continue_button_pressed() -> void:
 	var checkpoint = clamp(Globals.checkpoint, 0, Globals.final_checkpoint - 1)

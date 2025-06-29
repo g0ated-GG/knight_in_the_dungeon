@@ -1,9 +1,10 @@
-[gd_scene load_steps=22 format=3 uid="uid://dcp7dodgvnmor"]
+[gd_scene load_steps=23 format=3 uid="uid://dcp7dodgvnmor"]
 
 [ext_resource type="Script" uid="uid://t40b0q3fok6p" path="res://scenes/player/hud.gd" id="1_mqmef"]
 [ext_resource type="Theme" uid="uid://bkbd6o6hdefv6" path="res://scenes/player/font.tres" id="2_vas50"]
 [ext_resource type="FontFile" uid="uid://bfub2kbyi1bw6" path="res://fonts/liberation-fonts-ttf-2.1.5/LiberationSerif-Regular.ttf" id="2_wak6e"]
 [ext_resource type="Script" uid="uid://j43d3yvyp587" path="res://scenes/player/menu.gd" id="3_vjlu0"]
+[ext_resource type="PackedScene" uid="uid://53ukfuiax1xm" path="res://scenes/player/joystick.tscn" id="5_nhg7b"]
 [ext_resource type="Texture2D" uid="uid://t62nsa5xvmhe" path="res://img/touch.svg" id="6_nhg7b"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wwjjb"]
@@ -246,30 +247,26 @@ layout_mode = 1
 anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
-offset_left = 150.0
-offset_top = -175.0
-offset_right = 150.0
-offset_bottom = -175.0
+offset_left = 144.0
+offset_top = -168.0
+offset_right = 144.0
+offset_bottom = -168.0
 grow_vertical = 0
+metadata/_edit_use_anchors_ = true
+
+[node name="Joystick" parent="JoystickPosition" instance=ExtResource("5_nhg7b")]
 
 [node name="AttackButtonPosition" type="Control" parent="."]
 layout_mode = 1
-anchors_preset = 3
-anchor_left = 1.0
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -128.0
-offset_top = -153.0
-offset_right = -128.0
-offset_bottom = -153.0
-grow_horizontal = 0
-grow_vertical = 0
+anchor_left = 0.888889
+anchor_top = 0.740741
+anchor_right = 0.888889
+anchor_bottom = 0.740741
+metadata/_edit_use_anchors_ = true
 
 [node name="AttackButton" type="TouchScreenButton" parent="AttackButtonPosition"]
 texture_normal = SubResource("AtlasTexture_oxl5d")
 texture_pressed = SubResource("AtlasTexture_v82ke")
-action = "attack"
 
 [node name="DodgeButtonPosition" type="Control" parent="."]
 layout_mode = 1
@@ -279,11 +276,12 @@ anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = -128.0
-offset_top = -281.0
+offset_top = -296.0
 offset_right = -128.0
-offset_bottom = -281.0
+offset_bottom = -296.0
 grow_horizontal = 0
 grow_vertical = 0
+metadata/_edit_use_anchors_ = true
 
 [node name="DodgeButton" type="TouchScreenButton" parent="DodgeButtonPosition"]
 texture_normal = SubResource("AtlasTexture_a6kbs")
@@ -292,13 +290,16 @@ action = "dodge"
 
 [node name="MenuButtonPosition" type="Control" parent="."]
 layout_mode = 1
-anchors_preset = 0
+anchor_left = -0.000868056
+anchor_right = -0.000868056
 offset_left = 25.0
 offset_top = 25.0
 offset_right = 25.0
 offset_bottom = 25.0
+metadata/_edit_use_anchors_ = true
 
 [node name="MenuButton" type="TouchScreenButton" parent="MenuButtonPosition"]
+process_mode = 3
 texture_normal = SubResource("AtlasTexture_nhg7b")
 texture_pressed = SubResource("AtlasTexture_gbix8")
 action = "pause"
@@ -308,3 +309,4 @@ action = "pause"
 [connection signal="pressed" from="Menu/VBoxContainer/RestartButton" to="Menu" method="_on_restart_button_pressed"]
 [connection signal="pressed" from="Menu/VBoxContainer/MainMenuButton" to="Menu" method="_on_main_menu_button_pressed"]
 [connection signal="pressed" from="Menu/VBoxContainer/DesktopButton" to="Menu" method="_on_desktop_button_pressed"]
+[connection signal="pressed" from="AttackButtonPosition/AttackButton" to="." method="_on_attack_button_pressed"]
