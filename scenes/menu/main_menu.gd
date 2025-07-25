@@ -13,6 +13,7 @@ func _ready() -> void:
 		Globals.ui_scale = config.get_value('config', 'ui_scale')
 		Globals.particles = config.get_value('config', 'particles')
 		Globals.light = config.get_value('config', 'light')
+		Globals.volume = config.get_value('config', 'volume')
 		var language_options : Dictionary[String, int] = {}
 		for index in range($CanvasLayer/LanguageOptionButton.item_count):
 			language_options[$CanvasLayer/LanguageOptionButton.get_item_text(index)] = index

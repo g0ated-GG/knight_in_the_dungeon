@@ -27,6 +27,10 @@ boot_splash/image="res://img/logo_white_transparent.png"
 config/icon="uid://tcor3n7s22qq"
 boot_splash/minimum_display_time=2000
 
+[audio]
+
+general/default_playback_type.web=0
+
 [autoload]
 
 Globals="*res://globals.gd"

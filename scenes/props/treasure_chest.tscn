@@ -11,6 +11,13 @@ region = Rect2(3023, 2457, 388, 199)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_v2y7x"]
 size = Vector2(120, 60)
 
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_1p0eq"]
+load_path = "res://.godot/imported/world_sprites.svg-86afb6dc52fe0dcc8a43c1f0b2fdf631.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_boy2r"]
+atlas = SubResource("CompressedTexture2D_1p0eq")
+region = Rect2(2111, 2943, 96, 96)
+
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_6n6gw"]
 lifetime_randomness = 0.3
 particle_flag_disable_z = true
@@ -25,13 +32,6 @@ tangential_accel_min = 1.78
 tangential_accel_max = 27.56
 scale_min = 0.01
 scale_max = 0.05
-
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_1p0eq"]
-load_path = "res://.godot/imported/world_sprites.svg-86afb6dc52fe0dcc8a43c1f0b2fdf631.ctex"
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_boy2r"]
-atlas = SubResource("CompressedTexture2D_1p0eq")
-region = Rect2(2111, 2943, 96, 96)
 
 [node name="Treasure chest" instance=ExtResource("1_r5nks")]
 
@@ -49,5 +49,5 @@ shape = SubResource("RectangleShape2D_v2y7x")
 
 [node name="GPUParticles2D" type="GPUParticles2D" parent="." index="3"]
 amount = 50
-process_material = SubResource("ParticleProcessMaterial_6n6gw")
 texture = SubResource("AtlasTexture_boy2r")
+process_material = SubResource("ParticleProcessMaterial_6n6gw")
