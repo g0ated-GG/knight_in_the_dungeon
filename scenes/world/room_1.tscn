@@ -10,28 +10,30 @@
 [node name="TileMapLayer" parent="." index="0"]
 visible = false
 
-[node name="Floor label" parent="." index="1" instance=ExtResource("4_n1l0x")]
+[node name="Root" type="Node2D" parent="." index="1"]
+
+[node name="Floor label" parent="Root" index="0" instance=ExtResource("4_n1l0x")]
 offset_left = 704.0
 offset_top = 248.0
 offset_right = 1344.0
 offset_bottom = 401.0
 text = "TIP_MOVE"
 
-[node name="Borders" type="StaticBody2D" parent="." index="2"]
+[node name="Borders" type="StaticBody2D" parent="Root" index="1"]
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Borders" index="0"]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Root/Borders" index="0"]
 polygon = PackedVector2Array(0, 0, 1168, 0, 1168, 88, 1528, 88, 1528, -272, 1616, -272, 1616, 176, 1080, 176, 1080, 88, 88, 88, 88, 544, 1080, 544, 1080, 448, 1896, 448, 1896, -272, 1984, -272, 1984, 536, 1168, 536, 1168, 632, 0, 632, 0, 0)
 
-[node name="Lamp" parent="." index="3" instance=ExtResource("2_4t1cq")]
+[node name="Lamp" parent="Root" index="2" instance=ExtResource("2_4t1cq")]
 position = Vector2(1028, 136)
 
-[node name="Lamp2" parent="." index="4" instance=ExtResource("2_4t1cq")]
+[node name="Lamp2" parent="Root" index="3" instance=ExtResource("2_4t1cq")]
 position = Vector2(1032, 496)
 
-[node name="Lamp3" parent="." index="5" instance=ExtResource("2_4t1cq")]
+[node name="Lamp3" parent="Root" index="4" instance=ExtResource("2_4t1cq")]
 position = Vector2(1848, 408)
 
-[node name="Checkpoint" parent="." index="6" instance=ExtResource("3_0ponu")]
+[node name="Checkpoint" parent="Root" index="5" instance=ExtResource("3_0ponu")]
 position = Vector2(256, 320)
 number = 0
 enabled = true
