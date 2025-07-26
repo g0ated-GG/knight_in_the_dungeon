@@ -9,6 +9,7 @@ Game for KOD23 "Small, but mighty" game jam [https://gamin.me/compos/kod/23](htt
 * Mouse - rotation
 * LMB - sword strike
 * Space / RMB - rolling
+* E - interact
 * Esc - menu
 * F11 - fullscreen/window mode
 
