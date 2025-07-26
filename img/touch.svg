@@ -2,13 +2,13 @@
 <!-- Created with Inkscape (http://www.inkscape.org/) -->
 
 <svg
-   width="85.511665mm"
+   width="99.511665mm"
    height="26mm"
-   viewBox="0 0 85.511665 26"
+   viewBox="0 0 99.511665 26"
    version="1.1"
    id="svg1"
    sodipodi:docname="touch.svg"
-   inkscape:version="1.4 (e7c3feb100, 2024-10-09)"
+   inkscape:version="1.4.2 (ebf0e940d0, 2025-05-08)"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns="http://www.w3.org/2000/svg"
@@ -24,20 +24,20 @@
      inkscape:deskcolor="#d1d1d1"
      inkscape:document-units="mm"
      showgrid="true"
-     inkscape:zoom="4.0617769"
-     inkscape:cx="189.8184"
-     inkscape:cy="58.841242"
+     inkscape:zoom="2.0308885"
+     inkscape:cx="196.71194"
+     inkscape:cy="18.95722"
      inkscape:window-width="1920"
      inkscape:window-height="1008"
      inkscape:window-x="0"
      inkscape:window-y="0"
      inkscape:window-maximized="1"
-     inkscape:current-layer="g11">
+     inkscape:current-layer="layer1">
     <inkscape:grid
        id="grid1"
        units="mm"
-       originx="8.8817842e-16"
-       originy="8.8817843e-16"
+       originx="1.7763568e-15"
+       originy="1.7763568e-15"
        spacingx="0.99999998"
        spacingy="1"
        empcolor="#0099e5"
@@ -107,7 +107,8 @@
          sodipodi:nodetypes="ccscc" />
     </g>
     <g
-       id="g3">
+       id="g3"
+       transform="translate(15)">
       <ellipse
          style="font-variation-settings:normal;vector-effect:none;fill:#e6e6e6;fill-opacity:1;stroke:#b3b3b3;stroke-width:1.02333;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;-inkscape-stroke:none;stop-color:#000000"
          id="path2-2-8"
@@ -162,7 +163,7 @@
        id="g4"
        transform="translate(8.7960495e-8,12)">
       <ellipse
-         style="font-variation-settings:normal;opacity:1;vector-effect:none;fill:#b3b3b3;fill-opacity:1;stroke:#e6e6e6;stroke-width:1.02332979;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;-inkscape-stroke:none;stop-color:#000000;stop-opacity:1"
+         style="font-variation-settings:normal;opacity:1;vector-effect:none;fill:#b3b3b3;fill-opacity:1;stroke:#e6e6e6;stroke-width:1.02333;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;-inkscape-stroke:none;stop-color:#000000;stop-opacity:1"
          id="ellipse3"
          cx="49"
          cy="6.9999995"
@@ -177,23 +178,23 @@
        id="g5"
        transform="translate(8.7960495e-8,12)">
       <ellipse
-         style="font-variation-settings:normal;vector-effect:none;fill:#b3b3b3;fill-opacity:1;stroke:#e6e6e6;stroke-width:1.02332979;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;-inkscape-stroke:none;stop-color:#000000;opacity:1;stop-opacity:1"
+         style="font-variation-settings:normal;opacity:1;vector-effect:none;fill:#b3b3b3;fill-opacity:1;stroke:#e6e6e6;stroke-width:1.02333;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;-inkscape-stroke:none;stop-color:#000000;stop-opacity:1"
          id="ellipse4"
          cx="64"
          cy="6.9999995"
          rx="5"
          ry="4.9999995" />
       <path
-         style="font-variation-settings:normal;opacity:1;vector-effect:none;fill:#4d4d4d;fill-opacity:1;stroke:#808080;stroke-width:0.427098;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;-inkscape-stroke:none;stop-color:#000000;stop-opacity:1"
+         style="font-variation-settings:normal;opacity:1;fill:#4d4d4d;fill-opacity:1;stroke:#808080;stroke-width:0.427;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;stop-color:#000000;stop-opacity:1"
          d="m 60.671597,5.3313615 c 0,5.3254455 3.328404,5.3254455 3.328404,5.3254455 0,0 3.328404,10e-7 3.328404,-5.3254455 0,0 -2.662722,-0.6656806 -3.328404,-1.3313613 -0.66568,0.6656807 -3.328404,1.3313613 -3.328404,1.3313613 z"
          id="path5"
          sodipodi:nodetypes="ccscc" />
     </g>
     <g
        id="g11"
-       transform="translate(8.7960495e-8,12)">
+       transform="translate(15,11.999999)">
       <ellipse
-         style="font-variation-settings:normal;vector-effect:none;fill:#b3b3b3;fill-opacity:1;stroke:#e6e6e6;stroke-width:1.02332979;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;-inkscape-stroke:none;stop-color:#000000;opacity:1;stop-opacity:1"
+         style="font-variation-settings:normal;opacity:1;vector-effect:none;fill:#b3b3b3;fill-opacity:1;stroke:#e6e6e6;stroke-width:1.02333;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;-inkscape-stroke:none;stop-color:#000000;stop-opacity:1"
          id="ellipse5"
          cx="79"
          cy="7.0000005"
@@ -223,6 +224,40 @@
            height="0.99999994"
            x="78"
            y="11.500001" />
+      </g>
+    </g>
+    <g
+       id="g8">
+      <ellipse
+         style="font-variation-settings:normal;vector-effect:none;fill:#e6e6e6;fill-opacity:1;stroke:#b3b3b3;stroke-width:1.02333;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;-inkscape-stroke:none;stop-color:#000000"
+         id="path2-5"
+         cx="79"
+         cy="6.9999995"
+         rx="5"
+         ry="4.9999995" />
+      <path
+         style="fill:#4d4d4d;fill-opacity:1;stroke:#808080;stroke-width:0.3;stroke-dasharray:none;stroke-opacity:1"
+         d="M 77.5,10.499999 V 8.5 l -1,-1.000001 v -2 h 1 V 6.5 l 10e-7,-3 h 1.000001 l -10e-7,3 v -2 h 0.999997 v 2 -2 h 1.000001 v 2 -1.000001 H 81.5 V 6.5 7.499999 L 80.5,8.5 v 1.999999 z"
+         id="path8"
+         sodipodi:nodetypes="cccccccccccccccccccccc" />
+    </g>
+    <g
+       id="g12"
+       transform="translate(0,12)">
+      <g
+         id="g13">
+        <ellipse
+           style="font-variation-settings:normal;vector-effect:none;fill:#b3b3b3;fill-opacity:1;stroke:#e6e6e6;stroke-width:1.02333;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;-inkscape-stroke:none;stop-color:#000000"
+           id="ellipse8"
+           cx="79"
+           cy="6.9999995"
+           rx="5"
+           ry="4.9999995" />
+        <path
+           style="fill:#4d4d4d;fill-opacity:1;stroke:#808080;stroke-width:0.3;stroke-dasharray:none;stroke-opacity:1"
+           d="M 77.5,10.499999 V 8.5 l -1,-1.000001 v -2 h 1 V 6.5 l 10e-7,-3 h 1.000001 l -10e-7,3 v -2 h 0.999997 v 2 -2 h 1.000001 v 2 -1.000001 H 81.5 V 6.5 7.499999 L 80.5,8.5 v 1.999999 z"
+           id="path9"
+           sodipodi:nodetypes="cccccccccccccccccccccc" />
       </g>
     </g>
   </g>

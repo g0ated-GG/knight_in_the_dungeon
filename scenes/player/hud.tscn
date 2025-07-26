@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://dcp7dodgvnmor"]
+[gd_scene load_steps=25 format=3 uid="uid://dcp7dodgvnmor"]
 
 [ext_resource type="Script" uid="uid://t40b0q3fok6p" path="res://scenes/player/hud.gd" id="1_mqmef"]
 [ext_resource type="Theme" uid="uid://bkbd6o6hdefv6" path="res://scenes/player/font.tres" id="2_vas50"]
@@ -85,9 +85,17 @@ region = Rect2(552, 127, 105, 105)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_nhg7b"]
 atlas = ExtResource("6_nhg7b")
-region = Rect2(694, 14, 105, 105)
+region = Rect2(836, 14, 104, 105)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_gbix8"]
+atlas = ExtResource("6_nhg7b")
+region = Rect2(836, 127, 104, 105)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6fu3r"]
+atlas = ExtResource("6_nhg7b")
+region = Rect2(694, 14, 105, 105)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w2mwk"]
 atlas = ExtResource("6_nhg7b")
 region = Rect2(694, 127, 105, 105)
 
@@ -309,6 +317,24 @@ position = Vector2(48, 48)
 texture_normal = SubResource("AtlasTexture_nhg7b")
 texture_pressed = SubResource("AtlasTexture_gbix8")
 action = "pause"
+
+[node name="InteractButtonPosition" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -40.0
+offset_top = -40.0
+grow_horizontal = 0
+grow_vertical = 0
+
+[node name="InteractButton" type="TouchScreenButton" parent="InteractButtonPosition"]
+position = Vector2(-104, -392)
+texture_normal = SubResource("AtlasTexture_6fu3r")
+texture_pressed = SubResource("AtlasTexture_w2mwk")
+action = "interact"
 
 [connection signal="timeout" from="RestartGameTimer" to="." method="_on_restart_timer_timeout"]
 [connection signal="pressed" from="Menu/VBoxContainer/ResumeButton" to="Menu" method="_on_resume_button_pressed"]

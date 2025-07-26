@@ -11,6 +11,7 @@ var touch_control : bool :
 		$AttackButtonPosition.visible = state
 		$DodgeButtonPosition.visible = state
 		$MenuButtonPosition.visible = state
+		$InteractButtonPosition.visible = state
 		player.touch_control = state
 
 func _ready() -> void:
