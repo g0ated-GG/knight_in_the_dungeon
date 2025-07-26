@@ -1,7 +1,7 @@
 [🇺🇸](./README.md)
 [🇷🇺](./README_ru.md)
-# KOD23
-The game "Knight in the dungeon". 2D Souls-like with top-down view.
+# 🛡️ **Knight in the dungeon** ⚔️
+2D Souls-like with top-down view.
 
 Game for jam KOD23 "Small, but bold" [https://gamin.me/compos/kod/23](https://gamin.me/compos/kod/23)
 
