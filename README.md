@@ -1,7 +1,7 @@
 [🇺🇸](./README.md)
 [🇷🇺](./README_ru.md)
 # 🛡️ **Knight in the dungeon** ⚔️
-2D Souls-like with top-down view.
+2D Souls-like with top-down view. [🎬 Gameplay video](./gameplay.mp4)
 
 Game for KOD23 "Small, but mighty" game jam [https://gamin.me/compos/kod/23](https://gamin.me/compos/kod/23)
 
