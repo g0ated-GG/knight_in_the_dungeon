@@ -1,8 +1,9 @@
-[gd_scene load_steps=10 format=3 uid="uid://diuuntjgrkkv7"]
+[gd_scene load_steps=12 format=3 uid="uid://diuuntjgrkkv7"]
 
 [ext_resource type="Texture2D" uid="uid://bwpp8sttuibr2" path="res://img/lamp.png" id="1_0tk7r"]
 [ext_resource type="Script" uid="uid://c1osxek2vdape" path="res://zones/lava.gd" id="1_foq0s"]
 [ext_resource type="AudioStream" uid="uid://dx3upa0p7nyqn" path="res://resources/Lava loop.wav" id="3_pndt8"]
+[ext_resource type="Texture2D" uid="uid://cf880tqyh4lsu" path="res://img/world_sprites.svg" id="4_mydb0"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2qes0"]
 size = Vector2(64, 64)
@@ -53,6 +54,10 @@ _data = {
 &"damage": SubResource("Animation_wba4t")
 }
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_jmec8"]
+atlas = ExtResource("4_mydb0")
+region = Rect2(1496, 2866, 325, 325)
+
 [node name="LavaV2" type="Area2D"]
 collision_layer = 16
 collision_mask = 10
@@ -83,3 +88,7 @@ stream = ExtResource("3_pndt8")
 volume_db = -20.0
 autoplay = true
 max_distance = 800.0
+
+[node name="AlternateLight" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0.498039)
+texture = SubResource("AtlasTexture_jmec8")

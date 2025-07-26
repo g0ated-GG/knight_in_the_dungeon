@@ -1,10 +1,11 @@
-[gd_scene load_steps=11 format=3 uid="uid://dah36w80s8ho6"]
+[gd_scene load_steps=13 format=3 uid="uid://dah36w80s8ho6"]
 
 [ext_resource type="PackedScene" uid="uid://di1psgm2krpc3" path="res://scenes/props/generic_prop.tscn" id="1_v6b20"]
 [ext_resource type="Texture2D" uid="uid://cf880tqyh4lsu" path="res://img/world_sprites.svg" id="2_1m0gy"]
 [ext_resource type="Texture2D" uid="uid://bwpp8sttuibr2" path="res://img/lamp.png" id="2_8c77b"]
 [ext_resource type="Script" uid="uid://c7ao6t48sbtfk" path="res://scenes/props/lamp.gd" id="2_pukns"]
 [ext_resource type="AudioStream" uid="uid://b2hffkfqycp3k" path="res://resources/Fire Burning.wav" id="5_k2i3c"]
+[ext_resource type="LabelSettings" uid="uid://4qrxnohtkh4n" path="res://scenes/props/Floor label.tres" id="6_8ivjm"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_yrebg"]
 atlas = ExtResource("2_1m0gy")
@@ -34,6 +35,10 @@ scale_max = 0.05
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_th1kn"]
 radius = 30.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2xsn7"]
+atlas = ExtResource("2_1m0gy")
+region = Rect2(1496, 2866, 325, 325)
 
 [node name="Lamp" instance=ExtResource("1_v6b20")]
 script = ExtResource("2_pukns")
@@ -66,3 +71,23 @@ shape = SubResource("CircleShape2D_th1kn")
 stream = ExtResource("5_k2i3c")
 autoplay = true
 max_distance = 800.0
+
+[node name="AlternateLight" type="Sprite2D" parent="." index="6"]
+modulate = Color(1, 1, 1, 0.498039)
+texture = SubResource("AtlasTexture_2xsn7")
+
+[node name="TipPivot" type="Node2D" parent="." index="7"]
+
+[node name="Tip" type="Label" parent="TipPivot" index="0"]
+visible = false
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -149.0
+offset_top = -64.0
+offset_right = 150.0
+offset_bottom = -28.0
+grow_horizontal = 2
+text = "TIP_INTERACTION"
+label_settings = ExtResource("6_8ivjm")
+horizontal_alignment = 1

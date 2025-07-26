@@ -5,10 +5,15 @@ extends StaticBody2D
 	set(state):
 		enabled = state
 		$Sprite2D/FireSprite2D.visible = enabled
-		$PointLight2D.enabled = enabled && Globals.light
+		$PointLight2D.enabled = enabled and Globals.light
+		$AlternateLight.visible = enabled and not Globals.light
 
 func _ready() -> void:
 	$SaveArea2D.body_entered.connect(save)
+	if number <= Globals.checkpoint:
+		enabled = true
+	else:
+		enabled = enabled
 
 func save(player : Player):
 	if not enabled and Globals.checkpoint < number:

@@ -3,7 +3,7 @@
 # 🛡️ **Knight in the dungeon** ⚔️
 2D Souls-like with top-down view.
 
-Game for jam KOD23 "Small, but bold" [https://gamin.me/compos/kod/23](https://gamin.me/compos/kod/23)
+Game for KOD23 "Small, but mighty" game jam [https://gamin.me/compos/kod/23](https://gamin.me/compos/kod/23)
 
 * WASD / arrows - move
 * Mouse - rotation

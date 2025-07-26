@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://c2vvc45tkhr2o"]
+[gd_scene load_steps=12 format=3 uid="uid://c2vvc45tkhr2o"]
 
 [ext_resource type="Script" uid="uid://cdv12xswcvnfl" path="res://zones/checkpoint.gd" id="1_eudqv"]
 [ext_resource type="Texture2D" uid="uid://cf880tqyh4lsu" path="res://img/world_sprites.svg" id="1_ux6k0"]
@@ -26,6 +26,10 @@ radius = 45.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_5no8m"]
 radius = 100.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4mxbf"]
+atlas = ExtResource("1_ux6k0")
+region = Rect2(1496, 2866, 325, 325)
 
 [node name="Checkpoint" type="StaticBody2D"]
 script = ExtResource("1_eudqv")
@@ -55,3 +59,7 @@ shape = SubResource("CircleShape2D_5no8m")
 color = Color(1, 1, 0, 1)
 energy = 2.0
 texture = ExtResource("4_y40dt")
+
+[node name="AlternateLight" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0.498039)
+texture = SubResource("AtlasTexture_4mxbf")

@@ -1,3 +1,4 @@
+class_name Gargoyle
 extends StaticBody2D
 
 var arrow_scene = preload('res://scenes/bullet/arrow.tscn')
@@ -16,6 +17,7 @@ func _ready() -> void:
 	$SwitchArea2D.body_entered.connect(switch)
 	if not shooting:
 		$AnimationPlayer.play('sleep')
+	$TipPivot.global_rotation = 0.0
 
 func switch(_target):
 	shooting = !shooting
@@ -48,3 +50,6 @@ func shoot():
 	$AnimationPlayer.stop()
 	$AnimationPlayer.play('RESET')
 	$AnimationPlayer.play('shoot-arrow' if bulletType == BulletType.ARROW else 'shoot-fireball')
+
+func show_tip(state : bool) -> void:
+	$TipPivot/Tip.visible = state

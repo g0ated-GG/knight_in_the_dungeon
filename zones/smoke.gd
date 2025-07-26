@@ -3,6 +3,9 @@ extends GPUParticles2D
 
 @export var enabled : bool = true :
 	set(state):
-		enabled = state
+		if Globals.particles:
+			enabled = state
+		else:
+			enabled = false
 		emitting = enabled
 		$Sparkles.emitting = enabled

@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://cbv8kd8au3ic"]
+[gd_scene load_steps=19 format=3 uid="uid://cbv8kd8au3ic"]
 
 [ext_resource type="Script" uid="uid://ceomjctecwl6q" path="res://scenes/player/player.gd" id="1_07msp"]
 [ext_resource type="Texture2D" uid="uid://cf880tqyh4lsu" path="res://img/world_sprites.svg" id="2_llpwy"]
@@ -441,6 +441,9 @@ _data = {
 [sub_resource type="CircleShape2D" id="CircleShape2D_7ymd7"]
 radius = 90.0
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_lvxji"]
+radius = 100.0
+
 [node name="Player" type="CharacterBody2D"]
 z_index = 5
 collision_layer = 3
@@ -512,3 +515,11 @@ volume_db = -10.0
 
 [node name="AudioListener2D" type="AudioListener2D" parent="."]
 current = true
+
+[node name="InteractionArea" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea"]
+shape = SubResource("CircleShape2D_lvxji")
+
+[connection signal="body_entered" from="InteractionArea" to="." method="interactive_object_found"]
+[connection signal="body_exited" from="InteractionArea" to="." method="interactive_object_lost"]
